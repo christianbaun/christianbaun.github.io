@@ -1,0 +1,421 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Verteilte Systeme, SS2011, FH-Mannheim, HS-Mannheim, Christian Baun">
+<meta name="author" content="M.Sc. Christian Baun">
+<meta name="keywords" content="VSY, HS-Mannheim, FH-Mannheim, Mannheim, Cluster-Computing, Grid-Computing, Cloud-Computing, SS2011, Sommersemester, Informatik, Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Vorlesung Cluster-, Grid- und Cloud-Computing (WS1011)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zu den vorheringen Veranstaltungen" border="0" height="32" width="32"></a>
+    </td>
+  </tr>
+</table>
+<hr>
+
+<h2>Verteilte Systeme (SS2011)</h2>
+
+<p>
+Ein Verteiltes System ist ein Zusammenschluss mehrerer unabhängiger Computer, die über ein Netzwerk miteinander kommunizieren. Es existieren verschiedene Architekturen verteilter Systeme in der Informatik. Neben der bekanntesten Architektur, dem Client-Server-Modell, existieren ganz besonders im Umfeld des Parallelrechnens u.a. Cluster-Computing, Grid-Computing, Peer-to-Peer (P2P) und Cloud-Computing.
+</p><p>
+Das Ziel dieser Vorlesung ist die Vermittlung der Grundlagen von Verteilten Systemen. Praktische Übungen nehmen in der Vorlesung einen großen Raum ein und sind für das Verständnis der Technologien elementar.
+</p><p>
+Die Vorlesung erfolgt in Zusammenarbeit mit <a href="http://www.viktormauch.de" style="text-decoration: none">Viktor Mauch</a>.
+</p>
+
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<!-- <font size="+3" color="#000000"><b>Skripte</b></font> -->
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../VAR1314/index.html" style="text-decoration: none">Verteilte Architekturen im WS1314</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>
+
+<!-- <h2>Ankündigungen</h2>  -->
+
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Finale der Vorlesung</b></font>
+<p>
+Die Präsentationen finden am Freitag (8.4.2011) ab 9:45 Uhr in Raum A212 statt.
+</p>
+<p>
+Für diejenigen Gruppen, die am Freitag Vormittag FIM hören, besteht die Möglichkeit, am Freitag Nachmittag ab 12:00 Uhr zu präsentieren.
+</p>
+<p>
+Pro Präsentation sind 30 Minuten <b>inklusive Live-Demo</b> eingeplant!
+</p>
+<p>
+Entgegen früherer Plaungen findet am 11.4.2011 <B>kein</b> VSY statt!
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Skripte</b></font>
+<p>
+Es ist ratsam, die Folien der Vorlesung erst NACH der Veranstaltung auszudrucken, weil Änderungen nicht ausgeschlossen werden können.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+<h2>Folien zur Vorlesung</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>(15.03.2011)</td>
+    <td colspan="2"><i>Vorlesungsbeginn</i></td>
+  </tr>
+  <tr>
+    <td>1.Termin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>(17.03.2011)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>08:00 - 09:30</td>
+    <td>1.Vorlesung: Organisatorisches, Einführung</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>09:45 - 11:15</td>
+    <td>2.Vorlesung: OSI-Modell - Bitübertragungsschicht</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>11:30 - 13:00</td>
+    <td>3.Vorlesung: OSI-Modell - Sicherungsschicht</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>13:40 - 15:10</td>
+    <td>4.Vorlesung: OSI-Modell - Vermittlungsschicht</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>15:20 - 16:50&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Übung</td>
+  </tr>
+  <tr>
+    <td>2.Termin</td>
+    <td>(21.03.2011)</td>
+    <td>08:00 - 09:30</td>
+    <td>5.Vorlesung: OSI-Modell - Transportschicht</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>09:45 - 11:15</td>
+    <td>6.Vorlesung: Weitere Schichten, Dienste</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>11:30 - 13:00</td>
+    <td>7.Vorlesung: Sicherheit</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>13:40 - 15:10</td>
+    <td>8.Vorlesung: Cluster Computing</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>15:20 - 16:50</td>
+    <td>Übung</td>
+  </tr>
+  <tr>
+    <td>3.Termin</td>
+    <td>(22.03.2011)</td>
+    <td>08:00 - 09:30</td>
+    <td>9.Vorlesung: Grid Computing</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>09:45 - 11:15</td>
+    <td>10.Vorlesung: Cloud Computing</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>11:30 - 13:00</td>
+    <td>11.Vorlesung: Cloud Computing</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>13:40 - 15:10</td>
+    <td>12.Vorlesung: Cloud Computing</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>15:20 - 16:50</td>
+    <td>Übung</td>
+  </tr>
+  <tr>
+    <td>4.Termin</td>
+    <td>(23.03.2011)</td>
+    <td>08:00 - 09:30</td>
+    <td>13.Vorlesung: Web Services</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>09:45 - 11:15</td>
+    <td>14.Vorlesung: Peer-to-Peer</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>11:30 - 13:00</td>
+    <td>Übung</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>13:40 - 15:10</td>
+    <td>Übung</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>15:20 - 16:50</td>
+    <td>Übung</td>
+  </tr>
+  <tr>
+    <td>5.Termin</td>
+    <td>(24.03.2011)</td>
+    <td>08:00 - 09:30</td>
+    <td>Übung</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>09:45 - 11:15</td>
+    <td>Übung</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>11:30 - 13:00</td>
+    <td>Übung</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>13:40 - 15:10</td>
+    <td>Übung</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>15:20 - 16:50</td>
+    <td>Übung</td>
+  </tr>
+  <tr>
+    <td>6.Termin</td>
+    <td>(08.04.2011)</td>
+    <td>08:00 - 09:30</td>
+    <td>Übung (Präsentationen)</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>09:45 - 11:15</td>
+    <td>Übung (Präsentationen)</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>11:30 - 13:00</td>
+    <td>Übung (Präsentationen)</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>13:40 - 15:10</td>
+    <td>Übung (Präsentationen)</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>15:20 - 16:50</td>
+    <td>Übung (Präsentationen)</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>(01.07.2011)</td>
+    <td colspan="2"><i>Vorlesungsende</i></td>
+  </tr>
+</table>
+
+
+
+<h2>Übungsaufgabe</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>Die erfolgreiche Bearbeitung der <a href="Skript/VSY_Uebungsaufgabe_SS2011.pdf" style="text-decoration: none">Übungsaufgabe</a> inklusive Anfertigung einer schriftlichen Ausarbeitung und Präsentation der Ergebnisse ist die Grundlage für die Notenfindung.</td>
+  </tr>
+</table>
+
+
+<h2>Abgaben</h2>
+
+<h3>Medizinische Informatik Bachelor</h3>
+
+<ul>
+<li><b>Gruppe 1:</b>
+<ul>
+<li><b>Teilnehmer:</b> Estelmann, Kern, Reiser, Reitz, Schröder, Zimmermann</li>
+<li><a href="Abgaben/IMB_Gruppe1_Ausarbeitung.pdf" style="text-decoration: none">Schriftliche Ausarbeitung</a></li>
+<li><a href="Abgaben/IMB_Gruppe1_Folien.pdf" style="text-decoration: none">Folien der Präsentation</a></li>
+<li><b>Besonderheiten:</b> Webanwendung mit PHP</li>
+</ul>
+</li>
+<li><b>Gruppe 2:</b>
+<ul>
+<li><b>Teilnehmer:</b> Hegemann, Keinath, Seip, Vinh Lam, Wilbertz</li>
+<li><a href="Abgaben/IMB_Gruppe2_Ausarbeitung.pdf" style="text-decoration: none">Schriftliche Ausarbeitung</a></li>
+<li><a href="Abgaben/IMB_Gruppe2_Folien.pdf" style="text-decoration: none">Folien der Präsentation</a></li>
+<li><b>Besonderheiten:</b> Client und Server auf Basis von .NET für Windows</li>
+</ul>
+</li>
+<li><b>Gruppe 3:</b>
+<ul>
+<li><b>Teilnehmer:</b> Beltran, Guegang, Meppe</li>
+<li><a href="Abgaben/IMB_Gruppe3_Ausarbeitung.pdf" style="text-decoration: none">Schriftliche Ausarbeitung</a></li>
+<li><a href="Abgaben/IMB_Gruppe3_Folien.pdf" style="text-decoration: none">Folien der Präsentation</a></li>
+<li><b>Besonderheiten:</b> Client und Server mit JAVA entwickelt</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Informatik Bachelor</h3>
+
+<ul>
+<li><b>Gruppe 1:</b>
+<ul>
+<li><b>Teilnehmer:</b> Gedack, Kordowski, Kraljic, Krause, Opitz, Sinn</li>
+<li><a href="Abgaben/IB_Gruppe1_Ausarbeitung.pdf" style="text-decoration: none">Schriftliche Ausarbeitung</a></li>
+<li><a href="Abgaben/IB_Gruppe1_Folien.pdf" style="text-decoration: none">Folien der Präsentation</a></li>
+<li><b>Besonderheiten:</b> Server in PHP entwickelt, Client mit Java realisiert, zusätzlicher Client für iPhone </li>
+</ul>
+</li>
+<li><b>Gruppe 2:</b>
+<ul>
+<li><b>Teilnehmer:</b> Ahmed, Bruckner, Cisowski, Stapelberg, Töpper</li>
+<li><a href="Abgaben/IB_Gruppe2_Ausarbeitung.pdf" style="text-decoration: none">Schriftliche Ausarbeitung</a></li>
+<li><a href="Abgaben/IB_Gruppe2_Folien.pdf" style="text-decoration: none">Folien der Präsentation</a></li>
+<li><b>Besonderheiten:</b> Server in Perl entwickelt, 4 verschiedene Clients (Android, Qt, Perl, Java)</li>
+</ul>
+</li>
+<li><b>Gruppe 3:</b>
+<ul>
+<li><b>Teilnehmer:</b> Düsing, Hillenbrand, Kraus, Pohlmann, Scheuermann, Stammer</li>
+<li><a href="Abgaben/IB_Gruppe3_Ausarbeitung.pdf" style="text-decoration: none">Schriftliche Ausarbeitung</a></li>
+<li><a href="Abgaben/IB_Gruppe3_Folien.pdf" style="text-decoration: none">Folien der Präsentation</a></li>
+<li><b>Besonderheiten:</b> Anwendung in Java entwickelt, Jeder Teinehmer kann Client und Server sein</li>
+</ul>
+</li>
+<li><b>Gruppe 4:</b>
+<ul>
+<li><b>Teilnehmer:</b> Keller, Tantchev, Tchorbadjiyski, Wurm</li>
+<li><a href="Abgaben/IB_Gruppe4_Ausarbeitung.pdf" style="text-decoration: none">Schriftliche Ausarbeitung</a></li>
+<li><a href="Abgaben/IB_Gruppe4_Folien.pdf" style="text-decoration: none">Folien der Präsentation</a></li>
+<li><b>Besonderheiten:</b> Server in Ruby entwickelt, Client als Webanwendung realisiert</li>
+</ul>
+</li>
+<li><b>Gruppe 5:</b>
+<ul>
+<li><b>Teilnehmer:</b> Braner, Gutermann, Hennhöfer, Schönung, Tschirpke</li>
+<li><a href="Abgaben/IB_Gruppe5_Ausarbeitung.pdf" style="text-decoration: none">Schriftliche Ausarbeitung</a></li>
+<li><a href="Abgaben/IB_Gruppe5_Folien.pdf" style="text-decoration: none">Folien der Präsentation</a></li>
+<li><b>Besonderheiten:</b> Server in Java entwickelt, zwei Clients (Webanwendung und Java-Client) realisiert</li>
+</ul>
+</li>
+</ul>
+
+<h3>Vorlagen</h3>
+
+<ul>
+<li><a href="Vorlagen/VSY_Paper_Vorlage_SS2011.zip" style="text-decoration: none">Vorlage für die schriftliche Ausarbeitung</a></li>
+<li><a href="Vorlagen/VSY_Folien_Vorlage_SS2011.zip" style="text-decoration: none">Vorlage für die Präsentation</a></li>
+</ul>
+
+<p>Die Vorlage für die Ausarbeitung nutzt das LaTeX-Makropaket <tt>llncs</tt> (<a href="http://www.springer.com/computer/lncs?SGWID=0-164-7-72376-0" style="text-decoration: none">Lecture Notes in Computer Science</a>) des Springer-Verlags. Die Vorlage für die Präsentation basiert auf <a href="http://www2.informatik.hu-berlin.de/~mischulz/beamer.html" style="text-decoration: none">LaTeX Beamer</a>.</p>
+
+<p>Alle großen Linux-Distributionen bringen LaTeX-Pakete mit. Unter Windows sind die LaTeX-Distributionen <a href="http://www.miktex.org" style="text-decoration: none">MiKTeX</a> und <a href="http://www.tug.org/texlive/" style="text-decoration: none">TeX Live</a> bekannt. LaTeX-Dokumente können mit jedem Editor bearbeitet werden.</p>
+
+
+
+<h2>Vorlesungsevaluierung</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/Evaluation_VSY_SS2011_Baun_Mauch_0.3.3.pdf" style="text-decoration: none">Ergebnis</a> der Vorlesungsevaluierung
+    </td>
+  </tr>
+</table>
+
+
+<h2>Kontakt</h2>
+<p>Zu erreichen sind die Dozenten am besten per E-Mail: <a href="mailto:[baun|mauch]@kit.edu">[baun|mauch]@kit.edu</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:baun@kit.edu" style="text-decoration: none">M.Sc. Christian Baun</a>,<br>
+      <a href="mailto:mauch@kit.edu" style="text-decoration: none">Dipl.-Phys. Viktor Mauch</a><br></i>
+      <i><a href="http://www.hs-mannheim.de" style="text-decoration: none">Hochschule Mannheim</a><br></i>
+      <i><a href="http://www.informatik.hs-mannheim.de" style="text-decoration: none">Fakultät für Informatik</a><br></i>
+      <i>Stand: 16.4.2011</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      <a href="http://www.hs-mannheim.de/"><img src="Bilder/HS-Mannheim-Logo-weiss.gif" alt="zur Homepage der HS Mannheim" border="0" width="195" height="60" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

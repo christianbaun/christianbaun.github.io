@@ -1,0 +1,336 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Cluster-, Cluster-Computing, Grid-Computing, Cloud-Computing, WS1011, FH-Mannheim, HS-Mannheim, Christian Baun">
+<meta name="author" content="M.Sc. Christian Baun">
+<meta name="keywords" content="CGC, HS-Mannheim, FH-Mannheim, Mannheim, Cluster-Computing, Grid-Computing, Cloud-Computing, WS1011, Wintersemester, Informatik, Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Vorlesung Cluster-, Grid- und Cloud-Computing (WS1011)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Cluster-, Grid- und Cloud-Computing (WS1011)</h2>
+
+<p>
+Ein Verteiltes System ist ein Zusammenschluss mehrerer unabhängiger Computer, die über ein Netzwerk miteinander kommunizieren. Es existieren verschiedene Architekturen verteilter Systeme in der Informatik. Neben der bekannten Architektur, dem Client-Server-Modell, existieren ganz besonders im Umfeld des Parallelrechnens u.a. Cluster-Computing, Grid-Computing, Peer-to-Peer (P2P) und Cloud-Computing.
+</p><p>
+Cloud-Computing hat das Potential, den Charakter der Informationstechnik (IT) fundamental zu verändern. Die Konsolidierung der Rechen- und Speicherressourcen in großen Rechen- bzw. Ressourcenzentren bietet die Möglichkeit, Mittel, die bisher der Aufrechterhaltung des Ressourcenbetriebs dienten, in andere Aufgaben fließen zu lassen. Gleichzeitig haben die Anwender in der Cloud große Freiheiten bzgl. der Infrastrukturen, Betriebssysteme, Programmiersprachen und Anwendungen, die sie verwenden möchten.
+</p><p>
+Das Ziel dieser Vorlesung ist die Vermittlung der Grundlagen von Cluster-Computing, Grid-Computing, Peer-to-Peer (P2P) und ganz besonders von Cloud-Computing. Praktische Übungen nehmen in der Vorlesung einen großen Raum ein und sind für das Verständnis der Technologien elementar.
+</p>
+
+<!-- <h2>Termine</h2> -->
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Vorlesung&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></td>
+    <td>Freitags&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>9:45 - 11:15 Uhr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Raum A212</td>
+  </tr>
+  <tr>
+    <td><b>Übung</b></td>
+    <td>Freitags</td>
+    <td>8:00 - 9:30 Uhr</td>
+    <td>Raum A008</td>
+  </tr>
+  <tr>
+    <td><b>Klausur</b></td>
+    <td>25.1.2011</td>
+    <td>10.45 - 12.45 Uhr</td>
+    <td>Raum A210</td>
+  </tr>
+  <tr>
+    <td><b>Klausureinsicht</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>2.2.2011</td>
+    <td>14.00 - 15.00 Uhr</td>
+    <td>Raum A113a</td>
+  </tr>
+</table>-->
+
+<!-- <h2>Ankündigungen</h2>  -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ffff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Gastvorlesung von Dr. Marcel Kunze</b></font>
+<p>
+Am 10.12.2010 referiert Dr. Marcel Kunze, Leiter der Forschungsgruppe Cloud-Computing am <a href="http://www.scc.kit.edu" style="text-decoration: none">Steinbuch Zentrum für Computing</a> des <a href="http://www.kit.edu" style="text-decoration: none">Karlsruher Instituts für Technologie</a>
+</p>
+<p>
+Die Vorlesung findet im Rahmen der CGC-Vorlesung wie üblich um 9:45 Uhr in Raum A/212 statt!
+</p>
+<p>
+Thema: <b>Map-Reduce (Hadoop)</b>
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ffff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Gastvorlesung von Dr. Rüdiger Berlich</b></font>
+<p>
+Am Mittwoch, den 27.10.2010 referiert <a href="http://ruediger.berlich.com/" style="text-decoration: none">Dr. Rüdiger Berlich</a>, Mitarbeiter des <a href="http://www.kit.edu" style="text-decoration: none">Karlsruher Instituts für Technologie</a>.
+</p>
+<p>
+Die Vorlesung findet im Rahmen des Mannheimer Informatik Kolloquiums um 15.30 Uhr in Raum A/206 statt!
+</p>
+<p>
+Thema: <b>Parametrische Optimierung in parallelen und verteilten Umgebungen</b>
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>! ! ! Exkursion ! ! !</b></font>
+<p>
+Die <a href="album/index.html">Bilder</a> der Exkursion ins <a href="http://www.arithmeum.uni-bonn.de/">Arithmeum</a> nach Bonn vom 9.5.2009 sind online.
+<p>
+Im Sekretariat des Fachbereichs liegt eine Anmeldeliste aus.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Skripte</b></font>
+<p>
+Es ist ratsam, die Folien der Vorlesung erst NACH der Veranstaltung auszudrucken, weil Änderungen nicht ausgeschlossen werden können.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<!-- <font size="+3" color="#000000"><b>Skripte</b></font> -->
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../CGC11/index.html" style="text-decoration: none">Cluster-, Grid- und Cloud-Computing im SS2011</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>
+
+
+<h2>Folien zur Vorlesung</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>(28.09.2010)</td>
+    <td><i>Vorlesungsbeginn</i></td>
+  </tr>
+  <tr>
+    <td>1.Vorlesung&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>(01.10.2010)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Einführung, Client-Server</td>
+  </tr>
+  <tr>
+    <td>2.Vorlesung</td>
+    <td>(08.10.2010)</td>
+    <td>Parallelrechner</td>
+  </tr>
+  <tr>
+    <td>3.Vorlesung</td>
+    <td>(15.10.2010)</td>
+    <td>Cloud-Computing</td>
+  </tr>
+  <tr>
+    <td>4.Vorlesung</td>
+    <td>(22.10.2010)</td>
+    <td>Amazon Web-Services (EC2, EBS, ELB)</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/Informatik_Kolloquium_Ruediger_Berlich_WS1011.pdf" style="text-decoration: none">5.Vorlesung</a></td>
+    <td>(27.10.2010)</td>
+    <td>Gastvorlesung von Dr. Rüdiger Berlich (<a href="http://www.scc.kit.edu/" style="text-decoration: none">SCC/KIT</a>) zum Thema Parametrische Optimierung in parallelen und verteilten Umgebungen <a href="abstract_berlich_WS1011.html" style="text-decoration: none">[Abstract]</a></td>
+  </tr>
+  <tr>
+    <td>6.Vorlesung</td>
+    <td>(05.11.2010)</td>
+    <td>Amazon Web-Services (S3), PaaS (Google App Engine)</td>
+  </tr>
+  <tr>
+    <td>7.Vorlesung</td>
+    <td>(12.11.2010)</td>
+    <td>Private Cloud IaaS (Eucalyptus) und Private Cloud PaaS (AppScale)</td>
+  </tr>
+  <tr>
+    <td>8.Vorlesung</td>
+    <td>(19.11.2010)</td>
+    <td>Cluster-Computing</td>
+  </tr>
+  <tr>
+    <td>9.Vorlesung</td>
+    <td>(26.11.2010)</td>
+    <td>Grid-Computing</td>
+  </tr>
+  <tr>
+    <td>10.Vorlesung</td>
+    <td>(03.12.2010)</td>
+    <td>Peer-to-Peer</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/folien_cgc_vorlesung_11_Marcel_Kunze_WS1011.pdf" style="text-decoration: none">11.Vorlesung</a></td>
+    <td>(10.12.2010)</td>
+    <td>Gastvorlesung von Dr. Marcel Kunze (<a href="http://www.scc.kit.edu/" style="text-decoration: none">SCC/KIT</a>) zum Thema MapReduce/Hadoop</td>
+  </tr>
+  <tr>
+    <td>12.Vorlesung</td>
+    <td>(17.12.2010)</td>
+    <td>Virtualisierung</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>(24.12.2010)</td>
+    <td><i>Heiligabend</i></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>(31.12.2010)</td>
+    <td><i>Silvester</i></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>(07.01.2011)</td>
+    <td><i>Vorlesungsfreie Zeit</i></td>
+  </tr>
+  <tr>
+    <td>13.Vorlesung</td>
+    <td>(14.01.2011)</td>
+    <td>Web Services</td>
+  </tr>
+  <tr>
+    <td>14.Vorlesung</td>
+    <td>(21.01.2011)</td>
+    <td>Fragestunde</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>(21.01.2011)</td>
+    <td><i>Vorlesungsende</i></td>
+  </tr>
+</table>
+
+
+<h2>Übungsblätter</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr><td><a href="Skript/CGC_Uebungsblatt_Uebung_01_WS1011.pdf" style="text-decoration: none">Übungsblatt 1</a></td></tr>
+  <tr><td><a href="Skript/CGC_Uebungsblatt_Uebung_02_WS1011.pdf" style="text-decoration: none">Übungsblatt 2</a></td></tr>
+  <tr><td><a href="Skript/CGC_Uebungsblatt_Uebung_03_WS1011.pdf" style="text-decoration: none">Übungsblatt 3</a></td></tr>
+  <tr><td><a href="Skript/CGC_Uebungsblatt_Uebung_04_WS1011.pdf" style="text-decoration: none">Übungsblatt 4</a></td></tr>
+  <tr><td><a href="Skript/CGC_Uebungsblatt_Uebung_05_WS1011.pdf" style="text-decoration: none">Übungsblatt 5</a></td></tr>
+<!--  <tr><td><a href="Skript/CGC_Uebungsblatt_Uebung_06_WS1011.pdf" style="text-decoration: none">Übungsblatt 6</a></td></tr>
+  <tr><td><a href="Skript/CGC_Uebungsblatt_Uebung_07_WS1011.pdf" style="text-decoration: none">Übungsblatt 7</a></td></tr>-->
+</table>
+
+<h2>Klausuren</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="Skript/CGC_Klausur_WS1011.pdf" style="text-decoration: none">Abschlussklausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(25.01.2011)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Bearbeitungszeit: 60 Minuten</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/CGC_Klausur_Loesung_WS1011.pdf" style="text-decoration: none">Lösungsvorschlag</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(25.01.2011)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Lösungsvorschlag zu Abschlussklausur</td>
+  </tr>
+  <tr>
+    <td><a href="cgc_klausur_WS1011.html" style="text-decoration: none">Ergebnis der Klausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+<!--  <tr>
+    <td><a href="Skript/Testklausur_SYS_SS2009.pdf" style="text-decoration: none">Übungsklausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(04.06.2009)</td>
+  </tr>-->
+</table>
+
+<h2>Vorlesungsevaluierung</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/Evaluation_CGC_WS1011_Baun_0.3.4.pdf" style="text-decoration: none">Ergebnis</a> der Vorlesungsevaluierung
+    </td>
+  </tr>
+</table>
+
+<!-- <h2>Exkursion</h2> -->
+
+<!-- <h2>Reference Cards</h2> -->
+
+
+<h2>Kontakt</h2>
+<p>Zu erreichen bin ich am besten per E-Mail: <a href="mailto:cray@unix-ag.uni-kl.de">cray@unix-ag.uni-kl.de</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:cray@unix-ag.uni-kl.de">M.Sc. Christian Baun</a><br></i>
+      <i>Hochschule Mannheim<br></i>
+      <i>Fakultät für Informatik<br></i>
+      <i>Stand: 1.2.2011</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      <a href="http://www.hs-mannheim.de/"><img src="Bilder/HS-Mannheim-Logo-weiss.gif" alt="zur Homepage der HS Mannheim" border="0" width="195" height="60" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

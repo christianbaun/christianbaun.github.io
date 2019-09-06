@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+<!-- saved from url=(0013)about:internet -->
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1" />
+<meta name="Keywords" content="photo,album,gallery,Exkursion nach München 12.12.2008,ExkursionWS0809_22" />
+
+<meta http-equiv="Page-Enter" content="blendTrans(Duration=0.5)" />
+<meta http-equiv="Page-Exit" content="blendTrans(Duration=0.5)" />
+<title>Exkursion nach München 12.12.2008/ExkursionWS0809_22</title>
+<script type="text/javascript" src="../res/embedmovie.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+function keypress(e) {
+	if(!e) var e=window.event;
+	if(e.keyCode) keyCode=e.keyCode; 
+	else if(e.which) keyCode=e.which;
+	switch(keyCode) {
+		case 8: window.location="../index.html"; return false; break;
+		case 63235: case 39: window.location="ExkursionWS0809_23.html"; return false; break;
+		case 63234: case 37: window.location="ExkursionWS0809_21.html"; return false; break;
+		case 63273: case 36: window.location="ExkursionWS0809_01.html"; return false; break;
+		case 63275: case 35: window.location="ExkursionWS0809_98.html"; return false; break;
+		case 32: show_down(); setTimeout('show_out()', 200); return false; break;
+	}
+	return true;
+}
+function keypresslistener() {
+  if(document.all) { document.onkeydown = keypress; }
+  else if(document.layers || document.getElementById) { document.onkeypress = keypress; }
+}
+idx0 = new Image(31,31); idx0.src = "../res/idx.gif";
+idx1 = new Image(31,31); idx1.src = "../res/idx1.gif";
+next0 = new Image(31,31);next0.src = "../res/next.gif";
+next1 = new Image(31,31);next1.src = "../res/next1.gif";
+prev0 = new Image(31,31);prev0.src = "../res/prev.gif";
+prev1 = new Image(31,31);prev1.src = "../res/prev1.gif";
+
+show0 = new Image(31,31);show0.src = "../res/show.gif";
+show1 = new Image(31,31);show1.src = "../res/show1.gif";
+stop0 = new Image(31,31);stop0.src = "../res/stop.gif";
+stop1 = new Image(31,31);stop1.src = "../res/stop1.gif";
+
+var show_param = -1;
+if (window.location.search.length > 1) {
+	var parms = window.location.search.substring(1,location.search.length).split("&");
+	for (var i = 0; i < parms.length; i++) {		
+		if(parms[i].substring(0, parms[i].indexOf("=")) == "show_param") 
+			delay = show_param = parms[i].substring(parms[i].indexOf("=") + 1, parms[i].length);
+	}
+}
+var show_delay = show_param;
+function show_timer() {
+	if (show_delay >= 0) {
+		show_delay--;
+		if (show_delay < 0 && show_param > 0) {
+			window.location="ExkursionWS0809_23.html?show_param=" + show_param;
+		}
+		else if(show_param > 0) 
+			window.status='Time left: '+(show_delay + 1)+' s';
+	}
+	setTimeout('show_timer()', 1000);	
+}
+function show_over() {
+	document.getElementById("show").src = (show_param >= 0)? stop1.src : show1.src;
+	window.status = 'Diaschau starten/anhalten - Doppelklick für Geschwindigkeitsänderung';
+}
+function show_out() {
+	document.getElementById("show").src = (show_param >= 0)? stop0.src : show0.src;
+}
+function show_down() {
+	el = document.getElementById("show");
+	if (show_param >= 0) { 
+		show_param = -1; 
+		el.src = stop1.src; 
+		window.status=''; 
+	} 
+	else { 
+		show_param = 3; 
+		el.src = show1.src; 
+	} 
+	show_delay = show_param; 
+}
+function change_delay() {
+	delay = prompt('Verzögerung', (show_param < 0)? 3 : show_param);
+	show_param = show_delay = delay; 
+	document.getElementById("show").src = show1.src;
+}
+
+
+
+
+/* ]]> */
+</script>
+
+
+
+<link rel="stylesheet" type="text/css" href="../res/styles.css" />
+
+<style type="text/css">
+body { background-image: url(../res/bg.gif); background-repeat: repeat-x; }
+</style>
+</head>
+
+<body id="body" onload="show_timer(); show_out(); keypresslistener();">
+<div style="width:99%; margin-left:auto; margin-right:auto; text-align:center;">
+<table style="height:54px;" align="center" cellspacing="0" cellpadding="0" border="0">
+<tr><td>
+<!-- Header of slide pages -->
+<table style="width:722px;" align="center" cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td style="width:31px;">
+  <a href="../index.html"><img style="border:none;" src="../res/idx.gif" onmouseover="this.src=idx1.src" onmouseout="this.src=idx0.src" width="31" height="31" title="Indexseite" id="idx" alt="" /></a></td>
+<td style="width:20px;">
+  <img style="border:none;" src="../res/hdr_left.gif" width="20" height="31" alt="" /></td>
+<td style="text-align:left; background:transparent url(../res/hdr_mid.gif); background-repeat: repeat-x; white-space:nowrap;" class="title"><a href="../index.html">Exkursion nach München 12.12.2008</a></td>
+<td style="width:20px;">
+  <img style="border:none;" src="../res/hdr_right.gif" width="20" height="31" alt="" /></td>
+<td style="width:31px;">
+  <a href="ExkursionWS0809_21.html"><img style="border:none;" src="../res/prev.gif" onmouseover="this.src=prev1.src" onmouseout="this.src=prev0.src" width="31" height="31" title="Vorheriges Bild" id="prev" alt="" /></a></td>
+<td style="width:31px;">
+  <a href="ExkursionWS0809_23.html"><img style="border:none;" src="../res/next.gif" onmouseover="this.src=next1.src" onmouseout="this.src=next0.src" width="31" height="31" title="Nächstes Bild" id="next" alt="" /></a></td>
+
+<td style="width:31px;">
+  <a href="javascript:void(0)"><img style="border:none;" src="../res/show.gif" onmouseover="show_over();" onmouseout="show_out();" onmousedown="show_down();" ondblclick="change_delay();" width="31" height="31" title="Diaschau starten/anhalten - Doppelklick für Geschwindigkeitsänderung" id="show" alt="" /></a></td>
+</tr></table>
+</td></tr></table>
+<br />
+
+
+<map name="imagemap" style="text-decoration:none; border:none;" id="imap"><area coords="0,0,240,479" href="ExkursionWS0809_21.html" title="Vorheriges Bild" alt="" /><area coords="480,0,720,479" href="ExkursionWS0809_23.html" title="Nächstes Bild" alt="" /><area coords="240,0,480,479" href="../index.html" title="Indexseite" alt="" /></map>
+<table align="center" border="0" cellspacing="0" cellpadding="0"><tr>
+<td style="vertical-align:top;"><table style="width:64px;"><tr><td style="text-align:center; padding:4px; height:50px; border:0px;" class="thumb"><a href="ExkursionWS0809_17.html"><img src="../thumbs/ExkursionWS0809_17.jpg" title="ExkursionWS0809_17.jpg" width="48" height="31" alt="" class="mthumb" /></a></td></tr><tr><td style="text-align:center; padding:4px; height:50px; border:0px;" class="thumb"><a href="ExkursionWS0809_18.html"><img src="../thumbs/ExkursionWS0809_18.jpg" title="ExkursionWS0809_18.jpg" width="48" height="31" alt="" class="mthumb" /></a></td></tr><tr><td style="text-align:center; padding:4px; height:50px; border:0px;" class="thumb"><a href="ExkursionWS0809_19.html"><img src="../thumbs/ExkursionWS0809_19.jpg" title="ExkursionWS0809_19.jpg" width="32" height="48" alt="" class="mthumb" /></a></td></tr><tr><td style="text-align:center; padding:4px; height:50px; border:0px;" class="thumb"><a href="ExkursionWS0809_20.html"><img src="../thumbs/ExkursionWS0809_20.jpg" title="ExkursionWS0809_20.jpg" width="32" height="48" alt="" class="mthumb" /></a></td></tr><tr><td style="text-align:center; padding:4px; height:50px; border:0px;" class="thumb"><a href="ExkursionWS0809_21.html"><img src="../thumbs/ExkursionWS0809_21.jpg" title="ExkursionWS0809_21.jpg" width="48" height="31" alt="" class="mthumb" /></a></td></tr></table></td><td style="width:12px">&nbsp;</td>
+<td style="text-align:center; width:722px;">
+<img src="ExkursionWS0809_22.jpg" class="slideImage" width="720" height="479" title="Verkleinertes Bild [ExkursionWS0809_22.jpg - 1919kB]" usemap="#imagemap" alt="" /></td>
+<td style="width:12px">&nbsp;</td><td style="vertical-align:bottom"><table style="width:64px;"><tr><td style="text-align:center; padding:4px; height:50px; border:0px;" class="thumb"><a href="ExkursionWS0809_23.html"><img src="../thumbs/ExkursionWS0809_23.jpg" title="ExkursionWS0809_23.jpg" width="48" height="31" alt="" class="mthumb" /></a></td></tr><tr><td style="text-align:center; padding:4px; height:50px; border:0px;" class="thumb"><a href="ExkursionWS0809_24.html"><img src="../thumbs/ExkursionWS0809_24.jpg" title="ExkursionWS0809_24.jpg" width="32" height="48" alt="" class="mthumb" /></a></td></tr><tr><td style="text-align:center; padding:4px; height:50px; border:0px;" class="thumb"><a href="ExkursionWS0809_25.html"><img src="../thumbs/ExkursionWS0809_25.jpg" title="ExkursionWS0809_25.jpg" width="48" height="31" alt="" class="mthumb" /></a></td></tr><tr><td style="text-align:center; padding:4px; height:50px; border:0px;" class="thumb"><a href="ExkursionWS0809_26.html"><img src="../thumbs/ExkursionWS0809_26.jpg" title="ExkursionWS0809_26.jpg" width="32" height="48" alt="" class="mthumb" /></a></td></tr><tr><td style="text-align:center; padding:4px; height:50px; border:0px;" class="thumb"><a href="ExkursionWS0809_27.html"><img src="../thumbs/ExkursionWS0809_27.jpg" title="ExkursionWS0809_27.jpg" width="48" height="31" alt="" class="mthumb" /></a></td></tr></table></td></tr></table>
+<br /> <!-- Comment and image data at BOTTOM -->
+<table align="center" style="width:722px;" class="infotable" cellspacing="0" cellpadding="2">
+<tr>
+  
+  <td style="text-align:center;" class="smalltxt"><span class="comment">ExkursionWS0809 22</span></td>
+  
+  
+</tr>
+  <tr><td style="text-align:center;" class="smalltxt">Bild |<a href="ExkursionWS0809_01.html"> 1 </a>|<a href="ExkursionWS0809_02.html"> 2 </a>|<a href="ExkursionWS0809_03.html"> 3 </a>|<a href="ExkursionWS0809_04.html"> 4 </a>|<a href="ExkursionWS0809_05.html"> 5 </a>|<a href="ExkursionWS0809_06.html"> 6 </a>|<a href="ExkursionWS0809_07.html"> 7 </a>|<a href="ExkursionWS0809_08.html"> 8 </a>|<a href="ExkursionWS0809_09.html"> 9 </a>|<a href="ExkursionWS0809_10.html"> 10 </a>|<a href="ExkursionWS0809_11.html"> 11 </a>|<a href="ExkursionWS0809_12.html"> 12 </a>|<a href="ExkursionWS0809_13.html"> 13 </a>|<a href="ExkursionWS0809_14.html"> 14 </a>|<a href="ExkursionWS0809_15.html"> 15 </a>|<a href="ExkursionWS0809_16.html"> 16 </a>|<a href="ExkursionWS0809_17.html"> 17 </a>|<a href="ExkursionWS0809_18.html"> 18 </a>|<a href="ExkursionWS0809_19.html"> 19 </a>|<a href="ExkursionWS0809_20.html"> 20 </a>|<a href="ExkursionWS0809_21.html"> 21 </a>|<span class="current">&nbsp;22&nbsp;</span>|<a href="ExkursionWS0809_23.html"> 23 </a>|<a href="ExkursionWS0809_24.html"> 24 </a>|<a href="ExkursionWS0809_25.html" title="Nächste Seite"> &gt; </a>|<a href="ExkursionWS0809_98.html" title="Letzte Seite"> &raquo;</a></td></tr>
+  
+  <tr><td style="text-align:center;" class="smalltxt"><b>KAMERA:&nbsp;</b>Canon EOS 400D DIGITAL | <b>DATUM:&nbsp;</b>12.12.08 12:08 | <b>ISO-EINSTELLUNG:&nbsp;</b>400 | <b>BELICHTUNGSDAUER:&nbsp;</b>1/60s | <b>ÖFFNUNG:&nbsp;</b>4.0 | <b>BRENNWEITE:&nbsp;</b>13.0mm (=21mm)</td></tr>
+  
+  
+  
+  <tr><td style="text-align:center;" class="xsmalltxt">Anzahl Bilder: <strong>98</strong> | Letzte Aktualisierung: <strong>21.12.08 17:24</strong> | Erzeugt von <a href="http://jalbum.net" title="JAlbum - Freeware Web Fotoalbum Software">JAlbum 7.3</a> &amp; <a href="http://lazaworx.com" title="Chameleon v4.22 White skin by lazaWORX">Chameleon</a> | <a href="javascript:void(0)" onclick="window.open('../help.html','Hilfe','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,copyhistory=no,resizable=yes,width=560,height=560')">Hilfe</a></td></tr>
+</table>
+
+
+<br />&nbsp;
+</div>
+
+<script language="javascript" type="text/javascript">
+next_image=new Image(); next_image.src="ExkursionWS0809_23.jpg";
+</script>
+<script language="javascript" type="text/javascript">
+previous_image=new Image(); previous_image.src="ExkursionWS0809_21.jpg";
+</script>
+</body>
+</html>

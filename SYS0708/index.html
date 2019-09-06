@@ -1,0 +1,440 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Systemsoftware SYS WS0708, FH-Mannheim, HS-Mannheim, Christian Baun">
+<meta name="author" content="MSc Christian Baun">
+<meta name="keywords" content="BTS, HS-Mannheim, FH-Mannheim, Mannheim, Systemsoftware, WS0708, Informatik, Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Vorlesung Systemsoftware (WS0708)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Systemsoftware (WS0708)</h2>
+
+<p>Der Begriff der Systemsoftware steht für die Software, die den Betrieb eines Computersystems ermöglicht. Die Systemsoftware bietet den Hardware-Komponenten des Computersystems die notwendigen Voraussetzungen, damit diese die Anwendungssoftware umsetzen können. Systemsoftware umfasst Betriebssysteme sowie systemnahe Software und Übersetzungsprogramme (Assembler und Compiler). Das Ziel dieser Vorlesung ist die Vermittlung der Grundlagen, Prinzipien, Probleme und Lösungen, kurz gesagt der Konzepte auf denen die klassischen und modernen Betriebssysteme und Compiler sowie die zugrunde liegende Hardware basieren.</p>
+
+<!-- <p>Die Vorlesung erfolgt in Zusammenarbeit mit Prof. Dr. Thomas Ihme. Die Vorlesungsunterlagen zu den Themen der Systemsoftware, die Prof. Ihme lehrt, finden Sie auf seiner Webseite.</p> -->
+
+<p>Der von mir gelehrte Teil von Systemsoftware umfasst schwerpunktmäßig in der Vorlesung den Bereich der Betriebssysteme und in der Übung den Bereich der Nutzung von Linux-/UNIX-Betriebssystemen sowie eine Einführung in die Systemprogrammierung.</p>
+
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<!-- <font size="+3" color="#000000"><b>Skripte</b></font> -->
+<font size="+3" color="#000000"><b>Diese Seite ist veraltet!</b></font>
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../SYS08/index.html" style="text-decoration: none">Systemsoftware im SS2008</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>
+
+<p></p>
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td colspan="4"><b>Vorlesung</b></td>
+  </tr>
+  <tr>
+    <td>Mittwochs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>13:40 - 15:10 Uhr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Raum 01211&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>(Prof. Dr. Thomas Ihme)</td>
+  </tr>
+  <tr>
+    <td>Freitags</td>
+    <td>9:45 - 11:15 Uhr</td>
+    <td>Raum 01008</td>
+    <td>(Christian Baun)</td>
+  </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Übung</b></td>
+  </tr>
+  <tr>
+    <td>Montags</td>
+    <td>9:45 - 11:15 Uhr</td>
+    <td>Raum 01111</td>
+    <td>(Prof. Dr. Thomas Ihme)</td>
+  </tr>
+  <tr>
+    <td>Freitags</td>
+    <td>11:25 - 12:55 Uhr</td>
+    <td>Raum 01008</td>
+    <td>(Christian Baun)</td>
+  </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3"><b>Klausur</b></td>
+  </tr>
+  <tr>
+    <td>6.2.2008</td>
+    <td>13:15 - 15:15 Uhr</td>
+    <td colspan="2">Raum 01210 / 01211</td>
+  </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3"><b>Klausureinsicht</b></td>
+  </tr>
+  <tr>
+    <td>19.3.2008</td>
+    <td>9:45 - 11:15 Uhr</td>
+    <td>Raum 01008</td>
+  </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+  </tr>
+</table>-->
+
+<!--
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>! ! ! Exkursion ! ! !</b></font>
+<p>
+Am 5.12.2007 veranstaltet der Fachbereich Informatik eine Exkursion in das <a href="http://www.hnf.de/">Heinz-Nixdorf-Museum</a> in Paderborn. Allen Studenten, die die Vorlesung SYS hören, wird die Teilnahme an der Exkursion empfohlen.
+<p>
+Das Heinz-Nixdorf-Museum ist das größte Compter-Museum der Welt. Auf einer Dauerausstellungsfläche von über 6.000 qm werden mehr als 2.000 Objekte zu allen Aspekten der letzten 5.000 Jahre in der Geschichte der Informations- und Kommunikationstechnologie präsentiert. Die Sonderausstellung zum Thema Kryptographie und Steganographie befasst sich mit Chiffriergeräten, Tarnschriften und Steganographie.
+<p>
+Im Sekretariat des Fachbereichs liegt eine Anmeldeliste aus. Bei der Anmeldung sind 15 Euro zu zahlen. Im Bus erhält jeder 10 Euro zurück.
+<p>
+Die Abfahrt ist in Mannheim: 6:00 Uhr vor Gebäude 1.
+</td>
+</tr>
+</table>
+</center>
+-->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Fotos der Exkursion</b></font>
+<p>
+Die <a href="album/index.html">Bilder</a> der Exkursion ins <a href="http://www.hnf.de/">Heinz-Nixdorf-Museum</a> (Paderborn) vom 5.12.2007 sind online.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Skripte</b></font>
+<p>
+Es ist ratsam, die Folien der Vorlesung erst NACH der Veranstaltung auszudrucken, weil Änderungen nicht ausgeschlossen werden können.
+</td>
+</tr>
+</table>
+</center>
+-->
+
+<h2>Folien zur Vorlesung</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>1.Vorlesung&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>(05.10.2007)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Einführung, historische Entwicklung, Klassifikationen, Betriebsarten</td>
+  </tr>
+  <tr>
+    <td>2.Vorlesung</td>
+    <td>(12.10.2007)</td>
+    <td>Singletasking, Multitasking, Betriebssystemarchitekturen, Strukturierung mit Schalen</td>
+  </tr>
+  <tr>
+    <td>3.Vorlesung</td>
+    <td>(19.10.2007)</td>
+    <td>Von-Neumann-Architektur, Speicherhierarchie, Schreibstrategien, Datenverwaltung</td>
+  </tr>
+  <tr>
+    <td>4.Vorlesung</td>
+    <td>(26.10.2007)</td>
+    <td>RAID, Adressraum, Virtueller Speicher, MMU, Segment-/Seitenorientierter Speicher</td>
+  </tr>
+  <tr>
+    <td>5.Vorlesung</td>
+    <td>(02.11.2007)</td>
+    <td>Systemaufrufe, Prozess-Kontext, Prozesszustände, Prozessübergänge, Prozessmodelle</td>
+  </tr>
+  <tr>
+    <td>6.Vorlesung</td>
+    <td>(09.11.2007)</td>
+    <td>Interrupts, Exceptions, Prozesstabellen, Prozesskontrollblock, Zustandslisten, Threads</td>
+  </tr>
+  <tr>
+    <td>7.Vorlesung</td>
+    <td>(16.11.2007)</td>
+    <td>Prozesse erzeugen und ersetzen, Dispatcher, Scheduling, Scheduling-Verfahren</td>
+  </tr>
+  <tr>
+    <td>8.Vorlesung</td>
+    <td>(23.11.2007)</td>
+    <td>Scheduling-Verfahren, Scheduling-Beispiele</td>
+  </tr>
+  <tr>
+    <td>9.Vorlesung</td>
+    <td>(30.11.2007)</td>
+    <td>Scheduling, Kritische Abschnitte, Race Conditions, Prozess-Synchronisation</td>
+  </tr>
+  <tr>
+    <td><a href="../Exkursion_WS0708/index.html" style="text-decoration: none">Exkursion</a></td>
+    <td>(05.12.2007)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>10.Vorlesung</td>
+    <td>(07.12.2007)</td>
+    <td>Prozess-Kommunikation, Prozess-Kooperation</td>
+  </tr>
+  <tr>
+    <td>11.Vorlesung</td>
+    <td>(14.12.2007)</td>
+    <td>Dateien, Dateisysteme, Verzeichnisse, Journaling Dateisysteme, Defragmentierung</td>
+  </tr>
+  <tr>
+    <td>12.Vorlesung</td>
+    <td>(21.12.2007)</td>
+    <td>Musterlösung der Übungsklausur</td>
+  </tr>
+  <tr>
+    <td>13.Vorlesung</td>
+    <td>(11.01.2008)</td>
+    <td>Virtualisierung, Emulation</td>
+  </tr>
+  <tr>
+    <td>14.Vorlesung</td>
+    <td>(18.01.2008)</td>
+    <td>Verteilte Systeme, Clustering, Grid-Computing, Peer-to-Peer</td>
+  </tr>
+  <tr>
+    <td>15.Vorlesung</td>
+    <td>(25.01.2008)</td>
+    <td>Fragestunde</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+ </tr>
+<!--  <tr>
+    <td colspan="3"><a href="Skript/folien_sys_vorlesung_sammlung_WS0708.pdf" style="text-decoration: none">Sammlung der klausurrelevanten Inhalte</a></td>
+  </tr>-->
+</table>
+
+<h2>Folien zur Übung</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>1.Übung&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>(05.10.2007)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td>2.Übung</td>
+    <td>(12.10.2007)</td>
+    <td>Übungsblatt zur 2.Übung</td>
+  </tr>
+  <tr>
+    <td>3.Übung</td>
+    <td>(19.10.2007)</td>
+    <td>Übungsblatt zur 3.Übung</td>
+  </tr>
+  <tr>
+    <td>4.Übung</td>
+    <td>(26.10.2007)</td>
+    <td>Übungsblatt zur 4.Übung</td>
+  </tr>
+  <tr>
+    <td>5.Übung</td>
+    <td>(02.11.2007)</td>
+    <td>Übungsblatt zur 5.Übung</td>
+  </tr>
+  <tr>
+    <td>6.Übung</td>
+    <td>(09.11.2007)</td>
+    <td>Übungsblatt zur 6.Übung</td>
+  </tr>
+  <tr>
+    <td>7.Übung</td>
+    <td>(16.11.2007)</td>
+    <td>Übungsblatt zur 7.Übung</td>
+  </tr>
+  <tr>
+    <td>8.Übung</td>
+    <td>(23.11.2007)</td>
+    <td>Übungsblatt zur 8.Übung</td>
+  </tr>
+  <tr>
+    <td>9.Übung</td>
+    <td>(30.11.2007)</td>
+    <td>Übungsblatt zur 9.Übung</td>
+  </tr>
+  <tr>
+    <td>10.Übung</td>
+    <td>(07.12.2007)</td>
+    <td>Übungsblatt zur 10.Übung</td>
+  </tr>
+  <tr>
+    <td>11.Übung</td>
+    <td>(14.12.2007)</td>
+    <td>Übungsblatt zur 11.Übung</td>
+  </tr>
+  <tr>
+    <td>12.Übung</td>
+    <td>(21.12.2007)</td>
+    <td>Übungsblatt zur 12.Übung</td>
+  </tr>
+  <tr>
+    <td>13.Übung</td>
+    <td>(11.01.2008)</td>
+    <td>Übungsblatt zur 13.Übung</td>
+  </tr>
+  <tr>
+    <td>14.Übung</td>
+    <td>(18.01.2008)</td>
+    <td>Übungsblatt zur 14.Übung</td>
+  </tr>
+  <tr>
+    <td>15. Übung</td>
+    <td>(25.01.2008)</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+<h2>Klausuren</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="Skript/SYS_Klausur_WS0708.pdf" style="text-decoration: none">Abschlussklausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(06.02.2008)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>
+      Bearbeitungszeit: 60 Minuten
+    </td>
+  </tr>
+  <tr>
+    <td><a href="Skript/SYS_Klausur_Loesung_WS0708.pdf" style="text-decoration: none">Lösungsvorschlag</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(06.02.2008)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Lösungsvorschlag zu Abschlussklausur</td>
+  </tr>
+  <tr>
+    <td><a href="sys_klausur_ws0708.html" style="text-decoration: none">Ergebnis der Klausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/Testklausur_SYS_WS0708.pdf" style="text-decoration: none">Übungsklausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(21.12.2007)</td>
+  </tr>
+</table>
+
+<h2>Vorlesungsevaluierung</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/Eval_Auswertung_03_ALPHA_baun_SYS_WS0708.pdf" style="text-decoration: none">Ergebnis</a> der Vorlesungsevaluierung
+    </td>
+  </tr>
+</table>
+
+<h2>Exkursion</h2>
+
+<p>Am 5.12.2007 veranstaltete die Fakultät für Informatik im Rahmen der Vorlesung Systemsoftware (SYS) eine Exkursion ins <a href="http://www.hnf.de/">Heinz-Nixdorf-Museum</a> in Paderborn. Das Heinz-Nixdorf-Museum ist das größte Compter-Museum der Welt. Auf einer Dauerausstellungsfläche von über 6.000 qm werden mehr als 2.000 Objekte zu allen Aspekten der letzten 5.000 Jahre in der Geschichte der Informations- und Kommunikationstechnologie präsentiert. Gleichzeitig fand eine  Sonderausstellung zum Thema Kryptographie und Steganographie statt, die sich mit Chiffriergeräten, Tarnschriften und Steganographie befasste.</p>
+
+<p>Im Anschluss an den Besuch des Heinz-Nixdorf-Museums ermöglichte das Paderborn <a href="http://wwwcs.uni-paderborn.de/pc2/">Center for Parallel Computing</a> mit einer interessanten Führung durch das Rechenzentrums dieses Instituts der Universität Paderborn einen interessanten Einblick in den Betrieb eines Rechenzentrums mit Forschungsschwerpunkt.</p>
+
+<p>Die Bilder der Exkursion befinden sich <a href="../Exkursion_WS0708/index.html">hier</a>.</p>
+
+<!--<h2>Reference Cards</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="Reference_cards/Bash_Quick_Reference.pdf" style="text-decoration: none">Bash Reference (Arnold Robbins)</a></td>
+  </tr>
+  <tr>
+    <td><a href="Reference_cards/The_One_Page_Linux_Manual.pdf" style="text-decoration: none">The One Page Linux Manual</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="Reference_cards/UNIX_commands_reference_card.pdf" style="text-decoration: none">UNIX Commands Reference Card</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="Reference_cards/LINUX_System_Call_Quick_Reference.pdf" style="text-decoration: none">LINUX System Call Quick Reference (Jialong He)</a></td>
+  </tr>
+  <tr>
+    <td><a href="Reference_cards/Emacs_21_Reference.pdf" style="text-decoration: none">GNU Emacs 21 Reference Card</a></td>
+  </tr>
+  <tr>
+    <td><a href="Reference_cards/joe_reference_card.pdf" style="text-decoration: none">JOE Reference Card</a></td>
+  </tr>
+  <tr>
+    <td><a href="Reference_cards/vi_Quick_Reference.pdf" style="text-decoration: none">Vi Quick Reference</a></td>
+  </tr>
+  <tr>
+    <td><a href="Reference_cards/vi_Reference_Card.pdf" style="text-decoration: none">Vi Reference Card (Donald J. Binder)</a></td>
+  </tr>
+  <tr>
+    <td><a href="Reference_cards/VIM_Quick_Reference_Card.pdf" style="text-decoration: none">VIM Quick Reference Card (Laurent Gregoire)</a></td>
+  </tr>
+  <tr>
+    <td><a href="Reference_cards/vi_Reference_Card_HP.pdf" style="text-decoration: none">Vi Reference Card (HP)</a></td>
+  </tr>
+  <tr>
+    <td><a href="Reference_cards/XEmacs_21_Reference.pdf" style="text-decoration: none">XEmacs Reference Card (für Version 21)</a></td>
+  </tr>
+</table>-->
+
+<h2>Kontakt</h2>
+<p>Zu erreichen bin ich am besten per E-Mail: <a href="mailto:cray@unix-ag.uni-kl.de">cray@unix-ag.uni-kl.de</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:cray@unix-ag.uni-kl.de">M.Sc. Christian Baun</a><br></i>
+      <i>Hochschule Mannheim<br></i>
+      <i>Fakultät für Informatik<br></i>
+      <i>Stand: 18.3.2008</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      <a href="http://www.hs-mannheim.de/"><img src="Bilder/HS-Mannheim-Logo-weiss.gif" alt="zur Homepage der HS Mannheim" border="0" width="195" height="60" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

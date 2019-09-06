@@ -1,0 +1,924 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<base target="_blank">   <!--Open new window for links-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Cloud Computing, SS2019, FH-Frankfurt, Prof. Dr. Christian Baun">
+<meta name="author" content="Prof. Dr. Christian Baun">
+<meta name="keywords" content="Computer Networks, FH-Frankfurt, Frankfurt, SS2019, Computer Science, Prof. Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Cloud Computing Course, (SS2019)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite / Back to main page</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+
+<h2>Cloud Computing (SS2019)</h2>
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FFFF00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Guest lecture on February 1<sup>st</sup></b></font> 
+<p>
+For the guest lecture from <a href="https://www.novatec-gmbh.de">NOVATEC</a> on February 1st 2019 please prepare these prerequisites:
+</p>
+<p>
+<a href="https://www.heroku.com/">Heroku account</a> with billing information (https://heroku.com/verify). The credit card will not be charged during this exercise. It is only required for step 2 of the exercise to attach the backing services to your Apps. After the exercise you can remove your credit card information. If you don’t like to provide your credit card information, you can still follow the excercise but you wont’t be able to run the apps on your own Heroku account.
+</p>
+<p> 
+<a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku CLI</a> installed
+</p>
+<p>
+<a href="https://telegram.org/">Telegram account</a>
+</p>
+<p>
+Git and Java 1.8 installed
+</p>
+<p>
+Any IDE (Eclipse, intelliJ, ...)
+</p>
+<p>
+I expect that you all attend the event in time.
+</p>
+<p>
+The topics, which will be presented during this event are relevant for the written exam!
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FFFF00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Guest lecture on February 8<sup>th</sup></b></font> 
+<p>
+On February 8th 2018 we have a guest lecture from <a href="https://www.novatec-gmbh.de">NOVATEC</a> covering the topics <a href="https://12factor.net/">12 Factor App</a> and live coding with <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> and <a href="http://projects.spring.io/spring-cloud/">Spring Cloud</a>.
+</p>
+<p>
+I expect that you all attend the lecture in time.
+</p>
+<p>
+The topics, which will be presended during this lecture are relevant for the written exam!
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>No lecture on February 1<sup>st</sup></b></font> 
+
+<p>
+The lectures and exercise sessions on February 1<sup>st</sup> can not take place due to illness.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--   <p></p>   -->
+  
+<table border="0" cellspacing="0" cellpadding="1">
+<tr>
+<td valign="top"><img src="Bilder/978-3-642-20917-8.jpg" alt="Cloud Computing: Web-Based Dynamic IT Services" border="0" width="165" height="250" align="middle"></td>
+<td>&nbsp;</td>
+<td valign="top">
+<p>
+A distributed system consists of several independent computers that communicate with each other over a network. Different distributed system architectures exist in the computer science. The most popular architecture is the Client-Server model. But especially in the parallel computing field, exist among others, Cluster Computing and Cloud Computing.
+</p>
+<p>
+Cloud Computing implies scalable services and the consolidation of compute and storage resources in large-scale resource centers. This consolidation offers the opportunity to redistribute resources, which have been used so far to keep the own resources running. At the same time, the users of a Cloud infrastructure services have the freedom to use their desired operating systems, programming languages ​​and applications.
+</p>
+<p>
+In this course, the fundamentals of Cloud Computing and related technologies are discussed. Practical exercises are an important part of this course because they are essential for thee understanding of these technologies. 
+</p>
+<p>
+The course (lectures, exercises and exam) is held in English language.
+</p>
+<p>
+Parts of the slide sets are based on the book <b>Cloud Computing: Web-Based Dynamic IT Services</b>, which was published in 2011 by Springer. ISBN: 978-3-642-20916-1
+</p>
+</td>
+</tr>
+</table>
+
+<!--   <p></p>   -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Presentation from Henry Cocos (Topics: FaaS, Container, OpenFaaS and OpenWhisk) on December 14th</b></font> 
+<p>
+!!! The content of this presentation is exam relevant !!!
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Review of the answer sheets of the cloud computing exam</b></font> 
+<p>
+The answer sheets of the cloud computing exam can be reviewed tomorrow at 12:00 in my office 1-216.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+<!-- <center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>No exercises session on January 11<sup>th</sup> 2018 !!!</b></font> 
+<p>
+The exercises session (NOT THE LECTURE!!!) on January 11th 2018 must be cancelled because of the &quot;Vollversammlung der Studierenden&quot; which takes place between 11:30 and 13:30.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!-- <center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>No course and lecture session on January 30th 2014 !!!</b></font> 
+<p>
+The course and exercises session on January 30th 2014 must be cancelled by reason of illness. For exam preparation please repeat all 14 exercise sheets. If you have questions, please send me an email.
+</p>
+</td>
+</tr>
+</table>
+</center>
+-->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Exercise Sheets !!!</b></font> 
+<p>
+Please use the exercise sheets from SS2014 and NOT the exercise sheets from WS1314 !!!
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--   <p></p>   -->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">-->
+<!-- <font size="+3" color="#000000"><b>Slide Sets</b></font>  -->
+<!--<p>
+The complete course (lectures, exercises and exam) will be held in English language. All slides are available in English and in German language. The content of the English and German slides is identical, but please use the English slides for the exam preparation to become familiar with the technical terms.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!-- <p></p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Slide Sets</b></font>
+<p>
+Please only print out slides sets of lectures which have already ended!
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Auxiliary Material during the Exam</b></font>
+<p>
+Each participant is allowed to use a <u>calculator</u> and to bring a <u>self prepared and handwritten</u> DIN-A4 sheet whose content is free into the exam. Attention: Only <u>a single side</u> of the DIN-A4 sheet is allowed to be used! Only handwritten originals are allowed but no copies.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p></p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Hilfsmittel während der Klausur</b></font>
+<p>
+Jeder Teilnehmer darf jeder Teilnehmer einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<p>
+Henry Cocos developed a useful program in C to generate large files with random numbers. The source code can be found <a href="https://github.com/hcocos/Cloud_Computing">here</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ffff00" align="center" valign="middle">
+<p>
+Slide set 7-10 and exercise sheet 7-10 are <u>not</u> relevant for the exam in WS1819 because they have not been discussed in class.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<p>
+Because your Professor is too stupid to <a href="https://en.wikipedia.org/wiki/Sprained_ankle">walk</a>, the cloud computing lectures and exercises sessions on January 18th and 25th cannot take place. Sorry. :-(
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../CGC1920/index.html" style="text-decoration: none">Cloud Computing im WS1920</a>.
+</p>
+<p>
+Updated and improved lecture materials can be found on the web page of the course <a href="../CGC1920/index.html" style="text-decoration: none">Cloud Computing in WS1920</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>
+-->
+
+<!-- <p></p> -->
+
+
+
+<h2>Schedule of the Course</h2>
+
+<p>The exercise session always takes place on Wednesday between <b>11:30-13:00</b> in room 1-234.</p>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Date</th>
+    <th class="abstand_links">Time</th>
+    <th class="abstand_links">Room</th>
+    <th class="abstand_links">Event</th>
+    <th class="abstand_links">Topics</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">17.04.2019</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links">Discussion of slide set 1 (slides 1-43)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">24.04.2019</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 1 (slides 44-69) and slide set 2 (slides 1-11)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">01.05.2019</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Labor Day</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">08.05.2019</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links"><a href="Skript/Function_as_a_Service_SS19_v1.pdf">Guest lecture</a> from Henry Cocos (Topics: FaaS, Container, <a href="https://www.openfaas.com">OpenFaaS</a> and <a href="https://openwhisk.apache.org/">OpenWhisk</a>)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">15.05.2019</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links">Discussion of slide set 2 (slides 12-49)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">22.05.2019</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links">Discussion of slide set 2 (slides 50-72) and slide set 3 (slides 1-9)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">29.05.2019</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links">Discussion of slide set 3 (slides 10-43)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">05.06.2019</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links">Discussion of slide set 3 (slides 44-79)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">12.06.2019</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links">Discussion of slide set 4 (slides 1-24)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">19.06.2019</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links">Discussion of slide set 4 (slides 25-59)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">26.06.2019</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links">Discussion of slide set 5</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">03.07.2019</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links">Discussion of slide set 6</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">10.07.2019</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links">Discussion of slide set 7 (slides 1-28)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">17.07.2019</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links"><a href="Skript/OpenShift_Jens_Kuehnel_Presentation_2019_07_17.pdf">Guest lecture</a> from Jens Kühnel (Topics: OpenShift, Docker, Kubernetes)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">30.07.2019</td>
+    <td class="abstand_links">12:00-13:30</td>
+    <td class="abstand_links">4-109/110</td>
+    <td class="abstand_links"><a href="#Klausuren">Exam</a></td>
+    <td class="abstand_links">The exam covers all discussed slide sets, exercise sheets (1-6) and the Special Tasks</td>
+  </tr>
+</table>
+
+<h2>Slides Sets</h2>
+
+<!--<p><font color="#FF0000"><b>Please only print out slides sets of lectures which have already ended!</b></font></p>-->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th>&nbsp;</th>
+    <th class="abstand_zentriert" colspan="2">Slide sets</th>
+    <th class="abstand_links">Topics</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide&nbsp;set&nbsp;1</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_slideset_01.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Organisational information, Client-Server, Fundamentals, Laws and Limitations, Parallel Computers</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide&nbsp;set&nbsp;2</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_slideset_02.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Cluster Computing</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Guest lecture</td>
+    <td class="abstand_zentriert"><a href="Skript/Function_as_a_Service_SS19_v1.pdf"><img src="Bilder/flag_english.gif" alt="Presentation from Henry Cocos in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Guest Lecture from Henry Cocos about FaaS, Container, OpenFaaS and OpenWhisk</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide&nbsp;set&nbsp;3</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_slideset_03.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Cloud Computing, Services and Concepts, Opportunities and Risks</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide&nbsp;set&nbsp;4</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_slideset_04.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Amazon Web Services (EC2, EBS, ELB, S3), Google Cloud Storage</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide&nbsp;set&nbsp;5</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_slideset_05.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 5 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Platform Services (Google App Engine)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide&nbsp;set&nbsp;6</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_slideset_06.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 6 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Private Infrastructure Services (IaaS), Private Platform Services (PaaS)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide&nbsp;set&nbsp;7</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_slideset_07.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 7 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">MapReduce/Hadoop</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Guest lecture</td>
+    <td class="abstand_zentriert"><a href="Skript/OpenShift_Jens_Kuehnel_Presentation_2019_07_17.pdf"><img src="Bilder/flag_english.gif" alt="Presentation from Jens Kühnel in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Guest Lecture from Jens Kühnel about OpenShift, Docker and Kubernetes</td>
+  </tr>
+  <!--
+  <tr>
+    <td class="abstand_links">Slide&nbsp;set&nbsp;8</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_slideset_08.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 8 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Web Services</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide&nbsp;set&nbsp;9</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_slideset_09.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 9 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Virtualization</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide&nbsp;set&nbsp;10</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_slideset_10.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 10 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Peer-to-Peer</td>
+  </tr>-->
+</table>
+
+
+<h2>Exercise Sheets</h2>
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th>&nbsp;</th>
+    <th class="abstand_zentriert" colspan="2">Exercise&nbsp;sheets</th>
+    <th class="abstand_links">Topics</th>
+    <th class="abstand_zentriert" colspan="2">Solutions</th>
+    <th class="abstand_links">&nbsp;</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;1</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_01_SS2019.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Topics of slide set 1</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_exercise_sheet_01_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;2</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_02_SS2019.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Topics of slide set 2</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_exercise_sheet_02_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;3</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_03_SS2019.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Topics of slide set 3</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_exercise_sheet_03_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;4</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_04_SS2019.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Topics of slide set 4</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_exercise_sheet_04_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;5</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_05_SS2019.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 5 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Topics of slide set 5</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_exercise_sheet_05_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 5 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;6</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_06_SS2019.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 6 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Topics of slide set 6</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_exercise_sheet_06_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 6 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;7</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_07_SS2019.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 7 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Topics of slide set 7</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_exercise_sheet_07_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 7 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a href="Skript/PageRank_Example_Exercise_Sheet_SS2018.xlsx">Solution of the PageRank example (xlsx-file)</a></td>
+  </tr>
+<!--
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;8</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_08_SS2019.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 8 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Topics of slide set 8</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2019_exercise_sheet_08_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 8 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;9</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_09_SS2019.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 9 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Topics of slide set 9</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;10</td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_10_SS2019.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 10 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Topics of slide set 10</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>-->
+</table>
+
+<h2>Special Tasks</h2>
+
+<p>More information about the special task alternatives contains <a href="Skript/cloud_computing_SS2019_slideset_01.pdf">slide set 1</a>.</p>
+
+
+<!-- <p><a href="Skript/groups_WS1819.jpg">The group overview can be found here.</a></p> -->
+
+<!-- <p>Henry Cocos developed a useful program in C to generate large files with random numbers. The source code can be found <a href="https://github.com/hcocos/Cloud_Computing">here</a>.</p> -->
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Group</th>
+    <th class="abstand_links">Topic / Task</th>
+    <th class="abstand_links">Participants</th>
+    <th class="abstand_links">Results</th>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">1</td>
+    <td class="abstand_links">OpenFaaS</td>
+    <td class="abstand_links">Legendre, Müller, Tkachov, Seng</td>
+    <td class="abstand_links"><a href="Skript/OpenFaaS_Installation_Guide.pdf">Documentation</a>, <a href="Skript/OpenFaaS_Presentation.pdf">Presentation</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">2</td>
+    <td class="abstand_links">OpenNebula</td>
+    <td class="abstand_links">Jordan, Gombert, Fiebig, Angrisano</td>
+    <td class="abstand_links"><a href="Skript/OpenNebulaGuide.pdf">Documentation</a>, <a href="Skript/OpenNebula_Presentation.pdf">Presentation</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">3</td>
+    <td class="abstand_links">OpenStack</td>
+    <td class="abstand_links">Fleischer, Jorek</td>
+    <td class="abstand_links"><a href="Skript/OpenStack_NilsJorek_NicolasFleischer_2019_07_17.pdf">Presentation</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">4</td>
+    <td class="abstand_links">OpenStack</td>
+    <td class="abstand_links">Deshpande, Solan, Shivakummar</td>
+    <td class="abstand_links">TBD</td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">5</td>
+    <td class="abstand_links">OpenStack</td>
+    <td class="abstand_links">Vikrant, Nambiar, Khedker, Vishwanath, Vijaykumar, Srinivasan</td>
+    <td class="abstand_links">TBD</td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">6</td>
+    <td class="abstand_links">Eucalyptus</td>
+    <td class="abstand_links">Dhani, Kar, Vadgama, Supkar</td>
+    <td class="abstand_links">TBD</td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">7</td>
+    <td class="abstand_links">OpenFaaS</td>
+    <td class="abstand_links">Mai</td>
+    <td class="abstand_links"><a href="Skript/OpenFaaS_Presentation_Mai_2019_07_17.pdf">Presentation</a></td>
+  </tr> 
+  <tr>
+    <td class="abstand_zentriert">8</td>
+    <td class="abstand_links">OpenFaaS + Kubernetes</td>
+    <td class="abstand_links">De Grave</td>
+    <td class="abstand_links"><a href="Skript/OpenFaas_Kubernetes_Mobile_Cloud_Presentation.pdf">Presentation</a></td>
+  </tr> 
+  <tr>
+    <td class="abstand_zentriert">9</td>
+    <td class="abstand_links">OpenStack</td>
+    <td class="abstand_links">Panda, Kumar, Atri, Mahto, Ingle, Raut</td>
+    <td class="abstand_links">TBD</td>
+  </tr> 
+</table>
+
+<p>&nbsp;</p>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Alternative</th>
+    <th class="abstand_links">Task</th>
+    <th class="abstand_links">information</th>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">1</td>
+    <td class="abstand_links">OpenFaaS (FaaS)</td>
+    <td class="abstand_links"><a href="https://www.openfaas.com/">Project</a>, <a href="https://github.com/openfaas/faas">Code</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">2</td>
+    <td class="abstand_links">Apache OpenWhisk (FaaS)</td>
+    <td class="abstand_links"><a href="https://openwhisk.apache.org/">Project</a>, <a href="https://github.com/apache/incubator-openwhisk">Code</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">3</td>
+    <td class="abstand_links">AppScale (PaaS)</td>
+    <td class="abstand_links"><a href="https://www.appscale.com/">Project</a>, <a href="https://github.com/AppScale/appscale">Code</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">4</td>
+    <td class="abstand_links">OpenNebula (IaaS)</td>
+    <td class="abstand_links"><a href="https://opennebula.org/">Project</a>, <a href="https://github.com/OpenNebula/one">Code</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">5</td>
+    <td class="abstand_links">Eucalyptus (IaaS)</td>
+    <td class="abstand_links"><a href="https://www.eucalyptus.cloud/">Project</a>, <a href="https://github.com/corymbia/eucalyptus">Code</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">6</td>
+    <td class="abstand_links">Apache CloudStack (IaaS)</td>
+    <td class="abstand_links"><a href="https://cloudstack.apache.org/">Project</a>, <a href="https://github.com/apache/cloudstack">Code</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">7</td>
+    <td class="abstand_links">OpenStack (IaaS)</td>
+    <td class="abstand_links"><a href="https://www.openstack.org/">Project</a>, <a href="https://github.com/openstack">Code</a></td>
+  </tr> 
+</table>
+  
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td class="abstand_links">MPI&nbsp;Special&nbsp;Challenge&nbsp;1</td>
+    <td class="abstand_zentriert"><a href="Skript/Special_Task_MPI_sorting_WS1819.pdf"><img src="Bilder/flag_english.gif" alt="Special Task 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Develop a parallel sorting application (Quicksort) with C and MPI</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">MPI&nbsp;Special&nbsp;Challenge&nbsp;2</td>
+    <td class="abstand_zentriert"><a href="Skript/Special_Task_MPI_sorting_2_WS1819.pdf"><img src="Bilder/flag_english.gif" alt="Special Task 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Develop a parallel sorting application (Mergesort) with C and MPI</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="Skript/MPI_TASK_2_Presentation.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Special Task 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Solution of Prachi Agrawal, Henry Cocos, David Merkl und Samuel Santos</td>
+  </tr>
+</table>-->
+  
+
+<h2 id="Klausuren">Exams</h2>
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Semester</th>
+    <th class="abstand_zentriert" colspan="2">Exams</th>
+    <th class="abstand_zentriert">Time limit</th>
+    <th class="abstand_links">University</th>
+    <th class="abstand_zentriert" colspan="2">Sample solutions</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1819</td>
+    <td class="abstand_zentriert"><a href="../CGC1819/Skript/CGC_Exam_en_WS1819.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom WS1819 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">FRA-UAS</td>
+    <td class="abstand_zentriert"><a href="../CGC1819/Skript/CGC_Exam_en_solution_WS1819.pdf"><img src="Bilder/flag_english.gif" alt="Sample Solution of the exam of WS1819 in english language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2018</td>
+    <td class="abstand_zentriert"><a href="../CGC18/Skript/CGC_Exam_en_SS2018.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom SS2018 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">FRA-UAS</td>
+    <td class="abstand_zentriert"><a href="../CGC18/Skript/CGC_Exam_en_solution_SS2018.pdf"><img src="Bilder/flag_english.gif" alt="Sample Solution of the exam of SS2018 in english language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1718</td>
+    <td class="abstand_zentriert"><a href="../CGC1718/Skript/CGC_Exam_en_WS1718.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom WS1718 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">FRA-UAS</td>
+    <td class="abstand_zentriert"><a href="../CGC1718/Skript/CGC_Exam_en_solution_WS1718.pdf"><img src="Bilder/flag_english.gif" alt="Sample Solution of the exam of WS1718 in english language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1617</td>
+    <td class="abstand_zentriert"><a href="../CGC1617/Skript/CGC_Exam_en_WS1617.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom CGC1617 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">FRA-UAS</td>
+    <td class="abstand_zentriert"><a href="../CGC1617/Skript/CGC_Exam_en_solution_WS1617.pdf"><img src="Bilder/flag_english.gif" alt="Sample Solution of the exam of CGC1617 in english language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2014</td>
+    <td class="abstand_zentriert"><a href="../CGC14/Skript/CGC_Exam_en_SS2014.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom SS2014 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">FRA-UAS</td>
+    <td class="abstand_zentriert"><a href="../CGC14/Skript/CGC_Exam_en_solution_SS2014.pdf"><img src="Bilder/flag_english.gif" alt="Sample Solution of the exam of WS1314 in english language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1314</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../VAR1314/Skript/VAR_Klausur_WS1314.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1314 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minutes</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../VAR1314/Skript/VAR_Klausur_Musterloesung_WS1314.pdf"><img src="Bilder/flag_deutsch.gif" alt="Musterlösung der Klausur vom WS1314 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1314</td>
+    <td class="abstand_zentriert"><a href="../CGC1314/Skript/CGC_Klausur_en_WS1314.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom WS1314 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">FH Frankfurt am Main</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1112</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC1112/Skript/CGC_Klausur_WS1112.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1112 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minutes</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC1112/Skript/CGC_Klausur_Loesung_WS1112.pdf"><img src="Bilder/flag_deutsch.gif" alt="Musterlösung der Klausur vom WS1112 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2011</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC11/Skript/CGC_Klausur_SS2011.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2011 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minutes</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC11/Skript/CGC_Klausur_Loesung_SS2011.pdf"><img src="Bilder/flag_deutsch.gif" alt="Musterlösung der Klausur vom SS2011 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1011</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC1011/Skript/CGC_Klausur_WS1011.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1011 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minutes</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC1011/Skript/CGC_Klausur_Loesung_WS1011.pdf"><img src="Bilder/flag_deutsch.gif" alt="Musterlösung der Klausur vom WS1011 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2010</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC10/Skript/CGC_Klausur_SS2010.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2010 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minutes</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC10/Skript/CGC_Klausur_Loesung_SS2010.pdf"><img src="Bilder/flag_deutsch.gif" alt="Musterlösung der Klausur vom SS2010 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+</table>
+
+
+<h2 id="Klausuren">Exam Results</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="cgc_klausur_SS2019.html" style="text-decoration: none">Result of the written examination</a></td>
+  </tr>
+</table>
+
+
+<!-- <h2>Evaluation</h2> -->
+
+<!--The date of the evaluation is still unknown.-->
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/WiSe18_19-Cloud_Computing.pdf">Result</a> of the course evaluation
+    </td>
+  </tr>
+</table>-->
+
+
+
+<h2>Contact</h2>
+
+<p>The best way to reach me is via email: <a href="mailto:christianbaun@fb2.fra-uas.de">christianbaun@fb2.fra-uas.de</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="49%" align="left">
+      <i><a href="mailto:christianbaun@fb2.fra-uas.de" >Prof. Dr. Christian Baun</a><br></i>
+      <i><a href="https://www.frankfurt-university.de/">Frankfurt University of Applied Sciences</a><br></i>
+      <i>(1971-2014: Fachhochschule Frankfurt am Main)<br></i>
+      <i><a href="https://www.fh-frankfurt.de/fachbereiche/fb2.html">Faculty of Computer Science and Engineering</a><br></i>
+      <i>Last updated: August 21th 2019</i>
+    </td>
+    <td>
+      &nbsp;
+    </td>
+    <td width="49%" align="right" valign="middle">
+      <a href="https://www.frankfurt-university.de/"><img src="Bilder/fuas-logo.png" alt="zur Homepage der Frankfurt University of Applied Sciences" border="0" width="225" height="100" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Netzwerke, Computer Networks, WS1516, FH-Frankfurt, Frankfurt, FRA-UAS, Prof. Dr. Christian Baun">
+<meta name="author" content="Prof. Dr. Christian Baun">
+<meta name="keywords" content="Netzwerke, Computer Networks, FH-Frankfurt, FRA-UAS, Frankfurt, WS1516, Wintersemester, Informatik, Prof. Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Vorlesung Netzwerke (SS2012)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite / Back to main page</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Computer Networks (WS1516)</h2>
+
+<p>
+Netzwerke sind Zusammenschlüsse von Computern. Sie ermöglichen die Kommunikation einzelner Systeme untereinander und die gemeinsame Nutzung von Ressourcen. Die Kommunikation in Netzwerken erfolgt über verschiedene Protokolle, die über verschiedene Schichtenmodelle (OSI-Referenzmodell, TCP/IP-Referenzmodell, hybrides Modell) strukturiert werden können. Inhalte der Vorlesung sind:
+</p>
+
+<ul>
+<li>Grundlagen der Computernetzwerke: Grundbegriffe, Netzwerkarchitektur, OSI-, Hybrid- und TCP/IP-Referenzmodell</li>
+<li>Direktverbindungsnetzwerke: Hardwarebausteine und Kopplungselemente, Verbindungsleitungen, Verkabelung, Kodierung, Erzeugung von Rahmen, Fehlererkennung, Fehlerkorrektur</li>
+<li>Mehrfachzugriff in ausgewählten lokalen LANs</li>
+<li>Paketvermittlung: Vermittlung und Weiterleitung, Bridges und Switche, Spanning-Tree-Algorithmus</li>
+<li>Internetworking: Adressierung, Subnetting, ARP, DHCP, ICMP mit PING und Traceroute</li>
+<li>Routing: Netzwerk als Graph, Distanzvektor-Routing, Link-State-Routing</li>
+<li>Ende-zu-Ende Protokolle: UDP, TCP</li>
+<li>Ausgewählte Protokolle der Anwendungsschicht</li>
+</ul>
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">-->
+<!-- <font size="+3" color="#000000"><b>Skripte</b></font> -->
+<!--<font size="+3" color="#000000"><b>Diese Seite ist veraltet!</b></font>
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../Netzwerke1314/index.html" style="text-decoration: none">Netzwerke im WS1314</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p></p>  -->
+
+
+<h2>Buch</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+<tr>
+<td valign="top"><img src="Bilder/computernetze_buch_auflage1_cover_klein.jpg" alt="Slide set 1 in English language" border="0" width="165" height="247"></td>
+<td>&nbsp;</td>
+<td valign="top">
+Die im SS2012 verwendeten Vorlesungsunterlagen sind die Grundlage für das Buch <b>Computernetze kompakt</b>, das im August 2012 bei Springer Vieweg erschienen ist. ISBN: 978-3-642-28987-3
+</td>
+</tr>
+</table>
+
+
+
+<h2>Vorlesungstermine</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Datum</b></td>
+    <td><b>Uhrzeit</b></td>
+    <td><b>Veranstaltung</b>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td><b>Inhalt</b></td>
+  </tr>
+  <tr>
+    <td>20.03.2012&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>10:15-12:45&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Vorlesung 1</td>
+    <td>Organisatorisches, Grundlagen der Informatik</td>
+  </tr>
+  <tr>
+    <td>22.03.2012</td>
+    <td>16:00-17:30</td>
+    <td>Vorlesung 2</td>
+    <td>Grundlagen der Computervernetzung</td>
+  </tr>
+  <tr>
+    <td>29.03.2012</td>
+    <td>16:00-17:30</td>
+    <td>Vorlesung 3</td>
+    <td>Grundlagen der Computervernetzung, Protokolle und Referenzmodelle</td>
+  </tr>
+  <tr>
+    <td>03.04.2012 </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Vorlesung&nbsp;entfällt</i></td>
+  </tr>
+  <tr>
+    <td>05.04.2012 </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Vorlesungsfreie&nbsp;Zeit&nbsp;(Ostern)</i></td>
+  </tr>
+  <tr>
+    <td>10.04.2012 </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Vorlesungsfreie&nbsp;Zeit&nbsp;(Ostern)</i></td>
+  </tr>
+  <tr>
+    <td>12.04.2012</td>
+    <td>16:00-17:30</td>
+    <td>Vorlesung 4</td>
+    <td>Bitübertragungsschicht (Vernetzungstechnologien)</td>
+  </tr>
+  <tr>
+    <td>19.04.2012</td>
+    <td>16:00-17:30</td>
+    <td>Vorlesung 5</td>
+    <td>Bitübertragungsschicht (Übertragungsmedien, Repeater, Hubs, Kollisionsdomäne)</td>
+  </tr>
+  <tr>
+    <td>24.04.2012</td>
+    <td>10:15-11:45</td>
+    <td>Vorlesung 6</td>
+    <td>Bitübertragungsschicht (Kodierung von Daten mit Leitungscodes)</td>
+  </tr>
+  <tr>
+    <td>26.04.2012</td>
+    <td>16:00-17:30</td>
+    <td>Vorlesung 7</td>
+    <td>Sicherungsschicht (Bridges, Spanning Tree Protocol, MAC-Adressen, Rahmen abgrenzen)</td>
+  </tr>
+  <tr>
+    <td>01.05.2012</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Tag der Arbeit</i></td>
+  </tr>
+  <tr>
+    <td>03.05.2012 </td>
+    <td>16:00-17:30</td>
+    <td>Vorlesung 8</td>
+    <td>Sicherungsschicht (Fehlererkennung, Fehlerkorrektur)</td>
+  </tr>
+  <tr>
+    <td>10.05.2012 </td>
+    <td>16:00-17:30</td>
+    <td>Vorlesung 9</td>
+    <td>Sicherungsschicht (Flusskontrolle, Medienzugriffsverfahren)</td>
+  </tr>
+  <tr>
+    <td>15.05.2012 </td>
+    <td>10:15-11:45</td>
+    <td>Vorlesung 10</td>
+    <td>Sicherungsschicht (Adressauflösung mit ARP), Vermittlungsschicht (Router, Kollisionsdomäne, Broadcast-Domäne)</td>
+  </tr>
+  <tr>
+    <td>17.05.2012</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Christi Himmelfahrt</i></td>
+  </tr>
+  <tr>
+    <td>24.05.2012 </td>
+    <td>16:00-17:30</td>
+    <td>Vorlesung 11</td>
+    <td>Vermittlungsschicht (Adressierung)</td>
+  </tr>
+  <tr>
+    <td>29.05.2012</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Vorlesungsfreie Zeit (Pfingsten)</i></td>
+  </tr>
+  <tr>
+    <td>31.05.2012 </td>
+    <td>16:00-17:30</td>
+    <td>Vorlesung 12</td>
+    <td>Sondervorlesung zu Multimedia, Future Internet und Netzwerk-Virtualisierung und Fundamentals of Cloud Computin</td>
+  </tr>
+  <tr>
+    <td>05.06.2012 </td>
+    <td>10:15-11:45</td>
+    <td>Vorlesung 13</td>
+    <td>Vermittlungsschicht (Weiterleitung und Wegbestimmung)</td>
+  </tr>
+  <tr>
+    <td>07.06.2012</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Fronleichnam</i></td>
+  </tr>
+  <tr>
+    <td>14.06.2012</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Campusfest</i></td>
+  </tr>
+  <tr>
+    <td>19.06.2012 </td>
+    <td>10:15-11:45</td>
+    <td>Vorlesung 14</td>
+    <td>Transportschicht</td>
+  </tr>
+  <tr>
+    <td>21.06.2012 </td>
+    <td>16:00-17:30</td>
+    <td>Vorlesung 15</td>
+    <td>Anwendungsschicht</td>
+  </tr>
+  <tr>
+    <td>28.06.2012 </td>
+    <td>16:00-17:30</td>
+    <td>Vorlesung 16</td>
+    <td>Anwendungsschicht, Wiederholung für die Klausur</td>
+  </tr>
+  <tr>
+    <td>05.07.2012</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Prüfungszeitraum</i></td>
+  </tr>
+  <tr>
+    <td>12.07.2012</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Prüfungszeitraum</i></td>
+  </tr>
+  <tr>
+    <td>13.07.2012</td>
+    <td>08:30-10:00</td>
+    <td>Klausur</td>
+    <td>Inhalte der Foliensätze 1 bis 12</td>
+  </tr>
+</table>
+
+
+<h2>Vorlesungsunterlagen</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+<!--  <tr>
+    <td>Foliensatz 1&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Organisatorisches, Grundlagen der Informatik</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 2</td>
+    <td>Grundlagen der Computervernetzung</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 3</td>
+    <td>Protokolle und Referenzmodelle</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 4</td>
+    <td>Bitübertragungsschicht (Teil 1)</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 5</td>
+    <td>Bitübertragungsschicht (Teil 2)</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 6</td>
+    <td>Sicherungsschicht (Teil 1)</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 7</td>
+    <td>Sicherungsschicht (Teil 2)</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 8</td>
+    <td>Sicherungsschicht (Teil 3)</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 9</td>
+    <td>Vermittlungsschicht (Teil 1)</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 10</td>
+    <td>Vermittlungsschicht (Teil 2)</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 11</td>
+    <td>Transportschicht</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 12</td>
+    <td>Anwendungsschicht</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 13</td>
+    <td>Kryptologie (Grundbegriffe, Symmetrische Verfahren)</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 14</td>
+    <td>Kryptologie (Asymmetrische Verfahren, Schlüsselverteilung, Hashfunktionen)</td>
+  </tr>
+  <tr>
+    <td>Foliensatz 15</td>
+    <td>Steganographie, Plagiatsfallen und Wasserzeichen</td>
+  </tr>-->
+  <tr>
+    <td><a href="Skript/Folien_31_5_2012.pdf" style="text-decoration: none">Sondervorlesung 1</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Multimedia, Future Internet und Netzwerk-Virtualisierung</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/Folien_31_5_2012_Cloud_Computing.pdf" style="text-decoration: none">Sondervorlesung 2</a></td>
+    <td>Fundamentals of Cloud Computing</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/Was_ist_Cloud_Computing_auf_2_Seiten_v1.1.pdf" style="text-decoration: none">Handout</a></td>
+    <td>Handout <i>Cloud Computing - Eine kompakte Einführung</i> zur Sondervorlesung 2</td>
+  </tr>
+</table>
+
+<!--<p>
+<b>Die Foliensätze 1 bis 12 sind klausurrelevant.</b><br>
+<b>Die Foliensätze 13 bis 15 und die Sondervorlesungen sind nicht klausurrelevant.</b>
+</p>-->
+
+<!--
+<h2>Übungsblätter</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr><td><a href="Skript/CGC_Uebungsblatt_Uebung_01_SS2011.pdf" style="text-decoration: none">Übungsblatt 1</a></td></tr>
+  <tr><td><a href="Skript/CGC_Uebungsblatt_Uebung_02_SS2011.pdf" style="text-decoration: none">Übungsblatt 2</a> (<a href="Skript/CGC_Uebungsblatt_Uebung_02_Anleitung_SS2011.pdf" style="text-decoration: none">Erste Schritte mit der App Engine</a>)</td></tr>
+  <tr><td><a href="Skript/CGC_Uebungsblatt_Uebung_03_SS2011.pdf" style="text-decoration: none">Übungsblatt 3</a></td></tr>
+  <tr><td><a href="Skript/CGC_Uebungsblatt_Uebung_04_SS2011.pdf" style="text-decoration: none">Übungsblatt 4</a> (<a href="Skript/mpich2-1.1-installguide.pdf" style="text-decoration: none">MPICH2 Installationsanleitung</a>)</td></tr>
+  <tr><td><a href="Skript/CGC_Uebungsblatt_Uebung_05_SS2011.pdf" style="text-decoration: none">Übungsblatt 5</a> (<a href="Skript/CGC_Uebungsblatt_Uebung_05_Anleitung_SS2011.pdf" style="text-decoration: none">Cloudera-Installationsanleitung</a>)</td></tr>
+</table>-->
+
+<h2>Klausur</h2>
+
+<!-- <p>Die Klausur findet am 13.7.2012 von 8:30 bis 10:00 Uhr in Raum D14/104 und D14/204 statt.</p> -->
+
+<!-- <p>Die Klausur dauert die vollen 90 Minuten. Hilfsmittel sind nicht zugelassen.</p> -->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="Skript/Netzwerke_Klausur_SS2012.pdf" style="text-decoration: none">Abschlussklausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(13.07.2012)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Bearbeitungszeit: 90 Minuten</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/Netzwerke_Klausur_Musterloesung_SS2012.pdf" style="text-decoration: none">Musterlösung</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(13.07.2012)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="netzwerke_klausur_SS2012.html" style="text-decoration: none">Ergebnis der Klausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(26.07.2012)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<h2>Vorlesungsevaluation</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/Evaluation_SS12_Netzwerke.pdf" style="text-decoration: none">Ergebnis</a> der Vorlesungsevaluation
+    </td>
+  </tr>
+</table>
+
+
+
+<h2>Praktikumsunterlagen</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="Praktikum/Praktikum1_Netzwerke_TK_Vorbereitung_2011-10-18.doc" style="text-decoration: none">Versuch 1: LAN (Vorbereitung)</a></td>
+  </tr>
+  <tr>
+    <td><a href="Praktikum/Praktikum1_TK_2011-10-20.doc" style="text-decoration: none">Versuch 1: LAN (Versuchsanleitung)</a></td>
+  </tr>
+  <tr>
+    <td><a href="Praktikum/Praktikum2_StaticRouting-Student-de.doc" style="text-decoration: none">Versuch 2: Statisches Routing (Vorbereitung und Versuchsanleitung) Word</a></td>
+  </tr>
+  <tr>
+    <td><a href="Praktikum/Praktikum2_StaticRouting-Student-de.odt" style="text-decoration: none">Versuch 2: Statisches Routing (Vorbereitung und Versuchsanleitung) OpenOffice</a></td>
+  </tr>
+  <tr>
+    <td><a href="Praktikum/Netzwerke-P2-BasicRouterConfig-v2.pdf" style="text-decoration: none">Versuch 2: Statisches Routing (Tutorial - sollte im Rahmen der Vorbereitung durchgearbeitet werden)</a></td>
+  </tr>
+  <tr>
+    <td><a href="Praktikum/Netzwerke-P2-BasicRouterConfig-v2.pkt" style="text-decoration: none">Packet-Tracer Datei zu Versuch 2</a></td>
+  </tr>
+  <tr>
+    <td><a href="Praktikum/PT-CreateTopology.doc" style="text-decoration: none">Packet Tracer - Creating a New Topology</a></td>
+  </tr>
+  <tr>
+    <td><a href="Praktikum/Praktikum3_HOME-DynamicRouting-Student.doc" style="text-decoration: none">Versuch 3: Dynamisches Routing (Vorbereitung)</a></td>
+  </tr>
+  <tr>
+    <td><a href="Praktikum/Praktikum3_LAB-DynamicRouting-Student_KORRIGIERT.doc" style="text-decoration: none">Versuch 3: Dynamisches Routing (Laborversuch)</a></td>
+  </tr>
+  <tr>
+    <td><a href="Praktikum/Netzwerke-P3-4R_Handout_172_17_8_0_v53.pkt" style="text-decoration: none">Packet-Tracer Datei zu Versuch 3</a></td>
+  </tr>
+  <tr>
+    <td><a href="Praktikum/BR1_startup-config_Handout.txt" style="text-decoration: none">BR1_startup-config_Handout.txt</a></td>
+  </tr>
+  <tr>
+    <td><a href="Praktikum/BR2_startup-config_Handout.txt" style="text-decoration: none">BR2_startup-config_Handout.txt</a></td>
+  </tr>
+  <tr>
+    <td><a href="Praktikum/HQ_startup-config_Handout.txt" style="text-decoration: none">HQ_startup-config_Handout.txt</a></td>
+  </tr>
+  <tr>
+    <td><a href="Praktikum/ISP_startup-config_Handout.txt" style="text-decoration: none">ISP_startup-config_Handout.txt</a></td>
+  </tr>
+</table>
+
+
+<h2>Kontakt</h2>
+
+<p>Zu erreichen bin ich am besten per E-Mail: <a href="mailto:wolkenrechnen@gmail.com" style="text-decoration: none">wolkenrechnen@gmail.com</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:wolkenrechnen@gmail.com" style="text-decoration: none">Dr. Christian Baun</a><br></i>
+      <i><a href="https://www.h-da.de" style="text-decoration: none">Hochschule Darmstadt</a><br></i>
+      <i><a href="https://www.fbi.h-da.de" style="text-decoration: none">Fachbereich Informatik</a><br></i>
+      <i>Stand: 28.7.2012</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      &nbsp;
+    </td>
+  </tr>
+</table>
+</body>
+</html>

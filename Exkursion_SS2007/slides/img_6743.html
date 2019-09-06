@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<!-- saved from url=(0013)about:internet -->
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="Keywords" content="photo,album,gallery,Exkursion Paderborn 18.5.2007,img_6743">
+<meta http-equiv="Page-Enter" content="blendTrans(Duration=0.5)">
+<meta http-equiv="Page-Exit" content="blendTrans(Duration=0.5)">
+<TITLE>Exkursion Paderborn 18.5.2007/img_6743</TITLE>
+<script language="JavaScript" src="../res/embedmovie.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+function keypress(e) {
+	if(!e) var e=window.event;
+	if(e.keyCode) keyCode=e.keyCode; 
+	else if(e.which) keyCode=e.which;
+	switch(keyCode) {
+		case 8: window.location="../index.html"; return false; break;
+		case 63235: case 39: window.location="img_6744.html"; return false; break;
+		case 63234: case 37: window.location="img_6742.html"; return false; break;
+		case 63273: case 36: window.location="img_6782.html"; return false; break;
+		case 63275: case 35: window.location="img_6781.html"; return false; break;
+		case 32: show_down(); setTimeout('show_out()', 200); return false; break;
+	}
+	return true;
+}
+function keypresslistener() {
+  if(document.all) { document.onkeydown = keypress; }
+  else if(document.layers || document.getElementById) { document.onkeypress = keypress; }
+}
+idx0 = new Image(31,31); idx0.src = "../res/idx.gif";
+idx1 = new Image(31,31); idx1.src = "../res/idx1.gif";
+next0 = new Image(31,31);next0.src = "../res/next.gif";
+next1 = new Image(31,31);next1.src = "../res/next1.gif";
+prev0 = new Image(31,31);prev0.src = "../res/prev.gif";
+prev1 = new Image(31,31);prev1.src = "../res/prev1.gif";
+
+show0 = new Image(31,31);show0.src = "../res/show.gif";
+show1 = new Image(31,31);show1.src = "../res/show1.gif";
+stop0 = new Image(31,31);stop0.src = "../res/stop.gif";
+stop1 = new Image(31,31);stop1.src = "../res/stop1.gif";
+
+var show_param = -1; // stopped
+if (window.location.search.length > 1) {
+	var parms = window.location.search.substring(1,location.search.length).split("&");
+	for (var i = 0; i < parms.length; i++) {		
+		if(parms[i].substring(0, parms[i].indexOf("=")) == "show_param") 
+			delay = show_param = parms[i].substring(parms[i].indexOf("=") + 1, parms[i].length);
+	}
+}
+var show_delay = show_param;
+function show_timer() {
+	if (show_delay >= 0) {
+		show_delay--;
+		if (show_delay < 0 && show_param > 0) {
+			window.location="img_6744.html?show_param=" + show_param;
+		}
+		else if(show_param > 0) 
+			window.status='Time left: '+(show_delay + 1)+' s';
+	}
+	setTimeout('show_timer()', 1000);	
+}
+function show_over() { 
+	document.show.src = (show_param >= 0)? stop1.src : show1.src;
+	window.status = 'Diaschau starten/anhalten - Doppelklick für Geschwindigkeitsänderung';
+}
+function show_out() {
+	document.show.src = (show_param >= 0)? stop0.src : show0.src;
+}
+function show_down() {
+	if (show_param >= 0) { 
+		show_param = -1; 
+		document.show.src = stop1.src; 
+		window.status=''; 
+	} 
+	else { 
+		show_param = 3; 
+		document.show.src = show1.src; 
+	} 
+	show_delay = show_param; 
+}
+function change_delay() { 
+	delay = prompt('Verzögerung', (show_param < 0)? 3 : show_param);
+	show_param = show_delay = delay; 
+	document.show.src = show1.src;
+}
+
+
+</script>
+
+
+
+<link href="../res/styles.css" rel="stylesheet">
+
+<style type="text/css">
+body { background-image: url(../res/bg.gif); background-repeat: repeat-x; }
+</style>
+</HEAD>
+
+<BODY ID="body" onload="show_timer(); show_out(); keypresslistener();">
+<CENTER>
+<TABLE style="height:54px;" cellspacing="0" cellpadding="0" border="0">
+<TR><TD valign="middle">
+<!-- Header of slide pages -->
+<TABLE style="width:722px;" cellspacing="0" cellpadding="0" border="0">
+<TR>
+<TD style="width:31px;"><a href="../index.html" onmouseover="document.idx.src=idx1.src" onmouseout="document.idx.src=idx0.src"><img src="../res/idx.gif" width="31" height="31" border="0" title="Indexseite" name="idx" alt=""></a></TD>
+<TD style="width:20px;"><IMG SRC="../res/hdr_left.gif" width="20" height="31" border="0" alt=""></TD>
+<TD align="left" valign="middle" style="background:url(../res/hdr_mid.gif);" class="title" nowrap="nowrap"><a href="../index.html">Exkursion Paderborn 18.5.2007</a></TD>
+<TD style="width:20px;"><IMG SRC="../res/hdr_right.gif" width="20" height="31" border="0" alt=""></TD>
+<TD style="width:31px;">
+<a href="img_6742.html" onmouseover="document.prev.src=prev1.src" onmouseout="document.prev.src=prev0.src"><img src="../res/prev.gif" width="31" height="31" border="0" title="Vorheriges Bild" name="prev" alt=""></a></TD>
+<TD style="width:31px;">
+<a href="img_6744.html" onmouseover="document.next.src=next1.src" onmouseout="document.next.src=next0.src"><img src="../res/next.gif" width="31" height="31" border="0" title="Nächstes Bild" name="next" alt=""></a></TD>
+<TD style="width:31px;"><a href="javascript:void(0)" onmouseover="show_over();" onmouseout="show_out();" onmousedown="show_down();" ondblclick="change_delay();"><img src="../res/show.gif" width="31" height="31" border="0" title="Diaschau starten/anhalten - Doppelklick für Geschwindigkeitsänderung" name="show" alt=""></a></TD>
+</TR></TABLE>
+</TD></TR></TABLE><BR>
+
+
+
+<map name="imagemap" style="text-decoration:none"><area coords="0,0,240,540" href="img_6742.html" title="Vorheriges Bild" alt=""><area coords="480,0,720,540" href="img_6744.html" title="Nächstes Bild" alt=""><area coords="240,0,480,540" href="../index.html" title="Indexseite" alt=""></map>
+<TABLE border="0" cellspacing="0" cellpadding="0"><TR>
+<TD valign="top"><TABLE style="width:64px;"><TR><TD align="center" valign="middle" style="padding:4px; border:0px; height:50px" class="thumb"><A href="img_6738.html"><IMG src="../thumbs/img_6738.jpg" title="img_6738.jpg" width="48" height="36" alt="" class="mthumb"></A></TD></TR><TR><TD align="center" valign="middle" style="padding:4px; border:0px; height:50px" class="thumb"><A href="img_6739.html"><IMG src="../thumbs/img_6739.jpg" title="img_6739.jpg" width="48" height="36" alt="" class="mthumb"></A></TD></TR><TR><TD align="center" valign="middle" style="padding:4px; border:0px; height:50px" class="thumb"><A href="img_6740.html"><IMG src="../thumbs/img_6740.jpg" title="img_6740.jpg" width="48" height="36" alt="" class="mthumb"></A></TD></TR><TR><TD align="center" valign="middle" style="padding:4px; border:0px; height:50px" class="thumb"><A href="img_6741.html"><IMG src="../thumbs/img_6741.jpg" title="img_6741.jpg" width="48" height="36" alt="" class="mthumb"></A></TD></TR><TR><TD align="center" valign="middle" style="padding:4px; border:0px; height:50px" class="thumb"><A href="img_6742.html"><IMG src="../thumbs/img_6742.jpg" title="img_6742.jpg" width="48" height="36" alt="" class="mthumb"></A></TD></TR></TABLE></TD><TD style="width:12px">&nbsp;</TD>
+<TD style="width:722px;" align="center" valign="middle">
+<IMG SRC="img_6743.jpg" class="slideImage" width="720" height="540" TITLE="Verkleinertes Bild [img_6743.jpg - 1996kB]" usemap="#imagemap" alt=""></TD>
+<TD style="width:12px">&nbsp;</TD><TD valign="bottom"><TABLE style="width:64px;"><TR><TD align="center" valign="middle" style="padding:4px; border:0px; height:50px" class="thumb"><A href="img_6744.html"><IMG src="../thumbs/img_6744.jpg" title="img_6744.jpg" width="48" height="36" alt="" class="mthumb"></A></TD></TR><TR><TD align="center" valign="middle" style="padding:4px; border:0px; height:50px" class="thumb"><A href="img_6746.html"><IMG src="../thumbs/img_6746.jpg" title="img_6746.jpg" width="48" height="36" alt="" class="mthumb"></A></TD></TR><TR><TD align="center" valign="middle" style="padding:4px; border:0px; height:50px" class="thumb"><A href="img_6747.html"><IMG src="../thumbs/img_6747.jpg" title="img_6747.jpg" width="48" height="36" alt="" class="mthumb"></A></TD></TR><TR><TD align="center" valign="middle" style="padding:4px; border:0px; height:50px" class="thumb"><A href="img_6748.html"><IMG src="../thumbs/img_6748.jpg" title="img_6748.jpg" width="48" height="36" alt="" class="mthumb"></A></TD></TR><TR><TD align="center" valign="middle" style="padding:4px; border:0px; height:50px" class="thumb"><A href="img_6749.html"><IMG src="../thumbs/img_6749.jpg" title="img_6749.jpg" width="48" height="36" alt="" class="mthumb"></A></TD></TR></TABLE></TD></TR></TABLE>
+<BR><!-- Comment and image data at BOTTOM -->
+<TABLE style="width:722px;" class="infotable" cellspacing="0" cellpadding="2">
+<TR><TD style="width:703px;" align="center" valign="middle" class="smalltxt"><span class="comment">img 6743</span></TD>
+
+<TD align="center" valign="middle"><A href="img_6743.jpg" target="_blank"><IMG src="../res/download.gif" title="Bild speichern" width="17" height="17" border="0" alt=""></A></TD><!-- Download Image -->
+</TR>
+<TR><TD colspan="2" align="center" valign="middle" class="smalltxt"><a href="img_6782.html" title="Erste Seite">&laquo; </a>|<a href="img_6737.html" title="Vorherige Seite"> &lt; </a>|<a href="img_6738.html">&nbsp;81&nbsp;</a>|<a href="img_6739.html">&nbsp;82&nbsp;</a>|<a href="img_6740.html">&nbsp;83&nbsp;</a>|<a href="img_6741.html">&nbsp;84&nbsp;</a>|<a href="img_6742.html">&nbsp;85&nbsp;</a>|<span class="current">&nbsp;86&nbsp;</span>|<a href="img_6744.html">&nbsp;87&nbsp;</a>|<a href="img_6746.html">&nbsp;88&nbsp;</a>|<a href="img_6747.html">&nbsp;89&nbsp;</a>|<a href="img_6748.html">&nbsp;90&nbsp;</a>|<a href="img_6749.html">&nbsp;91&nbsp;</a>|<a href="img_6750.html">&nbsp;92&nbsp;</a>|<a href="img_6751.html">&nbsp;93&nbsp;</a>|<a href="img_6752.html">&nbsp;94&nbsp;</a>|<a href="img_6753.html">&nbsp;95&nbsp;</a>|<a href="img_6754.html">&nbsp;96&nbsp;</a>|<a href="img_6756.html">&nbsp;97&nbsp;</a>|<a href="img_6757.html">&nbsp;98&nbsp;</a>|<a href="img_6758.html">&nbsp;99&nbsp;</a>|<a href="img_6760.html">&nbsp;100&nbsp;</a>|<a href="img_6761.html" title="Nächste Seite"> &gt; </a>|<a href="img_6781.html" title="Letzte Seite"> &raquo;</a></TD></TR>
+
+
+
+
+<TR><TD colspan="2" align="center" valign="middle" class="xsmalltxt">Anzahl Bilder: <strong>115</strong> | Letzte Aktualisierung: <strong>24.05.07 11:34</strong> | Erzeugt von <a href="http://jalbum.net" title="JAlbum - Freeware Web Fotoalbum Software" target="_blank">JAlbum 7.1</a> &amp; <a href="http://lazaworx.com" title="Chameleon v4.03 White skin by lazaWORX" target="_blank">Chameleon</a> | <A href="javascript:void(0)" onClick="window.open('../help.html','Hilfe','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,copyhistory=no,resizable=yes,width=560,height=560')">Hilfe</A></TD></TR>
+</TABLE>
+
+
+<BR>&nbsp;</CENTER>
+
+<script language="javascript" type="text/javascript">
+next_image=new Image(); next_image.src="img_6744.jpg";
+</script>
+<script language="javascript" type="text/javascript">
+previous_image=new Image(); previous_image.src="img_6742.jpg";
+</script>
+</BODY>
+</HTML>

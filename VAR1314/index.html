@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Vorlesung VAR WS1314, FH-Mannheim, HS-Mannheim, Prof. Dr. Christian Baun">
+<meta name="author" content="Prof. Dr. Christian Baun">
+<meta name="keywords" content="VAR, HS-Mannheim, FH-Mannheim, Mannheim, WS1314, Wintersemester, Informatik, Prof. Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Vorlesung Verteilte Architekturen (WS1314)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Verteilte Architekturen (WS1314)</h2>
+
+<p>
+Verteilte Systeme bzw. verteilte Architekturen sind Zusammenschlüsse mehrerer unabhängiger Computer, die über ein Netzwerk miteinander kommunizieren. Es existieren verschiedene Architekturen verteilter Systeme in der Informatik. Neben der bekannten Architektur, dem Client-Server-Modell, existieren ganz besonders im Umfeld des Parallelrechnens u.a. Cluster-Computing, Grid-Computing, Peer-to-Peer (P2P) und Cloud-Computing.
+</p><p>
+Cloud-Computing hat das Potential, den Charakter der Informationstechnik (IT) fundamental zu verändern. Die Konsolidierung der Rechen- und Speicherressourcen in großen Rechen- bzw. Ressourcenzentren bietet die Möglichkeit, Mittel, die bisher der Aufrechterhaltung des Ressourcenbetriebs dienten, in andere Aufgaben fließen zu lassen. Gleichzeitig haben die Anwender in der Cloud große Freiheiten bzgl. der Infrastrukturen, Betriebssysteme, Programmiersprachen und Anwendungen, die sie verwenden möchten.
+</p><p>
+Das Ziel dieser Vorlesung ist die Vermittlung der Grundlagen von Cluster-Computing, Grid-Computing, Peer-to-Peer (P2P) und ganz besonders von Cloud-Computing.
+<!-- Praktische Übungen nehmen in der Vorlesung einen großen Raum ein und sind für das Verständnis der Technologien elementar. -->
+</p>
+
+
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<!-- <font size="+3" color="#000000"><b>Skripte</b></font> -->
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../VSY14/index.html" style="text-decoration: none">Distributed Systems / Verteilte Systeme im SS2014</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Hilfsmittel während der Klausur</b></font>
+<p>
+Jeder Teilnehmer darf jeder Teilnehmer einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<h3>Termine</h3>
+
+<!-- <p>Die Termine stehen noch nicht fest.</p> -->
+
+<ul>
+<li>Freitag. 07.03.2014: 9:00 Uhr. Raum A211</li>
+<li>Samstag. 08.03.2014: 9:00 Uhr. Raum A211</li>
+<li>Samstag. 15.03.2014: 9:00 Uhr. Raum A211</li>
+<li>Freitag. 21.03.2014: 8:00 Uhr. Raum A211. Klausur</li>
+</ul>
+
+
+<h2>Vorlesungsunterlagen</h2>
+
+<!-- <p><font color="#FF0000"><b>Es ist ratsam, Präsentationsfolien erst nach der Veranstaltung auszudrucken, weil Änderungen nicht ausgeschlossen werden können.</b></font></p> -->
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>Foliensatz&nbsp;1&nbsp;&nbsp;&nbsp;</td>
+    <td>Organisatorisches, Einführung, Client-Server</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;2</td>
+    <td>Grundlagen, Gesetze und Einschränkungen, Parallelrechner</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;3</td>
+    <td>Cloud-Computing, Dienste und Konzepte, Chancen und Risiken</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;4</td>
+    <td>Amazon Web Services (EC2, EBS, ELB), Google Compute Engine, HP Cloud Compute</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;5</td>
+    <td>Amazon Web Services (S3) und Google Cloud Storage</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;6</td>
+    <td>Platform Services (Google App Engine)</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;7</td>
+    <td>Private Infrastrukturdienste (IaaS), Private Plattformdienste (PaaS)</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;8</td>
+    <td>Cluster-Computing</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;9</td>
+    <td>Peer-to-Peer</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;10</td>
+    <td>Web Services</td>
+  </tr>
+<!--  <tr>
+    <td><a href="https://dl.dropboxusercontent.com/u/10971224/var_vorlesung_13_WS1314.pdf" style="text-decoration: none">Foliensatz&nbsp;13</a></td>
+    <td>Virtualization</td>
+  </tr>-->
+</table>
+
+
+<h2>Klausur</h2>
+
+<!-- Jeder Teilnehmer darf einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien. -->
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="Skript/VAR_Klausur_WS1314.pdf" style="text-decoration: none">Abschlussklausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(21.03.2014)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Bearbeitungszeit: 60 Minuten</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/VAR_Klausur_Musterloesung_WS1314.pdf" style="text-decoration: none">Musterlösung</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(21.03.2014)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="var_klausur_WS1314.html" style="text-decoration: none">Ergebnis der Klausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<h2>Alte Klausuren</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Klausur</b></td>
+    <td>&nbsp;</td>
+    <td><b>Bearbeitungszeit</b></td>
+    <td>&nbsp;</td>
+    <td><b>Hochschule</b></td>
+    <td>&nbsp;</td>
+    <td><b>Musterlösung</b></td>
+  </tr>
+  <tr>
+    <td><a href="../CGC1314/Skript/CGC_Klausur_en_WS1314.pdf" style="text-decoration: none">WS1314</a></td>
+    <td>&nbsp;</td>
+    <td>90 Minuten</td>
+    <td>&nbsp;</td>
+    <td>FH Frankfurt am Main&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../CGC1112/Skript/CGC_Klausur_WS1112.pdf" style="text-decoration: none">WS1112</a></td>
+    <td>&nbsp;</td>
+    <td>60 Minuten</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+    <td>&nbsp;</td>    
+    <td><a href="../CGC1112/Skript/CGC_Klausur_Loesung_WS1112.pdf" style="text-decoration: none">Musterlösung</a></td>
+  </tr>
+  <tr>
+    <td><a href="../CGC11/Skript/CGC_Klausur_SS2011.pdf" style="text-decoration: none">SS2011</a></td>
+    <td>&nbsp;</td>
+    <td>60 Minuten</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+    <td>&nbsp;</td>    
+    <td><a href="../CGC11/Skript/CGC_Klausur_Loesung_SS2011.pdf" style="text-decoration: none">Musterlösung</a></td>
+  </tr>
+  <tr>
+    <td><a href="../CGC1011/Skript/CGC_Klausur_WS1011.pdf" style="text-decoration: none">WS1011</a></td>
+    <td>&nbsp;</td>
+    <td>60 Minuten</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+    <td>&nbsp;</td>    
+    <td><a href="../CGC1011/Skript/CGC_Klausur_Loesung_WS1011.pdf" style="text-decoration: none">Musterlösung</a></td>
+  </tr>
+  <tr>
+    <td><a href="../CGC10/Skript/CGC_Klausur_SS2010.pdf" style="text-decoration: none">SS2010</a></td>
+    <td>&nbsp;</td>
+    <td>60 Minuten</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+    <td>&nbsp;</td>    
+    <td><a href="../CGC10/Skript/CGC_Klausur_Loesung_SS2010.pdf" style="text-decoration: none">Musterlösung</a></td>
+  </tr>
+</table>
+  
+
+<h2>Vorlesungsevaluation</h2>
+
+<!-- Der Termin der Vorlesungsevaluierung steht noch nicht fest -->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/Evaluation_VAR_WS1314_Baun_0.3.4.pdf" style="text-decoration: none">Ergebnis</a> der Vorlesungsevaluation
+    </td>
+  </tr>
+</table>
+
+
+<h2>Wahre Kunstwerke</h2>
+
+<p>Als Hilfsmittel durften die Studenten ein selbständig vorbereitetes DIN-A4-Blatt mit in die Klausur mitnehmen. Nur und handschriftlich beschriebenes Originale waren zugelassen und keine Kopien. Diese Seite enthält eine Auswahl der Blätter. Einige sind wahre Kunstwerke.</p>
+
+<!-- <p>As auxiliary material, the students were allowed to use a self prepared, single sided DIN-A4 sheet in the exam. Only handwritten originals were allowed, but no copies. This page contains a selection of the sheets. Some of them are true works of art.</p> -->
+
+<a href="klausurzettel/var_klausurzettel_WS1314_01.jpg" style="text-decoration: none"><img src="klausurzettel/var_klausurzettel_WS1314_01_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/var_klausurzettel_WS1314_02.jpg" style="text-decoration: none"><img src="klausurzettel/var_klausurzettel_WS1314_02_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/var_klausurzettel_WS1314_03.jpg" style="text-decoration: none"><img src="klausurzettel/var_klausurzettel_WS1314_03_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="72" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/var_klausurzettel_WS1314_04.jpg" style="text-decoration: none"><img src="klausurzettel/var_klausurzettel_WS1314_04_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/var_klausurzettel_WS1314_05.jpg" style="text-decoration: none"><img src="klausurzettel/var_klausurzettel_WS1314_05_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/var_klausurzettel_WS1314_06.jpg" style="text-decoration: none"><img src="klausurzettel/var_klausurzettel_WS1314_06_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/var_klausurzettel_WS1314_07.jpg" style="text-decoration: none"><img src="klausurzettel/var_klausurzettel_WS1314_07_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/var_klausurzettel_WS1314_08.jpg" style="text-decoration: none"><img src="klausurzettel/var_klausurzettel_WS1314_08_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/var_klausurzettel_WS1314_09.jpg" style="text-decoration: none"><img src="klausurzettel/var_klausurzettel_WS1314_09_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="130" height="100"></a>
+
+<h2>Kontakt</h2>
+
+<p>Zu erreichen bin ich am besten per E-Mail: <a href="mailto:christianbaun@gmail.com" style="text-decoration: none">christianbaun@gmail.com</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:christianbaun@gmail.com" style="text-decoration: none">Prof. Dr. Christian Baun</a><br></i>
+      <i><a href="http://www.hs-mannheim.de" style="text-decoration: none">Hochschule Mannheim</a><br></i>
+      <i><a href="http://www.informatik.hs-mannheim.de" style="text-decoration: none">Fakultät für Informatik</a><br></i>
+      <i>Stand: 26.3.2014</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      <a href="http://www.hs-mannheim.de"><img src="Bilder/HS-Mannheim-Logo-weiss.gif" alt="zur Homepage der HS Mannheim" border="0" width="195" height="60" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

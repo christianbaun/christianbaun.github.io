@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Betriebssysteme BTS SS2011, FH-Mannheim, HS-Mannheim, Christian Baun">
+<meta name="author" content="M.Sc. Christian Baun">
+<meta name="keywords" content="BTS, HS-Mannheim, FH-Mannheim, Mannheim, Betriebssysteme, SS2011, Informatik, Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Vorlesung Betriebssysteme (SS2011)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+
+<h2>Betriebssysteme (SS2011)</h2>
+
+<p>Die Hauptaufgabe eines Betriebssystems besteht in der Steuerung, Verwaltung und Verteilung der Betriebsmittel eines Rechnersystems auf die Benutzer. Zu den Betriebsmitteln gehören Prozessoren, Hauptspeicher, Dateien, Ein-/Ausgabegeräte und Netzwerkdienste und generell alle Ressourcen, die mit dem Rechnersystem verbunden sind. Zusätzlich stellt ein Betriebssystem die Benutzerschnittstelle zur Steuerung des Systems sowie Schutzmechanismen, Werkzeuge, Bibliotheken und Entwicklungswerkzeuge bereit. Das Ziel dieser Vorlesung ist die Vermittlung der Grundlagen, Prinzipien, Probleme, und Lösungen, kurz gesagt der Konzepte auf denen die klassischen und modernen Betriebssysteme basieren.</p>
+
+
+<!--
+<h2>Termine</h2>
+-->
+
+<!--
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Vorlesung&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></td>
+    <td>Freitags&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>13:40 - 15:10 Uhr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Raum H0807</td>
+  </tr>
+  <tr>
+    <td><b>Übung</b></td>
+    <td>Freitags</td>
+    <td>15:20 - 16:50 Uhr</td>
+    <td>Raum A008</td>
+  </tr>
+  <tr>
+    <td><b>Klausur</b></td>
+    <td>7.7.2011</td>
+    <td>08:00 - 10.15 Uhr</td>
+    <td>Raum H0307</td>
+  </tr>
+</table>
+-->
+
+<!-- <h2>Ankündigungen</h2> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Skripte</b></font>
+<p>
+Es ist ratsam, die Folien der Vorlesung erst NACH der Veranstaltung auszudrucken, weil Änderungen nicht ausgeschlossen werden können.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>!!! Achtung !!!</b></font>
+<p>
+Am 8. April 2011 findet kein BTS statt!
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<!-- <font size="+3" color="#000000"><b>Skripte</b></font> -->
+<font size="+3" color="#000000"><b>Diese Seite ist veraltet!</b></font>
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../BTS12/index.html" style="text-decoration: none">Betriebssysteme im SS2012</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>
+
+<h2>Folien zur Vorlesung</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>(15.03.2011)</td>
+    <td><i>Vorlesungsbeginn</i></td>
+  </tr>
+  <tr>
+    <td>1.Vorlesung&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>(18.03.2011)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Einführung, historische Entwicklung</td>
+  </tr>
+  <tr>
+    <td>2.Vorlesung</td>
+    <td>(25.03.2011)</td>
+    <td>Klassifikationen, Betriebsarten, Architekturen, Schnittstellen</td>
+  </tr>
+  <tr>
+    <td>3.Vorlesung</td>
+    <td>(01.04.2011)</td>
+    <td>Von-Neumann-Architektur, Speicherhierarchie, Schreibstrategien, Datenverwaltung</td>
+  </tr>
+<!-- Vorlesungsfreie Zeit an der HS: 21.4.2011 bis 1.5.2011 -->
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>(08.04.2011)</td>
+    <td><i>Fällt aus!</i></td>
+  </tr>-->
+  <tr>
+    <td>4.Vorlesung</td>
+    <td>(15.04.2011)</td>
+    <td>RAID, Adressraum, Virtueller Speicher, MMU, Segment-/Seitenorientierter Speicher</td>
+  </tr>
+<!-- Vorlesungsfreie Zeit an der HS: 21.4.2011 bis 1.5.2011 -->
+  <tr>
+    <td>&nbsp;</td>
+    <td>(22.04.2011)</td>
+    <td><i>Karfreitag</i></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>(29.04.2011)</td>
+    <td><i>Vorlesungsfreie Zeit (Ostern)</i></td>
+  </tr>
+  <tr>
+    <td>5.Vorlesung</td>
+    <td>(06.05.2011)</td>
+    <td>Virtueller Speicher, Segment-/Seitenorientierter Speicher, Systemaufrufe, Prozess-Kontext</td>
+  </tr>
+  <tr>
+    <td>6.Vorlesung</td>
+    <td>(13.05.2011)</td>
+    <td>Prozessmodelle, Prozesstabellen, Prozesskontrollblock, Zustandslisten, Threads</td>
+  </tr>
+  <tr>
+    <td>7.Vorlesung</td>
+    <td>(20.05.2011)</td>
+    <td>Prozesse erzeugen und ersetzen, Dispatcher, Scheduling-Kriterien, Scheduling-Strategien, Scheduling-Verfahren</td>
+  </tr>
+  <tr>
+    <td>8.Vorlesung</td>
+    <td>(27.05.2011)</td>
+    <td>Scheduling-Beispiele, Interprozesskommunikation, Synchronisation, Deadlocks</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>(03.06.2011)</td>
+    <td><i>Brückentag</i></td>
+  </tr>
+  <tr>
+    <td>9.Vorlesung</td>
+    <td>(10.06.2011)</td>
+    <td>Kommunikation und Kooperation</td>
+  </tr>
+  <tr>
+    <td>9.Vorlesung</td>
+    <td>(17.06.2011)</td>
+    <td>Kommunikation und Kooperation</td>
+  </tr>
+  <tr>
+    <td>10.Vorlesung</td>
+    <td>(24.06.2011)</td>
+    <td>Dateien, Dateisysteme, Verzeichnisse, Journaling Dateisysteme, Defragmentierung</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>(01.07.2011)</td>
+    <td><i>Vorlesungsende</i></td>
+  </tr>
+</table>
+
+<h2>Übungsaufgabe</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>Die erfolgreiche Bearbeitung der <a href="Skript/BTS_Uebungsaufgabe_SS2011.pdf" style="text-decoration: none">Übungsaufgabe</a> ist Voraussetzung zur Teilnahme an der Klausur!</td>
+  </tr>
+</table>
+
+
+<h3>Abgaben</h3>
+
+<ul>
+<li><b>Gruppe 1:</b>
+<ul>
+<li><b>Teilnehmer:</b> Albert, Beedgen, Cohen, Haschmi, Rohr</li>
+<li><a href="Abgaben/BTS_Gruppe1_Ausarbeitung.pdf" style="text-decoration: none">Schriftliche Ausarbeitung</a></li>
+<li><a href="Abgaben/BTS_Gruppe1_Folien.pdf" style="text-decoration: none">Folien der Präsentation</a></li>
+<li><b>Besonderheiten:</b> Java-Anwendung und Applet</li>
+</ul>
+</li>
+<li><b>Gruppe 2:</b>
+<ul>
+<li><b>Teilnehmer:</b> Adler, Aldefai, Hensch, Kaiser, Naymushina</li>
+<li><a href="Abgaben/BTS_Gruppe2_Ausarbeitung.pdf" style="text-decoration: none">Schriftliche Ausarbeitung</a></li>
+<li><a href="Abgaben/BTS_Gruppe2_Folien.pdf" style="text-decoration: none">Folien der Präsentation</a></li>
+<li><b>Besonderheiten:</b> Java-Anwendung für Android</li>
+</ul>
+</li>
+<li><b>Gruppe 3:</b>
+<ul>
+<li><b>Teilnehmer:</b> Müller, Schütt, Schwarzmann, Zapf</li>
+<li><a href="Abgaben/BTS_Gruppe3_Ausarbeitung.pdf" style="text-decoration: none">Schriftliche Ausarbeitung</a></li>
+<li><a href="Abgaben/BTS_Gruppe3_Folien.pdf" style="text-decoration: none">Folien der Präsentation</a></li>
+<li><b>Besonderheiten:</b> Webanwendung mit PHP</li>
+</ul>
+</li>
+<li><b>Gruppe 4:</b>
+<ul>
+<li><b>Teilnehmer:</b> Dafinger, Elsässer, Hlipala, Zeiler</li>
+<li><a href="Abgaben/BTS_Gruppe4_Ausarbeitung.pdf" style="text-decoration: none">Schriftliche Ausarbeitung</a></li>
+<li><a href="Abgaben/BTS_Gruppe4_Folien.pdf" style="text-decoration: none">Folien der Präsentation</a></li>
+<li><b>Besonderheiten:</b> Java-Anwendung</li>
+</ul>
+</li>
+<li><b>Gruppe 5:</b>
+<ul>
+<li><b>Teilnehmer:</b> Hahn, Galuschek, Maugg, Weissinger</li>
+<li><a href="Abgaben/BTS_Gruppe5_Ausarbeitung.pdf" style="text-decoration: none">Schriftliche Ausarbeitung</a></li>
+<li><a href="Abgaben/BTS_Gruppe5_Folien.pdf" style="text-decoration: none">Folien der Präsentation</a></li>
+<li><b>Besonderheiten:</b> Java-Anwendung für Android</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Vorlagen</h3>
+
+<ul>
+<li><a href="Vorlagen/BTS_Paper_Vorlage_SS2011.zip" style="text-decoration: none">Vorlage für die schriftliche Ausarbeitung</a></li>
+<li><a href="Vorlagen/BTS_Folien_Vorlage_SS2011.zip" style="text-decoration: none">Vorlage für die Präsentation</a></li>
+</ul>
+
+<p>Die Vorlage für die Ausarbeitung nutzt das LaTeX-Makropaket <tt>llncs</tt> (<a href="http://www.springer.com/computer/lncs?SGWID=0-164-7-72376-0" style="text-decoration: none">Lecture Notes in Computer Science</a>) des Springer-Verlags. Die Vorlage für die Präsentation basiert auf <a href="http://www2.informatik.hu-berlin.de/~mischulz/beamer.html" style="text-decoration: none">LaTeX Beamer</a>.</p>
+
+<p>Alle großen Linux-Distributionen bringen LaTeX-Pakete mit. Unter Windows sind die LaTeX-Distributionen <a href="http://www.miktex.org" style="text-decoration: none">MiKTeX</a> und <a href="http://www.tug.org/texlive/" style="text-decoration: none">TeX Live</a> bekannt. LaTeX-Dokumente können mit jedem Editor bearbeitet werden.</p>
+
+
+<h2>Klausur</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="Skript/BTS_Klausur_SS2011.pdf" style="text-decoration: none">Abschlussklausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(07.07.2011)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Bearbeitungszeit: 60 Minuten</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/BTS_Klausur_Loesung_SS2011.pdf" style="text-decoration: none">Lösungsvorschlag</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(07.07.2010)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Lösungsvorschlag zu Abschlussklausur</td>
+  </tr>
+  <tr>
+    <td><a href="bts_klausur_SS2011.html" style="text-decoration: none">Ergebnis der Klausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+
+<h2>Vorlesungsevaluierung</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/Evaluation_BTS_SS2011_Baun_0.3.4.pdf" style="text-decoration: none">Ergebnis</a> der Vorlesungsevaluierung
+    </td>
+  </tr>
+</table>
+
+<!-- <h2>Exkursion</h2> -->
+
+
+
+
+<h2>Kontakt</h2>
+
+<p>Zu erreichen bin ich am besten per E-Mail: <a href="mailto:cray@unix-ag.uni-kl.de" style="text-decoration: none">cray@unix-ag.uni-kl.de</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:cray@unix-ag.uni-kl.de" style="text-decoration: none">M.Sc. Christian Baun</a><br></i>
+      <i><a href="http://www.hs-mannheim.de" style="text-decoration: none">Hochschule Mannheim</a><br></i>
+      <i><a href="http://www.informatik.hs-mannheim.de" style="text-decoration: none">Fakultät für Informatik</a><br></i>
+      <i>Stand: 10.7.2011</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      <a href="http://www.hs-mannheim.de"><img src="Bilder/HS-Mannheim-Logo-weiss.gif" alt="zur Homepage der HS Mannheim" border="0" width="195" height="60" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

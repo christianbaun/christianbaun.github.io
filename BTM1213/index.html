@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Betriebssysteme WS1213, FH-Mannheim, HS-Mannheim, Dr. Christian Baun">
+<meta name="author" content="Dr. Christian Baun">
+<meta name="keywords" content="Betriebssysteme, HS-Mannheim, FH-Mannheim, Mannheim, SS2012, Wintersemester, Informatik, Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Betriebssysteme (WS1213)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Betriebssysteme (WS1213)</h2>
+
+<p>
+Die Hauptaufgabe eines Betriebssystems besteht in der Steuerung, Verwaltung und Verteilung der Betriebsmittel eines Rechnersystems auf die Benutzer. Zu den Betriebsmitteln gehören Prozessoren, Hauptspeicher, Dateien, Ein-/Ausgabegeräte und Netzwerkdienste und generell alle Ressourcen, die mit dem Rechnersystem verbunden sind. Zusätzlich stellt ein Betriebssystem die Benutzerschnittstelle zur Steuerung des Systems sowie Schutzmechanismen, Werkzeuge, Bibliotheken und Entwicklungswerkzeuge bereit. Das Ziel dieser Vorlesung ist die Vermittlung der Grundlagen, Prinzipien, Probleme, und Lösungen, kurz gesagt der Konzepte auf denen die klassischen und modernen Betriebssysteme basieren.
+</p>
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<p>
+Die BTS-Klausur über 30 Minuten ist Teil der Modulklausur BSW und findet am Donnerstag, den 24.1.2013 um 8:15 in Raum H307/H407 statt.
+</p>
+<p>
+Die BTS-Klausur über 60 Minuten ist Teil der Modulklausur SBS und findet am Mittwoch, den 30.1.2013 um 8:15 in Raum H307/H407 statt.
+</p>
+<p>
+Bitte beachten Sie den <a href="http://www.informatik.hs-mannheim.de/fileadmin/templates/Boehm/PP_IB.pdf" style="text-decoration: none">Prüfungsplan</a>! Änderungen an den Klausurterminen können nicht ausgeschlossen werden.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+
+
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Diese Seite ist veraltet!</b></font>
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../BTS1314/index.html" style="text-decoration: none">Betriebssysteme im WS1314</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>
+
+<h2>Organisatorisches</h2>
+
+<p>Diejenigen Teilnehmer, die im RGS4 studieren, müssen zusätzlich zur Klausur als weitere Prüfungsleistung eine schriftliche Ausarbeitung über 10 Seiten verfassen. Die Ausarbeitung ist im Textsatzsystem <a href="http://www.latex-project.org" style="text-decoration: none">LaTeX</a> (<a href="http://de.wikipedia.org/wiki/LaTeX" style="text-decoration: none">Wikipedia</a>) anzufertigen. Inhalt ist ein Thema aus dem Bereich Betriebssysteme.
+LaTeX ist der Standard für wissenschaftliche Publikationen in Mathematik und Naturwissenschaften. Es bietet ein hervorragendes Layout und läuft auf allen gängigen Architekturen und Betriebssystemen. Eine Einarbeitung ist jedoch notwendig.
+Eine <a href="Vorlagen/BTS_Paper_Vorlage_WS1213.zip" style="text-decoration: none">Vorlage</a> für die Ausarbeitung ist verfügbar. Die Verwendung dieser Vorlage ist Voraussetzung für das Bestehen der Prüfungsleistung!
+Die Vorlage für die Ausarbeitung nutzt das LaTeX-Makropaket <tt>llncs</tt> (<a href="http://www.springer.com/computer/lncs?SGWID=0-164-7-72376-0" style="text-decoration: none">Lecture Notes in Computer Science</a>) des Springer-Verlags.
+Alle großen Linux-Distributionen bringen LaTeX-Pakete mit. Unter Windows sind die LaTeX-Distributionen <a href="http://www.miktex.org" style="text-decoration: none">MiKTeX</a> und <a href="http://www.tug.org/texlive/" style="text-decoration: none">TeX Live</a> bekannt. LaTeX-Dokumente können mit jedem Editor bearbeitet werden.</p>
+
+
+
+<h2>Termine</h2>
+
+
+<ul>
+<li>Vorlesung 1: Samstag, 17.11.2012. 9:00 - 18:00 Uhr. Raum A212</li>
+<li>Vorlesung 2: Samstag, 01.12.2012. 9:00 - 18:00 Uhr. Raum A212</li>
+<li>Klausur (RGS5): 24.01.2013. 8:15 - 9:45 Uhr. Raum H307/H407</li>
+<li>Klausur (RGS4): 30.01.2013. 8:15 - 9:45 Uhr. Raum H307/H407</li>
+<li>Einsichtnahme: 11.02.2013. 18:00 - 19:00 Uhr</li>
+</ul>
+
+<h2>Vorlesungsunterlagen</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="Skript/folien_bts_vorlesung_00_WS1213.pdf" style="text-decoration: none">Foliensatz&nbsp;0</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Organisatorisches, Literatur</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;1</td>
+    <td>Generationen von Computersystemen und Betriebssystemen</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;2</td>
+    <td>Klassifikationen, Betriebsarten, Architekturen</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;3</td>
+    <td>Von-Neumann-Architektur, Hardware-Komponenten eines Computers, Speicher, Speicherhierarchie, Ersetzungsstrategien</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;4</td>
+    <td>Festplatten, Solid State Drives, RAID</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;5</td>
+    <td>Ein-/Ausgabegeräte, Speicheradressierung, Speicherverwaltung, virtueller Speicher</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;6</td>
+    <td>Dateien, Dateisysteme, Verzeichnisse, Blockadressierung, Journaling, Extents, Defragmentierung</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;7</td>
+    <td>Systemaufrufe, Prozess, Prozesskontext, Zustands-Prozessmodelle, Prozessverwaltung, Prozesse erzeugen und löschen</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;8</td>
+    <td>Unterbrechungen, Dispatcher, Scheduling-Verfahren</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;9</td>
+    <td>Interprozesskommunikation, Synchronisation von Prozessen</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;10</td>
+    <td>Kommunikation von Prozessen, Kooperation von Prozessen</td>
+  </tr>
+</table>
+
+
+<h2>Klausur</h2>
+
+<!-- Der Klausurtermin steht noch nicht fest. -->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="Skript/Klausurrelevanter_Inhalte_WS1213.pdf" style="text-decoration: none">Klausurrelevante Inhalte</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(01.12.2012)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/BTS_Klausur_30_WS1213.pdf" style="text-decoration: none">Abschlussklausur für RGS5</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(24.01.2013)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Bearbeitungszeit: 30 Minuten</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/BTS_Klausur_Musterloesung_30_WS1213.pdf" style="text-decoration: none">Musterlösung</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(24.01.2013)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Für Teilnehmer die im RGS5 studieren</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/BTS_Klausur_60_WS1213.pdf" style="text-decoration: none">Abschlussklausur für RGS4</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(31.01.2013)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Bearbeitungszeit: 60 Minuten</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/BTS_Klausur_Musterloesung_60_WS1213.pdf" style="text-decoration: none">Musterlösung</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(31.01.2013)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Für Teilnehmer die im RGS4 studieren</td>
+  </tr>
+  <tr>
+    <td><a href="bts_klausur_WS1213.html" style="text-decoration: none">Ergebnis</a> der Klausur</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(11.02.2012)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<h2>Vorlesungsevaluation</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/Evaluation_BTS_WS1213_Baun_0.3.4.pdf" style="text-decoration: none">Ergebnis</a> der Vorlesungsevaluation
+    </td>
+  </tr>
+</table>
+
+<h2>Kontakt</h2>
+
+<p>Zu erreichen bin ich am besten per E-Mail: <a href="mailto:wolkenrechnen@gmail.com" style="text-decoration: none">wolkenrechnen@gmail.com</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:wolkenrechnen@gmail.com" style="text-decoration: none">Dr. Christian Baun</a><br></i>
+      <i><a href="http://www.hs-mannheim.de" style="text-decoration: none">Hochschule Mannheim</a><br></i>
+      <i><a href="http://www.informatik.hs-mannheim.de" style="text-decoration: none">Fakultät für Informatik</a><br></i>
+      <i>Stand: 11.2.2013</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      <a href="http://www.hs-mannheim.de"><img src="Bilder/HS-Mannheim-Logo-weiss.gif" alt="zur Homepage der HS Mannheim" border="0" width="195" height="60" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

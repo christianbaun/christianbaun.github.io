@@ -1,0 +1,39 @@
+!******************************************
+!* AUFGABE 0: Startkonfiguration  
+!******************************************
+enable
+configure terminal
+hostname BR2
+interface FastEthernet0/0
+ ip address 172.17.8.206 255.255.255.240
+ no shutdown
+interface Serial0/0
+ ip address 172.17.8.250 255.255.255.252
+ clock rate 128000
+ no shutdown
+interface Serial0/1
+ no ip address
+ shutdown
+line con 0
+! password cisco
+! login
+! Sitzungsdauer 240 Minuten
+ exec-timeout 240
+line vty 0 4
+! password cisco
+! login
+! Sitzungsdauer 240 Minuten
+ exec-timeout 240
+end
+copy running-config startup-config
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+configure terminal
+interface s0/1
+ ip address 172.17.8.246 255.255.255.252
+ no shutdown
+end
+copy run start
+
+

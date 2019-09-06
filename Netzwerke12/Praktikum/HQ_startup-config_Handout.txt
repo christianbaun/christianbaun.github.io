@@ -1,0 +1,48 @@
+!******************************************
+!* AUFGABE 0: Startkonfiguration  
+!******************************************
+enable
+configure terminal
+hostname HQ
+!enable secret class
+no ip domain-lookup
+no ip name-server 0.0.0.0
+interface FastEthernet0/0
+ ip address 172.17.8.126 255.255.255.128
+ no ip split-horizon
+ no shutdown
+interface FastEthernet0/1
+ ip address 200.200.201.2 255.255.255.252
+ no ip split-horizon
+ no shutdown
+interface Serial0/1
+ ip address 172.17.8.253 255.255.255.252
+  no shutdown
+interface Serial0/0
+ no ip address
+ shutdown
+line con 0
+! password cisco
+! login
+! Sitzungsdauer 240 Minuten
+ exec-timeout 240
+line vty 0 4
+! password cisco
+! login
+! Sitzungsdauer 240 Minuten
+ exec-timeout 240
+end
+copy running-config startup-config
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+configure terminal
+interface s0/0
+ ip address 172.17.8.245 255.255.255.252
+ clock rate 128000
+ no shutdown
+end
+copy run start
+
+
+
+

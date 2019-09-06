@@ -1,0 +1,36 @@
+!******************************************
+!* AUFGABE 0: Startkonfiguration  
+!******************************************
+enable
+configure terminal
+hostname ISP
+!enable secret class
+no ip domain-lookup
+interface FastEthernet0/0
+ ip address 200.200.200.254 255.255.255.0
+ no ip split-horizon
+ no shutdown
+interface FastEthernet0/1
+ ip address 200.200.201.1 255.255.255.252
+ no ip split-horizon
+ no shutdown
+interface Serial0/0
+ no ip address
+ shutdown
+interface Serial0/1
+ no ip address
+ shutdown
+line con 0
+! password cisco
+! login
+! Sitzungsdauer 240 Minuten
+ exec-timeout 240
+line vty 0 4
+! password cisco
+! login
+! Sitzungsdauer 240 Minuten
+ exec-timeout 240
+end
+copy running-config startup-config
+
+

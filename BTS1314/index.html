@@ -1,0 +1,725 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Computer Networks, WS1314, FH-Frankfurt, Christian Baun">
+<meta name="author" content="Dr. Christian Baun">
+<meta name="keywords" content="Betriebssysteme, FH-Frankfurt, Frankfurt, WS1314, Wintersemester, Computer Science, Prof. Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Vorlesung Betriebssysteme, (WS1314)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+
+<h2>Betriebssysteme (WS1314)</h2>
+
+<p>
+Die Hauptaufgabe eines Betriebssystems besteht in der Steuerung, Verwaltung und Verteilung der Betriebsmittel eines Rechnersystems auf die Benutzer. Zu den Betriebsmitteln gehören Prozessoren, Hauptspeicher, Dateien, Ein-/Ausgabegeräte und Netzwerkdienste und generell alle Ressourcen, die mit dem Rechnersystem verbunden sind. Zusätzlich stellt ein Betriebssystem die Benutzerschnittstelle zur Steuerung des Systems sowie Schutzmechanismen, Werkzeuge, Bibliotheken und Entwicklungswerkzeuge bereit. Das Ziel dieser Vorlesung ist die Vermittlung der Grundlagen, Prinzipien, Probleme, und Lösungen, kurz gesagt der Konzepte auf denen die klassischen und modernen Betriebssysteme basieren.
+</p>
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Klausur</b></font>
+<p>
+Am 8. Mai 2014 um 14:15 findet in Raum 1-236 die Betriebssysteme-Klausur im SS2014 statt.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Hilfsmittel während der Klausur</b></font>
+<p>
+Jeder Teilnehmer darf jeder Teilnehmer einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p> -->
+
+
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<!-- <font size="+3" color="#000000"><b>Skripte</b></font> -->
+<font size="+3" color="#000000"><b>Diese Seite ist veraltet!</b></font>
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../BTS14/index.html" style="text-decoration: none">Betriebssysteme im SS2014</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>
+
+<h2>Vorlesungstermine</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Datum</b></td>
+    <td><b>Uhrzeit</b></td>
+    <td><b>Veranstaltung</b>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td><b>Themen</b></td>
+  </tr>
+  <tr>
+    <td>14.10.2013&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>10:00-11:30&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Vorlesung&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Foliensatz 1 + 2</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>&nbsp;</td>
+    <td><i>Keine Übung heute</i></td>
+  </tr>-->
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>&nbsp;</td>
+    <td><i>Keine Übung heute</i></td>
+  </tr>-->
+  <tr>
+    <td>21.10.2013</td>
+    <td>10:00-11:30</td>
+    <td>Vorlesung</td>
+    <td>Foliensatz 3</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 1</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 1</td>
+  </tr>-->
+  <tr>
+    <td>28.10.2013</td>
+    <td>10:00-11:30</td>
+    <td>Vorlesung</td>
+    <td>Foliensatz 4</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 2</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 2</td>
+  </tr>-->
+  <tr>
+    <td>04.11.2013</td>
+    <td>10:00-11:30</td>
+    <td>Vorlesung</td>
+    <td>Foliensatz 5</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 3</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 3</td>
+  </tr>-->
+  <tr>
+    <td>11.11.2013</td>
+    <td>10:00-11:30</td>
+    <td>Vorlesung</td>
+    <td>Foliensatz 6</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 4</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 4</td>
+  </tr>-->
+  <tr>
+    <td>18.11.2013</td>
+    <td>10:00-11:30</td>
+    <td>Vorlesung</td>
+    <td>Foliensatz 6 + 7</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 5</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 5</td>
+  </tr>-->
+  <tr>
+    <td>25.11.2013</td>
+    <td>10:00-11:30</td>
+    <td>Vorlesung</td>
+    <td>Foliensatz 7</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 6</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 6</td>
+  </tr>-->
+  <tr>
+    <td>02.12.2013</td>
+    <td>10:00-11:30</td>
+    <td>Vorlesung</td>
+    <td>Foliensatz 8</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 7</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 7</td>
+  </tr>-->
+  <tr>
+    <td>09.12.2013</td>
+    <td>10:00-11:30</td>
+    <td>Vorlesung</td>
+    <td>Foliensatz 8 + 9</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 8</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 8</td>
+  </tr>-->
+  <tr>
+    <td>16.12.2013</td>
+    <td>10:00-11:30</td>
+    <td>Vorlesung</td>
+    <td>Foliensatz 9</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 9</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 9</td>
+  </tr>-->
+  <tr>
+    <td>23.12.2013</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Vorlesungsfreie Zeit (Weihnachten)</i></td>
+  </tr>
+  <tr>
+    <td>30.01.2014</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Vorlesungsfreie Zeit (Weihnachten)</i></td>
+  </tr>
+  <tr>
+    <td>06.01.2014</td>
+    <td>10:00-11:30</td>
+    <td>Vorlesung</td>
+    <td>Foliensatz 10</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 10</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 10</td>
+  </tr>-->
+  <tr>
+    <td>13.01.2014</td>
+    <td>10:00-11:30</td>
+    <td>Vorlesung</td>
+    <td>Foliensatz 11</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 11</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 11</td>
+  </tr>-->
+  <tr>
+    <td>20.01.2014</td>
+    <td>10:00-11:30</td>
+    <td>Vorlesung</td>
+    <td>Foliensatz 11</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 12</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 12</td>
+  </tr>-->
+  <tr>
+    <td>27.01.2014</td>
+    <td>10:00-11:30</td>
+    <td>Vorlesung</td>
+    <td>Wiederholung der Inhalte von Foliensatz 1-12</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 13</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>Übung</td>
+    <td>Besprechung von Übungsblatt 13</td>
+  </tr>-->
+  <tr>
+    <td>14.02.2014</td>
+    <td>17:30-19:00</td>
+    <td>Klausur</td>
+    <td>Inhalte von Foliensatz 1-12</td>
+  </tr>
+</table>
+
+
+
+
+<h2>Vorlesungsunterlagen</h2>
+
+<!--<p><font color="#FF0000"><b>Es ist ratsam, die Präsentationsfolien der Vorlesung erst nach der Veranstaltung auszudrucken, weil Änderungen nicht ausgeschlossen werden können.</b></font></p>-->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>Foliensatz&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Organisatorisches, Literatur</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;2</td>
+    <td>Generationen von Computersystemen und Betriebssystemen</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;3</td>
+    <td>Klassifikationen, Betriebsarten, Architekturen</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;4</td>
+    <td>Von-Neumann-Architektur, Hardware-Komponenten eines Computers, Speicher, Speicherhierarchie, Ersetzungsstrategien</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;5</td>
+    <td>Festplatten, Solid State Drives, RAID</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;6</td>
+    <td>Ein-/Ausgabegeräte, Speicheradressierung, Speicherverwaltung, virtueller Speicher</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;7</td>
+    <td>Dateien, Dateisysteme, Verzeichnisse, Blockadressierung, Journaling, Extents, Defragmentierung</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;8</td>
+    <td>Systemaufrufe, Prozess, Prozesskontext, Zustands-Prozessmodelle, Prozessverwaltung, Prozesse erzeugen und löschen</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;9</td>
+    <td>Unterbrechungen, Dispatcher, Scheduling-Verfahren</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;10</td>
+    <td>Interprozesskommunikation, Synchronisation von Prozessen</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;11</td>
+    <td>Kommunikation von Prozessen, Kooperation von Prozessen</td>
+  </tr>
+</table>
+
+<h2>Lehrmaterial zu den praktischen Übungsaufgaben</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>Linux und Shell-Programmierung - Teil&nbsp;1</td>
+    <td>&nbsp;</td>
+    <td>Organisatorisches, Einführung, Hilfesystem, Verzeichnisse, Dateien</td>
+  </tr>
+  <tr>
+    <td>Linux und Shell-Programmierung - Teil&nbsp;2</td>
+    <td>&nbsp;</td>
+    <td>Systemverwaltung, Zugriffsrechte, Verweise, Dateien durchsuchen, Editoren, Prozesse</td>
+  </tr>
+  <tr>
+    <td>Linux und Shell-Programmierung - Teil&nbsp;3</td>
+    <td>&nbsp;</td>
+    <td>Datum und Uhrzeit, Ein-/Ausgaben umleiten, Zeichen zählen, Alias, Dateien suchen, Kommandos zeitsteuern</td>
+  </tr>
+  <tr>
+    <td>Linux und Shell-Programmierung - Teil&nbsp;4</td>
+    <td>&nbsp;</td>
+    <td>Ressourcen überwachen, Sortieren, Umgebungsvariablen, Textausgaben, Mustervergleiche, Texte auswerten</td>
+  </tr>
+  <tr>
+    <td>Linux und Shell-Programmierung - Teil&nbsp;5</td>
+    <td>&nbsp;</td>
+    <td>Grundlagen der Shell und von Shell-Skripten, Vergleichsoperationel, Kontrollstrukturen, Schleifen</td>
+  </tr>
+  <tr>
+    <td>Linux und Shell-Programmierung - Teil&nbsp;6</td>
+    <td>&nbsp;</td>
+    <td>Arithmetik auswerten, Funktionen, Funktionsbibliotheken, Auswahlmenüs</td>
+  </tr>
+</table>
+
+<!--<p>
+<b>Das Lehrmaterial zu den praktischen Übungsaufgaben ist <u>nicht</u> klausurrelevant.</b>
+</p>-->
+
+<h2>Übungsblätter</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Aufgaben</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td><b>Besprechung</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td><b>Themengebiete</b></td>
+  </tr>
+  <tr>
+    <td>Übungsblatt&nbsp;1</td>
+    <td>&nbsp;</td>
+    <td>21.10.2013</td>
+    <td>&nbsp;</td>
+    <td>Stapelbetrieb, Dialogbetrieb, Dateien und Verzeichnisse</td>
+  </tr>
+  <tr>
+    <td>Übungsblatt&nbsp;2</td>
+    <td>&nbsp;</td>
+    <td>28.10.2013</td>
+    <td>&nbsp;</td>
+    <td>Klassifikationen von Betriebssystemen, Struktur von Betriebssystemen, Zugriffsrechte</td>
+  </tr>
+    <td>Übungsblatt&nbsp;3</td>
+    <td>&nbsp;</td>
+    <td>04.11.2013</td>
+    <td>&nbsp;</td>
+    <td>Digitale Datenspeicher, Rechnerarchitektur, Cache-Schreibstrategien, Ersetzungsstrategien, Zugriffsrechte und Links, Wildcards und Filter</td>
+  </tr>
+  <tr>
+    <td>Übungsblatt&nbsp;4</td>
+    <td>&nbsp;</td>
+    <td>11.11.2013</td>
+    <td>&nbsp;</td>
+    <td>Festplatten, Solid State Drives, RAID, Zeichen zählen, Zeit und Datum, Aliase, Weiterleitung, Dateien suchen</td>
+  </tr>
+  <tr>
+    <td>Übungsblatt&nbsp;5</td>
+    <td>&nbsp;</td>
+    <td>18.11.2013</td>
+    <td>&nbsp;</td>
+    <td>Ein-/Ausgabegeräte, Speicherverwaltung, Buddy-Verfahren, Zeitgesteuerte Kommandoausführung, Sortieren, Umgebungsvariablen</td>
+  </tr>
+  <tr>
+    <td>Übungsblatt&nbsp;6</td>
+    <td>&nbsp;</td>
+    <td>25.11.2013</td>
+    <td>&nbsp;</td>
+    <td>Virtueller Speicher, Speicherverwaltung, Dateisysteme, Mustervergleiche und Auswertung</td>
+  </tr>
+  <tr>
+    <td>Übungsblatt&nbsp;7</td>
+    <td>&nbsp;</td>
+    <td>02.12.2013</td>
+    <td>&nbsp;</td>
+    <td>Dateisysteme, Zeitgesteuerte Kommandoausführung, Kontrollstrukturen, Archivierung</td>
+  </tr>
+  <tr>
+    <td>Übungsblatt&nbsp;8</td>
+    <td>&nbsp;</td>
+    <td>09.12.2013</td>
+    <td>&nbsp;</td>
+    <td>Systemaufrufe, Prozesse, Shell-Skripte</td>
+  </tr>
+  <tr>
+    <td>Übungsblatt&nbsp;9</td>
+    <td>&nbsp;</td>
+    <td>16.12.2013</td>
+    <td>&nbsp;</td>
+    <td>Prozesse, Shell-Skripte</td>
+  </tr>
+  <tr>
+    <td>Übungsblatt&nbsp;10</td>
+    <td>&nbsp;</td>
+    <td>06.01.2014</td>
+    <td>&nbsp;</td>
+    <td>Schedulingverfahren, Scheduling, Datenkompression</td>
+  </tr>
+  <tr>
+    <td>Übungsblatt&nbsp;11</td>
+    <td>&nbsp;</td>
+    <td>13.01.2014</td>
+    <td>&nbsp;</td>
+    <td>Interprozesskommunikation, Synchronisation, Datei-Browser</td>
+  </tr>
+  <tr>
+    <td>Übungsblatt&nbsp;12</td>
+    <td>&nbsp;</td>
+    <td>20.01.2014</td>
+    <td>&nbsp;</td>
+    <td>Kommunikation von Prozessen, Schleifen</td>
+  </tr>
+  <tr>
+    <td>Übungsblatt&nbsp;13</td>
+    <td>&nbsp;</td>
+    <td>27.01.2014</td>
+    <td>&nbsp;</td>
+    <td>Kooperation von Prozessen, Erzeuger/Verbraucher-Szenario, Semaphoren, Interprozesskommunikation</td>
+  </tr>
+</table>
+
+<p>
+<b>Die praktischen Übungsaufgaben zur Shell und Linux-Systemadministration sind <u>nicht</u> klausurrelevant.</b>
+</p>
+
+<h2>Klausur</h2>
+
+<!-- Die Klausur findet am 14.02.2014 von 17:30-19:00 Uhr in Raum 4/111+112 statt. -->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="Skript/BTS_Klausur_WS1314.pdf" style="text-decoration: none">Abschlussklausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(14.02.2014)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Bearbeitungszeit: 90 Minuten</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/BTS_Klausur_Musterloesung_WS1314.pdf" style="text-decoration: none">Musterlösung</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(14.02.2014)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="bts_klausur_WS1314.html" style="text-decoration: none">Ergebnis der Klausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<!-- <p> -->
+
+<!--Jeder Teilnehmer darf einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.-->
+
+<h2>Alte Klausuren</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Klausur</b></td>
+    <td>&nbsp;</td>
+    <td><b>Bearbeitungszeit</b></td>
+    <td>&nbsp;</td>
+    <td><b>Hochschule</b></td>
+    <td>&nbsp;</td>
+    <td><b>Musterlösung</b></td>
+  </tr>
+  <tr>
+    <td><a href="../BTM1213/Skript/BTS_Klausur_60_WS1213.pdf" style="text-decoration: none">WS1213</a></td>
+    <td>&nbsp;</td>
+    <td>60 Minuten</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+    <td>&nbsp;</td>
+    <td><a href="../BTM1213/Skript/BTS_Klausur_Musterloesung_60_WS1213.pdf" style="text-decoration: none">Musterlösung</a></td>
+  </tr>
+  <tr>
+    <td><a href="../BTS12/Skript/BTS_Klausur_SS2012.pdf" style="text-decoration: none">SS2012</a></td>
+    <td>&nbsp;</td>
+    <td>90 Minuten</td>
+    <td>&nbsp;</td>
+    <td>HS Darmstadt</td>
+    <td>&nbsp;</td>
+    <td><a href="../BTS12/Skript/BTS_Klausur_Musterloesung_SS2012.pdf" style="text-decoration: none">Musterlösung</a></td>
+  </tr>
+  <tr>
+    <td><a href="../BTS11/Skript/BTS_Klausur_SS2011.pdf" style="text-decoration: none">SS2011</a></td>
+    <td>&nbsp;</td>
+    <td>60 Minuten</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+    <td>&nbsp;</td>
+    <td><a href="../BTS11/Skript/BTS_Klausur_Loesung_SS2011.pdf" style="text-decoration: none">Musterlösung</a></td>
+  </tr>
+  <tr>
+    <td><a href="../SYS09/Skript/SYS_Klausur_SS2009.pdf" style="text-decoration: none">SS2009</a></td>
+    <td>&nbsp;</td>
+    <td>60 Minuten</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+    <td>&nbsp;</td>
+    <td><a href="../SYS09/Skript/SYS_Klausur_Loesung_SS2009.pdf" style="text-decoration: none">Musterlösung</a></td>
+  </tr>
+  <tr>
+    <td><a href="../SYS0809/Skript/SYS_Klausur_WS0809.pdf" style="text-decoration: none">WS0809</a></td>
+    <td>&nbsp;</td>
+    <td>60 Minuten</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+    <td>&nbsp;</td>
+    <td><a href="../SYS0809/Skript/SYS_Klausur_Loesung_WS0809.pdf" style="text-decoration: none">Musterlösung</a></td>
+  </tr>
+  <tr>
+    <td><a href="../SYS08/Skript/SYS_Klausur_SS2008.pdf" style="text-decoration: none">SS2008</a></td>
+    <td>&nbsp;</td>
+    <td>60 Minuten</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+    <td>&nbsp;</td>
+    <td><a href="../SYS08/Skript/SYS_Klausur_Loesung_SS2008.pdf" style="text-decoration: none">Musterlösung</a></td>
+  </tr>
+  <tr>
+    <td><a href="../SYS0708/Skript/SYS_Klausur_WS0708.pdf" style="text-decoration: none">WS0708</a></td>
+    <td>&nbsp;</td>
+    <td>60 Minuten</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+    <td>&nbsp;</td>
+    <td><a href="../SYS0708/Skript/SYS_Klausur_Loesung_WS0708.pdf" style="text-decoration: none">Musterlösung</a></td>
+  </tr>
+  <tr>
+    <td><a href="../BTS07/Skript/BTS_Klausur_SS2007.pdf" style="text-decoration: none">SS2007</a></td>
+    <td>&nbsp;</td>
+    <td>70 Minuten</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+    <td>&nbsp;</td>
+    <td><a href="../BTS07/Skript/BTS_Klausur_Loesung_SS2007.pdf" style="text-decoration: none">Musterlösung</a></td>
+  </tr>
+</table>
+
+<h2>Vorlesungsevaluation</h2>
+
+<!-- Der Termin der Vorlesungsevaluierung steht noch nicht fest -->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/Evaluation_BTS_WS1314_Baun_0.3.4.pdf" style="text-decoration: none">Ergebnis</a> der Vorlesungsevaluation
+    </td>
+  </tr>
+</table>
+
+<h2>Wahre Kunstwerke</h2>
+
+<p>Als Hilfsmittel durften die Studenten ein selbständig vorbereitetes DIN-A4-Blatt mit in die Klausur mitnehmen. Nur und handschriftlich beschriebenes Originale waren zugelassen und keine Kopien. Diese Seite enthält eine Auswahl der Blätter. Einige sind wahre Kunstwerke.</p>
+
+<!-- <p>As auxiliary material, the students were allowed to use a self prepared, single sided DIN-A4 sheet in the exam. Only handwritten originals were allowed, but no copies. This page contains a selection of the sheets. Some of them are true works of art.</p> -->
+
+<a href="Klausurzettel/betriebssysteme_blatt_SS2014_0001.jpg" style="text-decoration: none"><img src="Klausurzettel/betriebssysteme_blatt_SS2014_0001_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/betriebssysteme_blatt_SS2014_0002.jpg" style="text-decoration: none"><img src="Klausurzettel/betriebssysteme_blatt_SS2014_0002_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+<h2>Kontakt</h2>
+
+<p>Zu erreichen bin ich am besten per E-Mail: <a href="mailto:christianbaun@fb2.fh-frankfurt.de" style="text-decoration: none">christianbaun@fb2.fh-frankfurt.de</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:christianbaun@fb2.fh-frankfurt.de" style="text-decoration: none">Prof. Dr. Christian Baun</a><br></i>
+      <i><a href="https://www.fh-frankfurt.de" style="text-decoration: none">Fachhochschule Frankfurt am Main</a><br></i>
+      <i><a href="https://www.fh-frankfurt.de/fachbereiche/fb2.html" style="text-decoration: none">FB 2:
+Informatik und Ingenieurwissenschaften</a><br></i>
+      <i>Stand: 18.4.2014</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      <a href="https://www.fh-frankfurt.de"><img src="Bilder/Logo-FH-FFM.png" alt="zur Homepage der FH Frankfurt am Main" border="0" width="254" height="94" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

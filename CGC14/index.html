@@ -1,0 +1,764 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Cloud Computing, SS2014, FH-Frankfurt, Christian Baun">
+<meta name="author" content="Dr. Christian Baun">
+<meta name="keywords" content="Computer Networks, FH-Frankfurt, Frankfurt, SS2014, Computer Science, Prof. Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Cloud Computing Course, (SS2014)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite / Back to main page</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+
+<h2>Cloud Computing (SS2014)</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+<tr>
+<td valign="top"><img src="Bilder/978-3-642-20917-8.jpg" alt="Cloud Computing: Web-Based Dynamic IT Services" border="0" width="165" height="250" align="middle"></td>
+<td>&nbsp;</td>
+<td valign="top">
+<p>
+A distributed system consists of several independent computers that communicate with each other over a network. Different distributed system architectures exist in the computer science. The most popular architecture is the Client-Server model. But especially in the parallel computing field, exist among others, Cluster Computing and Cloud Computing.
+</p>
+<p>
+Cloud Computing implies scalable services and the consolidation of compute and storage resources in large-scale resource centers. This consolidation offers the opportunity to redistribute resources, which have been used so far to keep the own resources running. At the same time, the users of a Cloud infrastructure services have the freedom to use their desired operating systems, programming languages ​​and applications.
+</p>
+<p>
+In this course, the fundamentals of Cloud Computing and related technologies are discussed. Practical exercises are an important part of this course because they are essential for thee understanding of these technologies. 
+</p>
+<p>
+The course (lectures, exercises and exam) is held in English language.
+</p>
+<p>
+Parts of the slide sets are based on the book <b>Cloud Computing: Web-Based Dynamic IT Services</b>, which was published in 2011 by Springer. ISBN: 978-3-642-20916-1
+</p>
+</td>
+</tr>
+</table>
+
+
+<!-- <center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Review of the answer sheets of the cloud computing exam</b></font> 
+<p>
+The answer sheets of the cloud computing exam can be reviewed tomorrow at 12:00 in my office 1-216.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+
+
+<!-- <center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>No course and lecture session on January 30th 2014 !!!</b></font> 
+<p>
+The course and exercises session on January 30th 2014 must be cancelled by reason of illness. For exam preparation please repeat all 14 exercise sheets. If you have questions, please send me an email.
+</p>
+</td>
+</tr>
+</table>
+</center>
+-->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Exercise Sheets !!!</b></font> 
+<p>
+Please use the exercise sheets from SS2014 and NOT the exercise sheets from WS1314 !!!
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--   <p></p>   -->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">-->
+<!-- <font size="+3" color="#000000"><b>Slide Sets</b></font>  -->
+<!--<p>
+The complete course (lectures, exercises and exam) will be held in English language. All slides are available in English and in German language. The content of the English and German slides is identical, but please use the English slides for the exam preparation to become familiar with the technical terms.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!-- <p></p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Slide Sets</b></font>
+<p>
+Please only print out slides sets of lectures which have already ended!
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Auxiliary Material during the Exam</b></font>
+<p>
+Each participant is allowed to use a <u>calculator</u> and to bring a <u>self prepared and handwritten</u> DIN-A4 sheet whose content is free into the exam. Attention: Only <u>a single side</u> of the DIN-A4 sheet is allowed to be used! Only handwritten originals are allowed but no copies.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p></p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Hilfsmittel während der Klausur</b></font>
+<p>
+Jeder Teilnehmer darf jeder Teilnehmer einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p></p> -->
+
+
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<!-- <font size="+3" color="#000000"><b>Skripte</b></font> -->
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../CGC1617/index.html" style="text-decoration: none">Cloud Computing im WS1617</a>.
+</p>
+<p>
+Updated and improved lecture materials can be found on the web page of the course <a href="../CGC1617/index.html" style="text-decoration: none">Cloud Computing in WS1617</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>
+
+<h2>Schedule of the Course</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Date</b></td>
+    <td><b>Time</b></td>
+    <td><b>Room</b></td>
+    <td><b>Event</b></td>
+    <td><b>Topics</b></td>
+  </tr>
+  <tr>
+    <td>27.03.2014&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>10:00-11:30&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>1-234&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Lecture&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Slide set 1 + 2</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>1-236</td>
+    <td>Lecture</td>
+    <td>Slide set 2</td>
+<!--     <td><i>No exercise today</i></td> -->
+  </tr>
+  <tr>
+    <td>03.04.2014</td>
+<!--    <td>09:00-10:00</td>
+    <td>1-236</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>-->
+<!--     <td>03.04.2014</td> -->
+<!--     <td>&nbsp;</td> -->
+    <td>10:00-11:30</td>
+    <td>1-234</td>
+    <td>Lecture</td>
+    <td>Slide set 3</td>
+  </tr>
+  <tr>
+    <td>10.04.2014</td>
+<!--    <td>09:00-10:00</td>
+    <td>1-236</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>-->
+    <td>10:00-11:30</td>
+    <td>1-234</td>
+    <td>Lecture</td>
+    <td>Slide set 3</td>
+  </tr>
+  <tr>
+    <td>17.04.2014</td>
+    <td>09:00-10:00</td>
+    <td>1-236</td>
+    <td>Lecture</td>
+    <td>Slide set 4</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>10:00-11:30</td>
+    <td>1-234</td>
+    <td>Lecture</td>
+    <td>Slide set 4</td>
+  </tr>
+  <tr>
+    <td>24.04.2014</td>
+<!--    <td>09:00-10:00</td>
+    <td>1-236</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>-->
+    <td>10:00-11:30</td>
+    <td>1-234</td>
+    <td>Lecture</td>
+    <td>Slide set 4 + 5 + 6</td>
+  </tr>
+  <tr>
+    <td>01.05.2014</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Labor Day / Tag der Arbeit</i></td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Labor Day / Tag der Arbeit</i></td>
+  </tr>-->
+<!--  <tr>
+    <td>08.05.2014</td>
+    <td>09:00-10:00</td>
+    <td>1-236</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>-->
+  <tr>
+    <td>&nbsp;</td>
+    <td>10:00-11:30</td>
+    <td>1-234</td>
+    <td>Lecture</td>
+    <td>Slide set 6 + 7</td>
+  </tr>  
+<!--  <tr>
+    <td>15.05.2014</td>
+    <td>09:00-10:00</td>
+    <td>1-236</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>-->
+  <tr>
+    <td>&nbsp;</td>
+    <td>10:00-11:30</td>
+    <td>1-234</td>
+    <td>Lecture</td>
+    <td>Slide set 8</td>
+  </tr>  
+<!--  <tr>
+    <td>22.05.2014</td>
+    <td>09:00-10:00</td>
+    <td>1-236</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>-->
+  <tr>
+    <td>&nbsp;</td>
+    <td>10:00-11:30</td>
+    <td>1-234</td>
+    <td>Lecture</td>
+    <td>Slide set 9</td>
+  </tr> 
+  <tr>
+    <td>29.05.2014</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Ascension Day / Christi Himmelfahrt</i></td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Ascension Day / Christi Himmelfahrt</i></td>
+  </tr>-->
+<!--  <tr>
+    <td>05.06.2014</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i><font color="#FF0000">No class today</font></i></td>
+  </tr>-->
+<!--  <tr>
+    <td>12.06.2014</td>
+    <td>09:00-10:00</td>
+    <td>1-236</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>-->
+  <tr>
+    <td>&nbsp;</td>
+    <td>10:00-11:30</td>
+    <td>1-234</td>
+    <td>Lecture</td>
+    <td>Slide set 10</td>
+  </tr> 
+  <tr>
+    <td>19.06.2014</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Corpus Christi / Fronleichnam</i></td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Corpus Christi / Fronleichnam</i></td>
+  </tr>-->
+<!--  <tr>
+    <td>26.06.2014</td>
+    <td>09:00-10:00</td>
+    <td>1-236</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>-->
+  <tr>
+    <td>&nbsp;</td>
+    <td>10:00-11:30</td>
+    <td>1-234</td>
+    <td>Lecture</td>
+    <td>Slide set 11</td>
+  </tr>  
+<!--  <tr>
+    <td>03.07.2014</td>
+    <td>09:00-10:00</td>
+    <td>1-236</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>-->
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>10:00-11:30</td>
+    <td>1-234</td>
+    <td>Lecture</td>
+    <td>Repetition of the contents of slide set 1-11</td>
+  </tr> -->
+  <tr>
+    <td>15.07.2014</td>
+    <td>10:00-11:30</td>
+    <td>1-131</td>
+    <td>Exam</td>
+    <td>The exam covers all slide sets and all exercise sheets</td>
+  </tr>
+</table>
+
+
+
+<h2>Slides Sets</h2>
+
+<!--<p><font color="#FF0000"><b>Please only print out slides sets of lectures which have already ended!</b></font></p>-->
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Slide Sets</b></td>
+<!--     <td colspan="2"><b>Languages</b>&nbsp;</td> -->
+    <td><b>Topics</b></td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;1</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_slide_set_01_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 1 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_vorlesung_folien_01_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 1 in German language" border="0" width="16" height="12"></a></td> -->
+    <td>Organisational information, Client-Server</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;2</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_slide_set_02_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 2 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_vorlesung_folien_02_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 2 in German language" border="0" width="16" height="12"></a></td> -->
+    <td>Fundamentals, Laws and Limitations, Parallel Computers</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;3</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_slide_set_03_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 3 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_vorlesung_folien_03_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 3 in German language" border="0" width="16" height="12"></a></td> -->
+    <td>Cloud Computing, Services and Concepts, Opportunities and Risks</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;4</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_slide_set_04_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 4 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_vorlesung_folien_04_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 4 in German language" border="0" width="16" height="12"></a></td> -->
+    <td>Amazon Web Services (EC2, EBS, ELB), Google Compute Engine, HP Cloud Compute</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;5</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_slide_set_05_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 5 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_vorlesung_folien_05_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 5 in German language" border="0" width="16" height="12"></a></td> -->
+    <td>Amazon Web Services (S3) und Google Cloud Storage</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;6</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_slide_set_06_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 6 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_vorlesung_folien_06_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 6 in German language" border="0" width="16" height="12"></a></td> -->
+    <td>Platform Services (Google App Engine)</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;7</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_slide_set_07_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 7 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_vorlesung_folien_07_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 7 in German language" border="0" width="16" height="12"></a></td> -->
+    <td>Private Infrastructure Services (IaaS), Private Platform Services (PaaS)</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;8</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_slide_set_08_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 8 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_vorlesung_folien_08_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 8 in German language" border="0" width="16" height="12"></a></td> -->
+    <td>Cluster Computing</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;9&nbsp;&nbsp;&nbsp;</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_slide_set_09_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 9 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_vorlesung_folien_09_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 9 in German language" border="0" width="16" height="12"></a></td> -->
+    <td>MapReduce/Hadoop</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;10</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_slide_set_10_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 10 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_vorlesung_folien_10_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 10 in German language" border="0" width="16" height="12"></a></td> -->
+    <td>Web Services</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;11</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_slide_set_11_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 11 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/cloud_vorlesung_folien_11_SS2014.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 11 in German language" border="0" width="16" height="12"></a></td> -->
+    <td>Virtualization</td>
+  </tr>
+</table>
+
+<!-- <p> -->
+<!-- <b>Die Foliensätze 1 bis 12 sind klausurrelevant.</b><br> -->
+<!-- <b>Slide sets 1 to 12 are relevant for the exam.</b><br> -->
+<!-- <b>Die Foliensätze 13 bis 15 und die Sondervorlesungen sind nicht klausurrelevant.</b> -->
+<!-- <b>Slide set 13 is <u>not</u> relevant for the exam.</b> -->
+<!-- </p> -->
+
+
+<h2>Exercise Sheets</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Exercise&nbsp;sheets</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td><b>Topics</b></td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;1</td>
+    <td>&nbsp;</td>
+    <td>Different Technologies, Client-Server Scenarios, Types of Clients</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;2</td>
+    <td>&nbsp;</td>
+    <td>Amounts of Data - storing, transmitting and transporting Data</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;3</td>
+    <td>&nbsp;</td>
+  <td>Data Rate, Laws and Limitations, Parallel Computers</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;4</td>
+    <td>&nbsp;</td>
+  <td>Cloud Services, Service Categories and Offerings, Amazon Web Services, Virtual Desktop in the Cloud, Virtual Infrastructure Design Aspects</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;5</td>
+    <td>&nbsp;</td>
+    <td>Web Server with persistent Storage, High Throughput Cluster of virtual Web Servers</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;6</td>
+    <td>&nbsp;</td>
+    <td>Different Storage Solutions for a virtual High Throughput Cluster, Financial Aspects</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;7</td>
+    <td>&nbsp;</td>
+    <td>AWS Import/Export vs. Internet, Interacting with Storage Services, Different Cloud Services, Functioning of some Cloud Services</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;8</td>
+    <td>&nbsp;</td>
+    <td>Google App Engine, Sudoku Web Application for the App Engine</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;9</td>
+    <td>&nbsp;</td>
+    <td>Private Cloud Platform Services</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;10</td>
+    <td>&nbsp;</td>
+    <td>Cluster Computing, MPI Cluster, Approximate Pi via Monte Carlo</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;11</td>
+    <td>&nbsp;</td>
+    <td>MapReduce/Hadoop, PageRank, Hadoop Cluster</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;12</td>
+    <td>&nbsp;</td>
+    <td>Web Services, RESTful Web Services, Web Service Interaction</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;13</td>
+    <td>&nbsp;</td>
+    <td>Virtualization</td>
+  </tr>
+</table>
+
+<h2>Exam</h2>
+
+
+<!-- The date of the written examination is still unknown. -->
+
+<!-- The written exam will take place on Tuesday, February 11th 2014 in room 1/130. -->
+
+<!-- <p> -->
+
+<!--ach participant is allowed to use a <u>calculator</u> and to bring a <u>self prepared and handwritten</u> DIN-A4 sheet whose content is free  into the exam. Attention: Only <u>a single side</u> of the DIN-A4 sheet is allowed to be used! Only handwritten originals are allowed but no copies.-->
+
+<!-- <p> -->
+
+<!--Jeder Teilnehmer darf einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.-->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="cgc_klausur_SS2014.html" style="text-decoration: none">Result of the written examination</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<h2>Old Exams</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Exam</b></td>
+    <td>&nbsp;</td>
+    <td><b>Language</b></td>
+    <td>&nbsp;</td>
+    <td><b>Time limit</b></td>
+    <td>&nbsp;</td>
+    <td><b>University</b></td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><b>Sample solution</b></td> -->
+  </tr>
+  <tr>
+    <td><a href="../VAR1314/Skript/VAR_Klausur_WS1314.pdf" style="text-decoration: none">WS1314</a></td>
+    <td>&nbsp;</td>
+    <td>German</td>
+    <td>&nbsp;</td>
+    <td>60 minutes</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+  </tr>
+  <tr>
+    <td><a href="../CGC1314/Skript/CGC_Klausur_en_WS1314.pdf" style="text-decoration: none">WS1314</a></td>
+    <td>&nbsp;</td>
+    <td>English</td>
+    <td>&nbsp;</td>
+    <td>90 minutes</td>
+    <td>&nbsp;</td>
+    <td>FH Frankfurt am Main</td>
+  </tr>
+  <tr>
+    <td><a href="../CGC1112/Skript/CGC_Klausur_WS1112.pdf" style="text-decoration: none">WS1112</a></td>
+    <td>&nbsp;</td>
+    <td>German</td>
+    <td>&nbsp;</td>
+    <td>60 minutes</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+  </tr>
+  <tr>
+    <td><a href="../CGC11/Skript/CGC_Klausur_SS2011.pdf" style="text-decoration: none">SS2011</a></td>
+    <td>&nbsp;</td>
+    <td>German</td>
+    <td>&nbsp;</td>
+    <td>60 minutes</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+  </tr>
+  <tr>
+    <td><a href="../CGC1011/Skript/CGC_Klausur_WS1011.pdf" style="text-decoration: none">WS1011</a></td>
+    <td>&nbsp;</td>
+    <td>German</td>
+    <td>&nbsp;</td>
+    <td>60 minutes</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+  </tr>
+  <tr>
+    <td><a href="../CGC10/Skript/CGC_Klausur_SS2010.pdf" style="text-decoration: none">SS2010</a></td>
+    <td>&nbsp;</td>
+    <td>German</td>
+    <td>&nbsp;</td>
+    <td>60 minutes</td>
+    <td>&nbsp;</td>
+    <td>HS Mannheim</td>
+  </tr>
+</table>
+
+
+<!--<h2>Evaluation</h2>
+
+The date of the evaluation is still unknown.-->
+
+
+<h2>True Works of Art</h2>
+
+<p>As auxiliary material, the students were allowed to use a self prepared, single sided DIN-A4 sheet in the exam. Only handwritten originals were allowed, but no copies. This page contains a selection of the sheets. Some of them are true works of art.</p>
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_001.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_001_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="138" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_002.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_002_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_003.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_003_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_004.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_004_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_005.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_005_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_006.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_006_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_007.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_007_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_008.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_008_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_009.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_009_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_010.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_010_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_011.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_011_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_012.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_012_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_013.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_013_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_014.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_014_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_015.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_015_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_016.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_016_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_017.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_017_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="138" height="100"></a>
+
+&nbsp;
+
+<a href="klausurzettel/cloud_computing_klausurzettel_SS2014_018.jpg" style="text-decoration: none"><img src="klausurzettel/cloud_computing_klausurzettel_SS2014_018_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+<h2>Contact</h2>
+
+<p>The best way to reach me is via email: <a href="mailto:christianbaun@fb2.fh-frankfurt.de" style="text-decoration: none">christianbaun@fb2.fh-frankfurt.de</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:christianbaun@fb2.fh-frankfurt.de" style="text-decoration: none">Prof. Dr. Christian Baun</a><br></i>
+      <i><a href="https://www.fh-frankfurt.de" style="text-decoration: none">Fachhochschule Frankfurt am Main</a><br></i>
+      <i><a href="https://www.fh-frankfurt.de/fachbereiche/fb2.html" style="text-decoration: none">Faculty of Computer Science and Engineering</a><br></i>
+      <i>Last updated: June 26th 2014</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      <a href="https://www.fh-frankfurt.de"><img src="Bilder/Logo-FH-FFM.png" alt="zur Homepage der FH Frankfurt am Main" border="0" width="254" height="94" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

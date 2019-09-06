@@ -1,0 +1,426 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Systemsoftware SYS SS2008, FH-Mannheim, HS-Mannheim, Christian Baun">
+<meta name="author" content="MSc Christian Baun">
+<meta name="keywords" content="BTS, HS-Mannheim, FH-Mannheim, Mannheim, Systemsoftware, SS2008, Sommersemester, Informatik, Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Vorlesung Systemsoftware (SS2008)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Systemsoftware (SS2008)</h2>
+
+<p>Der Begriff der Systemsoftware steht für die Software, die den Betrieb eines Computersystems ermöglicht. Die Systemsoftware bietet den Hardware-Komponenten des Computersystems die notwendigen Voraussetzungen, damit diese die Anwendungssoftware umsetzen können. Systemsoftware umfasst Betriebssysteme sowie systemnahe Software und Übersetzungsprogramme (Assembler und Compiler). Das Ziel dieser Vorlesung ist die Vermittlung der Grundlagen, Prinzipien, Probleme und Lösungen, kurz gesagt der Konzepte auf denen die klassischen und modernen Betriebssysteme und Compiler sowie die zugrunde liegende Hardware basieren.</p>
+
+<!-- <p>Die Vorlesung erfolgt in Zusammenarbeit mit Prof. Dr. Thomas Ihme. Die Vorlesungsunterlagen zu den Themen der Systemsoftware, die Prof. Ihme lehrt, finden Sie auf seiner Webseite.</p> -->
+
+<p>Der von mir gelehrte Teil von Systemsoftware umfasst schwerpunktmäßig in der Vorlesung den Bereich der Betriebssysteme und in der Übung den Bereich der Nutzung von Linux-/UNIX-Betriebssystemen sowie eine Einführung in die Systemprogrammierung.</p>
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td colspan="4"><b>Vorlesung</b></td>
+  </tr>
+  <tr>
+    <td>Dienstags&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>8:00 - 9:30 Uhr</td>
+    <td>Raum H0408&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>(Prof. Dr. Thomas Ihme)</td>
+  </tr>
+  <tr>
+    <td>Freitags</td>
+    <td>11:30 - 13:00 Uhr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Raum 01212</td>
+    <td>(Christian Baun)</td>
+  </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Übung</b></td>
+  </tr>
+  <tr>
+    <td>Montags</td>
+    <td>9:45 - 11:15 Uhr</td>
+    <td>Raum 01111</td>
+    <td>(Prof. Dr. Thomas Ihme)</td>
+  </tr>
+  <tr>
+    <td>Freitags</td>
+    <td>13:30 - 15:00 Uhr</td>
+    <td>Raum 01008</td>
+    <td>(Christian Baun)</td>
+  </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3"><b>Klausur</b></td>
+  </tr>
+  <tr>
+    <td>1.7.2008</td>
+    <td>10:45 - 12:45 Uhr</td>
+    <td colspan="2">Raum H0307</td>
+  </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3"><b>Klausureinsicht</b></td>
+  </tr>
+  <tr>
+    <td>4.7.2008</td>
+    <td>8:00 - 9:30 Uhr</td>
+    <td>Raum 01008</td>
+  </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+  </tr>
+</table>-->
+
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<!-- <font size="+3" color="#000000"><b>Skripte</b></font> -->
+<font size="+3" color="#000000"><b>Diese Seite ist veraltet!</b></font>
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../SYS0809/index.html" style="text-decoration: none">Systemsoftware im WS0809</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>
+
+<p></p>
+
+
+<!--<center>
+<table width="70%" border=2>
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Fotos der Exkursion</b></font>
+<p>
+Die <a href="album/index.html">Bilder</a> der Exkursion ins <a href="http://www.deutsches-museum.de/">Deutsche Museum</a> und ins <a href="http://www.computermuseum-muenchen.de/">Computermuseum München</a> vom 6.6.2008 sind online.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>! ! ! Exkursion ! ! !</b></font>
+<p>
+Am Freitag, den 6.6.2008, veranstaltete die Fakultät für Informatik im Rahmen der Vorlesung Systemsoftware (SYS) eine Exkursion nach München ins <a href="http://www.deutsches-museum.de/">Deutsche Museum</a> und ins <a href="http://www.computermuseum-muenchen.de/">Computermuseum München</a>. Allen Studenten, die die Vorlesung SYS hören, wird die Teilnahme an der Exkursion empfohlen.
+<p>
+Im Sekretariat des Fachbereichs liegt eine Anmeldeliste aus. Bei der Anmeldung sind 15 Euro zu zahlen. Im Bus erhält jeder 10 Euro zurück.
+<p>
+Die Abfahrt ist in Mannheim: 6:00 Uhr vor Gebäude 1.
+</td>
+</tr>
+</table>
+</center>
+-->
+
+<!--
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Skripte</b></font>
+<p>
+Es ist ratsam, die Folien der Vorlesung erst NACH der Veranstaltung auszudrucken, weil Änderungen nicht ausgeschlossen werden können.
+</td>
+</tr>
+</table>
+</center>
+-->
+
+<!--
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b></b></font>
+<p>
+Wegen Grippe müssen die 1.SYS-Vorlesung und 1.SYS-Übung am 14.3.2008 auf einen späteren Zeitpunkt verschoben werden.
+</td>
+</tr>
+</table>
+</center>
+-->
+
+<h2>Folien zur Vorlesung</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>1.Vorlesung&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>(28.03.2008)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Einführung, historische Entwicklung, Klassifikationen, Betriebsarten</td>
+  </tr>
+  <tr>
+    <td>2.Vorlesung</td>
+    <td>(04.04.2008)</td>
+    <td>Betriebsarten, Singletasking, Multitasking, Architekturen, Strukturierung mit Schalen</td>
+  </tr>
+  <tr>
+    <td>3.Vorlesung</td>
+    <td>(11.04.2008)</td>
+    <td>Von-Neumann-Architektur, Speicherhierarchie, Schreibstrategien, Datenverwaltung</td>
+  </tr>
+  <tr>
+    <td>4.Vorlesung</td>
+    <td>(18.04.2008)</td>
+    <td>RAID, Adressraum, Virtueller Speicher, MMU, Segment-/Seitenorientierter Speicher</td>
+  </tr>
+  <tr>
+    <td>5.Vorlesung</td>
+    <td>(25.04.2008)</td>
+    <td>Systemaufrufe, Prozess-Kontext, Prozesszustände, Prozessübergänge, Prozessmodelle</td>
+  </tr>
+  <tr>
+    <td>6.Vorlesung</td>
+    <td>(02.05.2008)</td>
+    <td>Interrupts, Exceptions, Prozesstabellen, Prozesskontrollblock, Zustandslisten, Threads</td>
+  </tr>
+  <tr>
+    <td>7.Vorlesung</td>
+    <td>(09.05.2008)</td>
+    <td>Prozesse erzeugen und ersetzen, Dispatcher, Scheduling-Kriterien, Scheduling-Strategien</td>
+  </tr>
+  <tr>
+    <td>8.Vorlesung</td>
+    <td>(23.05.2008)</td>
+    <td>Scheduling-Verfahren, Scheduling-Beispiele</td>
+  </tr>
+  <tr>
+    <td>9.Vorlesung</td>
+    <td>(30.05.2008)</td>
+    <td>Musterlösung der Übungsklausur</td>
+  </tr>
+  <tr>
+    <td>Exkursion</td>
+    <td>(06.06.2008)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>10.Vorlesung</td>
+    <td>(13.06.2008)</td>
+    <td>Kritische Abschnitte, Race Conditions, Synchronisation, Kommunikation, Kooperation</td>
+  </tr>
+  <tr>
+    <td>11.Vorlesung</td>
+    <td>(20.06.2008)</td>
+    <td>Dateien, Dateisysteme, Verzeichnisse, Journaling Dateisysteme, Defragmentierung</td>
+  </tr>
+  <tr>
+    <td>12.Vorlesung</td>
+    <td>(27.06.2008)</td>
+    <td>Fragestunde</td>
+  </tr>
+</table>
+
+<h2>Folien zur Übung</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>1.Übung&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>(28.03.2008)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td>2.Übung</td>
+    <td>(04.04.2008)</td>
+    <td><a href="Skript/SYS_Uebungsblatt_Uebung_02_SS2008.pdf" style="text-decoration: none">Übungsblatt zur 2.Übung</a></td>
+  </tr>
+  <tr>
+    <td>3.Übung</td>
+    <td>(11.04.2008)</td>
+    <td><a href="Skript/SYS_Uebungsblatt_Uebung_03_SS2008.pdf" style="text-decoration: none">Übungsblatt zur 3.Übung</a></td>
+  </tr>
+  <tr>
+    <td>4.Übung</td>
+    <td>(18.04.2008)</td>
+    <td><a href="Skript/SYS_Uebungsblatt_Uebung_04_SS2008.pdf" style="text-decoration: none">Übungsblatt zur 4.Übung</a></td>
+  </tr>
+  <tr>
+    <td>5.Übung</td>
+    <td>(25.04.2008)</td>
+    <td><a href="Skript/SYS_Uebungsblatt_Uebung_05_SS2008.pdf" style="text-decoration: none">Übungsblatt zur 5.Übung</a></td>
+  </tr>
+  <tr>
+    <td>6.Übung</td>
+    <td>(02.05.2008)</td>
+    <td><a href="Skript/SYS_Uebungsblatt_Uebung_06_SS2008.pdf" style="text-decoration: none">Übungsblatt zur 6.Übung</a></td>
+  </tr>
+  <tr>
+    <td>7.Übung</td>
+    <td>(09.05.2008)</td>
+    <td><a href="Skript/SYS_Uebungsblatt_Uebung_07_SS2008.pdf" style="text-decoration: none">Übungsblatt zur 7.Übung</a></td>
+  </tr>
+  <tr>
+    <td>8.Übung</td>
+    <td>(23.05.2008)</td>
+    <td><a href="Skript/SYS_Uebungsblatt_Uebung_08_SS2008.pdf" style="text-decoration: none">Übungsblatt zur 8.Übung</a></td>
+  </tr>
+  <tr>
+    <td>9.Übung</td>
+    <td>(30.05.2008)</td>
+    <td><a href="Skript/SYS_Uebungsblatt_Uebung_09_SS2008.pdf" style="text-decoration: none">Übungsblatt zur 9.Übung</a></td>
+  </tr>
+  <tr>
+    <td>10.Übung</td>
+    <td>(06.06.2008)</td>
+    <td><a href="Skript/SYS_Uebungsblatt_Uebung_10_SS2008.pdf" style="text-decoration: none">Übungsblatt zur 10.Übung</a></td>
+  </tr>
+  <tr>
+    <td>11.Übung</td>
+    <td>(13.06.2008)</td>
+    <td><a href="Skript/SYS_Uebungsblatt_Uebung_11_SS2008.pdf" style="text-decoration: none">Übungsblatt zur 11.Übung</a></td>
+  </tr>
+  <tr>
+    <td>12.Übung</td>
+    <td>(20.06.2008)</td>
+    <td><a href="Skript/SYS_Uebungsblatt_Uebung_12_SS2008.pdf" style="text-decoration: none">Übungsblatt zur 12.Übung</a></td>
+  </tr>
+  <tr>
+    <td>13.Übung</td>
+    <td>(27.06.2008)</td>
+    <td><a href="Skript/SYS_Uebungsblatt_Uebung_13_SS2008.pdf" style="text-decoration: none">Übungsblatt zur 13.Übung</a></td>
+  </tr>
+</table>
+
+<h2>Klausuren</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="Skript/SYS_Klausur_SS2008.pdf" style="text-decoration: none">Abschlussklausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(01.07.2008)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Bearbeitungszeit: 60 Minuten</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/SYS_Klausur_Loesung_SS2008.pdf" style="text-decoration: none">Lösungsvorschlag</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(01.07.2008)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Lösungsvorschlag zu Abschlussklausur</td>
+  </tr>
+  <tr>
+    <td><a href="sys_klausur_SS2008.html" style="text-decoration: none">Ergebnis der Klausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/Testklausur_SYS_SS2008.pdf" style="text-decoration: none">Übungsklausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(30.05.2008)</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/SYS_SS2008_Zusatzaufgabe.pdf" style="text-decoration: none">Zusatzaufgabe</a> zur Übungsklausur</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(11.06.2008)</td>
+  </tr>
+</table>
+
+<h2>Vorlesungsevaluierung</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/Evaluation_SYS_SS2008_Baun_0.3.3.pdf" style="text-decoration: none">Ergebnis</a> der Vorlesungsevaluierung
+    </td>
+  </tr>
+</table>
+
+<h2>Exkursion</h2>
+
+<p>Am 6.6.2008 veranstaltete die Fakultät für Informatik im Rahmen der Vorlesung Systemsoftware (SYS) eine Exkursion nach München in das <a href="http://www.deutsches-museum.de/">Deutsche Museum</a>, das mit ca. 28.000 ausgestellten Objekten aus rund 50 Bereichen der Naturwissenschaften und der Technik das größte naturwissenschaftlich-technische Museum der Welt ist. In der Informatik-Abteilung des Museums sind unter anderem ein Nachbau der Z3 sowie der originale Z4 des Computerpioniers Konrad Zuse präsentiert. Der Z3 gilt als erste vollständig programmierbare Rechenmaschine der Welt. Das Deutsche Museum verfügt auch über eine große Anzahl an mechanischen Rechenmaschinen, Tabelliermaschinen und eine Cray-1 S/1000.</p>
+
+<p>Im Anschluss folgte ein Besuch der Großrechner-Sammlung des <a href="http://www.computermuseum-muenchen.de/">Computermuseum München</a>. Während zweier Führungen durch die beeindruckende Sammlung wurde die Entwicklung und Arbeitsweise der Großrechner von den 50er Jahren bis heute anschaulich erklärt und mit Hilfe verschiedener Großrechner von Cray, CData, SGI, SUN und NEC demonstriert.</p>
+
+<p>Die Bilder der Exkursion befinden sich <a href="../Exkursion_SS2008/index.html">hier</a>.</p>
+
+<!--<h2>Reference Cards</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="../SYS0708/Reference_cards/Bash_Quick_Reference.pdf" style="text-decoration: none">Bash Reference (Arnold Robbins)</a></td>
+  </tr>
+  <tr>
+    <td><a href="../SYS0708/Reference_cards/The_One_Page_Linux_Manual.pdf" style="text-decoration: none">The One Page Linux Manual</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="../SYS0708/Reference_cards/UNIX_commands_reference_card.pdf" style="text-decoration: none">UNIX Commands Reference Card</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="../SYS0708/Reference_cards/LINUX_System_Call_Quick_Reference.pdf" style="text-decoration: none">LINUX System Call Quick Reference (Jialong He)</a></td>
+  </tr>
+  <tr>
+    <td><a href="../SYS0708/Reference_cards/Emacs_21_Reference.pdf" style="text-decoration: none">GNU Emacs 21 Reference Card</a></td>
+  </tr>
+  <tr>
+    <td><a href="../SYS0708/Reference_cards/joe_reference_card.pdf" style="text-decoration: none">JOE Reference Card</a></td>
+  </tr>
+  <tr>
+    <td><a href="../SYS0708/Reference_cards/vi_Quick_Reference.pdf" style="text-decoration: none">Vi Quick Reference</a></td>
+  </tr>
+  <tr>
+    <td><a href="../SYS0708/Reference_cards/vi_Reference_Card.pdf" style="text-decoration: none">Vi Reference Card (Donald J. Binder)</a></td>
+  </tr>
+  <tr>
+    <td><a href="../SYS0708/Reference_cards/VIM_Quick_Reference_Card.pdf" style="text-decoration: none">VIM Quick Reference Card (Laurent Gregoire)</a></td>
+  </tr>
+  <tr>
+    <td><a href="../SYS0708/Reference_cards/vi_Reference_Card_HP.pdf" style="text-decoration: none">Vi Reference Card (HP)</a></td>
+  </tr>
+  <tr>
+    <td><a href="../SYS0708/Reference_cards/XEmacs_21_Reference.pdf" style="text-decoration: none">XEmacs Reference Card (für Version 21)</a></td>
+  </tr>
+</table>-->
+
+<h2>Kontakt</h2>
+<p>Zu erreichen bin ich am besten per E-Mail: <a href="mailto:cray@unix-ag.uni-kl.de">cray@unix-ag.uni-kl.de</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:cray@unix-ag.uni-kl.de">M.Sc. Christian Baun</a><br></i>
+      <i>Hochschule Mannheim<br></i>
+      <i>Fakultät für Informatik<br></i>
+      <i>Stand: 8.7.2008</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      <a href="http://www.hs-mannheim.de/"><img src="Bilder/HS-Mannheim-Logo-weiss.gif" alt="zur Homepage der HS Mannheim" border="0" width="195" height="60" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

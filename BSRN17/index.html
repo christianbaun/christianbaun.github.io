@@ -1,0 +1,911 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Betriebssysteme, Operating Systems, SS2017, FH-Frankfurt, Prof. Dr. Christian Baun">
+<meta name="author" content="Prof. Dr. Christian Baun">
+<meta name="keywords" content="Betriebssysteme, Operating Systems, FH-Frankfurt, Frankfurt, SS2017, Sommersemester, Computer Science, Prof. Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Betriebssysteme und Rechnernetze (SS2017)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Betriebssysteme und Rechnernetze (SS2017)</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+<tr>
+<td>
+<img src="Bilder/computernetze_buch_auflage3_cover_ganzklein.png" alt="Computernetze kompakt. Springer Vieweg (2015). 3.Auflage. ISBN: 978-3-662-46931-6" border="1" width="100" height="150" align="middle">
+</td>
+<td>&nbsp;</td>
+<td valign="top" rowspan="2">
+<p>
+Die Hauptaufgabe eines Betriebssystems ist die Steuerung und Verwaltung der Betriebsmittel eines Rechnersystems sowie die Verteilung dieser Ressourcen an die Benutzer. Zu den Betriebsmitteln gehören Prozessoren, Hauptspeicher, Dateien, Ein-/Ausgabegeräte und Netzwerkdienste und generell alle Ressourcen, die mit dem Rechnersystem verbunden sind. Zusätzlich stellt ein Betriebssystem die Benutzerschnittstelle zur Steuerung des Systems sowie Schutzmechanismen, Werkzeuge, Bibliotheken und Entwicklungswerkzeuge bereit. 
+</p>
+<p>
+Rechnernetze ermöglichen den Zusammenschluss eigenständiger Computersysteme zur Kommunikation und gemeinsamen Nutzung von Ressourcen. Die Kommunikation in Computernetzen erfolgt über verschiedene Protokolle, die über verschiedene Schichtenmodelle (OSI-Referenzmodell, TCP/IP-Referenzmodell, hybrides Modell) strukturiert werden können. 
+</p>
+<p>
+Das Ziel dieser Vorlesung ist die Vermittlung der Grundlagen, Prinzipien, Probleme, und Lösungen, kurz gesagt der Konzepte auf denen die klassischen und modernen Betriebssysteme basieren. Zudem findet eine Einführung in die Grundlagen der Rechnernetze statt. Abschließend wird eine Auswahl bekannter Protokollen und ihre Klassifikation in die etablierten Referenzmodelle besprochen. Der Schwerpunkt des Themenbereichs Rechnernetze ist die Beschreibung des Transports von Daten durch die unterschiedlichen Protokollebenen und Übertragungsmedien.
+</p>
+<p>
+Die komplette Vorlesung (inkl. Übungen und Klausur) findet in deutscher Sprache statt.
+</p> 
+<p>
+Die Vorlesungsunterlagen zum Teil Betriebssysteme basieren auf der 1. Auflage des Buches <b>Betriebssysteme kompakt</b> (ISBN: 978-3-662-53142-6), das im April 2017 bei Springer Vieweg erschienen ist.
+</p>
+<p>
+Die Vorlesungsunterlagen zum Teil Rechnernetze basieren auf der 3. Auflage des Buches <b>Computernetze kompakt</b> (ISBN: 978-3-662-46931-6), das im September 2015 bei Springer Vieweg erschienen ist.
+</p>
+</td>
+</tr>
+
+<tr>
+<td>
+<img src="Bilder/betriebssysteme_buch_auflage1_cover_ganzklein.png" alt="Betriebssysteme kompakt. Springer Vieweg (2017). 1.Auflage. ISBN: 978-3-662-53142-6" border="1" width="100" height="150" align="middle">
+</td>
+<td>&nbsp;</td>
+</tr>
+
+</table>
+
+
+<p></p> 
+
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Diese Seite ist veraltet!</b></font>
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../BSRN18/index.html" style="text-decoration: none">Betriebssysteme und Rechnernetze im SS2018</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>
+
+
+<!--
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>!!! Wichtig !!!</b></font>
+<p>
+Das Modul Betriebssysteme und Netzwerke sieht nicht einfach eine Klausur als Prüfungsleistung vor, sondern eine <b>Portfolioprüfung</b>. Das Portfolio besteht aus zwei Teilen (sogenannten Werkstücken).
+</p>
+<p>
+<b>Werkstück A</b> ist eine praktische Übung, die Sie bis zum Ende des Semesters erfolgreich bearbeiten müssen. Dafür müssen Sie im Team die Lösung für eine Aufgabe implementieren und eine Dokumentation schreiben und abgeben. Zudem müssen Sie ihre Lösung präsentieren. 
+</p>
+<p>
+<b>Werkstück B</b> ist ein schriftliches Testat (also eine Klausur) über 60 Minuten. 
+</p>
+<p>
+Die Leistungen aus den Werkstücken werden für die Endnote wie folgt gewichtet: Werkstück A: 50 Prozent, Werkstück B: 50 Prozent. 
+</p>
+<p>
+Zum Bestehen reichen 50 Prozent der zu erreichbaren Punkte aus.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ffff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Werkstück A</b></font>
+<p>
+<a href="#WerkstueckA"><b>Hier</b></a> finden Sie Aufgaben für Werkstück A. Sie müssen nur <b><u>EINE</u></b> Aufgabe bearbeiten. Suchen Sie sich die Aufgabe aus, die Ihnen am meisten zusagt und bearbeiten Sie diese im Team. Beachten Sie die Aufgabenstellung und schauen Sie sich bei Fragen auch die angegebene Literatur an.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<p>
+The complete course (lectures, exercises and exam) will be held in English language. All slides are available in English and in German language. The content of the English and German slides is identical, but please use the English slides for the exam preparation to become familiar with the technical terms.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Vorlesungsunterlagen verbessert</b></font>
+<p>
+In Foliensatz 4 habe ich die Abschnitte zu Prozessverwaltung und Prozesskontext
+zusammengelegt und den Umfang durch das Streichen redundanter Informationen um ein paar Folien reduzieren können.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Vorlesungsunterlagen verbessert</b></font>
+<p>
+In Foliensatz 4 habe ich die Abschnitte zu Prozessverwaltung und Prozesskontext
+zusammengelegt und den Umfang durch das Streichen redundanter Informationen um ein paar Folien reduzieren können.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Klausur am 19.7.2017</b></font>
+<p>
+Da Werkstück A der Portfolioprüfung schon eine praktische Leistung ist, wird Werkstück B (die Klausur über 60 Minuten) im SS2017 keine praktischen Aufgaben enthalten. Konzentrieren Sie sich bei der Vorbereitung auf die Klausur ganz auf die theoretischen Aufgaben in den Übungsblättern.
+</p>
+<p>
+Jeder Teilnehmer darf jeder Teilnehmer einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.
+</p>
+<p>
+Klausurrelevant sind die Foliensätze 1-9 und Übungsblätter 1-9.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Präsentationen von Werkstück A</b></font>
+<p>
+Bislang haben erst 38 Teilnehmer aus 20 Gruppen Werkstück A präsentiert und die Ausarbeitung abgegeben!
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>!!! Neue Folie in Foliensatz 4 eingefügt !!!</b></font>
+<p>
+In Foliensatz 4 wurde nachträglich eine neue Folie eingefügt. Es handelt sich um Folie 12, die einen sehr interessanten Vorteil der LBA-Adressierung im Vergleich zur CHS-Adressierung erklärt.
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+<!-- <p>&nbsp;</p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Klausur am 2.8.2017</b></font>
+<p>
+Klausurrelevant sind die Foliensätze 1-11 und Übungsblätter 1-11.
+</p>
+<p>
+Jeder Teilnehmer darf einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!-- <p>&nbsp;</p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Keine Übungen am 24. Mai 2017</b></font>
+<p>
+Wegen des Studientags und der Demonstration zum Thema Urheberrecht, fallen am Mittwoch, den 24 Mai 2017 die Übungen zur Vorlesung BSRN aus. Um 10 Uhr wird Vizepräsident Schrader alle Anwesenden auf dem Campus begrüßen. Der Start für die eigentliche Demonstration und Zug zur Hauptwache wird 12 Uhr sein.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<p>
+Die Übungen fangen am Montag, den <b>18.4.2016</b> an.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>!!! Achtung !!!</b></font>
+<p>
+Die zweite Übungsstunde kann am <b>14.6.2015</b> leider nicht stattfinden und wird bei Bedarf nachgeholt.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Ablauf der Übungstermine</b></font>
+<p>
+Die Übung findet von <b>11:30 bis 13:00</b> und von <b>14:30 bis 16:00</b> jeweils in <b>Raum 1-129</b> statt.
+</p>
+<p>
+Die Übung findet an jedem Tag statt, an dem auch die Vorlesung stattfindet.
+</p>
+<p>
+Die Übungsblätter und Musterlösungen sind alle auf dieser Webseite online. Im Sinne einer intensiveren Betreuung helfe ich bei Fragen jeder Übungsgruppe direkt. Eine bloße Präsentation der Lösungen von meiner Seite, die eine rein passive Teilnahme an den Übungsstunden ermöglicht, gibt es bei mir nicht.
+</p>
+<p>
+Die Übungsteilname ist <u>keine</u> Voraussetzung zur Klausurteilnahme. Ihre Teilnahme wird auch nicht erfasst. Das Bearbeiten der Übungsblätter ist auch <u>keine</u> Voraussetzung zur Klausurteilnahme.
+</p>
+<p>
+Die Teilnahme an den Übungen und ganz besonders das Bearbeiten der Übungsblätter wird aber sehr empfohlen, denn eine bessere Vorbereitung für die Klausur gibt es nicht.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p> -->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<font size="+3" color="#000000"><b>This page is outdated!</b></font>
+<p>
+Updated and improved lecture materials can be found on the web page of the course <a href="../BTS15/index.html">Operating Systems in summer term 2015</a>.
+</p>
+<font size="+3" color="#000000"><b>Diese Seite ist veraltet!</b></font>
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../BTS15/index.html">Betriebssysteme im SS2015</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+<!-- <h2>Schedule of the Course</h2> -->
+<h2>Zeitplan für das Semester</h2>
+
+<!--<ul>
+<li>Übungstermin 1 ist immer Mittwochs von <b>10:00-11:30</b> in Raum 1-234.</li>
+<li>Übungstermin 2 ist immer Mittwochs von <b>11:45-13:15</b> in Raum 1-234.</li>
+<li>Übungstermin 3 ist immer Donnerstags von <b>10:00-11:30</b> in Raum 1-234.</li>
+<li>Übungstermin 4 ist immer Donnerstags von <b>14:15-15:45</b> in Raum 1-234.</li>
+<li>Übungstermin 5 ist immer Donnerstags von <b>16:00-17:30</b> in Raum 1-234.</li>
+</ul>-->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+<!--     <th class="abstand_links">Date</th> -->
+    <th class="abstand_links">Datum</th>
+<!--     <th class="abstand_links">Time</th> -->
+    <th class="abstand_links">Zeit</th>
+<!--     <th class="abstand_links">Room</th> -->
+    <th class="abstand_links">Raum</th>
+<!--     <th class="abstand_links">Event</th> -->
+    <th class="abstand_links">Veranstaltung</th>
+<!--     <th class="abstand_links">Topics</th> -->
+    <th class="abstand_links">Inhalte</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">13.04.2017</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 1</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">20.04.2017</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 2 (Folien 1-33)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">27.04.2017</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 2 (Folien 34-57)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">04.05.2017</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 3 (Folien 1-29)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">11.05.2017</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 3 (Folien 30-42) + Foliensatz 4 (Folien 1-15)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">18.05.2017</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 4 (Folien 16-44)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">25.05.2017</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Christi Himmelfahrt</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">01.06.2017</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 4 (Folien 45-51) + Foliensatz 5 (Folien 1-20)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">08.06.2017</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Foliensatz 5 (Folien 21-29) + Foliensatz 6 (Folien 1-23)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">15.06.2017</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Fronleichnam</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">22.06.2017</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Foliensatz 6 (Folien 24-52)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">29.06.2017</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Foliensatz 6 (Folien 53-63) + Foliensatz 7 (Folien 1-23)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">06.07.2017</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Foliensatz 7 (Folien 24-27) + Foliensatz 8 + Foliensatz 9 (Folien 1-17)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">13.07.2017</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Foliensatz 9 (Folien 18-37)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">19.07.2017</td>
+    <td class="abstand_links">15:00-16:00</td>
+    <td class="abstand_links">8-208/209/211</td>
+    <td class="abstand_links"><a href="#Klausuren">Klausur</a></td>
+    <td class="abstand_links">Die Klausur deckt alle besprochenen Foliensätze und Übungsblätter ab</td>
+  </tr>
+</table>
+
+
+
+<!-- <h2>Slide Sets</h2> -->
+<h2>Vorlesungsunterlagen</h2>
+
+
+<!-- <p><font color="#FF0000"><b>Please only print out slides sets of lectures which have already ended!</b></font></p>  -->
+
+<!-- <p><font color="#FF0000"><b>Es ist ratsam, Präsentationsfolien immer erst nach der Vorlesung auszudrucken, weil Änderungen nicht ausgeschlossen werden können!</b></font></p> -->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+<!--     <th>&nbsp</th> -->
+    <th class="abstand_links">Foliensätze</th>
+<!--     <th class="abstand_zentriert" colspan="2">Slide sets</th> -->
+    <th class="abstand_links">Übungsblätter</th>
+    <th class="abstand_zentriert">Lösungen</th>
+    <th class="abstand_links">Themen</th>
+<!--     <th class="abstand_links">Topics</th> -->
+  </tr>
+  <tr>
+    <td class="abstand_links">Foliensatz&nbsp;1</td>
+    <td class="abstand_links">Übungsblatt&nbsp;1</td> 
+    <td class="abstand_zentriert">Lösung</td>
+    <td class="abstand_links">Organisatorisches, Literatur, Generationen von Computersystemen und Betriebssystemen, Klassifikationen, Einzelprogrammbetrieb, Mehrprogrammbetrieb, Einzelbenutzerbetrieb, Mehrbenutzerbetrieb, Kernelarchitekturen</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Foliensatz&nbsp;2</td>
+    <td class="abstand_links">Übungsblatt&nbsp;2</td> 
+    <td class="abstand_zentriert">Lösung</td>
+    <td class="abstand_links">Speicher, Speicherhierarchie, Ersetzungsstrategien, Speicherverwaltung, Real Mode, Protected Mode, virtueller Speicher</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Foliensatz&nbsp;3</td>
+    <td class="abstand_links">Übungsblatt&nbsp;3</td> 
+    <td class="abstand_zentriert">Lösung</td>
+    <td class="abstand_links">Dateien, Dateisysteme, Verzeichnisse, Blockadressierung, Journaling, Extents, Defragmentierung</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Foliensatz&nbsp;4</td>
+    <td class="abstand_links">Übungsblatt&nbsp;4</td> 
+    <td class="abstand_zentriert">Lösung</td>
+    <td class="abstand_links">Prozesse, Prozesskontext, Zustands-Prozessmodelle, Prozessverwaltung, Prozesse erzeugen und löschen, Systemaufrufe</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Foliensatz&nbsp;5</td>
+    <td class="abstand_links">Übungsblatt&nbsp;5</td> 
+    <td class="abstand_zentriert">Lösung</td>
+    <td class="abstand_links">Unterbrechungen, Dispatcher, Scheduling-Verfahren</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Foliensatz&nbsp;6</td>
+    <td class="abstand_links">Übungsblatt&nbsp;6</td> 
+    <td class="abstand_zentriert">Lösung</td>
+    <td class="abstand_links">Prozessinteraktion, Synchronisation von Prozessen, Kommunikation zwischen Prozessen, Kooperation von Prozessen</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a href="Skript/shared_memory_beispiel.c">Beispiel zu gemeinsamen Speichersegmenten (Shared Memory Segments)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a href="Skript/message_queue_beispiel.c">Beispiel zu Nachrichtenwarteschlangen (Message Queues)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td> 
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a href="Skript/pipe_beispiel.c">Beispiel zu anonymen Pipes</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a href="Skript/fifo_beispiel.c">Beispiel zu benannten Pipes</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a href="Skript/tcp_socket_server.c">Beispiel zu TCP-Sockets (Server)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a href="Skript/tcp_socket_client.c">Beispiel zu TCP-Sockets (Client)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Foliensatz&nbsp;7</td>
+    <td class="abstand_links">Übungsblatt&nbsp;7</td> 
+    <td class="abstand_zentriert">Lösung</td>
+    <td class="abstand_links">Grundlagen der Computervernetzung, Protokolle und Referenzmodelle</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Foliensatz&nbsp;8</td>
+    <td class="abstand_links">Übungsblatt&nbsp;8</td> 
+    <td class="abstand_zentriert">Lösung</td>
+    <td class="abstand_links">Bitübertragungsschicht</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Foliensatz&nbsp;9</td>
+    <td class="abstand_links">Übungsblatt&nbsp;9</td> 
+    <td class="abstand_zentriert">Lösung</td>
+    <td class="abstand_links">Sicherungsschicht</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Foliensatz&nbsp;10</td>
+    <td class="abstand_links">Übungsblatt&nbsp;10</td> 
+    <td class="abstand_zentriert">Lösung</td>
+    <td class="abstand_links">Vermittlungsschicht</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Foliensatz&nbsp;11</td>
+    <td class="abstand_links">Übungsblatt&nbsp;11</td> 
+    <td class="abstand_zentriert">Lösung</td>
+    <td class="abstand_links">Transportschicht</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Foliensatz&nbsp;12</td>
+    <td class="abstand_zentriert">---</td> 
+    <td class="abstand_zentriert">---</td>
+    <td class="abstand_links">Anwendungsschicht</td>
+  </tr>
+</table>
+
+
+<!-- <h2 id="Klausuren">Exams</h2> -->
+<h2 id="WerkstueckA">Aufgaben für Werkstück A der Portfolioprüfung</h2>
+
+
+<!--<p>
+<font color="#ff0000"><b>Sie müssen nur <u>EINE</u> Aufgabe bis zum Ende des Semesters erfolgreich bearbeiten (inkl. schriftlicher Ausarbeitung, Abnahme und Präsentation)!</b></font>
+</p>-->
+
+
+<p>
+Eine <a href="Skript/BSRN_Paper_Vorlage_SS2017.zip" style="text-decoration: none">Vorlage</a> (<a href="Skript/BSRN_Paper_Vorlage_SS2017.zip" style="text-decoration: none">ZIP</a>, <a href="Skript/BSRN_Paper_Vorlage.pdf" style="text-decoration: none">PDF</a>) für die Ausarbeitung von Werkstück A ist verfügbar. Die Verwendung dieser Vorlage ist <u>nicht</u> zwingend erforderlich. Die Vorlage nutzt das LaTeX-Makropaket <tt>lncs</tt> (<a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines" style="text-decoration: none">Lecture Notes in Computer Science</a>) des Springer-Verlags.
+Alle großen Linux-Distributionen bringen LaTeX-Pakete mit. Unter Windows sind die LaTeX-Distributionen <a href="http://www.miktex.org" style="text-decoration: none">MiKTeX</a> und <a href="http://www.tug.org/texlive/" style="text-decoration: none">TeX Live</a> bekannt. Für Mac OS gibt es <a href="http://www.tug.org/mactex/" style="text-decoration: none">MacTeX</a>. LaTeX-Dokumente können mit jedem Editor bearbeitet werden.</p>
+
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_zentriert">Werkstück A</th>
+    <th class="abstand_zentriert">Maximale Gruppengröße</th>
+    <th class="abstand_links">Themengebiet</th>
+<!--     <th class="abstand_links">Topics</th> -->
+  </tr>
+  <tr>
+    <td class="abstand_links">Alternative 1</td>
+    <td class="abstand_zentriert">3 Personen</td>
+    <td class="abstand_links">Interprozesskommunikation (siehe Foliensatz 6)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Alternative 2</td>
+    <td class="abstand_zentriert">2 Personen</td>
+    <td class="abstand_links">Buddy-Speicherverwaltung (siehe Foliensatz 2)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Alternative 3</td>
+    <td class="abstand_zentriert">3 Personen</td>
+    <td class="abstand_links">Seiten-Ersetzungsstrategien (siehe Foliensatz 2)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Alternative 4</td>
+    <td class="abstand_zentriert">3 Personen</td>
+    <td class="abstand_links">Scheduling-Verfahren (siehe Foliensatz 5)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Alternative 5</td>
+    <td class="abstand_zentriert">1 Person</td>
+    <td class="abstand_links">Dijkstra-Algorithmus</td>
+  </tr>
+</table>
+
+<!-- <h2>Exercise Sheets</h2> -->
+<!-- <h2>Übungsblätter</h2> -->
+
+<!--<p>
+<font color="#ff0000"><b>Diese Übungsblätter und die zugehörigen Lösungen wiederholen die Inhalte der Foliensätze. Die Übungsblätter sollten Sie selbständig mit Hilfe der Foliensätze lösen können. Bei wenigen Aufgaben müssen Sie selbständig recherchieren. Werkstück B (die Klausur über 60 Minuten) wird zum allergrößten Teil aus Aufgaben aus den Übungsblätter bestehen.</b></font>
+</p>-->
+
+
+ <!--
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Übungsblätter</th>
+    <th class="abstand_links">Themen</th>
+    <th class="abstand_zentriert">Lösungen</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;1</td> 
+    <td class="abstand_links">Foliensatz 1</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;2</td> 
+    <td class="abstand_links">Foliensatz 2</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;3</td> 
+    <td class="abstand_links">Foliensatz 3</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;4</td> 
+    <td class="abstand_links">Foliensatz 4</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;5</td> 
+    <td class="abstand_links">Foliensatz 5</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;6</td> 
+    <td class="abstand_links">Foliensatz 6</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;7</td> 
+    <td class="abstand_links">Foliensatz 7</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;8</td> 
+    <td class="abstand_links">Foliensatz 8</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;9</td> 
+    <td class="abstand_links">Foliensatz 9</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;10</td> 
+    <td class="abstand_links">Foliensatz 10</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;11</td> 
+    <td class="abstand_links">Foliensatz 11</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="abstand_zentriert">Zu Foliensatz 12 gibt es kein Übungsblatt</td>  
+  </tr>
+</table>-->
+
+<!-- <h2>German-language Documentation about Linux System Administration and Shell Programming</h2> -->
+<h2>Lehrmaterial in deutscher Sprache zur Linux-Systemadministration und Shell-Programmierung</h2>
+
+<p>
+<b>Diese Dokumentation sind ein guter Einstieg, wenn Sie wenig oder gar kein Vorwissen zu den Themengebieten Linux-Systemadministration und Shell-Programmierung haben. Diese Dokumentation ist nicht klausurrelevant.</b>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_01_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;1</a></td>
+    <td class="abstand_links">Organisatorisches, Einführung, Hilfesystem, Verzeichnisse, Dateien</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_02_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;2</a></td>
+    <td class="abstand_links">Systemverwaltung, Zugriffsrechte, Verweise, Dateien durchsuchen, Editoren, Prozesse</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_03_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;3</a></td>
+    <td class="abstand_links">Datum und Uhrzeit, Ein-/Ausgaben umleiten, Zeichen zählen, Alias, Dateien suchen, Kommandos zeitsteuern</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_04_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;4</a></td>
+    <td class="abstand_links">Ressourcen überwachen, Sortieren, Umgebungsvariablen, Textausgaben, Mustervergleiche, Texte auswerten</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_05_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;5</a></td>
+    <td class="abstand_links">Grundlagen der Shell und von Shell-Skripten, Vergleichsoperationel, Kontrollstrukturen, Schleifen</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_06_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;6</a></td>
+    <td class="abstand_links">Arithmetik auswerten, Funktionen, Funktionsbibliotheken, Auswahlmenüs</td>
+  </tr>
+</table>
+
+<!--<p>
+<b>Das Lehrmaterial zu den praktischen Übungsaufgaben ist <u>nicht</u> klausurrelevant.</b>
+</p>-->
+
+
+<!--<p>
+<b>Die praktischen Übungsaufgaben zur Shell und Linux-Systemadministration sind <u>nicht</u> klausurrelevant.</b>
+</p>-->
+
+
+<!-- <h2>Exam Results</h2> -->
+
+
+<!-- The date of the written examination is still unknown. -->
+
+<!-- The written exam will take place on Tuesday, February 11th 2014 in room 1/130. -->
+
+<!-- <p> -->
+
+<!--ach participant is allowed to use a <u>calculator</u> and to bring a <u>self prepared and handwritten</u> DIN-A4 sheet whose content is free  into the exam. Attention: Only <u>a single side</u> of the DIN-A4 sheet is allowed to be used! Only handwritten originals are allowed but no copies.-->
+
+<!-- <p> -->
+
+<!--Jeder Teilnehmer darf einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.-->
+
+<!-- <h2>Klausur</h2> -->
+
+<!-- Die Klausur findet am 14.02.2014 von 17:30-19:00 Uhr in Raum 4/111+112 statt. -->
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="Skript/BTS_Klausur_WS1314.pdf">Abschlussklausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(14.02.2014)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Bearbeitungszeit: 90 Minuten</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/BTS_Klausur_Musterloesung_WS1314.pdf">Musterlösung</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(14.02.2014)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="bts_klausur_WS1314.html">Ergebnis der Klausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+</table>-->
+
+<!-- <p> -->
+
+<!--Jeder Teilnehmer darf seinen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.-->
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="bts_klausur_WS1415.html">Result of the written examination (WS1415)</a></td>
+  </tr>
+  <tr>
+    <td><a href="bts_klausur_SS2014.html">Result of the written examination (SS2014)</a></td>
+  </tr>
+</table>-->
+  
+<!-- <h2 id="Klausuren">Exams</h2> -->
+<h2 id="Klausuren">Klausuren</h2>
+
+
+<!--<p>
+<font color="#ff0000"><b>Da Werkstück A der Portfolioprüfung schon eine praktische Leistung ist, wird Werkstück B (die Klausur über 60 Minuten) im SS2017 keine praktischen Aufgaben enthalten. Konzentrieren Sie sich bei der Vorbereitung auf die Klausur ganz auf die theoretischen Aufgaben in den Übungsblättern.</b></font>
+</p>-->
+
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Semester</th>
+    <th class="abstand_zentriert" colspan="2">Klausuren</th>
+<!--     <th class="abstand_zentriert" colspan="2">Exams</th> -->
+    <th class="abstand_zentriert">Bearbeitungszeit</th>
+<!--     <th class="abstand_zentriert">Time limit</th> -->
+    <th class="abstand_links">Hochschule</th>
+<!--     <th class="abstand_links">University</th> -->
+    <th class="abstand_zentriert" colspan="2">Lösungen</th>
+<!--     <th class="abstand_zentriert" colspan="2">Sample solutions</th> -->
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2017</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BSRN17/Skript/BSRN_Klausur_de_SS2017.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2017 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BSRN17/Skript/BSRN_Klausur_de_Musterloesung_SS2017.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2017 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2016</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BSRN16/Skript/BSRN_Klausur_de_SS2016.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2016 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BSRN16/Skript/BSRN_Klausur_de_Musterloesung_SS2016.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2016 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+</table> 
+  
+
+
+<h2>Prüfungsergebnisse</h2> 
+
+ <table border="0" cellspacing="0" cellpadding="1">
+ <tr>
+    <td><a href="bsrn_klausur_SS2017.html" style="text-decoration: none">Ergebnis der Klausur (Werkstück B) im SS2017</a></td>
+  </tr>
+</table>
+
+
+<h2>Vorlesungsevaluation</h2>
+
+
+<a href="Skript/SoSe2017-BSRN-Evaluation.pdf" >Ergebnis</a> der Vorlesungsevaluation
+
+
+
+<!-- <h2>True Works of Art </h2> -->
+<!-- <h2>Wahre Kunstwerke</h2> -->
+
+<!-- <p>As auxiliary material, the students were allowed to use a self prepared, single sided DIN-A4 sheet in the exam. Only handwritten originals were allowed, but no copies. This page contains a selection of the sheets. Some of them are true works of art.</p> -->
+
+<!-- <p>Als Hilfsmittel durften jeder Teilnehmer ein selbständig vorbereitetes und handschriftlich einseitig beschriebenes DIN-A4-Blatt in die Klausur mitnehmen. Diese Seite enthält eine Auswahl der Blätter. Einige sind wahre Kunstwerke.</p> -->
+
+<!-- <a href="klausurzettel/bts_klausurzettel_ss2016_01.jpg" style="text-decoration: none"><img src="klausurzettel/bts_klausurzettel_ss2016_01_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="138" height="100"></a> -->
+
+<!-- &nbsp; -->
+
+
+
+
+<h2>Kontakt</h2>
+
+<p>Zu erreichen bin ich am besten per E-Mail: <a href="mailto:christianbaun@fb2.fra-uas.de">christianbaun@fb2.fra-uas.de</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:christianbaun@fb2.fra-uas.de">Prof. Dr. Christian Baun</a><br></i>
+      <i><a href="https://www.frankfurt-university.de/">Frankfurt University of Applied Sciences</a><br></i>
+      <i>(1971-2014: Fachhochschule Frankfurt am Main)<br></i>
+      <i><a href="https://www.frankfurt-university.de/fachbereiche/fb2.html">FB 2:
+Informatik und Ingenieurwissenschaften</a><br></i>
+      <i>Stand: 20.7.2017</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      <a href="https://www.frankfurt-university.de/"><img src="Bilder/fuas-logo.png" alt="zur Homepage der Frankfurt University of Applied Sciences" border="0" width="225" height="100" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

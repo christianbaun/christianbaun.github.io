@@ -1,0 +1,859 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Computer Networks, WS1314, FH-Frankfurt, Christian Baun">
+<meta name="author" content="Dr. Christian Baun">
+<meta name="keywords" content="Computer Networks, FH-Frankfurt, Frankfurt, WS1314, Wintersemester, Computer Science, Prof. Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Computer Networks Course, (WS1314)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite / Back to main page</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+
+<h2>Computer Networks (WS1314)</h2>
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+<tr>
+<td valign="top"><img src="Bilder/computernetze_buch_auflage2_cover_klein.jpg" alt="Computernetze kompakt Cover 2. Auflage" border="0" width="165" height="247" align="middle"></td>
+<td>&nbsp;</td>
+<td valign="top">
+<p>
+Computer networks allow to connect individual computers systems for communication and resource sharing. Communication via computer networks is realized via different protocols of different layers of reference models (OSI reference model, TCP/IP reference model, hybrid reference model). 
+</p>
+<p>
+At the beginning of the course, an introduction to the required fundamentals of the computer sciences and computer networks takes place. Next, the protocols and their classification into established reference models is discussed. The main focus of the course is to explain the way, the data is transmitted through the different protocol layers and via different transmission media.
+</p>
+<p>
+The course (lectures, exercises and exam) is held in English language. All slide sets and exercise sheets are available in English and in German language. The content of the English and German slide sets and exercise sheets is identical. A list of technical terms provides <a href="computernetze_fachbegriffe.html" style="text-decoration: none">this page</a>.
+</p> 
+<p>
+The slide sets used in winter term 2013/2014 are the basis for the second edition of the German-language book <b>Computernetze kompakt</b>, which was published in February 2014 by Springer Vieweg. ISBN: 978-3-642-41652-1
+</p>
+</td>
+</tr>
+</table>
+
+
+<p></p> 
+
+
+
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<!-- <font size="+3" color="#000000"><b>Skripte</b></font> -->
+<font size="+3" color="#000000"><b>This page is outdated!</b></font>
+<p>
+Updated and improved lecture materials can be found on the web page of the course <a href="../Netzwerke1415/index.html" style="text-decoration: none">Moderne Netzstrukturen in winter term 2014/2015</a>.
+</p>
+</p>
+<font size="+3" color="#000000"><b>Diese Seite ist veraltet!</b></font>
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../Netzwerke1415/index.html" style="text-decoration: none">Moderne Netzstrukturen im WS1415</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>
+
+<!--<h2>Book</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+<tr>
+<th rowspan="3" valign="top"><img src="Bilder/computernetze_buch_auflage2_cover_klein.jpg" alt="Computernetze kompakt Cover 2. Auflage" border="0" width="165" height="247" align="middle"></th>
+<td>&nbsp;</td>
+<td valign="top">
+The slide sets used in winter term 2013/2014 are the basis for the second edition of the German-language book <b>Computernetze kompakt</b>, which was published in February 2014 by Springer Vieweg. ISBN: 978-3-642-41652-1
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td valign="top">
+Die im WS1314 verwendeten Vorlesungsunterlagen sind die Grundlage für die 2. Auflage des Buches <b>Computernetze kompakt</b>, das im Februar 2014 bei Springer Vieweg erschienen ist. ISBN: 978-3-642-41652-1
+</td>
+</tr>
+</table>-->
+
+
+<!--
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Keine Vorlesung und Übung am 29. Januar 2014 !!!</b></font> 
+<p>
+Die Vorlesung und Übungen am 29. Januar 2014 müssen wegen Erkrankung leider entfallen. Zur Klausurvorbereitung wiederholen Sie bitte alle 14 Übungsblätter. Die Musterlösungen aller Übungsblätter sind online verfügbar. Bei Fragen senden Sie mir bitte eine Email. 
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--  <p></p>  -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Skripte</b></font>
+<p>
+Please only print out slides sets of lectures which have already ended!
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Auxiliary Material during the Exam</b></font>
+<p>
+Each participant is allowed to use a <u>calculator</u> and to bring a <u>self prepared and handwritten</u> DIN-A4 sheet whose content is free into the exam. Attention: Only <u>a single side</u> of the DIN-A4 sheet is allowed to be used! Only handwritten originals are allowed but no copies.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p></p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Hilfsmittel während der Klausur</b></font>
+<p>
+Jeder Teilnehmer darf jeder Teilnehmer einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p></p> -->
+
+
+<h2>Schedule of the course</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Date</th>
+    <th class="abstand_links">Time</th>
+    <th class="abstand_links">Event</th>
+    <th class="abstand_links">Topics</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">09.10.2013</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 1 + 2</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 2</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">14:15-15:45</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>No exercise today</i></td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">16.10.2013</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 2 + 3</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 1</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 1</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">23.10.2013</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 4</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 2</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 2</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">30.10.2013</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 4 + 5</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 3</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 3</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">06.11.2013</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 5</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 4</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 4</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">13.11.2013</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 6</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 5</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 5</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">20.11.2013</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 7</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 6</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 6</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">27.11.2013</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 7 + 8</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 7</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 7</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">04.12.2013</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 8 + 9</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 8</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 8</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">11.12.2013</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 9</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 9</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 9</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">18.12.2013</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 10</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 10</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 10</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">25.12.2013</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Christmas break</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">01.01.2014</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>New Year's Day</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">08.01.2014</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 10 + 11</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 11</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 11</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">15.01.2014</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 11</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 12</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 12</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">22.01.2014</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Slide set 12</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 13</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 13</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">29.01.2014</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Q&amp;A session</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">11:45-13:15</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 14</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">15:15-15:45</td>
+    <td class="abstand_links">Exercise</td>
+    <td class="abstand_links">Discussion of Exercise sheet 14</td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">14.02.2014</td>
+    <td class="abstand_links">10:00-11:30</td>
+    <td class="abstand_links">Exam</td>
+    <td class="abstand_links">The exam covers the slide sets 1-12</td>
+  </tr>
+</table>
+
+<!--<p><font color="#FF0000"><b>Please only print out slides sets of lectures which have already ended!</b></font></p>-->
+
+
+<h2>Slide Sets</h2>
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td class="abstand_links"><b>Slide sets</b></td>
+<!--     <td colspan="2"><b>Languages</b>&nbsp;</td> -->
+    <td class="abstand_links"><b>Topics</b></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide set 1</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/slides_computer_networks_lecture_01_WS1314_english.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 1 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_01_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 1 in German language" border="0" width="16" height="12"></a></td> -->
+<!--     <td>Organisatorisches, Grundlagen der Informatik</td> -->
+    <td class="abstand_links">Organisational information</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide set 2</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/slides_computer_networks_lecture_02_WS1314_english.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 2 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_02_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 2 in German language" border="0" width="16" height="12"></a></td> -->
+<!--     <td>Grundlagen der Computervernetzung</td> -->
+    <td class="abstand_links">Fundamentals of computer networks</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide set 3</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/slides_computer_networks_lecture_03_WS1314_english.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 3 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_03_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 3 in German language" border="0" width="16" height="12"></a></td> -->
+<!--     <td>Protokolle und Referenzmodelle</td> -->
+    <td class="abstand_links">Protocols and reference models</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide set 4</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/slides_computer_networks_lecture_04_WS1314_english.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 4 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_04_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 4 in German language" border="0" width="16" height="12"></a></td> -->
+<!--     <td>Bitübertragungsschicht (Teil 1)</td> -->
+    <td class="abstand_links">Physical layer (part 1)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide set 5</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/slides_computer_networks_lecture_05_WS1314_english.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 5 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_05_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 5 in German language" border="0" width="16" height="12"></a></td> -->
+<!--     <td>Bitübertragungsschicht (Teil 2)</td> -->
+    <td class="abstand_links">Physical layer (part 2)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide set 6</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/slides_computer_networks_lecture_06_WS1314_english.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 6 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_06_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 6 in German language" border="0" width="16" height="12"></a></td> -->
+<!--     <td>Sicherungsschicht (Teil 1)</td> -->
+    <td class="abstand_links">Data link layer (part 1)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide set 7</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/slides_computer_networks_lecture_07_WS1314_english.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 7 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_07_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 7 in German language" border="0" width="16" height="12"></a></td> -->
+<!--     <td>Sicherungsschicht (Teil 2)</td> -->
+    <td class="abstand_links">Data link layer (part 2)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide set 8</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/slides_computer_networks_lecture_08_WS1314_english.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 8 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_08_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 8 in German language" border="0" width="16" height="12"></a></td> -->
+<!--     <td>Sicherungsschicht (Teil 3)</td> -->
+    <td class="abstand_links">Data link layer (part 3)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide set 9</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/slides_computer_networks_lecture_09_WS1314_english.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 9 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_09_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 9 in German language" border="0" width="16" height="12"></a></td> -->
+<!--     <td>Vermittlungsschicht (Teil 1)</td> -->
+    <td class="abstand_links">Network layer (part 1)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide set 10</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/slides_computer_networks_lecture_10_WS1314_english.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 10 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_10_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 10 in German language" border="0" width="16" height="12"></a></td> -->
+<!--     <td>Vermittlungsschicht (Teil 2)</td> -->
+    <td class="abstand_links">Network layer (part 2)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide set 11</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/slides_computer_networks_lecture_11_WS1314_english.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 11 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_11_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 11 in German language" border="0" width="16" height="12"></a></td> -->
+<!--     <td>Transportschicht</td> -->
+    <td class="abstand_links">Transport layer</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Slide set 12</td>
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/slides_computer_networks_lecture_12_WS1314_english.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 12 in English language" border="0" width="16" height="12"></a></td> -->
+<!--     <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_12_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 12 in German language" border="0" width="16" height="12"></a></td> -->
+<!--     <td>Anwendungsschicht</td> -->
+    <td class="abstand_links">Application layer</td>
+  </tr>
+<!--  <tr>
+    <td>Slide set 13</td>
+    <td>&nbsp;</td>
+    <td><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_13_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 13 in German language" border="0" width="16" height="12"></a></td>
+    <td>Kryptologie (Grundbegriffe, Symmetrische Verfahren)</td>
+  <td>Cryptography (fundamentals, symmetric key cryptography)</td>
+  </tr>
+  <tr>
+    <td>Slide set 14</td>
+    <td>&nbsp;</td>
+    <td><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_14_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 14 in German language" border="0" width="16" height="12"></a></td>
+    <td>Kryptologie (Asymmetrische Verfahren, Schlüsselverteilung, Hashfunktionen)</td>
+    <td>Cryptography (asymmetric key cryptography, key exchange, hash functions)</td>
+  </tr>
+  <tr>
+    <td>Slide set 15</td>
+    <td>&nbsp;</td>
+    <td><a href="https://dl.dropboxusercontent.com/u/10971224/folien_netzwerke_vorlesung_15_WS1314.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 15 in German language" border="0" width="16" height="12"></a></td>
+    <td>Steganographie, Plagiatsfallen und Wasserzeichen</td>
+    <td>Steganography, copyright traps and digital watermarking</td>
+  </tr>-->
+</table>
+
+<!-- <p> -->
+<!-- <b>Die Foliensätze 1 bis 12 sind klausurrelevant.</b><br> -->
+<!-- <b>The slide sets 1 to 12 are relevant for the exam.</b><br> -->
+<!-- <b>Die Foliensätze 13 bis 15 und die Sondervorlesungen sind nicht klausurrelevant.</b> -->
+<!-- <b>The slide sets 13 to 15 are <u>not</u> relevant for the exam.</b> -->
+<!-- </p> -->
+
+
+<h2>Exercise Sheets</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td class="abstand_links"><b>Exercise&nbsp;sheets</b></td>
+<!--     <td>&nbsp;&nbsp;&nbsp;</td> -->
+<!--     <td class="abstand_links"><b>Solutions</b></td> -->
+<!--     <td>&nbsp;&nbsp;&nbsp;</td> -->
+    <td class="abstand_links"><b>Topics</b></td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_01_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;1</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;1</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_01_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Data Rate, Latency, Transmission Media, Transfer Time</td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_02_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;2</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;2</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_02_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Parallel and Serial Data Transmission, Storing and transmitting Data, Physical and Logical Topology, Network Topologies, Network Cables</td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_03_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;3</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;3</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_03_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Directional Dependence, Transfer Time, Bandwidth-Delay Product, Layers of Reference Models</td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_04_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;4</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;4</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_04_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Transmission Media, Shielding of Twisted Pair Cables, Repeaters and Hubs</td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_05_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;5</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;5</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_05_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Repeaters and Hubs, Encoding Data with Line Codes</td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_06_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;6</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;6</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_06_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Bridges and Switches, Collision Domain, Spanning Tree Protocol, Addressing in the Data Link Layer</td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_07_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;7</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;7</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_07_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Framing, Byte Stuffing, Bit Stuffing, Error Detection, Error Correction</td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_08_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;8</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;8</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_08_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Concepts of Flow Control, Sliding Windows</td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_09_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;9</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;9</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_09_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Media Access Control, Address Resolution Protocol</td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_10_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;10</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;10</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_10_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Routers, Layer-3-Switches, Collision Domain, Broadcast Domain, Gateways, Addressing in the Network Layer</td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_11_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;11</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;11</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_11_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Collision Domain, Broadcast Domain, Addressing in the Network Layer, Checksums in IP Packets, Fragmenting IP Packets</td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_12_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;12</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;12</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_12_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Forwarding and Path Calculation, Bellman-Ford Algorithm, Dijkstra's Algorithm, Internet Control Message Protocol, Devices in Computer Networks</td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_13_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;13</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;13</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_13_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Transport Protocols, Header and Payload, Transmission Control Protocol</td>
+  </tr>
+  <tr>
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_14_computer_networks_WS1314.pdf" style="text-decoration: none">Exercise&nbsp;sheet&nbsp;14</a></td> -->
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;14</td>
+<!--     <td>&nbsp;</td> -->
+<!--     <td><a href="https://dl.dropboxusercontent.com/u/10971224/exercise_sheet_14_computer_networks_solution_WS1314.pdf" style="text-decoration: none">Solution</a></td> -->
+<!--     <td>&nbsp;</td> -->
+    <td class="abstand_links">Reference Models, Protocols in Computer Networks</td>
+  </tr>
+</table>
+
+<h2>Exam</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td class="abstand_links"><a href="Skript/Netzwerke_Klausur_de_SS2014.pdf" style="text-decoration: none">Written examination (german)</a></td>
+    <td class="abstand_links">(May 16th 2014)</td>
+    <td class="abstand_links">Time limit: 90 minutes</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="Skript/Netzwerke_Klausur_en_SS2014.pdf" style="text-decoration: none">Written examination (english)</a></td>
+    <td class="abstand_links">(May 16th 2014)</td>
+    <td class="abstand_links">Time limit: 90 minutes</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="Skript/Netzwerke_Klausur_en_loesung_SS2014.pdf" style="text-decoration: none">Sample solution of the written examination (english)</a></td>
+    <td class="abstand_links">(May 16th 2014)</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="netzwerke_klausur_SS2014.html" style="text-decoration: none">Result of the written examination (SS2014)</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>  
+  <tr>
+    <td class="abstand_links"><a href="Skript/Netzwerke_Klausur_de_WS1314.pdf" style="text-decoration: none">Written examination (german)</a></td>
+    <td class="abstand_links">(February 14th 2014)</td>
+    <td class="abstand_links">Time limit: 90 minutes</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="Skript/Netzwerke_Klausur_en_WS1314.pdf" style="text-decoration: none">Written examination (english)</a></td>
+    <td class="abstand_links">(February 14th 2014)</td>
+    <td class="abstand_links">Time limit: 90 minutes</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="Skript/Netzwerke_Klausur_en_loesung_WS1314.pdf" style="text-decoration: none">Sample solution of the written examination (english)</a></td>
+    <td class="abstand_links">(February 14th 2014)</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="netzwerke_klausur_WS1314.html" style="text-decoration: none">Result of the written examination (WS1314)</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<!-- The written exam will take place on Friday, February 14th 2014 at 10:00 in room 4/8. -->
+
+<!-- <p> -->
+
+<!-- Each participant is allowed to use a <u>calculator</u> and to bring a <u>self prepared and handwritten</u> DIN-A4 sheet whose content is free  into the exam. Attention: Only <u>a single side</u> of the DIN-A4 sheet is allowed to be used! Only handwritten originals are allowed but no copies. -->
+
+<!-- <p> -->
+
+<!-- Jeder Teilnehmer darf einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien. -->
+
+<h2>Old Exams</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td class="abstand_links"><a href="../Netzwerke12/Skript/Netzwerke_Klausur_SS2012.pdf" style="text-decoration: none">SS2012</a></td>
+    <td class="abstand_links">Exam in German language</td>
+  </tr>
+</table>
+
+
+<h2>Evaluation</h2>
+
+<!-- The date of the evaluation is still unknown. -->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td class="abstand_links">
+      <a href="Skript/Evaluation_Netzwerke_WS1314_Baun_0.3.4.pdf" style="text-decoration: none">Result</a> of the evaluation
+    </td>
+  </tr>
+</table>
+
+
+<h2>True Works of Art</h2>
+
+<p>As auxiliary material, the students were allowed to use a self prepared, single sided DIN-A4 sheet in the exam. Only handwritten originals were allowed, but no copies. This page contains a selection of the sheets. Some of them are true works of art.</p>
+
+<a href="Klausurzettel/netzwerke_blatt_SS2014_0001.jpg" style="text-decoration: none"><img src="Klausurzettel/netzwerke_blatt_SS2014_0001_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="68" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/netzwerke_blatt_SS2014_0002.jpg" style="text-decoration: none"><img src="Klausurzettel/netzwerke_blatt_SS2014_0002_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="70" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/netzwerke_blatt_WS1314_0001.jpg" style="text-decoration: none"><img src="Klausurzettel/netzwerke_blatt_WS1314_0001_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="68" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/netzwerke_blatt_WS1314_0002.jpg" style="text-decoration: none"><img src="Klausurzettel/netzwerke_blatt_WS1314_0002_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="70" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/netzwerke_blatt_WS1314_0003.jpg" style="text-decoration: none"><img src="Klausurzettel/netzwerke_blatt_WS1314_0003_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="71" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/netzwerke_blatt_WS1314_0004.jpg" style="text-decoration: none"><img src="Klausurzettel/netzwerke_blatt_WS1314_0004_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="70" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/netzwerke_blatt_WS1314_0005.jpg" style="text-decoration: none"><img src="Klausurzettel/netzwerke_blatt_WS1314_0005_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="71" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/netzwerke_blatt_WS1314_0006.jpg" style="text-decoration: none"><img src="Klausurzettel/netzwerke_blatt_WS1314_0006_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="70" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/netzwerke_blatt_WS1314_0007.jpg" style="text-decoration: none"><img src="Klausurzettel/netzwerke_blatt_WS1314_0007_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="140" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/netzwerke_blatt_WS1314_0008.jpg" style="text-decoration: none"><img src="Klausurzettel/netzwerke_blatt_WS1314_0008_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="71" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/netzwerke_blatt_WS1314_0009.jpg" style="text-decoration: none"><img src="Klausurzettel/netzwerke_blatt_WS1314_0009_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="70" height="100"></a>
+
+
+
+<h2>Contact</h2>
+
+<p>The best way to reach me is via email: <a href="mailto:christianbaun@fb2.fh-frankfurt.de" style="text-decoration: none">christianbaun@fb2.fh-frankfurt.de</a></p>
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:christianbaun@fb2.fh-frankfurt.de" style="text-decoration: none">Prof. Dr. Christian Baun</a><br></i>
+      <i><a href="https://www.fh-frankfurt.de" style="text-decoration: none">Fachhochschule Frankfurt am Main</a><br></i>
+      <i><a href="https://www.fh-frankfurt.de/fachbereiche/fb2.html" style="text-decoration: none">Faculty of Computer Science and Engineering</a><br></i>
+      <i>Last updated: November 30th 2014</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      <a href="https://www.fh-frankfurt.de"><img src="Bilder/Logo-FH-FFM.png" alt="zur Homepage der FH Frankfurt am Main" border="0" width="254" height="94" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

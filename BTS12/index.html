@@ -1,0 +1,360 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Betriebssysteme, SS2011, FH-Darmstadt, HS-Darmstadt, Christian Baun">
+<meta name="author" content="Dr. Christian Baun">
+<meta name="keywords" content="Betriebssysteme, HS-Darmstadt, FH-Darmstadt, Darmstadt, SS2012, Sommersemester, Informatik, Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Vorlesung Netzwerke (SS2012)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Betriebssysteme (SS2012)</h2>
+
+<p>
+Die Hauptaufgabe eines Betriebssystems besteht in der Steuerung, Verwaltung und Verteilung der Betriebsmittel eines Rechnersystems auf die Benutzer. Zu den Betriebsmitteln gehören Prozessoren, Hauptspeicher, Dateien, Ein-/Ausgabegeräte und Netzwerkdienste und generell alle Ressourcen, die mit dem Rechnersystem verbunden sind. Zusätzlich stellt ein Betriebssystem die Benutzerschnittstelle zur Steuerung des Systems sowie Schutzmechanismen, Werkzeuge, Bibliotheken und Entwicklungswerkzeuge bereit. Das Ziel dieser Vorlesung ist die Vermittlung der Grundlagen, Prinzipien, Probleme, und Lösungen, kurz gesagt der Konzepte auf denen die klassischen und modernen Betriebssysteme basieren.
+</p>
+
+<!--<h2>Termine</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Vorlesung&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></td>
+    <td>Dienstags&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>10:15 - 11:45 Uhr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Raum D14/004</td>
+  </tr>
+  <tr>
+    <td><b>Vorlesung</b></td>
+    <td>Donnerstags</td>
+    <td>16:00 - 17:30 Uhr</td>
+    <td>Raum D14/004</td>
+  </tr>
+  <tr>
+    <td><b>Klausur</b></td>
+    <td>13.7.2012</td>
+    <td>08.30 - 10:00 Uhr</td>
+    <td>Raum D14/104 und D14/204</td>
+  </tr>
+</table>-->
+
+<!-- <h2>Ankündigungen</h2>  -->
+
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Skripte</b></font>
+<p>
+Es ist ratsam, die Folien der Vorlesung erst NACH der Veranstaltung auszudrucken, weil Änderungen nicht ausgeschlossen werden können.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p> -->
+
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Diese Seite ist veraltet!</b></font>
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../BTM1213/index.html" style="text-decoration: none">Betriebssysteme im WS1213</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>
+
+
+<h2>Vorlesungstermine</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Datum</b></td>
+    <td><b>Uhrzeit</b></td>
+    <td><b>Veranstaltung</b>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td><b>Inhalt</b></td>
+  </tr>
+  <tr>
+    <td>29.03.2012&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>14:15-15:45&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Vorlesung 1</td>
+    <td>Organisatorisches, Generationen von Computersystemen und Betriebssystemen</td>
+  </tr>
+  <tr>
+    <td>03.04.2012 </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Vorlesung&nbsp;entfällt</i></td>
+  </tr>
+  <tr>
+    <td>05.04.2012 </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Vorlesungsfreie&nbsp;Zeit&nbsp;(Ostern)</i></td>
+  </tr>
+  <tr>
+    <td>10.04.2012 </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Vorlesungsfreie&nbsp;Zeit&nbsp;(Ostern)</i></td>
+  </tr>
+  <tr>
+    <td>12.04.2012</td>
+    <td>14:15-15:45</td>
+    <td>Vorlesung 2</td>
+    <td>Klassifikationen, Betriebsarten, Architekturen</td>
+  </tr>
+  <tr>
+    <td>19.04.2012</td>
+    <td>14:15-15:45</td>
+    <td>Vorlesung 3</td>
+    <td>Von-Neumann-Architektur, Hardware-Komponenten eines Computers, Speicher</td>
+  </tr>
+  <tr>
+    <td>24.04.2012</td>
+    <td>08:30-10:00</td>
+    <td>Vorlesung 4</td>
+    <td>Ersetzungsstrategien, Festplatten, Solid State Drives, RAID</td>
+  </tr>
+  <tr>
+    <td>26.04.2012</td>
+    <td>14:15-15:45</td>
+    <td>Vorlesung 5</td>
+    <td>Ein-/Ausgabegeräte, Speicheradressierung, Speicherverwaltung, virtueller Speicher</td>
+  </tr>
+  <tr>
+    <td>01.05.2012</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Tag der Arbeit</i></td>
+  </tr>
+  <tr>
+    <td>03.05.2012 </td>
+    <td>14:15-15:45</td>
+    <td>Vorlesung 6</td>
+    <td>Grundlagen von Dateisystemen, Linux-Dateisysteme, Inodes und Cluster</td>
+  </tr>
+  <tr>
+    <td>10.05.2012 </td>
+    <td>14:15-15:45</td>
+    <td>Vorlesung 7</td>
+    <td>Windows-Dateisysteme, Journaling, Extents, Copy-On-Write, Defragmentierung</td>
+  </tr>
+  <tr>
+    <td>15.05.2012 </td>
+    <td>08:30-10:00</td>
+    <td>Vorlesung 8</td>
+    <td>Systemaufrufe, Prozess, Prozesskontext, Zustands-Prozessmodelle</td>
+  </tr>
+  <tr>
+    <td>17.05.2012</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Christi Himmelfahrt</i></td>
+  </tr>
+  <tr>
+    <td>24.05.2012 </td>
+    <td>14:15-15:45</td>
+    <td>Vorlesung 9</td>
+    <td>Prozessverwaltung, Prozesse erzeugen und löschen, Unterbrechungen, Prozesswechsel</td>
+  </tr>
+  <tr>
+    <td>29.05.2012</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Vorlesungsfreie Zeit (Pfingsten)</i></td>
+  </tr>
+  <tr>
+    <td>31.05.2012</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Vorlesung entfällt</i></td>
+  </tr>
+  <tr>
+    <td>05.06.2012 </td>
+    <td>08:30-10:00</td>
+    <td>Vorlesung 10</td>
+    <td>Klassische und moderne Scheduling-Verfahren, Scheduling-Beispiele</td>
+  </tr>
+  <tr>
+    <td>07.06.2012</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Fronleichnam</i></td>
+  </tr>
+  <tr>
+    <td>14.06.2012</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Campusfest</i></td>
+  </tr>
+  <tr>
+    <td>19.06.2012 </td>
+    <td>08:30-10:00</td>
+    <td>Vorlesung 11</td>
+    <td>Interprozesskommunikation, Synchronisation von Prozessen</td>
+  </tr>
+  <tr>
+    <td>21.06.2012 </td>
+    <td>14:15-15:45</td>
+    <td>Vorlesung 12</td>
+    <td>Kommunikation von Prozessen</td>
+  </tr>
+  <tr>
+    <td>28.06.2012 </td>
+    <td>14:15-15:45</td>
+    <td>Vorlesung 13</td>
+    <td>Kooperation von Prozessen</td>
+  </tr>
+  <tr>
+    <td>05.07.2012</td>
+    <td>10:15-11:45</td>
+    <td>Klausur</td>
+    <td>Inhalte der Foliensätze 1 bis 10</td>
+  </tr>
+</table>
+
+
+<h2>Vorlesungsunterlagen</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>Foliensatz&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Organisatorisches, Generationen von Computersystemen und Betriebssystemen</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;2</td>
+    <td>Klassifikationen, Betriebsarten, Architekturen</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;3</td>
+    <td>Von-Neumann-Architektur, Hardware-Komponenten eines Computers, Speicher, Speicherhierarchie, Ersetzungsstrategien</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;4</td>
+    <td>Festplatten, Solid State Drives, RAID</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;5</td>
+    <td>Ein-/Ausgabegeräte, Speicheradressierung, Speicherverwaltung, virtueller Speicher</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;6</td>
+    <td>Dateien, Dateisysteme, Verzeichnisse, Blockadressierung, Journaling, Extents, Defragmentierung</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;7</td>
+    <td>Systemaufrufe, Prozess, Prozesskontext, Zustands-Prozessmodelle, Prozessverwaltung, Prozesse erzeugen und löschen</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;8</td>
+    <td>Unterbrechungen, Dispatcher, Scheduling-Verfahren</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;9</td>
+    <td>Interprozesskommunikation, Synchronisation von Prozessen</td>
+  </tr>
+  <tr>
+    <td>Foliensatz&nbsp;10</td>
+    <td>Kommunikation von Prozessen, Kooperation von Prozessen</td>
+  </tr>
+</table>
+
+
+<h2>Klausur</h2>
+
+<!-- <p>Die Klausur findet am 5.7.2012 von 10:15 bis 11:45 Uhr in D19/06-7 statt.</p> -->
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="Skript/Klausurrelevanter_Inhalte_SS2012.pdf" style="text-decoration: none">Klausurrelevante Inhalte</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(21.06.2012)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/BTS_Klausur_SS2012.pdf" style="text-decoration: none">Abschlussklausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(05.07.2012)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Bearbeitungszeit: 90 Minuten</td>
+  </tr>
+  <tr>
+    <td><a href="Skript/BTS_Klausur_Musterloesung_SS2012.pdf" style="text-decoration: none">Musterlösung</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(05.07.2012)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="bts_klausur_SS2012.html" style="text-decoration: none">Ergebnis der Klausur</a></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>(07.07.2012)</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<h2>Vorlesungsevaluation</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/Evaluation_SS12_Betriebssysteme.pdf" style="text-decoration: none">Ergebnis</a> der Vorlesungsevaluation
+    </td>
+  </tr>
+</table>
+
+<!--
+<h2>Praktikumsunterlagen</h2>
+-->
+
+
+<h2>Kontakt</h2>
+
+<p>Zu erreichen bin ich am besten per E-Mail: <a href="mailto:wolkenrechnen@gmail.com" style="text-decoration: none">wolkenrechnen@gmail.com</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:wolkenrechnen@gmail.com" style="text-decoration: none">Dr. Christian Baun</a><br></i>
+      <i><a href="https://www.h-da.de" style="text-decoration: none">Hochschule Darmstadt</a><br></i>
+      <i><a href="https://www.fbi.h-da.de" style="text-decoration: none">Fachbereich Informatik</a><br></i>
+      <i>Stand: 28.7.2012</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      &nbsp;
+    </td>
+  </tr>
+</table>
+</body>
+</html>

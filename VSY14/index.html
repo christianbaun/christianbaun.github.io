@@ -1,0 +1,1028 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Distributed Systems, Verteilte Systeme, WS1314, FH-Frankfurt, Prof. Dr. Christian Baun">
+<meta name="author" content="Prof. Dr. Christian Baun">
+<meta name="keywords" content="Distributed Systems, Verteilte Systeme, FH-Frankfurt, Frankfurt, SS2014, Wintersemester, Computer Science, Prof. Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Distributed Systems Course, (SS2014)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite / Back to main page</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+
+<h2>Distributed Systems / Verteilte Systeme (SS2014)</h2>
+
+<p>
+A distributed system consists of several independent computers that communicate with each other over a network. Different distributed system architectures exist in the computer science. The most popular architecture is the client-server model. But especially in the parallel computing field, exist among others, cluster computing, grid computing, peer-to-peer (P2P) and cloud computing.
+</p>
+<p>
+The aim of this course is to discuss the fundamentals of Cluster Computing, Grid Computing, Peer-to-Peer (P2P), Cloud Computing and MapReduce/Hadoop as well as Web Services, Cryptography and Steganography. Practical exercises are an important part of this course because they are essential for the understanding of these technologies.
+</p>
+<!-- The course (lectures, exercises and exam) is held in English language. All slides are available in English and in German language. The content of the English and German slides is identical, but please use the English slides for the exam preparation to become familiar with the technical terms. -->
+<!-- </p> -->
+
+
+<!-- <center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Review of the answer sheets of the cloud computing exam</b></font> 
+<p>
+The answer sheets of the cloud computing exam can be reviewd tomorrow at 12:00 in my office 1-216.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+
+
+<!-- <center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>No course and lecture session on January 30th 2014 !!!</b></font> 
+<p>
+The course and exercises session on January 30th 2014 must be cancelled by reason of illness. For exam preparation please repeat all 14 exercise sheets. If you have questions, please send me an email.
+</p>
+</td>
+</tr>
+</table>
+</center>
+-->
+
+<!--  <p></p>  -->
+
+<!--
+<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Skripte</b></font> 
+<p>
+The complete course (lectures, exercises and exam) will be held in English language. All slides are available in English and in German language. The content of the English and German slides is identical, but please use the English slides for the exam preparation to become familiar with the technical terms.
+</p>
+</td>
+</tr>
+</table>
+</center>
+-->
+
+<!-- <p></p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Skripte</b></font>
+<p>
+Please only print out slides sets of lectures which have already ended!
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Auxiliary Material during the Exam</b></font>
+<p>
+Each participant is allowed to use a <u>calculator</u> and to bring a <u>self prepared and handwritten</u> DIN-A4 sheet whose content is free into the exam. Attention: Only <u>a single side</u> of the DIN-A4 sheet is allowed to be used! Only handwritten originals are allowed but no copies.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p></p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Hilfsmittel während der Klausur</b></font>
+<p>
+Jeder Teilnehmer darf jeder Teilnehmer einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p></p> -->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Keine Vorlesung am 28.3.2014</b></font>
+<p>
+Die Vorlesung am 28.3.2014 kann leider nicht stattfinden. Die Inhalte werden nachgeholt. 
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Keine Verschiebung der Vorlesung möglich!</b></font>
+<p>
+Es wurde von einigen Teilnehmern des ersten Vorlesungstermins der Wunsch geäußert, die Vorlesung an einen anderen Termin zu verschieben. Dieses ist <b>nicht möglich</b> wegen der geringen Anzahl großer Räume. Freie Kapazitäten existieren aktuell nicht. Die bestehenden Termine können darum nicht geändert werden.
+<p>
+Studierende, bei denen aber eine Kollision mit Veranstaltungen aus dem zweiten Semester vorliegt, müssen die Vorlesung entweder in einem anderen Zug besuchen oder im nächsten Jahr hören.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p></p> -->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>!!! Wichtige Informationen !!!</b></font>
+<p>
+Die Foliensätze 13-15 werden aus zeitlichen Gründen dieses Semester <u>nicht</u> in der Vorlesung behandelt und sind <u>nicht</u> klausurrelevant!
+<p>
+Übungsblatt 12 wird <u>nicht</u> testiert und ist <u>nicht</u> klausurrelevant!
+<p>
+Die Übungsblätter 1-11 müssen spätestens bis zum 30.6.2014 testiert sein! An diesem Tag müssen die Ergebnisliste mit den Vorleistungen dem Prüfungsamt vorliegen. Ohne Vorleistung ist eine Teilnahme an der Klausur im SS2014 nicht möglich!
+<p>
+Nachdem Foliensatz 12 in der Vorlesung besprochen wurde, werden alle weiteren Vorlesungstermine zu Übungsterminen, um genug Zeit zum Testieren der fehlenden Übungsblätter zu haben.
+<p>
+Am 3.7.2014 ist eine Fragestunde.
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Übungsblätter müssten testiert werden</b></font>
+<p>
+Eine genau Analyse der Prüfungsordnung zusammen mit dem Prüfungsamt hat ergeben, dass <b>ALLE</b> Teilnehmer der Vorlesung ihre Übungsblätter testiert bekommen müssen. Das gilt für diejenigen Teilnehmer, die nach der alten PO studieren und genauso für diejenigen Teilnehmer, die nach der neuen PO studieren.
+<p>
+Konkret heißt das für Sie, dass Sie sich in 2er-Teams zusammenfinden und für jedes Übungsblatt eine schriftliche Abgabe mit den Lösungen vorbereiten. Die Abgaben gehe ich mit jedem Team einzeln während der Übungsstunden durch und behalte sie im Anschluss an die Besprechung ein. Übungsaufgaben, bei denen es ein System aufzusetzen gibt oder eine Software zu entwickeln gibt, müssen zudem demonstiert werden.
+<p>
+Bitte verwenden Sie keine Mappen, Hüllen oder Schnellhefter. Einfaches Zusammenheften der Abgaben genügt.
+<p>
+<b>Als Voraussetzung zur Klausurteilnahme müssen alle Übungsblätter bis zum Ende der Vorlesungszeit testiert sein!</b>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Hilfsmittel während der Klausur am 25.11.2014</b></font>
+<p>
+Jeder Teilnehmer darf jeder Teilnehmer einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p> -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Klausurrelevante Inhalte für die Klausur am 25.11.2014</b></font>
+<p>
+Klausurrelevant sind die Foliensätze 1-12 und Übungsblätter 1-11.
+</td>
+</tr>
+</table>
+</center>-->
+
+<h2>Schedule of the course</h2>
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Date</b></td>
+    <td><b>Time</b></td>
+    <td><b>Room</b></td>
+    <td><b>Event</b></td>
+    <td><b>Topics</b></td>
+  </tr>
+  <tr>
+    <td>27.03.2014&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>11:45-13:15&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>1-401&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Lecture&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Discussion of slide set 1</td>
+  </tr>
+<!--  <tr>
+    <td>28.03.2014</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i><font color="#FF0000">No class today</font></i></td>
+  </tr>-->
+  <tr>
+    <td>03.04.2014</td>
+    <td>11:45-13:15</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 2</td>
+  </tr>
+  <tr>
+    <td>04.03.2014</td>
+    <td>10:00-11:30</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 3</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>11:45-13:15</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>-->
+<!--     <td>Discussion of exercise sheet 1</td> -->
+<!--   </tr> -->
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>-->
+<!--     <td>Discussion of exercise sheet 1</td> -->
+<!--   </tr> -->
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>-->
+<!--     <td>Discussion of exercise sheet 1</td> -->
+<!--   </tr> -->
+  <tr>
+    <td>10.04.2014</td>
+    <td>11:45-13:15</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 3</td>
+  </tr>
+  <tr>
+    <td>11.04.2014</td>
+    <td>10:00-11:30</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 4</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>11:45-13:15</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>-->
+<!--     <td>Discussion of exercise sheet 2</td> -->
+<!--   </tr> -->
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>-->
+<!--     <td>Discussion of exercise sheet 2</td> -->
+<!--   </tr> -->
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>-->
+<!--     <td>Discussion of exercise sheet 2</td> -->
+<!--   </tr> -->
+  <tr>
+    <td>17.04.2014</td>
+    <td>11:45-13:15</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 4 + 5</td>
+  </tr>
+  <tr>
+    <td>18.04.2014</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Good Friday / Karfreitag</i></td>
+  </tr>
+  <tr>
+    <td>24.04.2014</td>
+    <td>11:45-13:15</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 5</td>
+  </tr>
+  <tr>
+    <td>25.04.2014</td>
+    <td>10:00-11:30</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 6</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>11:45-13:15</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>-->
+<!--     <td>Discussion of exercise sheet 1 + 2</td> -->
+<!--  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>-->
+<!--     <td>Discussion of exercise sheet 1 + 2</td> -->
+<!--  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>-->
+<!--     <td>Discussion of exercise sheet 1 + 2</td> -->
+<!--   </tr> -->
+  <tr>
+    <td>01.05.2014</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Labor Day / Tag der Arbeit</i></td>
+  </tr>
+  <tr>
+    <td>02.05.2014</td>
+    <td>10:00-11:30</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 6 + 7</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>11:45-13:15</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>-->
+  <tr>
+    <td>08.05.2014</td>
+    <td>11:45-13:15</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 7</td>
+  </tr>
+  <tr>
+    <td>09.05.2014</td>
+    <td>10:00-11:30</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 7 + 8</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>11:45-13:15</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>-->
+  <tr>
+    <td>15.05.2014</td>
+    <td>11:45-13:15</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 9</td>
+  </tr>
+  <tr>
+    <td>16.05.2014</td>
+    <td>10:00-11:30</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 10</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td><s>11:45-13:15</s></td>
+    <td><s>1-252</s></td>
+    <td><s>Exercise</s></td>
+    <td><i><font color="#FF0000">Dieser Termin entfällt wegen einer Wiederholungsklausur</font></i></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><font color="#FF0000">15:00-15:45</font></td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td><i><font color="#FF0000">Dieser Termin findet wegen einer Wiederholungsklausur nur verkürzt statt</font></i></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>-->
+  <tr>
+    <td>22.05.2014</td>
+    <td>11:45-13:15</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 11</td>
+  </tr>
+  <tr>
+    <td>23.05.2014</td>
+    <td>10:00-11:30</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 11</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>11:45-13:15</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>14:15-15:45</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>16:00-17:30</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td>&nbsp;</td>
+  </tr>-->
+  <tr>
+    <td>29.05.2014</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Ascension Day / Christi Himmelfahrt</i></td>
+  </tr>
+<!--  <tr>
+    <td colspan="5"><i><font color="#FF0000">Am 30.05.2014 können die Vorlesung und Übungen leider nicht stattfinden.</font></i></td>
+  </tr>
+  <tr>
+    <td colspan="5"><i><font color="#FF0000">Am 05.06.2014 kann die Vorlesung leider nicht stattfinden.</font></i></td>
+  </tr>
+  <tr>
+    <td colspan="5"><i><font color="#FF0000">Am 06.06.2014 können die Vorlesung und Übungen leider nicht stattfinden.</font></i></td>
+  </tr>-->
+  <tr>
+    <td>12.06.2014</td>
+    <td>11:45-13:15</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Discussion of slide set 12</td>
+  </tr>
+<!--  <tr>
+    <td>13.06.2014</td>
+    <td>10:00-11:30</td>
+    <td>1-401</td>
+    <td>Exercise</td>
+    <td><i><font color="#FF0000">Übungsblätter testieren!</font></i></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>11:45-13:15</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td><i><font color="#FF0000">Übungsblätter testieren!</font></i></td>
+  </tr>-->
+  <tr>
+    <td>19.06.2014</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><i>Corpus Christi / Fronleichnam</i></td>
+  </tr>
+<!--  <tr>
+    <td>20.06.2014</td>
+    <td>10:00-11:30</td>
+    <td>1-401</td>
+    <td>Exercise</td>
+    <td><i><font color="#FF0000">Übungsblätter testieren!</font></i></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>11:45-13:15</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td><i><font color="#FF0000">Übungsblätter testieren!</font></i></td>
+  </tr>
+  <tr>
+    <td>26.06.2014</td>
+    <td>11:45-13:15</td>
+    <td>1-401</td>
+    <td>Exercise</td>
+    <td><i><font color="#FF0000">Übungsblätter testieren!</font></i></td>
+  </tr>-->
+<!--  <tr>
+    <td>26.06.2014</td>
+    <td>11:45-13:15</td>
+    <td>1-401</td>
+    <td>Exercise</td>
+    <td><i><font color="#FF0000">Übungsblätter testieren!</font></i></td>
+  </tr>-->
+<!--  <tr>
+    <td>27.06.2014</td>
+    <td>10:00-11:30</td>
+    <td>1-401</td>
+    <td>Exercise</td>
+    <td><i><font color="#FF0000">Übungsblätter testieren!</font></i></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>11:45-13:15</td>
+    <td>1-252</td>
+    <td>Exercise</td>
+    <td><i><font color="#FF0000">Übungsblätter testieren!</font></i></td>
+  </tr>-->
+  <tr>
+    <td>03.07.2014</td>
+    <td>11:45-13:15</td>
+    <td>1-401</td>
+    <td>Lecture</td>
+    <td>Repetition of the contents of slide set 1-12</td>
+  </tr>
+  <tr>
+    <td>15.07.2014</td>
+    <td>14:00-15:30</td>
+    <td>8-104</td>
+    <td>Exam</td>
+    <td>The exam covers the slide sets 1-12 and the exercise sheets 1-11</td>
+  </tr>
+  <tr>
+    <td>25.11.2014</td>
+    <td>12:00-13:30</td>
+    <td>1-131</td>
+    <td>Exam</td>
+    <td>The exam covers the slide sets 1-12 and the exercise sheets 1-11</td>
+  </tr>
+</table>
+
+
+
+<h2>Slides Sets</h2>
+
+<!--<p><font color="#FF0000"><b>Please only print out slides sets of lectures which have already ended!</b></font></p>-->
+
+<!-- <p><font color="#FF0000"><b>Die Foliensätze 13-15 werden aus zeitlichen Gründen dieses Semester <u>nicht</u> in der Vorlesung behandelt und sind <u>nicht</u> klausurrelevant!</b></font></p> -->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Slide sets</b></td>
+    <td colspan="2"><b>Languages</b>&nbsp;</td>
+    <td><b>Topics</b></td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;1</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_slides_01_en.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 1 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_01_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 1 in German language" border="0" width="16" height="12"></a></td>
+    <td>Organisational information, Client-Server</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;2</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_slides_02_en.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 2 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_02_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 2 in German language" border="0" width="16" height="12"></a></td>
+    <td>Fundamentals, Laws and Limitations, Parallel Computers</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;3</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_slides_03_en.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 3 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_03_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 3 in German language" border="0" width="16" height="12"></a></td>
+    <td>Cluster Computing</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;4</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_slides_04_en.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 4 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_04_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 4 in German language" border="0" width="16" height="12"></a></td>
+    <td>Peer-to-Peer</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;5</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_slides_05_en.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 5 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_05_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 5 in German language" border="0" width="16" height="12"></a></td>
+    <td>Grid Computing</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;6</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_slides_06_en.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 6 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_06_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 6 in German language" border="0" width="16" height="12"></a></td>
+    <td>Cloud Computing, Services and Concepts, Opportunities and Risks</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;7</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_slides_07_en.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 7 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_07_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 7 in German language" border="0" width="16" height="12"></a></td>
+    <td>Amazon Web Services (EC2, EBS, ELB), Google Compute Engine, HP Cloud Compute</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;8</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_slides_08_en.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 8 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_08_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 8 in German language" border="0" width="16" height="12"></a></td>
+    <td>IBM Smart Cloud Enterprise, Amazon Web Services (S3) und Google Cloud Storage</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;9&nbsp;&nbsp;&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_slides_09_en.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 9 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_09_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 9 in German language" border="0" width="16" height="12"></a></td>
+    <td>Platform Services (Google App Engine)</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;10</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_slides_10_en.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 10 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_10_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 10 in German language" border="0" width="16" height="12"></a></td>
+    <td>Private Infrastructure Services (IaaS), Private Platform Services (PaaS)</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;11</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_slides_11_en.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 11 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_11_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 11 in German language" border="0" width="16" height="12"></a></td>
+    <td>MapReduce/Hadoop</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;12</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_slides_12_en.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Slide set 12 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_12_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 12 in German language" border="0" width="16" height="12"></a></td>
+    <td>Web Services</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;13</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_13_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 13 in German language" border="0" width="16" height="12"></a></td>
+<!--     <td>Kryptologie (Grundbegriffe, Symmetrische Verfahren)</td> -->
+  <td>Cryptography (fundamentals, symmetric key cryptography)</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;14</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_14_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 14 in German language" border="0" width="16" height="12"></a></td>
+<!--     <td>Kryptologie (Asymmetrische Verfahren, Schlüsselverteilung, Hashfunktionen)</td> -->
+    <td>Cryptography (asymmetric key cryptography, key exchange, hash functions)</td>
+  </tr>
+  <tr>
+    <td>Slide&nbsp;set&nbsp;15</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_vorlesung_15_de.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Slide set 15 in German language" border="0" width="16" height="12"></a></td>
+<!--     <td>Steganographie, Plagiatsfallen und Wasserzeichen</td> -->
+    <td>Steganography, copyright traps and digital watermarking</td>
+  </tr>
+<!--  <tr>
+    <td>Slide&nbsp;set&nbsp;16</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Fundamental algorithms of distributed systems</td>
+  </tr>-->
+</table>
+
+<!-- <p> -->
+<!-- <b>Die Foliensätze 1 bis 12 sind klausurrelevant.</b><br> -->
+<!-- <b>Slide sets 1 to 12 are relevant for the exam.</b><br> -->
+<!-- <b>Die Foliensätze 13 bis 15 und die Sondervorlesungen sind nicht klausurrelevant.</b> -->
+<!-- <b>Slide set 13 is <u>not</u> relevant for the exam.</b> -->
+<!-- </p> -->
+
+
+<h2>Exercise Sheets</h2>
+
+<!-- <p><font color="#FF0000"><b>Übungsblatt 12 wird <u>nicht</u> testiert!</b></font></p> -->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><b>Exercise&nbsp;sheets</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td colspan="2"><b>Languages</b>&nbsp;</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td><b>Topics</b></td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;1</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_exercise_sheet_01.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Exercise sheet 1 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_uebungsblatt_01.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 1 in German language" border="0" width="16" height="12"></a></td> 
+    <td>&nbsp;</td>
+    <td>Topics of slide set 1</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;2</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_exercise_sheet_02.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Exercise sheet 2 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_uebungsblatt_02.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 2 in German language" border="0" width="16" height="12"></a></td> 
+    <td>&nbsp;</td>
+    <td>Topics of slide set 2</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;3</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_exercise_sheet_03.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Exercise sheet 3 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_uebungsblatt_03.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 3 in German language" border="0" width="16" height="12"></a></td> 
+    <td>&nbsp;</td>
+    <td>Topics of slide set 2</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;4</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_exercise_sheet_04.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Exercise sheet 4 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_uebungsblatt_04.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 4 in German language" border="0" width="16" height="12"></a></td> 
+    <td>&nbsp;</td>
+    <td>Topics of slide set 3</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;5</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_exercise_sheet_05.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Exercise sheet 5 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_uebungsblatt_05.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 5 in German language" border="0" width="16" height="12"></a></td> 
+    <td>&nbsp;</td>
+    <td>Topics of slide set 4</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;6</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_exercise_sheet_06.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Exercise sheet 6 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_uebungsblatt_06.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 6 in German language" border="0" width="16" height="12"></a></td> 
+    <td>&nbsp;</td>
+    <td>Topics of slide set 5 + 6</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;7</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_exercise_sheet_07.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Exercise sheet 7 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_uebungsblatt_07.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 7 in German language" border="0" width="16" height="12"></a></td> 
+    <td>&nbsp;</td>
+    <td>Topics of slide set 7</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;8</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_exercise_sheet_08.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Exercise sheet 8 in English language" border="0" width="16" height="12"></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Topics of slide set 7 + 8</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;9</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_exercise_sheet_09.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Exercise sheet 9 in English language" border="0" width="16" height="12"></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Topics of slide set 9 + 10</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;10</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_exercise_sheet_10.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Exercise sheet 10 in English language" border="0" width="16" height="12"></a></td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_uebungsblatt_10.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 10 in German language" border="0" width="16" height="12"></a></td> 
+    <td>&nbsp;</td>
+    <td>Topics of slide set 11</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;11</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_exercise_sheet_11.pdf" style="text-decoration: none"><img src="Bilder/flag_english.gif" alt="Exercise sheet 11 in English language" border="0" width="16" height="12"></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Topics of slide set 12</td>
+  </tr>
+  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;12</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td align="center"><a href="https://dl.dropboxusercontent.com/u/10971224/vsy_SS2014_uebungsblatt_12.pdf" style="text-decoration: none"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 12 in German language" border="0" width="16" height="12"></a></td> 
+    <td>&nbsp;</td>
+    <td>Topics of slide set 13 + 14 + 15</td>
+  </tr>
+<!--  <tr>
+    <td>Exercise&nbsp;sheet&nbsp;13</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Topics of slide set 16</td>
+  </tr>-->
+</table>
+
+
+
+<!-- The written exam will take place on Tuesday, February 11th 2014 in room 1/130. -->
+
+<!-- <p> -->
+
+<!--ach participant is allowed to use a <u>calculator</u> and to bring a <u>self prepared and handwritten</u> DIN-A4 sheet whose content is free  into the exam. Attention: Only <u>a single side</u> of the DIN-A4 sheet is allowed to be used! Only handwritten originals are allowed but no copies.-->
+
+<!-- <p> -->
+
+<!--Jeder Teilnehmer darf einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.-->
+
+
+<h2>Exams</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Semester</th>
+<!--     <th class="abstand_zentriert" colspan="2">Klausuren</th> -->
+    <th class="abstand_zentriert" colspan="2">Exams</th>
+<!--     <th class="abstand_zentriert">Bearbeitungszeit</th> -->
+    <th class="abstand_zentriert">Time limit</th>
+<!--     <th class="abstand_links">Hochschule</th> -->
+    <th class="abstand_links">University</th>
+<!--     <th class="abstand_zentriert" colspan="2">Lösungen</th> -->
+    <th class="abstand_zentriert" colspan="2">Sample solutions</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1415</td>
+    <td class="abstand_zentriert"><a href="Skript/VSY_Exam_en_WS1415.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS1415 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/VSY_Klausur_de_WS1415.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1415 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">FH Frankfurt</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2014</td>
+    <td class="abstand_zentriert"><a href="Skript/VSY_Exam_en_SS2014.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom SS2014 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/VSY_Klausur_de_SS2014.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2014 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">FH Frankfurt</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="Skript/VSY_Klausur_de_Musterloesung_SS2014.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2014 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1314</td>
+    <td class="abstand_zentriert"><a href="../CGC1314/Skript/CGC_Klausur_en_WS1314.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom WS1314 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td>&nbsp;</td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">FH Frankfurt</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1112</td>
+    <td>&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC1112/Skript/CGC_Klausur_WS1112.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1112 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td>&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC1112/Skript/CGC_Klausur_Loesung_WS1112.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS1112 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2011</td>
+    <td>&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC11/Skript/CGC_Klausur_SS2011.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2011 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td>&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC11/Skript/CGC_Klausur_Loesung_SS2011.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2011 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1011</td>
+    <td>&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC1011/Skript/CGC_Klausur_WS1011.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1011 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td>&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC1011/Skript/CGC_Klausur_Loesung_WS1011.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS1011 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2010</td>
+    <td>&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC10/Skript/CGC_Klausur_SS2010.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2010 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td>&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../CGC10/Skript/CGC_Klausur_Loesung_SS2010.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2010 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+</table>
+
+
+<h2>Evaluation</h2>
+
+<!--The date of the evaluation is still unknown.-->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/Evaluation_VSY_SS2014_Baun.pdf" style="text-decoration: none">Result</a> of the evaluation
+    </td>
+  </tr>
+</table>
+
+<h2>True Works of Art </h2>
+
+<p>As auxiliary material, the students were allowed to use a self prepared, single sided DIN-A4 sheet in the exam. Only handwritten originals were allowed, but no copies. This page contains a selection of the sheets. Some of them are true works of art.</p>
+
+<a href="Klausurzettel/verteilte_systeme_blatt_WS1415_0001.jpg" style="text-decoration: none"><img src="Klausurzettel/verteilte_systeme_blatt_WS1415_0001_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/verteilte_systeme_blatt_WS1415_0002.jpg" style="text-decoration: none"><img src="Klausurzettel/verteilte_systeme_blatt_WS1415_0002_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+
+<a href="Klausurzettel/verteilte_systeme_blatt_WS1415_0003.jpg" style="text-decoration: none"><img src="Klausurzettel/verteilte_systeme_blatt_WS1415_0003_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/verteilte_systeme_blatt_WS1415_0004.jpg" style="text-decoration: none"><img src="Klausurzettel/verteilte_systeme_blatt_WS1415_0004_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+<a href="Klausurzettel/verteilte_systeme_blatt_WS1415_0005.jpg" style="text-decoration: none"><img src="Klausurzettel/verteilte_systeme_blatt_WS1415_0005_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="73" height="100"></a>
+
+&nbsp;
+
+<a href="Klausurzettel/verteilte_systeme_blatt_WS1415_0006.jpg" style="text-decoration: none"><img src="Klausurzettel/verteilte_systeme_blatt_WS1415_0006_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="138" height="100"></a>
+
+
+<h2>Contact</h2>
+
+<p>The best way to reach me is via email: <a href="mailto:christianbaun@fb2.fh-frankfurt.de" style="text-decoration: none">christianbaun@fb2.fh-frankfurt.de</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" align="left">
+      <i><a href="mailto:christianbaun@fb2.fh-frankfurt.de" style="text-decoration: none">Prof. Dr. Christian Baun</a><br></i>
+      <i><a href="https://www.fh-frankfurt.de" style="text-decoration: none">Fachhochschule Frankfurt am Main</a><br></i>
+      <i><a href="https://www.fh-frankfurt.de/fachbereiche/fb2.html" style="text-decoration: none">Faculty of Computer Science and Engineering</a><br></i>
+      <i>Last updated: November 14th 2014</i>
+    </td>
+    <td width="33%" align="center" valign="middle">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="Bilder/valid-html401.png"
+        alt="Valid HTML 4.01 Transitional" border="0" height="31" width="88"></a>
+    </td>
+    <td width="33%" align="right" valign="middle">
+      <a href="https://www.fh-frankfurt.de"><img src="Bilder/Logo-FH-FFM.png" alt="zur Homepage der FH Frankfurt am Main" border="0" width="254" height="94" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
