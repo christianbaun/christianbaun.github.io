@@ -108,27 +108,12 @@ td.abstand_zentriert_orange_bg {
   margin-right:10px;  
 }
 
-
-  div.abb img, div.abb .caption {
-     padding-bottom: 0.6em;
-  }
-
-  .caption {
-     font-size: 90%;
-     vertical-align: baseline;
-  }
-
-  .credit {
-     font-size: 90%;
-     color: #999999;
-     text-align: right;
-  }
-  
-  div.abb {
-     margin: 1em auto;
-     border: 1px solid #000;
-     padding: 0.3em;
-     text-align: left;
-  }
+div.zweitescover {
+     margin-top: 10px;
+}
 
 
+div.kasten {
+     margin-top: 15px;
+     margin-bottom: 15px;
+}
