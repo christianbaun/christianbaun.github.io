@@ -78,6 +78,17 @@ td.abstand_links {
   margin-right:10px;  
 }
 
+td.abstand_links_nowrap {
+  background-color:#FFFFFF;
+  vertical-align:middle;
+  text-align:left;
+  padding-left:10px;
+  padding-right:10px;
+  margin-left:10px;
+  margin-right:10px;  
+  white-space:nowrap;
+}
+
 td.abstand_zentriert {
   background-color:#FFFFFF;
   vertical-align:middle;
@@ -88,7 +99,7 @@ td.abstand_zentriert {
   margin-right:10px;  
 }
 
-td.abstand_zentriert_screencast {
+td.abstand_zentriert_nowrap {
   background-color:#FFFFFF;
   vertical-align:middle;
   text-align:center;
