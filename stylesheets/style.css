@@ -88,6 +88,18 @@ td.abstand_zentriert {
   margin-right:10px;  
 }
 
+td.abstand_zentriert_screencast {
+  background-color:#FFFFFF;
+  vertical-align:middle;
+  text-align:center;
+  padding-left:10px;
+  padding-right:10px;
+  margin-left:10px;
+  margin-right:10px;  
+  white-space:nowrap;
+}
+
+
 td.abstand_zentriert_blau_bg {
   background-color:#0059FF;
   vertical-align:middle;
