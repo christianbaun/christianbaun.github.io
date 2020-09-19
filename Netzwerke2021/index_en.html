@@ -1,0 +1,842 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Computer Networks, WS2021, FH-Frankfurt, Christian Baun">
+<meta name="author" content="Dr. Christian Baun">
+<meta name="keywords" content="Computer Networks, FH-Frankfurt, Frankfurt, WS2021, Wintersemester, Computer Science, Prof. Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Computer Networks (WS2021)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Back to main page" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Back to main page</a>
+    </td>
+    <td align="right" valign="middle">
+    <a href="index_de.html" style="text-decoration: none">Jump to the page in German language</a>
+    &nbsp;
+    <a href="index_de.html"><img src="Bilder/Flag_of_Germany.png" alt="Zurück zur Hauptseite" border="0" height="24" width="40"></a>
+    </td>
+  </tr>
+</table>
+
+
+<hr>
+
+
+
+
+<h2>Computer Networks (WS2021)</h2>
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+<tr>
+
+<td valign="top">
+
+<img src="Bilder/computernetze_buch_bilingual_auflage1_cover_kleiner.jpg" alt="Computernetze kompakt bilingual Cover 1. Auflage" border="0" width="167" height="238" align="middle">
+
+<div class="zweitescover">
+<img src="Bilder/computernetze_buch_auflage5_cover_kleiner.jpg" alt="Computernetze kompakt Cover 5. Auflage" border="0" width="167" height="267" align="middle">
+</div>
+</td>
+
+<td>&nbsp;</td>
+<td valign="top">
+<p>
+Computer networks allow to connect individual computers systems for communication and resource sharing. Communication via computer networks is realized via different protocols of different layers of reference models (OSI reference model, TCP/IP reference model, hybrid reference model). 
+</p>
+<p>
+At the beginning of the course, an introduction to the required fundamentals of the computer sciences and computer networks takes place. Next, the protocols and their classification into established reference models is discussed. The main focus of the course is to explain the way, the data is transmitted through the different protocol layers and via different transmission media.
+</p>
+<p>
+The course (lectures, exercises and exam) is held in English language. All slide sets and exercise sheets are available in English and in German language. The content of the English and German slide sets and exercise sheets is identical. A list of technical terms provides <a href="computernetworks_technical_terms.html" style="text-decoration: none">this page</a>.
+</p> 
+<p>
+The slide sets are the basis for the fifth edition of the German-language book <b>Computernetze kompakt</b>, which was published in autumn 2019 by Springer Vieweg. ISBN: 978-3-662-59896-2
+</p>
+<p>
+Also, a bilingual (English-German) edition exists <b>Computer Networks / Computernetze</b>, which was published in summer 2019 by Springer Vieweg. ISBN: 978-3-658-26355-3
+</p>
+<!--<p>
+The Lab exercises are supervised in WS2021 by <a href="Skript/Computer_Networks_Lab_Slide_Set_1_Introduction.pdf">Henry-Norbert Cocos</a>.
+</p>-->
+</td>
+</tr>
+</table>
+
+<!-- <p>&nbsp;</p>   -->
+  
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00FF00" align="center" valign="middle">
+<p>
+<b>The computer network lab is <u>no longer included</u> in this module. Instead, it is a separate module that is offered in the summer term. Furthermore, the contents of the computer network lab are <u>no longer relevant</u> for the written exam of this module!</b>
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<p>
+The exercise session on December 18th, 2019 between 11:30 and 13:00 cannot take place.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>&nbsp;</p>   -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<p>
+The exercise session on January 30th 2020 have to be cancelled due to a cold.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--   <p></p>   -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Auxiliary Material during the Exam</b></font>
+<p>
+Each participant is allowed to use a <u>calculator</u> and to bring a <u>self prepared and handwritten</u> DIN-A4 sheet whose content is free into the exam. Attention: Only <u>a single side</u> of the DIN-A4 sheet is allowed to be used! Only handwritten originals are allowed but no copies.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p></p>    -->
+
+
+
+<!-- <p></p>    -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Vollversammlung der Studierenden</b></font>
+<p>
+Wegen der Vollversammlung der Studierenden am 23.01.2020, 13:00-15:00 Uhr entfällt an diesem Tag die Übung am Nachmittag.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--<center>
+<table border="2" cellpadding="10">
+<tr>
+<td bgcolor="#FFFF00" align="left" valign="middle">
+<ul>
+<li>The <b>slides 11-41</b> &quot;encoding data with line codes&quot; of <b>slide set 3</b> are not relevant for the exam in SS2019</li>
+<li>&quot;Flow Control in the Data Link Layer&quot;  in <b>exercise sheet 3</b> is not relevant for the exam in SS2019</li>
+<li>The calculation and validation of checksums in IP Packets in <b>exercise sheet 4</b> is not relevant for the exam in SS2019</li>
+<li>The <b>slide set 10</b> was not discussed in class because time was too short and is not relevant for the exam in SS2019</li>
+<li>The <b>slide sets 11-13</b> are <u>not</u> relevant for the exam</li>
+</ul>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p></p>    -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<p>
+The exercises on Wednesday, February 12th, cannot take place.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<p>
+The exercises on Wednesday, November 20th, cannot take place because of a <a href="https://smartcity2019.b2match.io">business trip</a>. The lecture on Tuesday, November 19th, is <u>not</u> canceled. It will be given by Henry Cocos.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#00FF00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Room Change</b></font> 
+<p>
+The exercise session on February 6th, 2019 takes place in room 1-432.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--   <p></p>   -->
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>No exercise session on December 5th, 2018</b></font> 
+<p>
+On December 5th, 2018, no lectures, exercise sessions or seminars take place at our University between 10:00 and 16:00. For this reason, the exercise session is canceled for that day.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!-- <h2>Schedule of the Course</h2> -->
+
+
+
+<!--<ul>
+<li>Exercise session 1 always takes place on Wednesday between <b>10:00-11:30</b> in room 1-234.</li>
+<li>Exercise session 2 always takes place on Wednesday between <b>11:30-13:00</b> in room 1-234.</li>
+<li>Exercise session 3 always takes place on Thursday between <b>11:30-13:00</b> in room 1-234.</li>
+<li>Exercise session 4 always takes place on Thursday between <b>14:15-15:45</b> in room 1-234.</li>
+</ul>-->
+
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Date</th>
+    <th class="abstand_links">Time</th>
+    <th class="abstand_links">Room</th>
+    <th class="abstand_links">Event</th>
+    <th class="abstand_links">Topics</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">22.10.2019</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 1 (slide 1-33)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">29.10.2019</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 1 (slide 34-43) + <i>Trial Lecture</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">05.11.2019</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 1 (slide 44-50) + slide set 2 (slide 1-20)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">12.11.2019</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 2 (slide 21-53)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">19.11.2019</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 3 + slide set 4 (slide 1-22)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">26.11.2019</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 4 (slide 23-28) + slide set 5 (slide 1-17)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">03.12.2019</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 5 (slide 18-39) + slide set 6 (slide 1-14)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">10.12.2019</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 6 (slide 15-35) + slide set 7 (slide 1-16)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">17.12.2019</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links"><a href="#Christmasspecial">Christmas Special</a> + slide set 7 (slide 17-26) </td>
+  </tr>
+  <tr>
+    <td class="abstand_links">24.12.2019</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Christmas break</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">31.12.2019</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Christmas break</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">07.01.2020</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Christmas break</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">14.01.2020</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 7 (slide 27-49)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">21.01.2020</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links"><font color="#FF0000">8-209</font></td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 8</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">28.01.2020</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 9 (slide 1-21)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">04.02.2020</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 9 (slide 22-49)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">11.02.2020</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">4-8</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Q&amp;A session</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">19.02.2020</td>
+    <td class="abstand_links">12:00-13:30</td>
+    <td class="abstand_links">4-[109|110|111|112]</td>
+    <td class="abstand_links"><a href="#Klausuren">Exam</a></td>
+    <td class="abstand_links">The exam covers all discussed slide sets and exercise sheets</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">05.06.2020</td>
+    <td class="abstand_links">17:00-18:30</td>
+    <td class="abstand_links">4-[109|110|111|112]</td>
+    <td class="abstand_links"><a href="#Klausuren">Exam</a></td>
+    <td class="abstand_links">The exam covers all discussed slide sets and exercise sheets</td>
+  </tr>
+</table>-->
+
+
+
+
+
+<h2>Slide Sets</h2>
+
+<!-- <p><font color="#FF0000"><b>Please only print out slides sets <u>after</u> they have been discussed during class!</b></font></p>  -->
+
+<!-- <center> -->
+<!--<table border="2" cellpadding="10">
+<tr>
+<td bgcolor="#FFFF00" align="left" valign="middle">
+<ul>
+<li>The <b>slides 49-52</b> &quot;fiber-optic cables&quot; of <b>slide set 2</b> will not be discussed in class and are not relevant for the exam in WS1718 and SS2018</li>
+<li>The <b>slides 11-41</b> &quot;encoding data with line codes&quot; of <b>slide set 3</b> will not be discussed in class and are not relevant for the exam in WS1718 and SS2018</li>
+<li>The <b>slides 39-56</b> &quot;Flow Control in the Data Link Layer&quot; of <b>slide set 5</b> have been erased from the slide set and are not relevant for the exam in WS1718 and SS2018</li>
+<li>The <b>slides 32-37</b> of <b>slide set 8</b>, which explain the routing protocol  &quot;OSPF&quot; in detail, have been erased from the slide set and are not relevant for the exam in WS1718 and SS2018</li>
+<li>The <b>slide sets 11-13</b> are <u>not</u> relevant for the exam</li>
+<li>The <b>slide set 10</b> was not discussed in class because time was too short and is  not relevant for the exam in WS1718 and SS2018</li>
+</ul>
+</td>
+</tr>
+</table>-->
+<!-- </center> -->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th>&nbsp;</th>
+    <th class="abstand_zentriert" colspan="2">Slide sets</th>
+    <th class="abstand_links">Topics</th>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;1</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_slideset_01.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2021_foliensatz_01.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Slide set 1 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Organisational information, fundamentals of computer networks, protocols and reference models</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;2</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_slideset_02.pdf" ><img src="Bilder/flag_english.gif" alt="Slide set 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2021_foliensatz_02.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Slide set 2 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Physical layer (part 1)</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links" colspan="4"><font color="#FF0000">The Slides 49-52 (fiber-optic cables) will not be discussed in class and are not relevant for the exam in WS1718 and SS2018</font></td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;3</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_slideset_03.pdf" ><img src="Bilder/flag_english.gif" alt="Slide set 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2021_foliensatz_03.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Slide set 3 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Physical layer (part 2)</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links" colspan="4"><font color="#FF0000">The Slides 11-41 (encoding data with line codes) will not be discussed in class and are not relevant for the exam in WS1718 and SS2018</font></td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;4</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_slideset_04.pdf" ><img src="Bilder/flag_english.gif" alt="Slide set 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2021_foliensatz_04.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Slide set 4 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Data Link layer (part 1)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;5</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_slideset_05.pdf" ><img src="Bilder/flag_english.gif" alt="Slide set 5 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2021_foliensatz_05.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Slide set 5 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Data Link layer (part 2)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;6</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_slideset_06.pdf" ><img src="Bilder/flag_english.gif" alt="Slide set 6 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2021_foliensatz_06.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Slide set 6 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Data Link layer (part 3)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;7</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_slideset_07.pdf" ><img src="Bilder/flag_english.gif" alt="Slide set 7 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2021_foliensatz_07.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Slide set 7 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Network layer (part 1)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;8</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_slideset_08.pdf" ><img src="Bilder/flag_english.gif" alt="Slide set 8 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2021_foliensatz_08.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Slide set 8 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Network layer (part 2)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;9</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_slideset_09.pdf" ><img src="Bilder/flag_english.gif" alt="Slide set 9 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2021_foliensatz_09.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Slide set 9 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Transport layer</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;10</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_slideset_10.pdf" ><img src="Bilder/flag_english.gif" alt="Slide set 10 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2021_foliensatz_10.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Slide set 10 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Application layer</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;11</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2021_foliensatz_11.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Slide set 11 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Cryptography (fundamentals, symmetric key cryptography)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;12</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2021_foliensatz_12.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Slide set 12 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Cryptography (asymmetric key cryptography, key exchange, hash functions)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;13</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2021_foliensatz_13.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Slide set 13 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Steganography, copyright traps and digital watermarking</td>
+  </tr>
+</table>
+
+<!--<p>
+<b>The slide sets 1 to 10 are relevant for the exam.</b><br>
+<b>The slide sets 11 to 13 are <u>not</u> relevant for the exam.</b>
+</p> -->
+
+
+<h2>Exercise Sheets</h2>
+
+<!-- <center> -->
+<!--<table border="2" cellpadding="10">
+<tr>
+<td bgcolor="#FFFF00" align="left" valign="middle">
+<ul>
+<li>The <b>exercises 5+6</b> &quot;line codes&quot; of <b>exercise sheet 2</b> are not relevant for the exam in WS1718 and SS2018</li>
+<li>The <b>exercises 11+12</b> &quot;flow control in the Data Link Layer&quot; of <b>exercise sheet 3</b> are not relevant for the exam in WS1718 and SS2018</li>
+<li>The <b>exercise 12</b> &quot;Checksums in IP Packets&quot; of <b>exercise sheet 4</b> is not relevant for the exam in WS1718 and SS2018</li>
+<li>The <b>exercise 15</b> &quot;Bellman-Ford Algorithm&quot; of <b>exercise sheet 4</b> is not relevant for the exam in WS1718 and SS2018</li>
+<li><b>Exercise sheet 6</b> is <u>not</u> relevant for the exam</li>
+</ul>
+</td>
+</tr>
+</table>-->
+<!-- </center> -->
+
+    
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th>&nbsp;</th>
+    <th class="abstand_zentriert" colspan="2">Exercise&nbsp;sheets</th>
+    <th class="abstand_links">Topics</th>
+    <th class="abstand_zentriert" colspan="2">Solutions</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;1</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_exercise_sheet_01.pdf" ><img src="Bilder/flag_english.gif" alt="Exercise Sheet 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/computernetze_WS2021_uebungsblatt_01.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Exercise Sheet 1 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Topics of slide set 1</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_exercise_sheet_01_solution.pdf" ><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;2</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_exercise_sheet_02.pdf" ><img src="Bilder/flag_english.gif" alt="Exercise Sheet 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/computernetze_WS2021_uebungsblatt_02.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Exercise Sheet 2 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Topics of slide set 2 + 3</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_exercise_sheet_02_solution.pdf" ><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links" colspan="6"><font color="#FF0000">The exercises 4+5  (line codes) of exercise sheet 2 are not relevant for the exam in WS1718 and SS2018</font></td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;3</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_exercise_sheet_03.pdf" ><img src="Bilder/flag_english.gif" alt="Exercise Sheet 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/computernetze_WS2021_uebungsblatt_03.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Exercise Sheet 3 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Topics of slide set 4 + 5 + 6</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_exercise_sheet_03_solution.pdf" ><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;4</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_exercise_sheet_04.pdf" ><img src="Bilder/flag_english.gif" alt="Exercise Sheet 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/computernetze_WS2021_uebungsblatt_04.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Exercise Sheet 4 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Topics of slide set 7 + 8</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_exercise_sheet_04_solution.pdf" ><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;5</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_exercise_sheet_05.pdf" ><img src="Bilder/flag_english.gif" alt="Exercise Sheet 5 in English language" border="0" width="16" height="12"></a></td>
+   <td class="abstand_zentriert"><a href="Skript/computernetze_WS2021_uebungsblatt_05.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Exercise Sheet 5 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Topics of slide set 9 + 10</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2021_exercise_sheet_05_solution.pdf" ><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 5 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;6</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="Skript/computernetze_WS2021_uebungsblatt_06.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Exercise Sheet 6 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Topics of slide set 11 + 12 + 13</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+</table>
+  
+<!--<p>
+<b>The exercise sheets 1 to 5 are relevant for the exam.</b><br>
+<b>Exercise sheet 6 is <u>not</u> relevant for the exam.</b>
+</p>-->
+  
+<!-- <h2>Lab Exercise Sheets</h2> -->
+
+<!-- TBD -->
+
+<!-- <p><font color="#FF0000"><b>Mindestens 25% der Punkte, die in der Klausur im WS1718 erreichbar sind, werden sich auf die Laboraufgaben beziehen! Zum Bestehen der Klausur brauchen Sie 50% der erreichbaren Punkte.!</b></font></p> -->
+
+<!-- <p><font color="#FF0000"><b>At least 40% of the points, which can be reached in the exam of SS2018, will refer to the lab exercise sheets. To pass the exam, you will need 50% of the achievable points. So please try in your own interest to solve the laboratory tasks.</b></font></p> -->
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+    <th>&nbsp;</th>
+    <th class="abstand_zentriert">Lab&nbsp;Exercise&nbsp;sheets</th>
+    <th class="abstand_zentriert">Solutions</th>
+    <th class="abstand_links">Slides</th>
+  <tr>
+    <td class="abstand_links">Lab&nbsp;Exercise&nbsp;sheet&nbsp;1</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS1819_lab_exercise_sheet_01.pdf" ><img src="Bilder/flag_english.gif" alt="Lab Exercise Sheet 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS1819_lab_exercise_sheet_01_Sample_Solution.pdf" ><img src="Bilder/flag_english.gif" alt="Sample Solution of Lab Exercise Sheet 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links"><a href="Skript/Computer_Networks_Lab_Slide_Set_1_Introduction.pdf" >Introduction and Fundamentals</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Lab&nbsp;Exercise&nbsp;sheet&nbsp;2</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS1819_lab_exercise_sheet_02.pdf" ><img src="Bilder/flag_english.gif" alt="Lab Exercise Sheet 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS1819_lab_exercise_sheet_02_Sample_Solution.pdf" ><img src="Bilder/flag_english.gif" alt="Sample Solution of Lab Exercise Sheet 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links"><a href="Skript/Computer_Networks_Lab_Slide_Set_2_Network_Configuration.pdf" >Network Configuration in Linux</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Lab&nbsp;Exercise&nbsp;sheet&nbsp;3</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS1819_lab_exercise_sheet_03.pdf" ><img src="Bilder/flag_english.gif" alt="Lab Exercise Sheet 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS1819_lab_exercise_sheet_03_Sample_Solution.pdf" ><img src="Bilder/flag_english.gif" alt="Sample Solution of Lab Exercise Sheet 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links"><a href="Skript/Computer_Networks_Lab_Slide_Set_3_Firewalls.pdf" >Firewalls and iptables</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Lab&nbsp;Exercise&nbsp;sheet&nbsp;4</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS1819_lab_exercise_sheet_04.pdf" ><img src="Bilder/flag_english.gif" alt="Lab Exercise Sheet 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS1819_lab_exercise_sheet_04_Sample_Solution.pdf" ><img src="Bilder/flag_english.gif" alt="Sample Solution of Lab Exercise Sheet 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links"><a href="Skript/Computer_Networks_Lab_Slide_Set_4_Webserver_Clusters.pdf" >Webservers and Cluster Computing</a></td>
+  </tr>
+</table>-->
+  
+
+<!-- <h2>Klausur</h2> -->
+
+<!-- Der Termin der Klausur steht noch nicht fest. -->
+
+<!-- The written exam will take place on Friday, February 14th 2014 at 10:00 in room 4/8. -->
+
+<!-- <p> -->
+
+<!-- Each participant is allowed to use a <u>calculator</u> and to bring a <u>self prepared and handwritten</u> DIN-A4 sheet whose content is free  into the exam. Attention: Only <u>a single side</u> of the DIN-A4 sheet is allowed to be used! Only handwritten originals are allowed but no copies. -->
+
+<!-- <p> -->
+
+<!-- Jeder Teilnehmer darf einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien. -->
+
+<h2 id="Klausuren">Exams</h2>
+<!-- <h2 id="Klausuren">Klausuren</h2> -->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Semester</th>
+    <th class="abstand_zentriert" colspan="2">Exams</th>
+    <th class="abstand_zentriert">Time limit</th>
+    <th class="abstand_links">University</th>
+    <th class="abstand_zentriert" colspan="2">Sample solutions</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS2021</td>
+    <td class="abstand_zentriert"><a href="../Bilder/wisdom-cloak.png"><img src="Bilder/flag_english.gif" alt="Klausur vom WS2021 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Bilder/wisdom-cloak.png"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS2021 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Bilder/wisdom-cloak.png"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS2021 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Bilder/wisdom-cloak.png"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS2021 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1920</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1920/Skript/CompNet_Exam_en_WS1920.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS1920 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1920/Skript/CompNet_Exam_en_solution_WS1920.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS1920 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1819</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1819/Skript/CompNet_Exam_en_WS1819.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS1819 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1819/Skript/CompNet_Exam_en_solution_WS1819.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS1819 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1718</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1718/Skript/CompNet_Exam_en_WS1718.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS1718 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1718/Skript/CompNet_Exam_en_solution_WS1718.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS1718 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2017</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1617/Skript/CompNet_Exam_en_SS2017.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom SS2017 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1617/Skript/Netzwerke_Klausur_de_SS2017.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2017 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1617/Skript/CompNet_Exam_en_solution_SS2017.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom SS2017 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1617/Skript/Netzwerke_Klausur_de_loesung_SS2017.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2017 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1617</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1617/Skript/CompNet_Exam_en_WS1617.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS1617 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1617/Skript/CompNet_Exam_en_solution_WS1617.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS1617 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2016</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/CompNet_Exam_en_SS2016.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom SS2016 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/Netzwerke_Klausur_de_SS2016.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2016 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/CompNet_Exam_en_solution_SS2016.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom SS2016 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/Netzwerke_Klausur_de_loesung_SS2016.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2016 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1516</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/CompNet_Exam_en_WS1516.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS1516 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/Netzwerke_Klausur_de_WS1516.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1516 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/Netzwerke_Klausur_de_loesung_WS1516.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS1516 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2015</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1415/Skript/Netzwerke_Klausur_de_SS2015.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2015 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1415/Skript/Netzwerke_Klausur_de_loesung_SS2015.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2015 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1415</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1415/Skript/Netzwerke_Klausur_de_WS1415.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1415 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">FH Frankfurt</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1415/Skript/Netzwerke_Klausur_de_loesung_WS1415.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS1415 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2014</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1314/Skript/Netzwerke_Klausur_en_SS2014.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom SS2014 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1314/Skript/Netzwerke_Klausur_de_SS2014.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2014 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">FH Frankfurt</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1314/Skript/Netzwerke_Klausur_en_loesung_SS2014.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom SS2014 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1314</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1314/Skript/Netzwerke_Klausur_en_WS1314.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS1314 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1314/Skript/Netzwerke_Klausur_de_WS1314.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1314 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">FH Frankfurt</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1314/Skript/Netzwerke_Klausur_en_loesung_WS1314.pdf" ><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS1314 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2012</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke12/Skript/Netzwerke_Klausur_SS2012.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2012 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">HS Darmstadt</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke12/Skript/Netzwerke_Klausur_Musterloesung_SS2012.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Lösung Klausur vom SS2012 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+</table>
+
+ 
+<!-- <h2>Exam Results</h2> -->
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="netzwerke_exam_SS2020.html" style="text-decoration: none">Result of the written examination in SS2020</a></td>
+  </tr>
+  <tr>
+    <td><a href="netzwerke_exam_WS1920.html" style="text-decoration: none">Result of the written examination in WS1920</a></td>
+  </tr>
+</table>-->
+
+<h2 id="Christmasspecial">Christmas Special</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td class="abstand_links">Exercise Sheet</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS1920_exercise_sheet_components.pdf"><img src="Bilder/flag_english.gif" alt="Network Components Exercise Sheet in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Network Components</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS1920_slideset_network_components.pdf"><img src="Bilder/flag_english.gif" alt="Network Components in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS1920_foliensatz_netzwerkkomponenten.pdf"><img src="Bilder/flag_deutsch.gif" alt="Netzwerkkomponenten" border="0" width="16" height="12"></a></td>
+  </tr>
+</table>
+
+
+<a href="https://en.wikipedia.org/wiki/Xsnow"><img src="Bilder/xsnow.png" alt="xsnow" border="0" width="531" height="102"></a>
+
+<!-- <h2>Course Evaluation</h2> -->
+
+<!-- Der Termin der Vorlesungsevaluierung steht noch nicht fest. -->
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/WiSe18_19-Computer_Network.pdf">Result</a> of the course evaluation
+    </td>
+  </tr>
+</table>-->
+
+<!--<h2>Kontakt</h2>
+
+<p>Zu erreichen bin ich am besten per E-Mail: <a href="mailto:christianbaun@fb2.fra-uas.de" >christianbaun@fb2.fra-uas.de</a></p>-->
+
+<h2>Contact</h2>
+
+<p>The best way to reach me is via email: <a href="mailto:christianbaun@fb2.fra-uas.de">christianbaun@fb2.fra-uas.de</a></p>
+
+<!-- <p>The Lab exercises are supervised in WS1920 by Henry-Norbert Cocos: <a href="mailto:cocos@stud.fra-uas.de">cocos@stud.fra-uas.de</a></p> -->
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="49%" align="left">
+      <i><a href="mailto:christianbaun@fb2.fra-uas.de" >Prof. Dr. Christian Baun</a><br></i>
+      <i><a href="https://www.frankfurt-university.de/">Frankfurt University of Applied Sciences</a><br></i>
+      <i>(1971-2014: Fachhochschule Frankfurt am Main)<br></i>
+      <i><a href="https://www.fh-frankfurt.de/fachbereiche/fb2.html">Faculty of Computer Science and Engineering</a><br></i>
+      <i>Last updated: September 19th 2020</i>
+    </td>
+    <td width="49%" align="right" valign="middle">
+      <a href="https://www.frankfurt-university.de/"><img src="Bilder/fuas-logo.png" alt="zur Homepage der Frankfurt University of Applied Sciences" border="0" width="225" height="100" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
