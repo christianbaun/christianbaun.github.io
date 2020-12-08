@@ -140,3 +140,10 @@ div.kasten {
      margin-top: 15px;
      margin-bottom: 15px;
 }
+
+div.abb {
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    padding:10px;    /*     Innenabstand */
+}
