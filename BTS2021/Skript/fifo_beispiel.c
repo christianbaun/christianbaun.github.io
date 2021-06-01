@@ -3,9 +3,9 @@
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
-// date:         July 4th 2019
-// version:      1.1
-// gcc_version:  gcc (Debian 4.9.2-10) 4.9.2
+// date:         June 1st 2021
+// version:      1.2
+// gcc_version:  gcc (Debian 8.3.0-6)
 // compile with: gcc fifo_beispiel.c -o fifo_beispiel 
 // nodes:        This program creates a child process and inside the parent 
 //               process a named pipe (FIFO) is created. The parent process 
@@ -16,6 +16,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
+#include <sys/stat.h>
 
 void main() {
   int pid_des_Kindes;

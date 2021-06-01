@@ -3,15 +3,15 @@
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
-// date:         November 15th 2016
-// version:      1.0
-// gcc_version:  gcc (Debian 4.9.2-10) 4.9.2
+// date:         June 1st 2021
+// version:      1.2
+// gcc_version:  gcc (Debian 8.3.0-6)
 // compile with: gcc tcp_socket_client.c -o tcp_socket_client
-// nodes:        This program conncets with the socket of a server and transmits
+// nodes:        This program connects with the socket of a server and transmits
 //               a message which is typed in at the command line interface by the
-//               user. The hostname and portnumber are specified as arguments on the
+//               user. The IP address and portnumber are specified as arguments on the
 //               command line when executing the compiled program:
-//               ./tcp_socket_client <hostname> <portnumber>
+//               ./tcp_socket_client <ip-address> <portnumber>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,7 +19,8 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
-#include <netdb.h> 
+#include <netdb.h>
+#include <unistd.h>
 
 int main(int argc, char *argv[])
 {

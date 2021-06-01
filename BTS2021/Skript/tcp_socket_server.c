@@ -3,9 +3,9 @@
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
-// date:         November 15th 2016
-// version:      1.0
-// gcc_version:  gcc (Debian 4.9.2-10) 4.9.2
+// date:         June 1st 2021
+// version:      1.2
+// gcc_version:  gcc (Debian 8.3.0-6)
 // compile with: gcc tcp_socket_server.c -o tcp_socket_server
 // nodes:        This program creates a socket and waits for an incomming 
 //               connection from a client via TCP. The server waits for an 
@@ -20,6 +20,7 @@
 #include <sys/types.h> 
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <unistd.h>
 
 int main(int argc, char *argv[])
 {
