@@ -1,26 +1,26 @@
 // title:        tcp_socket_server.c
-// description:  This c program is a very TCP socket example for Linux
+// description:  This c program is a TCP socket example for Linux
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
-// date:         June 1st 2021
-// version:      1.2
+// date:         August 8th 2021
+// version:      1.3
 // gcc_version:  gcc (Debian 8.3.0-6)
 // compile with: gcc tcp_socket_server.c -o tcp_socket_server
-// nodes:        This program creates a socket and waits for an incomming 
+// nodes:        This program creates a socket and waits for an incoming 
 //               connection from a client via TCP. The server waits for an 
-//               incomming transmission and will reply a string to the client
+//               incoming transmission and will reply a string to the client
 //               The port number is specified as an argument when executing 
 //               the compiled program:
 //               ./tcp_socket_server <portnumber>
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <sys/types.h> 
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <unistd.h>
+#include <stdio.h>      // für printf
+#include <stdlib.h>     // für atoi, exit
+#include <string.h>     // für strlen, memset
+#include <sys/socket.h> // für socket
+#include <netinet/in.h> // für die Struktur sockaddr_in
+#include <unistd.h>     // für read, write, close
+#include <arpa/inet.h>	// für htons
 
 int main(int argc, char *argv[])
 {
@@ -30,15 +30,16 @@ int main(int argc, char *argv[])
     int clientadresselength;
     struct sockaddr_in adresse;
 
+    // Inhalt des Puffers mit Null-Bytes füllen
     char puffer[1024] = { 0 };
      
-    // Wenn keine Portnummer als Argumument angegeben wurde...
+    // Die Portnummer muss als Argument angegeben sein
     if (argc < 2) {
         printf("Sie müssen eine Portnummer angeben.\n");
         exit(1);
     }
      
-    // Das erste Argument nach dem Datainamen ist die Portnummer
+    // Das Argument nach dem Dateinamen ist die Portnummer
     portnummer = atoi(argv[1]);
      
     // Socket-Adresse in der Struktur sockaddr_in speichern
@@ -60,27 +61,25 @@ int main(int argc, char *argv[])
         printf("Der Port ist nicht verfügbar.\n");
         exit(1);
     } else {
-        printf("Der Socket wurde an eine Portnummer gebunden.\n");
+        printf("Der Socket wurde an die Portnummer gebunden.\n");
     }
 
-    // Eine Warteschlange für bis zu 5 eintreffende Verbindungsanforderung einrichten
+    // Eine Warteschlange für bis zu 5  Verbindungsanforderungen einrichten
     if (listen(sd, 5) == 0) {
         printf("Warte auf Verbindungsanforderungen.\n");
     } else {
         printf("Es kam beim listen zu einem Fehler.\n");
+        exit(1);
     }
 
     clientadresselength = sizeof(adresse);
     neuer_socket = accept(sd, (struct sockaddr *) &adresse, &clientadresselength);
     if (neuer_socket < 0) {
-        printf("Verbindungsanforderung konnte nicht akzeptiert werden.\n");
+        printf("Verbindungsanforderung fehlgeschlagen.\n");
         exit(1);
     } else {
-        printf("Es wurde ein Verbindung zu einem Client hergestellt.\n");
+        printf("Verbindung zu einem Client aufgebaut.\n");
     }
-     
-    // Inhalt des Puffers mit Null-Bytes füllen
-    memset(puffer, 0, sizeof(puffer));
 
     // Nachricht empfangen
     if (read(neuer_socket, puffer, sizeof(puffer)) < 0) {
@@ -91,7 +90,7 @@ int main(int argc, char *argv[])
     // Empfangene Nachricht lokal ausgeben
     printf("Empfangene Nachricht: %s\n",puffer);
      
-    char antwort[]="Server: Ich habe Ihre Nachricht empfangen.\n";
+    char antwort[]="Server: Nachricht empfangen.\n";
     
     // Nachricht senden
     if (write(neuer_socket, antwort, sizeof(antwort)) < 0) {

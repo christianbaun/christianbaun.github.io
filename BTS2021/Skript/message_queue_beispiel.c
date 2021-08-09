@@ -1,5 +1,6 @@
 // title:        message_queue_beispiel.c
-// description:  This c program is a very simple message queue example for Linux
+// description:  This c program is an example about inter-process communication
+//               via a message queue for Linux
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2

@@ -1,22 +1,22 @@
-// title:        tcp_socket_server.c
-// description:  This c program is a TCP socket example for Linux
+// title:        udp_socket_server.c
+// description:  This c program is a UDP socket example for Linux
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
-// date:         August 8th 2021
-// version:      1.3
+// date:         August 9th 2021
+// version:      1.0
 // gcc_version:  gcc (Debian 8.3.0-6)
-// compile with: gcc tcp_socket_server.c -o tcp_socket_server
+// compile with: gcc udp_socket_server.c -o udp_socket_server
 // nodes:        This program creates a socket and waits for an incoming 
-//               connection from a client via TCP. The server waits for an 
+//               connection from a client via UDP. The server waits for an 
 //               incoming transmission and will reply a string to the client
 //               The port number is specified as an argument when executing 
 //               the compiled program:
-//               ./tcp_socket_server <portnumber>
+//               ./udp_socket_server <portnumber>
 
 #include <stdio.h>      // für printf
 #include <stdlib.h>     // für atoi, exit
-#include <string.h>     // für strlen, memset
+#include <string.h>     // für memset
 #include <sys/socket.h> // für socket
 #include <netinet/in.h> // für die Struktur sockaddr_in
 #include <unistd.h>     // für read, write, close
@@ -27,8 +27,8 @@ int main(int argc, char *argv[])
     int sd;
     int neuer_socket;
     int portnummer;
-    int clientadresselength;
-    struct sockaddr_in adresse;
+    int client_adresse_laenge;
+    struct sockaddr_in adresse, client_adresse;
 
     // Inhalt des Puffers mit Null-Bytes füllen
     char puffer[1024] = { 0 };
@@ -41,14 +41,19 @@ int main(int argc, char *argv[])
      
     // Das Argument nach dem Dateinamen ist die Portnummer
     portnummer = atoi(argv[1]);
-     
+
+    // Speicherbereich der Struktur sockaddr_in mit Nullen füllen
+    memset(&adresse, 0, sizeof(adresse)); 
+    // Speicherbereich der Struktur sockaddr_in mit Nullen füllen
+    memset(&client_adresse, 0, sizeof(client_adresse)); 
+       
     // Socket-Adresse in der Struktur sockaddr_in speichern
     adresse.sin_family = AF_INET;
     adresse.sin_addr.s_addr = INADDR_ANY;
     adresse.sin_port = htons(portnummer);
      
     // Socket erstellen
-    sd = socket(AF_INET, SOCK_STREAM, 0);
+    sd = socket(AF_INET, SOCK_DGRAM, 0);
     if (sd < 0) {
         printf("Der Socket konnte nicht erzeugt werden.\n");
         exit(1);
@@ -63,44 +68,24 @@ int main(int argc, char *argv[])
     } else {
         printf("Der Socket wurde an die Portnummer gebunden.\n");
     }
-
-    // Eine Warteschlange für bis zu 5  Verbindungsanforderungen einrichten
-    if (listen(sd, 5) == 0) {
-        printf("Warte auf Verbindungsanforderungen.\n");
-    } else {
-        printf("Es kam beim listen zu einem Fehler.\n");
-        exit(1);
-    }
-
-    clientadresselength = sizeof(adresse);
-    neuer_socket = accept(sd, (struct sockaddr *) &adresse, &clientadresselength);
-    if (neuer_socket < 0) {
-        printf("Verbindungsanforderung fehlgeschlagen.\n");
-        exit(1);
-    } else {
-        printf("Verbindung zu einem Client aufgebaut.\n");
-    }
+     
+    client_adresse_laenge = sizeof(client_adresse);
 
     // Nachricht empfangen
-    if (read(neuer_socket, puffer, sizeof(puffer)) < 0) {
+    if (recvfrom(sd, (char *)puffer, sizeof(puffer), 0, (struct sockaddr *) &client_adresse, &client_adresse_laenge) < 0) {
         printf("Der Lesezugriff ist fehlgeschlagen.\n");
         exit(1);
     }
      
     // Empfangene Nachricht lokal ausgeben
     printf("Empfangene Nachricht: %s\n",puffer);
-     
+    
     char antwort[]="Server: Nachricht empfangen.\n";
     
     // Nachricht senden
-    if (write(neuer_socket, antwort, sizeof(antwort)) < 0) {
+    if (sendto(sd, (const char *)antwort, sizeof(antwort), 0, (struct sockaddr *) &client_adresse, client_adresse_laenge) < 0) {
         printf("Der Schreibzugriff ist fehlgeschlagen.\n");
         exit(1);
-    }
-
-    // Socket schließen
-    if (close(neuer_socket) == 0) {
-        printf("Der verbundene Socket wurde geschlossen.\n");
     }
 
     // Socket schließen

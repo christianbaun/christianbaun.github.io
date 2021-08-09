@@ -1,17 +1,17 @@
-// title:        tcp_socket_client.c
-// description:  This c program is a TCP socket example for Linux
+// title:        udp_socket_client.c
+// description:  This c program is a UDP socket example for Linux
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
-// date:         August 8th 2021
-// version:      1.3
+// date:         August 9th 2021
+// version:      1.0
 // gcc_version:  gcc (Debian 8.3.0-6)
-// compile with: gcc tcp_socket_client.c -o 6_tcp_socket_client
+// compile with: gcc udp_socket_client.c -o udp_socket_client
 // nodes:        This program connects with the socket of a server and transmits
 //               a message which is typed in at the command line interface by the
 //               user. The IP address and port number are specified as arguments on the
 //               command line when executing the compiled program:
-//               ./tcp_socket_client <ip-address> <portnumber>
+//               ./udp_socket_client <ip-address> <portnumber>
 
 #include <stdio.h>      // für printf
 #include <stdlib.h>     // für atoi, exit
@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
 {
     int sd;
     int portnummer;
+    int adresse_laenge;
     struct sockaddr_in adresse;
     struct hostent *server;
     
@@ -41,7 +42,7 @@ int main(int argc, char *argv[])
     portnummer = atoi(argv[2]);
 
     // Socket erstellen
-    sd = socket(AF_INET, SOCK_STREAM, 0);
+    sd = socket(AF_INET, SOCK_DGRAM, 0);
     if (sd < 0) {
         printf("Der Socket konnte nicht erzeugt werden.\n");
         exit(1);
@@ -56,37 +57,31 @@ int main(int argc, char *argv[])
     adresse.sin_family = AF_INET;
     adresse.sin_port = htons(portnummer);
     adresse.sin_addr.s_addr = inet_addr(argv[1]); 
-
-    // Verbindungsanfrage an Server senden
-    if (connect(sd, (struct sockaddr *) &adresse, sizeof(adresse)) < 0)  {
-        printf("Verbindungsanfrage fehlgeschlagen.\n");
-        exit(1);
-    } else {
-        printf("Verbindung zum Server aufgebaut.\n");
-    }
     
     printf("Bitte geben Sie die Nachricht ein: ");
-    
+        
     // Nachricht von der Kommandozeile einlesen
     fgets(puffer, sizeof(puffer), stdin);
     
+    adresse_laenge = sizeof(adresse);
+
     // Nachricht senden
-    if (write(sd, puffer, strlen(puffer)) < 0) {
+    if (sendto(sd, (const char *)puffer, strlen(puffer), 0, (struct sockaddr *) &adresse, adresse_laenge) < 0) {
         printf("Der Schreibzugriff ist fehlgeschlagen.\n");
         exit(1);
     }
     
-    // Inhalt des Puffers mit Null-Bytes füllen
+    // Den Inhalt des Puffers wieder mit Null-Bytes füllen
     memset(puffer, 0, sizeof(puffer));
-    
-    // Nachricht empfangen
-    if (read(sd, puffer, sizeof(puffer)) < 0) {
+
+    // Nachricht empfangen und in der Shell ausgeben
+    if (recvfrom(sd, (char *)puffer, sizeof(puffer), 0, (struct sockaddr *) &adresse, &adresse_laenge) < 0) {
         printf("Der Lesezugriff ist fehlgeschlagen.\n");
         exit(1);
     } else {
         printf("%s\n",puffer); 
     }
-
+        
     // Socket schließen
     if (close(sd) == 0) {
         printf("Der Socket wurde geschlossen.\n");

@@ -1,10 +1,11 @@
 // title:        pipe_beispiel.c
-// description:  This c program is a very simple example about inter-process communcation via a pipe for Linux
+// description:  This c program is an example about inter-process communication 
+//               via a pipe for Linux
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
-// date:         November 11th 2016
-// version:      1.0
+// date:         June 1st 2018
+// version:      1.1
 // gcc_version:  gcc (Debian 4.9.2-10) 4.9.2
 // compile with: gcc fifo_beispiel.c -o fifo_beispiel 
 // nodes:        This program creates a child process and inside the parent 
@@ -18,7 +19,7 @@
 
 void main() {
   int pid_des_Kindes;
-  // Zugriffskennungen der Pipe zum Lesen (testpipe[0]) und Schreiben (testpipe[01]) anlegen
+  // Zugriffskennungen der Pipe zum Lesen (testpipe[0]) und Schreiben (testpipe[1]) anlegen
   int testpipe[2]; 
   
   // Die Pipe testpipe anlegen
@@ -60,7 +61,7 @@ void main() {
     // Schreibkanal der Pipe testpipe blockieren
     close(testpipe[1]);
     
-    // Einen Empfangspuffer mit 80 Zeichen Kapaiztät anlegen
+    // Einen Empfangspuffer mit 80 Zeichen Kapazität anlegen
     char puffer[80];
     
     // Daten aus dem Lesekanal der Pipe auslesen

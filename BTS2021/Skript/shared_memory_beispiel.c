@@ -1,5 +1,6 @@
 // title:        shared_mememory_beispiel.c
-// description:  This c program is a very simple shared memory example for Linux
+// description:  This c program is an example about inter-process communication
+//               via shared memory for Linux
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2

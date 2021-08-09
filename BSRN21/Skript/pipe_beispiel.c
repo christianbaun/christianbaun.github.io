@@ -1,5 +1,6 @@
 // title:        pipe_beispiel.c
-// description:  This c program is a very simple example about inter-process communcation via a pipe for Linux
+// description:  This c program is an example about inter-process communication 
+//               via a pipe for Linux
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
