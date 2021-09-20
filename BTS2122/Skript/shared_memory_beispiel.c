@@ -4,10 +4,10 @@
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
-// date:         November 8th 2016
-// version:      1.2
-// gcc_version:  gcc (Debian 4.9.2-10) 4.9.2
-// compile with: gcc shared_memory_beispiel.c -o shared_memory_beispiel 
+// date:         September 20th 2021
+// version:      1.4
+// gcc_version:  gcc (Debian 8.3.0-6)
+// compile with: gcc shared_mememory_beispiel.c -o shared_mememory_beispiel
 // nodes:        This program creates a shared memory segment, attaches it to
 //               the running process, inserts a string into it, reads the 
 //               string out of it, detaches it and finally erases it.
@@ -81,7 +81,7 @@ int main(int argc, char **argv) {
   returncode_shmctl = shmctl(returncode_shmget, IPC_RMID, 0);
   if (returncode_shmctl == -1) {
     printf("Das Segment konnte nicht gelöscht werden.\n");
-    perror("semctl");
+    perror("shmctl");
     exit(1);
   } else { 
     printf("Das Segment wurde gelöscht.\n");
