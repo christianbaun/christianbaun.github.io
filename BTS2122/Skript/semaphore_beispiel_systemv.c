@@ -1,4 +1,4 @@
-// title:        semaphore_beispiel.c
+// title:        semaphore_beispiel_systemv.c
 // description:  This c program is a simple semaphore example for Linux
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
@@ -6,7 +6,7 @@
 // date:         October 2nd 2021
 // version:      1.0
 // gcc_version:  gcc 10.2.1 (Debian 10.2.1-6)
-// compile with: gcc semaphore_beispiel.c -o semaphore_beispiel
+// compile with: gcc semaphore_beispiel_systemv.c -o semaphore_beispiel_systemv
 // nodes:        This program creates a child process. The parent process and
 //               the child process both try to print characters in the command
 //               line interface (critical section). Each process may print 
