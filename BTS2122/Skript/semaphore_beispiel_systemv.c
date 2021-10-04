@@ -14,11 +14,11 @@
 //               to ensure mutual exclusion.
 //               System V semaphores can be monitored with command ipcs -s
 
-#include <stdio.h>      // für printf
-#include <stdlib.h>     // für exit
-#include <unistd.h>     // für read, write, close
-#include <sys/wait.h>   // für wait
-#include <sys/sem.h>    // für semget, semctl, semop
+#include <stdio.h>      // for printf
+#include <stdlib.h>     // for exit
+#include <unistd.h>     // for read, write, close
+#include <sys/wait.h>   // for wait
+#include <sys/sem.h>    // for semget, semctl, semop
 
 void main() {
   int pid_des_kindes;
@@ -34,7 +34,7 @@ void main() {
   // Neue Semaphorgruppe 12345 mit einer Semaphore erstellen 
   // IPC_CREAT = Semaphore erzeugen, wenn Sie noch nicht existiert
   // IPC_EXCL = Neuen Semaphorgruppe anlegen und nicht auf evtl. 
-  // existierende Semaphorgruppe mit gleichem Schlüssel zugreifen
+  // existierende Semaphorgruppe mit gleichem Key zugreifen
   // 0600 = Zugriffsrechte auf die neue Semaphorgruppe
   returncode_semget1 = semget(sem_key1, 1, IPC_CREAT | IPC_EXCL | 0600);
   if (returncode_semget1 < 0) {
@@ -53,10 +53,10 @@ void main() {
     exit(1);
   }
 
-  // P-Operation definieren. Wert der Zählveriable um eins dekrementieren 
+  // P-Operation definieren. Wert der Semaphore um eins dekrementieren 
   struct sembuf p_operation = {0, -1, 0};  
   
-  // V-Operation definieren. Wert der Zählveriable um eins inkrementieren 
+  // V-Operation definieren. Wert der Semaphore um eins inkrementieren 
   struct sembuf v_operation = {0, 1, 0};    
 
   // Erste Semaphore der Semaphorgruppe 12345 initial auf Wert 1 setzen
@@ -123,22 +123,22 @@ void main() {
 
   printf("\n");
 
-  // Semaphorgruppe 12345 löschen
+  // Semaphorgruppe 12345 entfernen
   returncode_semctl = semctl(returncode_semget1, 0, IPC_RMID, 0);
     if (returncode_semctl < 0) {
-      printf("Die Semaphorgruppe %i konnte nicht gelöscht werden.\n", returncode_semget1);
+      printf("Die Semaphorgruppe %i konnte nicht entfernt werden.\n", returncode_semget1);
       exit(1);
   } else { 
-      printf("Die Semaphorgruppe mit ID %i und Key %i wurde gelöscht.\n", returncode_semget1, sem_key1);
+      printf("Die Semaphorgruppe mit ID %i und Key %i wurde entfernt.\n", returncode_semget1, sem_key1);
   }    
 
-  // Semaphorgruppe 54321 löschen
+  // Semaphorgruppe 54321 entfernen
   returncode_semctl = semctl(returncode_semget2, 0, IPC_RMID, 0);
     if (returncode_semctl < 0) {
-      printf("Die Semaphorgruppe %i konnte nicht gelöscht werden.\n", returncode_semget2);
+      printf("Die Semaphorgruppe %i konnte nicht entfernt werden.\n", returncode_semget2);
       exit(1);
   } else { 
-      printf("Die Semaphorgruppe mit ID %i und Key %i wurde gelöscht.\n", returncode_semget2, sem_key2);
+      printf("Die Semaphorgruppe mit ID %i und Key %i wurde entfernt.\n", returncode_semget2, sem_key2);
   }
 
   exit(0);
