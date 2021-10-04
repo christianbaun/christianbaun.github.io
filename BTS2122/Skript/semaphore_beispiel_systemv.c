@@ -1,17 +1,18 @@
 // title:        semaphore_beispiel_systemv.c
-// description:  This c program is a simple semaphore example for Linux
+// description:  This c program is a simple semaphore (System V) example for Linux
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
-// date:         October 2nd 2021
+// date:         October 4th 2021
 // version:      1.0
 // gcc_version:  gcc 10.2.1 (Debian 10.2.1-6)
 // compile with: gcc semaphore_beispiel_systemv.c -o semaphore_beispiel_systemv
 // nodes:        This program creates a child process. The parent process and
 //               the child process both try to print characters in the command
 //               line interface (critical section). Each process may print 
-//               only one character at a time. Two semaphores are used to 
-//               ensure mutual exclusion.
+//               only one character at a time. Two System V semaphores are used  
+//               to ensure mutual exclusion.
+//               System V semaphores can be monitored with command ipcs -s
 
 #include <stdio.h>      // für printf
 #include <stdlib.h>     // für exit
@@ -95,26 +96,25 @@ void main() {
   // Kindprozess
   if (pid_des_kindes == 0) {
     for (int i=0;i<5;i++) {
-      semop(returncode_semget2, &p_operation, 1);
+      semop(returncode_semget2, &p_operation, 1); // P-Operation Semaphore 54321
       // Kritischer Abschnitt (Anfang)
-      printf("2");
+      printf("B");
       sleep(1);
       // Kritischer Abschnitt (Ende)
-      semop(returncode_semget1, &v_operation, 1);
+      semop(returncode_semget1, &v_operation, 1); // V-Operation Semaphore 12345
     }
-    
     exit(0);
   }
   
   // Elternprozess
   if (pid_des_kindes > 0) {       
     for (int i=0;i<5;i++) {
-      semop(returncode_semget1, &p_operation, 1);
+      semop(returncode_semget1, &p_operation, 1); // P-Operation Semaphore 12345
       // Kritischer Abschnitt (Anfang)
-      printf("1");
+      printf("A");
       sleep(1);
       // Kritischer Abschnitt (Ende)
-      semop(returncode_semget2, &v_operation, 1);
+      semop(returncode_semget2, &v_operation, 1); // V-Operation Semaphore 54321
     }
   }
 
