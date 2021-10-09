@@ -1,13 +1,13 @@
-// title:        semaphore_beispiel_posix_named.c
+// title:        Listing_9_13_semaphore_posix_named.c
 // description:  This c program is a simple named semaphore (POSIX) example 
 //               for Linux
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
-// date:         October 4th 2021
-// version:      1.0
+// date:         October 9th 2021
+// version:      1.1
 // gcc_version:  gcc 10.2.1 (Debian 10.2.1-6)
-// compile with: gcc semaphore_beispiel_posix_named.c -o semaphore_beispiel_posix_named -lpthread
+// compile with: gcc Listing_9_13_semaphore_posix_named.c -o Listing_9_13_semaphore_posix_named -lpthread
 // nodes:        This program creates a child process. The parent process and
 //               the child process both try to print characters in the command
 //               line interface (critical section). Each process may print 
@@ -15,7 +15,7 @@
 //               used to ensure mutual exclusion. 
 //               Attention: ipcs does only show System V semaphores and not  
 //               POSIX semaphores. 
-//               Named semaphores are created in Linux in the folder /dev/shm/
+//               Named semaphores are created in Linux in the folder /dev/shm
 //               with names of the form sem.<name>
 
 #include <stdio.h>      // for printf
@@ -29,7 +29,7 @@ void main() {
   const char sem1_name[] = "/mysem1";
   const char sem2_name[] = "/mysem2";
   int pid_des_kindes;
-  int returncode_unlink;
+  int returncode_close, returncode_unlink;
   int output;
   
   sem_t *mutex_sem1, *mutex_sem2;
@@ -40,32 +40,30 @@ void main() {
   // Neue benannte Semaphore /mysem1 erstellen die den initialen Wert 1 hat
   mutex_sem1 = sem_open(sem1_name, O_CREAT, 0600, 1);
   if (mutex_sem1 == SEM_FAILED) {
-    printf("Die Semaphore %s konnte nicht erstellt werden.\n", sem1_name);
+    printf("Die Semaphore konnte nicht erstellt werden.\n");
     perror("sem_open");
-    // Programmabbruch
-    exit(1);
+    exit(1);            // Programmabbruch
   } else { 
-    printf("Die Semaphore %s wurde erstellt.\n", sem1_name);
+    printf("Semaphore %s wurde erstellt.\n", sem1_name);
   }    
 
   // Neue benannte Semaphore /mysem2 erstellen die den initialen Wert 0 hat
   mutex_sem2 = sem_open(sem2_name, O_CREAT, 0600, 0);
   if (mutex_sem2 == SEM_FAILED) {
-    printf("Die Semaphore %s konnte nicht erstellt werden.\n", sem2_name);
+    printf("Die Semaphore konnte nicht erstellt werden.\n");
     perror("sem_open");
-    // Programmabbruch
-    exit(1);
+    exit(1);            // Programmabbruch
   } else { 
-    printf("Die Semaphore %s wurde erstellt.\n", sem2_name);
+    printf("Semaphore %s wurde erstellt.\n", sem2_name);
   }    
 
   // Initialen Wert der Semaphore /mysem1 zur Kontrolle ausgeben
   sem_getvalue(mutex_sem1, &output);
-  printf("Wert der Semaphore %s: %i\n", sem1_name, output);
+  printf("Wert von %s: %i\n", sem1_name, output);
 
   // Initialen Wert der Semaphore /mysem2 zur Kontrolle ausgeben
   sem_getvalue(mutex_sem2, &output);
-  printf("Wert der Semaphore %s: %i\n", sem2_name, output);
+  printf("Wert von %s: %i\n", sem2_name, output);
 
   // Einen Kindprozess erzeugen
   pid_des_kindes = fork();
@@ -73,8 +71,7 @@ void main() {
   // Es kam beim fork zu einem Fehler
   if (pid_des_kindes < 0) {
     perror("Es kam bei fork zu einem Fehler!\n");
-    // Programmabbruch
-    exit(1);
+    exit(1);            // Programmabbruch
   }
 
   // Kindprozess
@@ -82,8 +79,9 @@ void main() {
     for (int i=0;i<5;i++) {
       sem_wait(mutex_sem2);      // P-Operation Semaphore /mysem2
       // Kritischer Abschnitt (Anfang)
+      // Pause. Zwischen 0 und 2 Sekunden warten
+      sleep(rand() % 3);
       printf("B");
-      sleep(1);
       // Kritischer Abschnitt (Ende)
       sem_post(mutex_sem1);      // V-Operation Semaphore /mysem1
     }
@@ -96,8 +94,9 @@ void main() {
     for (int i=0;i<5;i++) {
       sem_wait(mutex_sem1);      // P-Operation Semaphore /mysem1
       // Kritischer Abschnitt (Anfang)
+      // Pause. Zwischen 0 und 2 Sekunden warten
+      sleep(rand() % 3);
       printf("A");
-      sleep(1);
       // Kritischer Abschnitt (Ende)
       sem_post(mutex_sem2);      // V-Operation Semaphore /mysem2
     }
@@ -108,22 +107,40 @@ void main() {
 
   printf("\n");
 
+  // Semaphore /mysem1 schliessen
+  returncode_close = sem_close(mutex_sem1);
+    if (returncode_close < 0) {
+      printf("%s konnte nicht geschlossen werden.\n", sem1_name);
+      exit(1);            // Programmabbruch
+  } else { 
+      printf("%s wurde geschlossen.\n", sem1_name);
+  }    
+
+  // Semaphore /mysem2 schliessen
+  returncode_close = sem_close(mutex_sem2);
+    if (returncode_close < 0) {
+      printf("%s konnte nicht geschlossen werden.\n", sem2_name);
+      exit(1);            // Programmabbruch
+  } else { 
+      printf("%s wurde geschlossen.\n", sem2_name);
+  }
+  
   // Semaphore /mysem1 entfernen
   returncode_unlink = sem_unlink(sem1_name);
     if (returncode_unlink < 0) {
-      printf("Die Semaphore %s konnte nicht entfernt werden.\n", sem1_name);
-      exit(1);
+      printf("%s konnte nicht entfernt werden.\n", sem1_name);
+      exit(1);            // Programmabbruch
   } else { 
-      printf("Die Semaphore %s wurde entfernt.\n", sem1_name);
+      printf("%s wurde entfernt.\n", sem1_name);
   }    
 
   // Semaphore /mysem2 entfernen
   returncode_unlink = sem_unlink(sem2_name);
     if (returncode_unlink < 0) {
-      printf("Die Semaphore %s konnte nicht entfernt werden.\n", sem2_name);
-      exit(1);
+      printf("%s konnte nicht entfernt werden.\n", sem2_name);
+      exit(1);            // Programmabbruch
   } else { 
-      printf("Die Semaphore %s wurde entfernt.\n", sem2_name);
+      printf("%s wurde entfernt.\n", sem2_name);
   }
 
   exit(0);

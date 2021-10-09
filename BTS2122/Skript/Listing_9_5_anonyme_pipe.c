@@ -1,13 +1,13 @@
-// title:        pipe_beispiel.c
+// title:        Listing_9_5_anonyme_pipe.c
 // description:  This c program is an example about inter-process communication 
 //               via a pipe for Linux
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
-// date:         June 1st 2018
-// version:      1.1
-// gcc_version:  gcc (Debian 4.9.2-10) 4.9.2
-// compile with: gcc fifo_beispiel.c -o fifo_beispiel 
+// date:         October 9th 2021
+// version:      1.3
+// gcc_version:  gcc 10.2.1 (Debian 10.2.1-6)
+// compile with: gcc Listing_9_5_anonyme_pipe.c -o Listing_9_5_anonyme_pipe
 // nodes:        This program creates a child process and inside the parent 
 //               process a pipe is created. The parent process writes a string
 //               into the pipe and the child process reads the string out of
@@ -19,7 +19,7 @@
 
 void main() {
   int pid_des_Kindes;
-  // Zugriffskennungen der Pipe zum Lesen (testpipe[0]) und Schreiben (testpipe[1]) anlegen
+  // Zugriffskennungen der Pipe zum Lesen (testpipe[0]) und Schreiben (testpipe[01]) anlegen
   int testpipe[2]; 
   
   // Die Pipe testpipe anlegen

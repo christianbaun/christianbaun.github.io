@@ -1,18 +1,18 @@
-// title:        shared_mememory_beispiel.c
+// title:        Listing_9_1_shared_memory_systemv.c
 // description:  This c program is an example about inter-process communication
-//               via shared memory for Linux
+//               via shared memory (System V) for Linux
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
-// date:         September 20th 2021
-// version:      1.4
-// gcc_version:  gcc (Debian 8.3.0-6)
-// compile with: gcc shared_mememory_beispiel.c -o shared_mememory_beispiel
-// nodes:        This program creates a shared memory segment, attaches it to
-//               the running process, inserts a string into it, reads the 
-//               string out of it, detaches it and finally erases it.
-//               Check the status of existing shared memory segment with the 
-//               command ipcs
+// date:         October 9th 2021
+// version:      1.5
+// gcc_version:  gcc 10.2.1 (Debian 10.2.1-6)
+// compile with: gcc Listing_9_1_shared_memory_systemv.c -o Listing_9_1_shared_memory_systemv 
+// nodes:        This program creates a System V shared memory segment, 
+//               attaches it to the running process, inserts a string into it,
+//               reads the string out of it, detaches it and finally erases it.
+//               Check the status of existing System V shared memory segments  
+//               with the command ipcs -m
 
 #include <stdlib.h>
 #include <sys/types.h>
@@ -33,14 +33,16 @@ int main(int argc, char **argv) {
   // Gemeinsames Speichersegment erzeugen
   // IPC_CREAT = Segment erzeugen, wenn es noch nicht existiert
   // 0600 = Zugriffsrechte auf das neue Segment
-  returncode_shmget = shmget(shared_memory_key, MAXMEMSIZE, IPC_CREAT | 0600);
+  returncode_shmget = shmget(shared_memory_key, 
+                             MAXMEMSIZE, 
+                             IPC_CREAT | 0600);
   if (returncode_shmget < 0) {
     printf("Das Segment konnte nicht erstellt werden.\n");
     perror("shmget");
     exit(1);
+  } else {
+    printf("Das Segment wurde erstellt.\n");
   }
-  
-  printf("Das Segment wurde erstellt.\n");
   
   // Gemeinsames Speichersegment anhängen
   sharedmempointer = shmat(returncode_shmget, 0, 0);
@@ -58,11 +60,11 @@ int main(int argc, char **argv) {
     printf("Der Schreibzugriff ist fehlgeschlagen.\n");
     exit(1);
   } else { 
-    printf("%i Zeichen wurden in das Segment geschrieben.\n", returncode_sprintf);
+    printf("%i Zeichen wurden geschrieben.\n", returncode_sprintf);
   }
   
   // Die Zeichenkette im gemeinsamen Speichersegment ausgeben.
-  if (printf ("Inhalt des Segments: %s\n", sharedmempointer) < 0) {
+  if (printf("Inhalt des Segments: %s\n", sharedmempointer) < 0) {
     printf("Der Lesezugriff ist fehlgeschlagen.\n");
     exit(1);
   }

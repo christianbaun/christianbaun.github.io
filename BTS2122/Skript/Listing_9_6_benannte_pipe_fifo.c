@@ -1,13 +1,13 @@
-// title:        fifo_beispiel.c
+// title:        Listing_9_6_benannte_pipe_fifo.c
 // description:  This c program is an example about inter-process communication 
 //               via a named pipe (FIFO) for Linux
 // author:       Dr. Christian Baun
 // url:          http://www.christianbaun.de
 // license:      GPLv2
-// date:         June 1st 2021
-// version:      1.2
-// gcc_version:  gcc (Debian 8.3.0-6)
-// compile with: gcc fifo_beispiel.c -o fifo_beispiel 
+// date:         October 9th 2021
+// version:      1.4
+// gcc_version:  gcc 10.2.1 (Debian 10.2.1-6)
+// compile with: gcc Listing_9_6_benannte_pipe_fifo.c -o Listing_9_6_benannte_pipe_fifo
 // nodes:        This program creates a child process and inside the parent 
 //               process a named pipe (FIFO) is created. The parent process 
 //               writes a string into the pipe and the child process reads the 
