@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
   int sd;
   int portnummer;
   struct sockaddr_in adresse;
-  struct hostent *server;
   
   // Inhalt des Puffers mit Null-Bytes füllen
   char puffer[1024] = { 0 };

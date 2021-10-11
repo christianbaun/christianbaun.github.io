@@ -12,11 +12,11 @@
 //               incoming transmission and will reply a string to the client
 //               The port number is specified as an argument when executing 
 //               the compiled program:
-//               ./Listing_9.5_tcp_socket_server <portnumber>
+//               ./Listing_9_7_tcp_socket_server <portnumber>
 
 #include <stdio.h>      // für printf
 #include <stdlib.h>     // für atoi, exit
-#include <string.h>     // für strlen, memset
+#include <string.h>     // für memset
 #include <sys/socket.h> // für socket
 #include <netinet/in.h> // für die Struktur sockaddr_in
 #include <unistd.h>     // für read, write, close
@@ -41,6 +41,9 @@ int main(int argc, char *argv[])
     
   // Das Argument nach dem Dateinamen ist die Portnummer
   portnummer = atoi(argv[1]);
+  
+  // Speicherbereich der Struktur sockaddr_in mit Nullen füllen
+  memset(&adresse, 0, sizeof(adresse)); 
     
   // Socket-Adresse in der Struktur sockaddr_in speichern
   adresse.sin_family = AF_INET;

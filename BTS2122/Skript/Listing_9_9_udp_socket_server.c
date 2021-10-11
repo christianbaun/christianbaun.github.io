@@ -25,7 +25,6 @@
 int main(int argc, char *argv[])
 {
   int sd;
-  int neuer_socket;
   int portnummer;
   int client_adresse_laenge;
   struct sockaddr_in adresse, client_adresse;

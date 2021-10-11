@@ -11,7 +11,7 @@
 //               a message which is typed in at the command line interface by the
 //               user. The IP address and port number are specified as arguments on the
 //               command line when executing the compiled program:
-//               ./Listing_9.8_udp_socket_client <ip-address> <portnumber>
+//               ./Listing_9_10_udp_socket_client <ip-address> <portnumber>
 
 #include <stdio.h>      // für printf
 #include <stdlib.h>     // für atoi, exit
@@ -27,7 +27,6 @@ int main(int argc, char *argv[])
   int portnummer;
   int adresse_laenge;
   struct sockaddr_in adresse;
-  struct hostent *server;
   
   // Inhalt des Puffers mit Null-Bytes füllen
   char puffer[1024] = { 0 };

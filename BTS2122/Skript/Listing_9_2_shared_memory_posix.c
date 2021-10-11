@@ -8,11 +8,11 @@
 // version:      1.5
 // gcc_version:  gcc 10.2.1 (Debian 10.2.1-6)
 // compile with: gcc Listing_9_2_shared_memory_posix.c -o Listing_9_2_shared_memory_posix -lrt
-// nodes:        This program creates a System V shared memory segment, 
+// nodes:        This program creates a POSIX shared memory segment, 
 //               attaches it to the running process, inserts a string into it,
 //               reads the string out of it, detaches it and finally erases it.
-//               Check the status of existing System V shared memory segments  
-//               with the command ipcs -m
+//               POSIX shared memory segments are created in Linux in the folder 
+//               /dev/shm
 
 #include <sys/mman.h>   // for shm_open, mmap, munmap, shm_unlink
 #include <fcntl.h>      // for O_CREAT, O_CREAT

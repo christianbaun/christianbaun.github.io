@@ -15,8 +15,8 @@
 //               used to ensure mutual exclusion. 
 //               Attention: ipcs does only show System V semaphores and not  
 //               POSIX semaphores. 
-//               Named semaphores are created in Linux in the folder /dev/shm
-//               with names of the form sem.<name>
+//               Named POSIX semaphores are created in Linux in the folder 
+//               /dev/shm with names of the form sem.<name>
 
 #include <stdio.h>      // for printf
 #include <stdlib.h>     // for exit
