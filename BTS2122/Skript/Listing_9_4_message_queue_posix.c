@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
   memset(&recv_buffer, 0, sizeof(recv_buffer)); 
   
   // Nachrichtenwarteschlange erzeugen oder auf eine bestehende zugreifen
-  // IPC_CREAT = Warteschlange erzeugen, wenn sie noch nicht existiert
+  // O_CREAT = Warteschlange erzeugen, wenn sie noch nicht existiert
   // O_RDWR = Nachrichtenwarteschlange lesend und schreibend öffnen
   // O_NONBLOCK = Die Nachrichtenwarteschlange nichtblockierend öffnen
   // 0600 = Zugriffsrechte auf die neue Nachrichtenwarteschlange
