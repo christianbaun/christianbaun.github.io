@@ -1,0 +1,698 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Betriebssysteme und Rechnernetze, SS2023, FRA-UAS, Prof. Dr. Christian Baun">
+<meta name="author" content="Prof. Dr. Christian Baun">
+<meta name="keywords" content="Betriebssysteme, Rechnernetze, Frankfurt University of Applied Sciences, FRA-UAS, FH-Frankfurt, Frankfurt, SS2023, Sommersemester, Computer Science, Prof. Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Betriebssysteme und Rechnernetze (SS2023)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Betriebssysteme und Rechnernetze (SS2023)</h2>
+
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+<tr>
+
+<td valign="top">
+<img src="Bilder/betriebssysteme_buch_auflage3_cover_kleiner.png" alt="Betriebssysteme kompakt Cover 3. Auflage" border="0" width="165" height="264" align="middle">
+
+
+<div class="zweitescover">
+<img src="Bilder/computernetze_buch_auflage6_cover_kleiner.jpg" alt="Computernetze kompakt Cover 6. Auflage" border="0" width="167" height="267" align="middle">
+</div>
+
+</td>
+
+<td>&nbsp;</td>
+<td valign="top">
+<p>
+Die Hauptaufgabe eines Betriebssystems ist die Steuerung und Verwaltung der Betriebsmittel eines Rechnersystems sowie die Verteilung dieser Ressourcen an die Benutzer. Zu den Betriebsmitteln gehören Prozessoren, Hauptspeicher, Dateien, Ein-/Ausgabegeräte und Netzwerkdienste und generell alle Ressourcen, die mit dem Rechnersystem verbunden sind. Zusätzlich stellt ein Betriebssystem die Benutzerschnittstelle zur Steuerung des Systems sowie Schutzmechanismen, Werkzeuge, Bibliotheken und Entwicklungswerkzeuge bereit. 
+</p>
+<p>
+Rechnernetze ermöglichen den Zusammenschluss eigenständiger Computersysteme zur Kommunikation und gemeinsamen Nutzung von Ressourcen. Die Kommunikation in Computernetzen erfolgt über verschiedene Protokolle, die über verschiedene Schichtenmodelle (OSI-Referenzmodell, TCP/IP-Referenzmodell, hybrides Modell) strukturiert werden können. 
+</p>
+<p>
+Das Ziel dieser Vorlesung ist die Vermittlung der Grundlagen, Prinzipien, Probleme, und Lösungen, kurz gesagt der Konzepte auf denen die klassischen und modernen Betriebssysteme basieren. Zudem findet eine Einführung in die Grundlagen der Rechnernetze statt. Abschließend wird eine Auswahl bekannter Protokollen und ihre Klassifikation in die etablierten Referenzmodelle besprochen. Der Schwerpunkt des Themenbereichs Rechnernetze ist die Beschreibung des Transports von Daten durch die unterschiedlichen Protokollebenen und Übertragungsmedien.
+</p>
+<p>
+Die komplette Vorlesung (inkl. Übungen und Klausur) findet in deutscher Sprache statt.
+</p> 
+<p>Die Betreuung der Übungen und die Abnahme von Werkstück A geschieht im SS2023 in Zusammenarbeit mit Amalie-Margarete Wilke <a href="amalie-margarete.wilke@stud.fra-uas.de">amalie-margarete.wilke@stud.fra-uas.de</a> und Henry-Norbert Cocos <a href="mailto:cocos@fb2.fra-uas.de">cocos@fb2.fra-uas.de</a>
+</p>
+<p>
+Die Vorlesungsunterlagen zum Teil Betriebssysteme basieren auf der 3. Auflage des Buches <b>Betriebssysteme kompakt</b> (ISBN: 978-3-662-64717-2), das im Juni 2022 bei Springer Vieweg erschienen ist.
+</p>
+<p>
+Die Vorlesungsunterlagen zum Teil Computernetze basieren auf der 6. Auflage des Buches <b>Computernetze kompakt</b> (ISBN: 978-3-662-65362-3), das im Herbst 2022 bei Springer Vieweg erschienen ist. 
+</p>
+
+<center>
+<table width="95%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+
+<table border="0" cellspacing="0" cellpadding="5">
+  <tr>
+    <td align="left" valign="middle">
+      <img src="Bilder/arrow_rechts.gif" alt="Pfeil nach rechts" border="0" width="32" height="32">
+    </td>
+    <td align="center" valign="middle">
+      <a href="bsrn_faq.html">Fragen und Antworten zur Vorlesung Betriebssysteme und Rechnernetze im SS2023 (wird laufend aktualisiert!)</a>
+    </td>
+    <td align="center" valign="middle">
+     <img src="Bilder/arrow.gif" alt="Pfeil nach rechts" border="0" width="32" height="32">
+    </td>
+  </tr>
+</table> 
+
+</td>
+</tr>
+</table>
+</center>
+
+<!-- <p>   -->
+
+
+
+<!--<center>
+<table width="95%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<p>
+Die Übung Montags um 10:00 Uhr war in den letzten Wochen sehr wenig nachgefragt und wird darum bis 27.6.2022 geschlossen. Bitte nutzen Sie stattdessen die anderen Übungen.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<p>
+Für die Abgabe von Werkstück A ist es ausreichend (und empfehlenswert) wenn Sie die Dokumentation und die Präsentation (beides als PDF!) in ihr Quellcode-Repository legen (z.B. <a href="https://github.com">GitHub</a>) und den Link an Herrn Rösler, Herrn Hußke und mich per Email schicken. Wenn Sie die Präsentation bis zum 28.6.2021 noch nicht final haben ist das egal. Die Dokumentation und der Quellcode müssen bis zum 28.6.2021 aber final sein.
+</b>
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>   -->
+
+
+<!-- </p> -->
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FFFF00" align="center" valign="middle">
+<p>
+Die Klausur findet am 21.7.2021 von <b>14:00-15:00</b> in Halle 11 (Messe Frankfurt) statt.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>   -->
+
+
+
+
+<h2>Zeitplan für das Semester</h2>
+
+<p>Übungstermine sind...</p>
+
+<ul>
+<li>Montags von <b>10:00-11:30</b> in Raum <b>1-234</b> bei Henry Cocos</li>
+<li>Montags von <b>11:45-13:15</b> in Raum <b>1-234</b> bei Henry Cocos</li>
+<li>Montags von <b>14:15-15:45</b> in Raum <b>1-234</b> bei Henry Cocos</li>
+<li>Montags von <b>16:00-17:30</b> in Raum <b>1-234</b> bei Henry Cocos</li>
+<li>Donnerstags von <b>10:00-11:30</b> in Raum <b>1-234</b> bei Christian Baun</li>
+<li>Freitags von <b>10:00-11:30</b> in Raum <b>1-234</b> bei Christian Baun</li>
+</ul>
+
+
+<p>
+
+<table border="0" cellspacing="0" cellpadding="1" style="white-space:nowrap;">
+  <tr>
+    <th class="abstand_links">Datum</th>
+    <th class="abstand_links">Zeit</th>
+    <th class="abstand_links">Raum</th>
+    <th class="abstand_links">Veranstaltung</th>
+    <th class="abstand_links">Inhalte</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">14.04.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td> 
+    <td class="abstand_links">Besprechung von Foliensatz 1 (Folie 1-?)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">21.04.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td> 
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">28.04.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td> 
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">27.06.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">-----</td>
+    <td class="abstand_links" style="white-space:nowrap;">-----</td>
+    <td class="abstand_links" style="white-space:nowrap;">-----</td>
+    <td class="abstand_links">Frist (Deadline) zur Abgabe der erste Lösungsskizze für Werkstück A der Portfolioprüfung in <a href="https://campuas.frankfurt-university.de/course/view.php?id=3004">campuas</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">05.05.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td> 
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">12.05.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td> 
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">19.05.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td> 
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">26.05.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">02.06.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">09.06.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">16.06.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">23.06.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">25.06.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">-----</td>
+    <td class="abstand_links" style="white-space:nowrap;">-----</td>
+    <td class="abstand_links" style="white-space:nowrap;">-----</td>
+    <td class="abstand_links">Frist (Deadline) zur Abgabe der Dokumentation, der Präsentationsfolien und des Quellcodes von Werkstück A der Portfolioprüfung in <a href="https://campuas.frankfurt-university.de/course/view.php?id=3004">campuas</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">30.06.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">07.07.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">14.07.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">Audimax</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">???</td>
+    <td class="abstand_links" style="white-space:nowrap;">???</td>
+    <td class="abstand_links">???</td>  
+    <td class="abstand_links"><a href="#Klausuren">Klausur</a></td>
+    <td class="abstand_links">Die Klausur deckt alle besprochenen Foliensätze und Übungsblätter ab</td>
+  </tr>
+</table>
+
+
+<h2>Vorlesungsunterlagen</h2>
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+   <th class="abstand_links">Foliensätze</th>
+   <th class="abstand_links">Übungsblätter</th>
+    <th class="abstand_zentriert">Lösungen</th>
+    <th class="abstand_links">Themen</th>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_vorlesung_01_de.pdf">Foliensatz 1</a></td>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_uebungsblatt_01.pdf">Übungsblatt 1</a></td> 
+    <td class="abstand_zentriert"><a href="Skript/bsrn_SS2023_uebungsblatt_01_loesung.pdf">Lösung</a></td>
+    <td class="abstand_links">Organisatorisches, Literatur, Generationen von Computersystemen und Betriebssystemen, Klassifikationen, Einzelprogrammbetrieb, Mehrprogrammbetrieb, Einzelbenutzerbetrieb, Mehrbenutzerbetrieb, Kernelarchitekturen</td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_vorlesung_02_de.pdf">Foliensatz 2</a></td>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_uebungsblatt_02.pdf">Übungsblatt 2</a></td> 
+    <td class="abstand_zentriert"><a href="Skript/bsrn_SS2023_uebungsblatt_02_loesung.pdf">Lösung</a></td>
+    <td class="abstand_links">Speicher, Speicherhierarchie, Ersetzungsstrategien, Speicherverwaltung, Real Mode, Protected Mode, virtueller Speicher</td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_vorlesung_03_de.pdf">Foliensatz&nbsp;3</a></td>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_uebungsblatt_03.pdf">Übungsblatt 3</a></td> 
+    <td class="abstand_zentriert"><a href="Skript/bsrn_SS2023_uebungsblatt_03_loesung.pdf">Lösung</a></td>
+    <td class="abstand_links">Dateien, Dateisysteme, Verzeichnisse, Blockadressierung, Journaling, Extents</td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_vorlesung_04_de.pdf">Foliensatz 4</a></td>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_uebungsblatt_04.pdf">Übungsblatt 4</a></td> 
+    <td class="abstand_zentriert"><a href="Skript/bsrn_SS2023_uebungsblatt_04_loesung.pdf">Lösung</a></td>
+    <td class="abstand_links">Prozesse, Prozesskontext, Zustands-Prozessmodelle, Prozessverwaltung, Prozesse erzeugen und löschen, Systemaufrufe</td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_vorlesung_05_de.pdf">Foliensatz 5</a></td>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_uebungsblatt_05.pdf">Übungsblatt 5</a></td> 
+    <td class="abstand_zentriert"><a href="Skript/bsrn_SS2023_uebungsblatt_05_loesung.pdf">Lösung</a></td>
+    <td class="abstand_links">Unterbrechungen, Dispatcher, Scheduling-Verfahren</td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_vorlesung_06_de.pdf">Foliensatz 6</a></td>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_uebungsblatt_06.pdf">Übungsblatt 6</a></td> 
+    <td class="abstand_zentriert"><a href="Skript/bsrn_SS2023_uebungsblatt_06_loesung.pdf">Lösung</a></td>
+    <td class="abstand_links">Prozessinteraktion, Synchronisation von Prozessen, Kommunikation zwischen Prozessen, Kooperation von Prozessen</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_1_shared_memory_systemv.c">Beispiel zu gemeinsamen Speichersegmenten - Shared Memory Segments (System V)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_2_shared_memory_posix.c">Beispiel zu gemeinsamen Speichersegmenten - Shared Memory Segments (POSIX)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_3_message_queue_systemv.c">Beispiel zu Nachrichtenwarteschlangen - Message Queues (System V)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_4_message_queue_posix.c">Beispiel zu Nachrichtenwarteschlangen - Message Queues (POSIX)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_5_anonyme_pipe.c">Beispiel zu anonymen Pipes</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_6_benannte_pipe_fifo.c">Beispiel zu benannten Pipes</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_7_tcp_socket_server.c">Beispiel zu TCP-Sockets (Server)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_8_tcp_socket_client.c">Beispiel zu TCP-Sockets (Client)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_9_udp_socket_server.c">Beispiel zu UDP-Sockets (Server)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_10_udp_socket_client.c">Beispiel zu UDP-Sockets (Client)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_12_semaphore_systemv.c">Beispiel zu Semaphoren (System V)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_13_semaphore_posix_named.c">Beispiel zu benannten Semaphoren (POSIX)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_vorlesung_07_de.pdf">Foliensatz 7</a></td>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_uebungsblatt_07.pdf">Übungsblatt 7</a></td> 
+    <td class="abstand_zentriert"><a href="Skript/bsrn_SS2023_uebungsblatt_07_loesung.pdf">Lösung</a></td>
+    <td class="abstand_links">Grundlagen der Computervernetzung, Protokolle und Referenzmodelle</td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_vorlesung_08_de.pdf">Foliensatz 8</a></td>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_uebungsblatt_08.pdf">Übungsblatt 8</a></td> 
+    <td class="abstand_zentriert"><a href="Skript/bsrn_SS2023_uebungsblatt_08_loesung.pdf">Lösung</a></td>
+    <td class="abstand_links">Bitübertragungsschicht - Physical Layer</td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_vorlesung_09_de.pdf">Foliensatz 9</a></td>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_uebungsblatt_09.pdf">Übungsblatt 9</a></td> 
+    <td class="abstand_zentriert"><a href="Skript/bsrn_SS2023_uebungsblatt_09_loesung.pdf">Lösung</a></td>
+    <td class="abstand_links">Sicherungsschicht - Data Link Layer</td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_vorlesung_10_de.pdf">Foliensatz 10</a></td>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_uebungsblatt_10.pdf">Übungsblatt 10</a></td> 
+    <td class="abstand_zentriert"><a href="Skript/bsrn_SS2023_uebungsblatt_10_loesung.pdf">Lösung</a></td>
+    <td class="abstand_links">Vermittlungsschicht - Network Layer</td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_vorlesung_11_de.pdf">Foliensatz 11</a></td>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_uebungsblatt_11.pdf">Übungsblatt 11</a></td> 
+    <td class="abstand_zentriert"><a href="Skript/bsrn_SS2023_uebungsblatt_11_loesung.pdf">Lösung</a></td>
+    <td class="abstand_links">Transportschicht - Transport Layer</td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_vorlesung_12_de.pdf">Foliensatz 12</a></td>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2023_uebungsblatt_12.pdf">Übungsblatt 12</a></td> 
+    <td class="abstand_zentriert"><a href="Skript/bsrn_SS2023_uebungsblatt_12_loesung.pdf">Lösung</a></td>
+    <td class="abstand_links">Anwendungsschicht - Application Layer</td>
+  </tr>
+</table>
+
+
+
+
+<h2 id="WerkstueckA">Werkstück A der Portfolioprüfung</h2>
+
+
+<p>
+<font color="#ff0000"><b>Sie müssen <u>EINE</u> Aufgabe bis zum Ende des Semesters erfolgreich bearbeiten (inkl. schriftlicher Ausarbeitung, Abnahme und Präsentation)!</b></font>
+</p>
+
+
+<!--<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Wo kann man Teampartner finden?</b></font>
+<p>
+z.B. In den Übungen (Zoom-Videokonferenzen) und <a href="https://moodle.frankfurt-university.de/course/view.php?id=6832">hier</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_zentriert">Werkstück&nbsp;A</th>
+    <th class="abstand_zentriert">Maximale Gruppengröße</th>
+    <th class="abstand_links">Themengebiet</th>
+    <th class="abstand_zentriert">Erlaubte Programmiersprachen</th>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2022_portfoliopruefung_teil_1_alternative_1.pdf">Alternative 1</a></td>
+    <td class="abstand_zentriert_nowrap">5 Personen</td>
+    <td class="abstand_links">Interprozesskommunikation (siehe Foliensatz 6)</td>
+    <td class="abstand_zentriert">Bash, C, Python</td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2022_portfoliopruefung_teil_1_alternative_2.pdf">Alternative 2</a></td>    <td class="abstand_zentriert_nowrap">4 Personen</td>
+    <td  class="abstand_links">Dynamische Partitionierung (siehe Foliensatz 2)</td>
+    <td class="abstand_zentriert">Bash</td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2022_portfoliopruefung_teil_1_alternative_3.pdf">Alternative 3</a></td>
+    <td class="abstand_zentriert_nowrap">4 Personen</td>
+    <td class="abstand_links">Seitenersetzungsstrategien (siehe Foliensatz 2)</td>
+    <td class="abstand_zentriert">Bash, C</td>
+  </tr>
+  <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2022_portfoliopruefung_teil_1_alternative_4.pdf">Alternative 4</a></td>
+    <td class="abstand_zentriert_nowrap">4 Personen</td>
+    <td class="abstand_links">Scheduling-Verfahren (siehe Foliensatz 5)</td>
+    <td class="abstand_zentriert">Bash, C, Python</td>
+  </tr>
+ <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2022_portfoliopruefung_teil_1_alternative_5.pdf">Alternative 5</a></td>
+    <td class="abstand_zentriert_nowrap">5 Personen</td>
+    <td class="abstand_links">Sudoku mit Interprozesskommunikation (siehe Foliensatz 6)</td>
+    <td class="abstand_zentriert">Bash, C, Python</td>
+  </tr>
+ <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2022_portfoliopruefung_teil_1_alternative_6.pdf">Alternative 6</a></td>
+    <td class="abstand_zentriert_nowrap">5 Personen</td>
+    <td class="abstand_links">Buzzword-Bingo mit Interprozesskommunikation (siehe Foliensatz 6)</td>
+    <td class="abstand_zentriert">Bash, C, Python</td>
+  </tr>
+ <tr>
+    <td class="abstand_links_nowrap"><a href="Skript/bsrn_SS2022_portfoliopruefung_teil_1_alternative_7.pdf">Alternative 7</a></td>
+    <td class="abstand_zentriert_nowrap">5 Personen</td>
+    <td class="abstand_links">Schiffe-Versenken mit Interprozesskommunikation (siehe Foliensatz 6)</td>
+    <td class="abstand_zentriert">Bash, C, Python</td>
+  </tr>
+</table>-->
+
+
+<p>
+Eine <a href="Skript/BSRN_Paper_Vorlage_SS2023.zip" style="text-decoration: none">Vorlage</a> (<a href="Skript/BSRN_Paper_Vorlage_SS2023.zip" style="text-decoration: none">ZIP</a>, <a href="Skript/BSRN_Paper_Vorlage.pdf" style="text-decoration: none">PDF</a>) für die Ausarbeitung von Werkstück A ist verfügbar. Die Vorlage nutzt das LaTeX-Makropaket <tt>lncs</tt> (<a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines" style="text-decoration: none">Lecture Notes in Computer Science</a>) des Springer-Verlags. Henry Cocos hat eine sehr schöne <a href="Skript/Latex_Beamer_Vorlage.zip" style="text-decoration: none">LaTeX-Vorlage</a> für Präsentationsfolien mit <a href="https://de.wikipedia.org/wiki/Beamer_(LaTeX)" style="text-decoration: none">LaTeX-Beamer</a> erstellt.</p>
+
+<p>Die Verwendung dieser Vorlagen ist <u>nicht</u> zwingend erforderlich. Es ist aber eine gute Gelegenheit, die Erstellung optisch ansprechender Dokumentationen und Präsentationen zu erlernen. Alle großen Linux-Distributionen bringen LaTeX-Pakete mit. Es gibt schier endlos viel Literatur und Tutorials für den Einstieg in LaTeX. Ein kostenfrei verfügbares eBook, das auch im Quellcode vorliegt, ist <a href="https://github.com/christianbaun/einstieginlatex/raw/master/Ein_Einstieg_in_LaTeX.pdf" style="text-decoration: none">Ein Einstieg in LaTeX</a></b> (<a href="https://github.com/christianbaun/einstieginlatex" style="text-decoration: none">GitHub</a>).</p>
+
+<p>Unter Windows sind die LaTeX-Distributionen <a href="http://www.miktex.org" style="text-decoration: none">MiKTeX</a> und <a href="http://www.tug.org/texlive/" style="text-decoration: none">TeX Live</a> bekannt. Für Mac OS gibt es <a href="http://www.tug.org/mactex/" style="text-decoration: none">MacTeX</a>. LaTeX-Dokumente können mit jedem Editor bearbeitet werden.</p>
+
+<h2>Lehrmaterial in deutscher Sprache zur Linux-Systemadministration und Shell-Programmierung</h2>
+
+<p>
+<b>Diese Dokumentation sind ein guter Einstieg, wenn Sie wenig oder gar kein Vorwissen zu den Themengebieten Linux-Systemadministration und Shell-Programmierung haben. Diese Dokumentation ist nicht klausurrelevant.</b>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_01_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;1</a></td>
+    <td class="abstand_links">Organisatorisches, Einführung, Hilfesystem, Verzeichnisse, Dateien</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_02_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;2</a></td>
+    <td class="abstand_links">Systemverwaltung, Zugriffsrechte, Verweise, Dateien durchsuchen, Editoren, Prozesse</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_03_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;3</a></td>
+    <td class="abstand_links">Datum und Uhrzeit, Ein-/Ausgaben umleiten, Zeichen zählen, Alias, Dateien suchen, Kommandos zeitsteuern</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_04_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;4</a></td>
+    <td class="abstand_links">Ressourcen überwachen, Sortieren, Umgebungsvariablen, Textausgaben, Mustervergleiche, Texte auswerten</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_05_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;5</a></td>
+    <td class="abstand_links">Grundlagen der Shell und von Shell-Skripten, Vergleichsoperationel, Kontrollstrukturen, Schleifen</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_06_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;6</a></td>
+    <td class="abstand_links">Arithmetik auswerten, Funktionen, Funktionsbibliotheken, Auswahlmenüs</td>
+  </tr>
+</table>
+
+
+  
+<h2 id="Klausuren">Werkstück B der Portfolioprüfung (Klausur)</h2>
+
+
+<p>
+<font color="#ff0000"><b>Da Werkstück A der Portfolioprüfung schon eine praktische Leistung ist, wird Werkstück B (die Klausur über 60 Minuten) im SS2023 keine praktischen Aufgaben enthalten. Konzentrieren Sie sich bei der Vorbereitung auf die Klausur ganz auf die theoretischen Aufgaben in den Übungsblättern.</b></font>
+</p>
+
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Semester</th>
+<!--     <th class="abstand_zentriert" colspan="2">Klausuren</th> -->
+    <th class="abstand_zentriert">Klausuren</th>
+<!--     <th class="abstand_zentriert" colspan="2">Exams</th> -->
+    <th class="abstand_zentriert">Bearbeitungszeit</th>
+<!--     <th class="abstand_zentriert">Time limit</th> -->
+<!--     <th class="abstand_links">Hochschule</th> -->
+<!--     <th class="abstand_links">University</th> -->
+<!--     <th class="abstand_zentriert" colspan="2">Lösungen</th> -->
+    <th class="abstand_zentriert">Lösungen</th>
+<!--     <th class="abstand_zentriert" colspan="2">Sample solutions</th> -->
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2022</td>
+    <td class="abstand_zentriert"><a href="../BSRN22/Skript/BSRN_Klausur_de_SS2022.pdf">Klausur</a></td>
+    <td class="abstand_zentriert">60 Minutes</td>
+    <td class="abstand_zentriert"><a href="../BSRN22/Skript/BSRN_Klausur_de_Musterloesung_SS2022.pdf">Musterlösung</a></td>
+  </tr>  
+  <tr>
+    <td class="abstand_links">SS2021</td>
+    <td class="abstand_zentriert"><a href="../BSRN21/Skript/BSRN_Klausur_de_SS2021.pdf">Klausur</a></td>
+    <td class="abstand_zentriert">60 Minutes</td>
+    <td class="abstand_zentriert"><a href="../BSRN21/Skript/BSRN_Klausur_de_Musterloesung_SS2021.pdf">Musterlösung</a></td>
+  </tr>  
+  <tr>
+    <td class="abstand_links">SS2020</td>
+    <td class="abstand_zentriert"><a href="../BSRN20/Skript/BSRN_Klausur_de_SS2020.pdf">Klausur</a></td>
+    <td class="abstand_zentriert">60 Minutes</td>
+    <td class="abstand_zentriert"><a href="../BSRN20/Skript/BSRN_Klausur_de_Musterloesung_SS2020.pdf">Musterlösung</a></td>
+  </tr>  
+  <tr>
+    <td class="abstand_links">SS2019</td>
+    <td class="abstand_zentriert"><a href="../BSRN19/Skript/BSRN_Klausur_de_SS2019.pdf">Klausur</a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_zentriert"><a href="../BSRN19/Skript/BSRN_Klausur_de_Musterloesung_SS2019.pdf">Musterlösung</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2018</td>
+    <td class="abstand_zentriert"><a href="../BSRN18/Skript/BSRN_Klausur_de_SS2018.pdf">Klausur</a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_zentriert"><a href="../BSRN18/Skript/BSRN_Klausur_de_Musterloesung_SS2018.pdf">Musterlösung</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2017</td>
+    <td class="abstand_zentriert"><a href="../BSRN17/Skript/BSRN_Klausur_de_SS2017.pdf">Klausur</a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_zentriert"><a href="../BSRN17/Skript/BSRN_Klausur_de_Musterloesung_SS2017.pdf">Musterlösung</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2016</td>
+    <td class="abstand_zentriert"><a href="../BSRN16/Skript/BSRN_Klausur_de_SS2016.pdf">Klausur</a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_zentriert"><a href="../BSRN16/Skript/BSRN_Klausur_de_Musterloesung_SS2016.pdf">Musterlösung</a></td>
+  </tr>
+</table> 
+  
+
+  
+
+
+<h2>Prüfungsergebnisse</h2> 
+
+<!-- <table border="0" cellspacing="0" cellpadding="1">
+ <tr>
+    <td><a href="bsrn_klausur_SS2022.html" style="text-decoration: none">Ergebnis des Moduls (Werkstück A+B) im SS2022</a></td>
+  </tr>
+</table>-->
+
+TBD
+
+<!-- <h2>Vorlesungsevaluation</h2> -->
+
+
+<!-- <a href="Skript/SoSe2017-BSRN-Evaluation.pdf" >Ergebnis</a> der Vorlesungsevaluation -->
+
+
+
+<!-- <h2>True Works of Art </h2> -->
+<!-- <h2>Wahre Kunstwerke</h2> -->
+
+<!-- <p>As auxiliary material, the students were allowed to use a self prepared, single sided DIN-A4 sheet in the exam. Only handwritten originals were allowed, but no copies. This page contains a selection of the sheets. Some of them are true works of art.</p> -->
+
+<!-- <p>Als Hilfsmittel durfte jeder Teilnehmer ein selbständig vorbereitetes und handschriftlich einseitig beschriebenes DIN-A4-Blatt in die Klausur mitnehmen. Diese Seite enthält eine Auswahl der Blätter. Einige sind wahre Kunstwerke.</p> -->
+
+<!-- <a href="klausurzettel/bts_klausurzettel_ss2016_01.jpg" style="text-decoration: none"><img src="klausurzettel/bts_klausurzettel_ss2016_01_klein.jpg" alt="Klausurzettel eines Teilnehmers" border="0" width="138" height="100"></a> -->
+
+<!-- &nbsp; -->
+
+
+
+
+<h2>Kontakt</h2>
+
+<p>Zu erreichen bin ich am besten per E-Mail: <a href="mailto:christianbaun@fb2.fra-uas.de">christianbaun@fb2.fra-uas.de</a></p>
+
+<p>Die Betreuung der Übungen und die Abnahme von Werkstück A geschieht im SS2023 in Zusammenarbeit mit Henry-Norbert Cocos: <a href="mailto:cocos@fb2.fra-uas.de">cocos@fb2.fra-uas.de</a></p>
+
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="49%" align="left">
+      <i><a href="mailto:christianbaun@fb2.fra-uas.de">Prof. Dr. Christian Baun</a><br></i>
+      <i><a href="https://www.frankfurt-university.de/">Frankfurt University of Applied Sciences</a><br></i>
+      <i>(1971-2014: Fachhochschule Frankfurt am Main)<br></i>
+      <i><a href="https://www.frankfurt-university.de/de/hochschule/fachbereich-2-informatik-und-ingenieurwissenschaften/">FB 2: Informatik und Ingenieurwissenschaften</a><br></i>
+      <i>Stand: 28.3.2023</i>
+    </td>
+    <td width="49%" align="right" valign="middle">
+      <a href="https://www.frankfurt-university.de/"><img src="Bilder/fuas-logo.png" alt="zur Homepage der Frankfurt University of Applied Sciences" border="0" width="225" height="100" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
