@@ -1,0 +1,566 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<base target="_blank">   <!--Open new window for links-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Cloud Computing, SS2023, FH-Frankfurt, Frankfurt University of Applied Sciences, FRA-UAS, Prof. Dr. Christian Baun">
+<meta name="author" content="Prof. Dr. Christian Baun">
+<meta name="keywords" content="Cloud Computing, FH-Frankfurt, Frankfurt, Frankfurt University of Applied Sciences, FRA-UAS, SS2023, Computer Science, Prof. Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Cloud Computing Course, (SS2023)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Zurück zur Hauptseite / Back to main page</a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+
+<h2>Cloud Computing (SS2023)</h2>
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FFFF00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Guest lecture on February 1<sup>st</sup></b></font> 
+<p>
+For the guest lecture from <a href="https://www.novatec-gmbh.de">NOVATEC</a> on February 1st 2019 please prepare these prerequisites:
+</p>
+<p>
+<a href="https://www.heroku.com/">Heroku account</a> with billing information (https://heroku.com/verify). The credit card will not be charged during this exercise. It is only required for step 2 of the exercise to attach the backing services to your Apps. After the exercise you can remove your credit card information. If you don’t like to provide your credit card information, you can still follow the excercise but you wont’t be able to run the apps on your own Heroku account.
+</p>
+<p> 
+<a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku CLI</a> installed
+</p>
+<p>
+<a href="https://telegram.org/">Telegram account</a>
+</p>
+<p>
+Git and Java 1.8 installed
+</p>
+<p>
+Any IDE (Eclipse, intelliJ, ...)
+</p>
+<p>
+I expect that you all attend the event in time.
+</p>
+<p>
+The topics, which will be presented during this event are relevant for the written exam!
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#FFFF00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Guest lecture on February 8<sup>th</sup></b></font> 
+<p>
+On February 8th 2018 we have a guest lecture from <a href="https://www.novatec-gmbh.de">NOVATEC</a> covering the topics <a href="https://12factor.net/">12 Factor App</a> and live coding with <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> and <a href="http://projects.spring.io/spring-cloud/">Spring Cloud</a>.
+</p>
+<p>
+I expect that you all attend the lecture in time.
+</p>
+<p>
+The topics, which will be presended during this lecture are relevant for the written exam!
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--   <p></p>   -->
+  
+<table border="0" cellspacing="0" cellpadding="1">
+<tr>
+<td valign="top"><img src="Bilder/978-3-642-20917-8.jpg" alt="Cloud Computing: Web-Based Dynamic IT Services" border="0" width="165" height="250" align="middle"></td>
+<td>&nbsp;</td>
+<td valign="top">
+<p>
+A distributed system consists of several independent computers that communicate with each other over a network. Different distributed system architectures exist in the computer science. The most popular architecture is the Client-Server model. But especially in the parallel computing field, exist among others, Cluster Computing and Cloud Computing.
+<!-- </p> -->
+<!-- <p> -->
+<!-- Cloud Computing implies scalable services and the consolidation of compute and storage resources in large-scale resource centers. This consolidation offers the opportunity to redistribute resources, which have been used so far to keep the own resources running. At the same time, the users of a Cloud infrastructure services have the freedom to use their desired operating systems, programming languages ​​and applications. -->
+<!-- </p> -->
+<!-- <p> -->
+In this course, the fundamentals of Cloud Computing and related technologies are discussed. Practical exercises are an important part of this course because they are essential for thee understanding of these technologies. 
+</p>
+<!--<p>
+The course is held in English language.
+</p>-->
+<p>
+Parts of the slide sets are based on the book <b>Cloud Computing: Web-Based Dynamic IT Services</b>, which was published in 2011 by Springer. ISBN: 978-3-642-20916-1
+</p>
+
+
+<!-- <h2 id="SemesterProject">Semester Project</h2> -->
+
+
+<p>
+This course has no written exam! Instead, your grade will depend 100% on your work and the results of the semester project. In previous semesters, each group had worked on completely different themes. This semester, all groups will work on one overarching theme. 
+<!-- In particular, all groups will work on the success of one primary goal. -->
+</p>
+<p>
+<b>The semester project in SS2023 has the goal to develop an <a href="https://en.wikipedia.org/wiki/Edge_computing">edge computing</a> solution for the automatic detection of pets (cats, dogs, golden hamster).</b> The semester project includes:
+</p>
+
+<ul>
+<li>development and setup of sensor nodes with <a href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/">single board computers</a> and <a href="https://projects.raspberrypi.org/en/projects/getting-started-with-picamera">camera modules</a></li>
+<li>deployment of the <a href="https://www.raspberrypi.com/software/">operating system</a> and the <a href="https://github.com/Qengineering">object detection software</a></li>
+<li>collection of a sufficient number of images for the training and testing of the object detection model (<a href="https://www.tensorflow.org/">Tensorflow</a>, <a href="https://opencv.org/">OpenCV</a>, <a href="https://pjreddie.com/darknet/yolo/">YOLO</a>)</li>
+<li>development of a backend to manage the sensor nodes by and the collected data. The backend will be deployed as docker container on a <a href="https://medium.com/thinkport/how-to-build-a-raspberry-pi-kubernetes-cluster-with-k3s-76224788576c">Raspberry Pi Kubernetes Cluster</a> with <a href="https://k3s.io/">k3s</a> (or a similar solution)</li>
+<li>development of a frontend to present e.g. log information, event messages, and a map of events with proof like images and timestamps. The frontend will be deployed as docker container on a <a href="https://medium.com/thinkport/how-to-build-a-raspberry-pi-kubernetes-cluster-with-k3s-76224788576c">Raspberry Pi Kubernetes Cluster</a> with <a href="https://k3s.io/">k3s</a> (or a similar solution) too</li>
+</ul>
+
+<p>
+<b>The requirements will be collected in class, discussed, and distributed among the individual teams on April 12th. We will try to design and assign the tasks so that the failure of individual team members and teams does not lead to the collapse of the overall project. It is very important that all participants of the module attend class on the 12th of April!</b>
+</p>
+<!--<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#00FF00" align="center" valign="middle">
+<p>
+It is sad that we lose the first two weeks of the semester. In order not to waste so much time, please form teams of 4 people now (!!!) and do some research to find out which topic for the <a href="#SemesterProject">semester project</a> is best for you. If you feel you have found a suitable topic, please contact me by email as fast as possible. In that case, we can discuss the topic and once your topic is finalized, you can start working on it right away.</b>
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+
+<!--   <p></p>   -->
+
+<!--<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#FF0000" align="center" valign="middle">
+<p>
+On Monday 9th of May, class (lecture and exercise session) cannot take place because of a business trip.
+</p>
+<p>
+For compensating this, we have class via zoom on Friday 6th of May at 10:00 and an exercise session the same day at 15:00.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--   <p></p>   -->
+  
+<!--<center>
+<table width="100%" border="2">
+<tr>
+<td bgcolor="#FFFF00" align="center" valign="middle">
+<p></p>
+Unfortunately, I have a cold (again!). That is why the guest lecture of Tobias Drechsel and Samir Hamian (<a href="https://thinkport.digital/">Thinkport</a>) is postponed to February 2nd. The semester project presentations will be on February 9th. 
+<p></p>
+Tomorrow (12th of January) we do discussions of your progress and presentations if you have things to present. We will do this via zoom:
+<p></p>
+<a href="https://fra-uas.zoom.us/j/66346481770">https://fra-uas.zoom.us/j/66346481770</a><br>
+Passcode: CloudComp
+<p></p>
+Sorry for the short notice.
+<p></p>
+</td>
+</tr>
+</table>
+</center>
+-->
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<p>
+Because your Professor is too stupid to <a href="https://en.wikipedia.org/wiki/Sprained_ankle">walk</a>, the cloud computing lectures and exercises sessions on January 18th and 25th cannot take place. Sorry. :-(
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--<center>
+<table width="70%" border="2">
+<tr>
+<td bgcolor="#cccccc" align="center" valign="middle">
+<p>
+Aktualisierte und verbesserte Vorlesungsunterlagen befinden sich auf der Seite <a href="../CGC22/index.html" style="text-decoration: none">Cloud Computing im SS2023</a>.
+</p>
+<p>
+Updated and improved lecture materials can be found on the web page of the course <a href="../CGC22/index.html" style="text-decoration: none">Cloud Computing in SS2023</a>.
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!-- <p></p> -->
+
+<!--<p>
+In the second week we will form teams of 
+Form a team of four team members maximum and pick a topic. You and your teammates need to...
+</p>
+<ol>
+<li>Select one Cloud Computing-related free software solution.
+<li>Deploy a <b>multi-node cloud service</b> with the software you selected. You may use physical machines, virtual machines, containers, public cloud
+infrastructure services, etc. Investigate which components your service has and analyze how these
+components do interact with each other. Learn how to use it. <br>
+Alternative: Create a complex system or software solution by using public or better hybrid cloud service offerings.</li>
+<li>Test your deployment with <b>appropriate tools</b>.</li>
+<li>Write a document that contains your findings and provides an in-depth explanation (step-by-step) of how to set up the system you created. Create an <b>installation guide</b>. Your installation guide should provide detailed steps how to deploy, configure and use the service.</li>
+<li>Create a presentation, including a live demonstration of your work. Give this presentation in class.</li>
+</ol>-->
+
+<!-- TBD -->
+
+
+<h2>Schedule of the Course</h2>
+
+<!-- <p>The exercise session always takes place on Monday between <b>15:45-16:15</b> in room <b>1-130</b>.</p> -->
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Date</th>
+    <th class="abstand_links">Time</th>
+    <th class="abstand_links">Room</th>
+    <th class="abstand_links">Event</th>
+    <th class="abstand_links">Topics</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">12.04.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links">Discussion of slide set 1 (slides 1-?)</td>
+  </tr> 
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Semester Project</td>
+    <td class="abstand_links">Semester project introduction, project planing, team building, groups formation, Requirement analysis, task identification, interface specification, time planing</td>
+  </tr> 
+  <tr>
+    <td class="abstand_links">19.04.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links">&nbsp;</td>
+  </tr> 
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Semester Project</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr> 
+  <tr>
+    <td class="abstand_links">26.04.2023</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Faculty Day at our University</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">03.05.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>  
+    <td class="abstand_links">&nbsp;</td>
+  </tr> 
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Semester Project</td>
+    <td class="abstand_links">Presentations of all groups, planing of next steps and tasks</td>
+  </tr> 
+  <tr>
+    <td class="abstand_links">10.05.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>   
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Semester Project</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">17.05.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>   
+    <td class="abstand_links">&nbsp;</td>
+  </tr> 
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Semester Project</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr> 
+  <tr>
+    <td class="abstand_links">24.05.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>   
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Semester Project</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">31.05.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;"><s>10:00-11:30</s></td>   
+    <td class="abstand_links"><s>1-234</s></td>   
+    <td class="abstand_links"><s>Lecture</s></td>   
+    <td class="abstand_links">Teams work for the semester project</td>
+  </tr> 
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links" style="white-space:nowrap;"><s>11:45-13:15</s></td>   
+    <td class="abstand_links"><s>1-234</s></td>   
+    <td class="abstand_links"><s>Lecture</s></td>   
+    <td class="abstand_links">Teams work for the semester project</td>
+  </tr> 
+  <tr>
+    <td class="abstand_links">07.06.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>   
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Semester Project</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">14.06.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>   
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Semester Project</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">21.06.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>   
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Semester Project</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+    <td class="abstand_links">28.06.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>   
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Semester Project</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">05.07.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>   
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Semester Project</td>
+    <td class="abstand_links">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">12.07.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-11:30</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Semester Project</td>
+    <td class="abstand_links">Semester project presentations</td>
+  </tr> 
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Semester Project</td>
+    <td class="abstand_links">Semester project presentations</td>
+  </tr> 
+</table>
+
+<h2>Course Materials</h2>
+
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_zentriert">Slide sets</th>
+    <th class="abstand_zentriert">Exercise&nbsp;sheets</th>
+    <th class="abstand_zentriert">Solutions</th>
+    <th class="abstand_links">Topics</th>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert" style="white-space:nowrap;"><a href="Skript/cloud_computing_SS2023_slideset_01.pdf">Slide&nbsp;set&nbsp;1</a></td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_01_SS2023.pdf">Exercise&nbsp;sheet&nbsp;1</a></td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2023_exercise_sheet_01_solution.pdf">Solution</a></td>
+    <td class="abstand_links">Organisational information, Client-Server, Fundamentals, Laws and Limitations, Parallel Computers</td>
+  </tr>
+<tr>
+    <td class="abstand_zentriert" style="white-space:nowrap;"><a href="Skript/cloud_computing_SS2023_slideset_02.pdf">Slide&nbsp;set&nbsp;2</a></td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_02_SS2023.pdf">Exercise&nbsp;sheet&nbsp;2</a></td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2023_exercise_sheet_02_solution.pdf">Solution</a></td>
+    <td class="abstand_links">Cluster Computing</td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert" style="white-space:nowrap;"><a href="Skript/cloud_computing_SS2023_slideset_03.pdf">Slide&nbsp;set&nbsp;3</a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Cloud Computing, Services and Concepts, Opportunities and Risks</td>
+  </tr>
+
+  <tr>
+    <td class="abstand_zentriert" style="white-space:nowrap;"><a href="Skript/Gastvorlesung_Green_Cloud_Computing.pdf">Guest lecture</a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">Operating in the Cloud with Event Streaming and/or Artificial Intelligence (<a href="https://www.envite.de>">envite</a>)</td>
+  </tr>
+</table>-->
+
+TBD
+
+<h2>Teams</h2>
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Team</th>
+    <th class="abstand_links">Members</th>
+    <th class="abstand_zentriert">Documentation</th>
+    <th class="abstand_zentriert">Slides</th>
+    <th class="abstand_zentriert">Source Code</th>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">1</td>
+    <td class="abstand_links">Szu-Chi Huang</td>  
+    <td class="abstand_zentriert"><a href="Skript/Group_1_SS2023_ProjectReport.pdf">PDF</a></td>
+    <td class="absal Arvindbhai Akbari, Sameer Soni, Santosh Gatand_zentriert"><a href="Skript/Group_1_SS2023_Slides.pdf">PDF</a></td>
+    <td class="abstand_zentriert">---</td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">2</td>
+    <td class="abstand_links">Jatinkumar Nakrani,Kaival Arvindbhai Akbari, Sameer Soni, Santosh Ganiger, Usman Tariq</td>
+    <td class="abstand_zentriert"><a href="Skript/Group_2_SS2023_ProjectReport.pdf">PDF</a></td>
+    <td class="abstand_zentriert"><a href="Skript/Group_2_SS2023_Slides.pdf">PDF</a></td>
+    <td class="abstand_zentriert"><a href="https://github.com/CloudStation1/pestdetectionsystem">GitHub</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">3</td>
+    <td class="abstand_links">Henry Kniß, Fabian Hauck, Marc Kaiser, Lucas Merkert, Frederik Kliemt, Christopher Unkart</td>
+    <td class="abstand_zentriert"><a href="Skript/Group_3_SS2023_ProjectReport.pdf">PDF</a></td>
+    <td class="abstand_zentriert"><a href="Skript/Group_3_SS2023_Slides.pdf">PDF</a></td>
+    <td class="abstand_zentriert"><a href="https://github.com/FreddyKly/Rat-Detector">GitHub</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">4</td>
+    <td class="abstand_links">Rahul Bhowmik Shuvo, Arash Abdollahi Kakroodi, Mohammad Aftabudduza, Husain Ahmad Jahid</td>
+    <td class="abstand_zentriert"><a href="Skript/Group_4_SS2023_ProjectReport.pdf">PDF</a></td>
+    <td class="abstand_zentriert"><a href="Skript/Group_4_SS2023_Slides.pdf">PDF</a></td>
+    <td class="abstand_zentriert"><a href="https://github.com/rahulshuvo/rat-detector">GitHub</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">5</td>
+    <td class="abstand_links">Amandeep Singh Chhatwal, Rajapreethi Rajendran, Shounak Ozarkar, Mansi Patil, Sneha Srinivasa, Mrinal Tyagi</td>
+    <td class="abstand_zentriert"><a href="Skript/Group_5_SS2023_ProjectReport.pdf">PDF</a></td>
+    <td class="abstand_zentriert"><a href="Skript/Group_5_SS2023_Slides.pdf">PDF</a></td>
+    <td class="abstand_zentriert"><a href="https://github.com/AmandeepChhatwal/FindTheRats">GitHub</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert">6</td>
+    <td class="abstand_links">Deepak Kumar, Shobhit Tiwari, Ashlesh Mithur, Anish Pokhrel, Nidhi Nayak, Pushpita Sarkar, Arpankumar Sabhadiya</td>
+    <td class="abstand_zentriert"><a href="Skript/Group_6_SS2023_ProjectReport.pdf">PDF</a></td>
+    <td class="abstand_zentriert"><a href="Skript/Group_6_SS2023_Slides.pdf">PDF</a></td>
+    <td class="abstand_zentriert"><a href="https://github.com/dpk0811/Rat-Detection">GitHub</a></td>
+  </tr>
+</table>-->
+
+TBD
+
+<h2>Contact</h2>
+
+<p>The best way to reach me is via email: <a href="mailto:christianbaun@fb2.fra-uas.de">christianbaun@fb2.fra-uas.de</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="49%" align="left">
+      <i><a href="mailto:christianbaun@fb2.fra-uas.de">Prof. Dr. Christian Baun</a><br></i>
+      <i><a href="https://www.frankfurt-university.de/">Frankfurt University of Applied Sciences</a><br></i>
+      <i>(1971-2014: Fachhochschule Frankfurt am Main)<br></i>
+      <i><a href="https://www.frankfurt-university.de/fachbereiche/fb2.html">Faculty of Computer Science and Engineering</a><br></i>
+      <i>Last updated: March 28th, 2023</i>
+    </td>
+    <td width="49%" align="right" valign="middle">
+      <a href="https://www.frankfurt-university.de/"><img src="Bilder/fuas-logo.png" alt="zur Homepage der Frankfurt University of Applied Sciences" border="0" width="225" height="100" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
