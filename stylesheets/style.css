@@ -119,6 +119,16 @@ td.abstand_links_highlight {
   margin-right:10px;  
 }
 
+td.abstand_links_highlight2 {
+  background-color:#00FF00;
+  vertical-align:middle;
+  text-align:left;
+  padding-left:10px;
+  padding-right:10px;
+  margin-left:10px;
+  margin-right:10px;  
+}
+
 td.abstand_links_nowrap {
   background-color:#FFFFFF;
   vertical-align:middle;
