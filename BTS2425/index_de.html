@@ -1,0 +1,927 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="de">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Betriebssysteme, Operating Systems, WS2425, FH-Frankfurt, FRA-UAS, Prof. Dr. Christian Baun">
+<meta name="author" content="Prof. Dr. Christian Baun">
+<meta name="keywords" content="Betriebssysteme, Operating Systems, FH-Frankfurt, FRA-UAS, Frankfurt, WS2425, Wintersemester, Computer Science, Prof. Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Operating Systems Course, (WS2425)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Zurück zur Hauptseite" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" >Zurück zur Hauptseite</a>
+    </td>
+    <td align="right" valign="middle">
+    <a href="index_en.html" style="text-decoration: none">Wechseln Sie zur Seite in englischer Sprache</a>
+    &nbsp;
+    <a href="index_en.html"><img src="Bilder/Flag_of_the_United_Kingdom.png" alt="Zurück zur Hauptseite" border="0" height="24" width="40"></a>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Betriebssysteme (WS2425)</h2>
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+<tr>
+<td valign="top"><img src="Bilder/betriebssysteme_buch_bilingual_auflage2_cover_kleiner.png" alt="Computernetze kompakt bilingual Cover 2. Auflage" border="0" width="165" height="236" align="middle">
+
+<div class="zweitescover">
+<img src="Bilder/betriebssysteme_buch_auflage3_cover_kleiner.png" alt="Betriebssysteme kompakt Cover 3. Auflage" border="0" width="165" height="264" align="middle">
+</div>
+
+</td>
+
+
+<td>&nbsp;</td>
+<td valign="top">
+<p>
+Die Hauptaufgabe eines Betriebssystems ist die Steuerung und Verwaltung der Betriebsmittel eines Rechnersystems sowie die Verteilung dieser Ressourcen an die Benutzer. Zu den Betriebsmitteln gehören Prozessoren, Hauptspeicher, Dateien, Ein-/Ausgabegeräte und Netzwerkdienste und generell alle Ressourcen, die mit dem Rechnersystem verbunden sind. Zusätzlich stellt ein Betriebssystem die Benutzerschnittstelle zur Steuerung des Systems sowie Schutzmechanismen, Werkzeuge, Bibliotheken und Entwicklungswerkzeuge bereit. 
+</p>
+<p>
+Das Ziel dieser Vorlesung ist die Vermittlung der Grundlagen, Prinzipien, Probleme, und Lösungen, kurz gesagt der Konzepte auf denen die klassischen und modernen Betriebssysteme basieren.
+</p>
+<p>
+Die komplette Vorlesung (inkl. Übungen und Klausur) findet in englischer Sprache statt. Alle Vorlesungsunterlagen liegen mit identischem Inhalt in deutscher und englischer Sprache vor.
+</p> 
+<!--<p>
+Die Betreuung der Übungen geschieht im WS2425 in Zusammenarbeit mit <a href="mailto:henry-norbert.cocos@fb2.fra-uas.de">Henry Cocos</a>.
+</p>-->
+<p>
+Die Vorlesungsunterlagen sind die Grundlage für die 3. Auflage des Buches <b>Betriebssysteme kompakt</b>, das im Juni 2022 bei Springer Vieweg erschienen ist. ISBN: 978-3-662-64717-2
+</p>
+<p>
+Zusätzlich existiert eine bilinguale (Englisch-Deutsch) Ausgabe - <b>Operating Systems / Betriebssysteme</b>, deren zweite Auflage im Juli 2023 bei Springer Vieweg erschienen ist. ISBN: 978-3-658-42229-5
+</p>
+
+  
+
+<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+
+<table border="0" cellspacing="0" cellpadding="5">
+  <tr>
+    <td align="left" valign="middle">
+      <img src="Bilder/arrow_rechts.gif" alt="Pfeil nach rechts" border="0" width="32" height="32">
+    </td>
+    <td align="center" valign="middle">
+      <a href="opsys_faq_de.html">Fragen und Antworten zur Vorlesung Betriebssysteme im WS2425 (wird laufend aktualisiert!)</a>
+    </td>
+    <td align="center" valign="middle">
+     <img src="Bilder/arrow.gif" alt="Pfeil nach rechts" border="0" width="32" height="32">
+    </td>
+  </tr>
+</table> 
+
+</td>
+</tr>
+</table>
+</center>
+
+
+<!-- <p>   -->
+
+<!--<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>!!! Achtung !!!</b></font>
+<p>
+Eine Klausureinsicht ist am 24. April ab 14:15 in Raum 1-216 möglich
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>    -->
+
+<!--<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>!!! Achtung !!!</b></font>
+<p>
+Die Vorlesung und die Übungen am <b>12.12.2023</b> können wegen einer Dienstreise leider nicht stattfinden. 
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>   -->
+
+<!--<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#00FF00" align="center" valign="middle">
+<font size="+2" color="#000000"><b>Organisatorische Informationen zur Vorlesung und Übung</b></font>
+<p>
+Auf dieser Webseite finden Sie Informationen zu den einzelnen Terminen und alle Vorlesungsunterlagen.
+<p>
+Für jeden Foliensatz gibt es ein Übungsblatt, dass die wichtigen Inhalte des jeweiligen Foliensatzes wiederholt. Die Übungsblätter sollten Sie selbständig mit Hilfe der Foliensätze lösen können. Bei wenigen Aufgaben müssen Sie selbständig recherchieren. Zur Kontrolle sind die Musterlösungen der Übungsblätter online. 
+<p>
+In den Übungen werden ich jeder Teilnehmerin und jedem Teilnehmer bzw. jeder Gruppe für Fragen persönlich bereit stehen. Ein bloßes Vorrechnen oder Anschreiben der Lösungen an die Tafel wird es nicht geben, weil das aus meiner Erfahrung wenig bringt.
+<p>
+Die Prüfungsleistung am Ende des Semesters ist eine Klausur über 90 Minuten. Klausuren aus den vorangegangenen Semestern und die zugehörigen Musterlösungen finden Sie auf dieser Seite. Klausurrelevant sind die Inhalte der Foliensätze, die im Semester besprochen wurden und damit in erster Linie die zugehörigen Übungsblätter. Von jedem Inhaltlich behandelten Übungsblatt kommen Aufgaben in der Klausur dran. 
+<p>
+Bei Fragen oder Fehlern in den Vorlesungsunterlagen sprechen Sie mich bitte persönlich oder per Email an.
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>   -->
+
+<!--<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<p>
+Wegen eines Corona-Falls in meiner Familie findet am 8.2.2022 die Vorlesung als Zoom-Konferenz statt.
+<p>
+Die Übungen werden auch als Zoom-Videokonferenzen angeboten.
+<p>
+Die Zoom-Zugangsdaten finden Sie auf dieser Webseite. Das Kennwort zur Vorlesung ist OPSYS
+</td>
+</tr>
+</table>
+</center>-->
+
+<!--<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+<font size="+3" color="#000000"><b>Hilfsmittel während der Klausur</b></font>
+<p>
+Jeder Teilnehmer darf einen <u>Taschenrechner</u> und ein <u>selbständig vorbereitetes und handschriftlich beschriebenes</u> DIN-A4-Blatt mit beliebigem Inhalt in die Klausur mitnehmen. Achtung: Es darf nur <u>eine Seite</u> des DIN-A4-Blattes beschrieben sein! Nur handschriftliche Originale sind zugelassen und keine Kopien.
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!--
+<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#00FF00" align="center" valign="middle">
+<p>
+Am 7. Februar 2023 muss die Übung um 16:00 Uhr leider entfallen. 
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p> -->
+
+<!--<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#00FF00" align="center" valign="middle">
+<p>
+Ab dem 16.12.2021 wird die Übung Donnerstags um 11:45 Uhr als <a href="https://fra-uas.zoom.us/j/83449345421">Zoom-Videokonferenz</a> (Kennwort: OPSYS) angeboten. 
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p> -->
+
+
+<!--<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="FFFF00" align="center" valign="middle">
+<p>
+Die Übungen am Donnerstag, den 16. Dezember müssen krankheitsbedingt  als <a href="https://fra-uas.zoom.us/j/94768434512">Zoom-Videokonferenz</a> (Kennwort: SS2021) stattfinden. 
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+<h2>Zeitplan für das Semester</h2>
+
+TBD
+
+<!--<ul>
+<li>Übungstermin 1 ist Dienstags von <b>10:00-11:30</b> in Raum 1-234</li>
+<li>Übungstermin 2 ist Dienstags von <b>11:30-13:00</b> in Raum 1-234</li>
+</ul>-->
+
+
+<!--<table border="0" cellspacing="0" cellpadding="1" style="white-space:nowrap;">
+  <tr>
+    <th class="abstand_links">Datum</th>
+    <th class="abstand_links">Zeit</th>
+    <th class="abstand_links">Raum</th>
+    <th class="abstand_links">Veranstaltung</th>
+    <th class="abstand_links">Inhalte</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">17.10.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-15:45</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 1 + Foliensatz 2 (Folie 1-18)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">24.10.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-15:45</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 2 (Folie 19-29) + Foliensatz 3 (Folie 1-14)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">31.10.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-15:45</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 3 (Folie 15-33) + Foliensatz 4 (Folie 1-13)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">07.11.2023</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Die Vorlesung und die Übungen können wegen einer Dienstreise nicht stattfinden</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">14.11.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-15:45</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 4 (Folie 14-31) + Foliensatz 5 (Folie 1-11)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">21.11.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-15:45</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 5 (Folie 12-42)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">28.11.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-15:45</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 6 (Folie 1-20)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">05.12.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-15:45</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 6 (Folie 21-41)</td>
+  </tr>  
+  <tr>
+    <td class="abstand_links">12.12.2023</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Die Vorlesung und die Übungen können wegen einer Dienstreise nicht stattfinden</i></td>
+  </tr>  
+  <tr>
+    <td class="abstand_links">19.12.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-15:45</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 6 (Folie 42-50) + Foliensatz 7 (Folie 1-17)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">26.12.2023</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Weihnachtsferien</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">02.01.2024</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Weihnachtsferien</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">09.01.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-15:45</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 7 (Folie 18-49)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">16.01.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-15:45</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 8 (Folie 1-27)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">23.01.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-15:45</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 9 (Folie 1-32)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">30.01.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-15:45</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 9 (Folie 33-58)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">06.02.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-15:45</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Vorlesung</td>
+    <td class="abstand_links">Besprechung von Foliensatz 9 (Folie 59-76)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">12.02.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">16:30-18:00</td>
+    <td class="abstand_links">10-MZH</td>  
+    <td class="abstand_links"><a href="#Klausuren">Klausur</a></td>
+    <td class="abstand_links">Die Klausur deckt die Foliensätze 1-9 und Übungsblätter 1-9 ab</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">14.05.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">08:00-09:30</td>
+    <td class="abstand_links">Audimax</td>   
+    <td class="abstand_links"><a href="#Klausuren">Klausur</a></td>
+    <td class="abstand_links">Die Wiederholungsklausur deckt die Foliensätze 1-9 und Übungsblätter 1-9 ab</td>
+  </tr>
+</table>-->
+
+<h2>Vorlesungsunterlagen</h2>
+
+<!-- TBD -->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th>&nbsp;</th>
+    <th class="abstand_zentriert" colspan="2">Foliensätze</th>
+    <th class="abstand_links">Screencasts</th>
+    <th class="abstand_links">Inhalte</th>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz&nbsp;1</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_slideset_01_en.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_vorlesung_01_de.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 1 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert_nowrap"><a href="https://youtu.be/b9dZ_8OF5PA"><img src="Bilder/youtube_logo_wikipedia_CC0.png" alt="Screencast Foliensatz g 1" border="0" width="16" height="12">&nbsp;Aufnahme</a></td>
+    <td class="abstand_links">Organisatorisches, Literatur, Generationen von Computersystemen und Betriebssystemen</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz&nbsp;2</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_slideset_02_en.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_vorlesung_02_de.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 2 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert_nowrap"><a href="https://youtu.be/5fgwSw7wDzM"><img src="Bilder/youtube_logo_wikipedia_CC0.png" alt="Screencast Foliensatz 2" border="0" width="16" height="12">&nbsp;Aufnahme</a></td>
+    <td class="abstand_links">Klassifikationen, Einzelprogrammbetrieb, Mehrprogrammbetrieb, Einzelbenutzerbetrieb, Mehrbenutzerbetrieb, Kernelarchitekturen</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz&nbsp;3</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_slideset_03_en.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_vorlesung_03_de.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 3 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert_nowrap"><a href="https://youtu.be/DLFNb-KZIRU"><img src="Bilder/youtube_logo_wikipedia_CC0.png" alt="Screencast Foliensatz 3" border="0" width="16" height="12">&nbsp;Aufnahme</a></td>
+    <td class="abstand_links">Von-Neumann-Architektur, Hardware-Komponenten eines Computers, Hauptpropessor, Speicher, Speicherhierarchie, Ersetzungsstrategien</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz&nbsp;4</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_slideset_04_en.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_vorlesung_04_de.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 4 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert_nowrap"><a href="https://youtu.be/6_FvB3VOp58"><img src="Bilder/youtube_logo_wikipedia_CC0.png" alt="Screencast Foliensatz 4" border="0" width="16" height="12">&nbsp;Aufnahme</a></td>
+    <td class="abstand_links">Festplatten (HDD), Solid State Drives (SDD), Redundant Array of Independent Disks (RAID)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz&nbsp;5</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_slideset_05_en.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 5 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_vorlesung_05_de.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 5 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert_nowrap"><a href="https://youtu.be/kTqZ04Lr3DE"><img src="Bilder/youtube_logo_wikipedia_CC0.png" alt="Screencast Foliensatz 5" border="0" width="16" height="12">&nbsp;Aufnahme</a></td>
+    <td class="abstand_links">Speicherverwaltung, Real Mode, Protected Mode, virtueller Speicher</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz&nbsp;6</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_slideset_06_en.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 6 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_vorlesung_06_de.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 6 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert_nowrap"><a href="https://youtu.be/RdnEfs9h3B8"><img src="Bilder/youtube_logo_wikipedia_CC0.png" alt="Screencast Foliensatz 6" border="0" width="16" height="12">&nbsp;Aufnahme</a></td>
+    <td class="abstand_links">Dateien, Dateisysteme, Verzeichnisse, Blockadressierung, Journaling, Extents, Defragmentierung</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz&nbsp;7</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_slideset_07_en.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 7 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_vorlesung_07_de.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 7 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert_nowrap"><a href="https://youtu.be/H8emXD2FMqo"><img src="Bilder/youtube_logo_wikipedia_CC0.png" alt="Screencast Foliensatz 7" border="0" width="16" height="12">&nbsp;Aufnahme</a></td>
+    <td class="abstand_links">Prozesse, Prozesskontext, Zustands-Prozessmodelle, Prozessverwaltung, Prozesse erzeugen und löschen, Systemaufrufe</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz&nbsp;8</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_slideset_08_en.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 8 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_vorlesung_08_de.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 8 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert_nowrap"><a href="https://youtu.be/VAHcW0ZwWV4"><img src="Bilder/youtube_logo_wikipedia_CC0.png" alt="Screencast Foliensatz 8" border="0" width="16" height="12">&nbsp;Aufnahme</a></td>
+    <td class="abstand_links">Unterbrechungen, Dispatcher, Scheduling-Verfahren</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz&nbsp;9</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_slideset_09_en.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 9 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_vorlesung_09_de.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 9 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert_nowrap"><a href="https://youtu.be/BPcRy-vJdnw"><img src="Bilder/youtube_logo_wikipedia_CC0.png" alt="Screencast Foliensatz 9" border="0" width="16" height="12">&nbsp;Aufnahme</a></td>
+    <td class="abstand_links">Interprozesskommunikation, Synchronisation von Prozessen, Kommunikation zwischen Prozessen, Kooperation von Prozessen</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_1_shared_memory_systemv.c">Beispiel zu gemeinsamen Speichersegmenten - Shared Memory Segments (System V)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_2_shared_memory_posix.c">Beispiel zu gemeinsamen Speichersegmenten - Shared Memory Segments (POSIX)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_3_message_queue_systemv.c">Beispiel zu Nachrichtenwarteschlangen - Message Queues (System V)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_4_message_queue_posix.c">Beispiel zu Nachrichtenwarteschlangen - Message Queues (POSIX)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_5_anonyme_pipe.c">Beispiel zu anonymen Pipes</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_6_benannte_pipe_fifo.c">Beispiel zu benannten Pipes</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_7_tcp_socket_server.c">Beispiel zu TCP-Sockets (Server)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_8_tcp_socket_client.c">Beispiel zu TCP-Sockets (Client)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_9_udp_socket_server.c">Beispiel zu UDP-Sockets (Server)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_10_udp_socket_client.c">Beispiel zu UDP-Sockets (Client)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_12_semaphore_systemv.c">Beispiel zu Semaphoren (System V)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><a charset="UTF-8" href="Skript/Listing_9_13_semaphore_posix_named.c">Beispiel zu benannten Semaphoren (POSIX)</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz&nbsp;10&nbsp;&nbsp;</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_slideset_10_en.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 10 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_vorlesung_10_de.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 10 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">TBD</td>
+    <td class="abstand_links">Emulation, Virtualisierung</td>
+  </tr>
+</table>
+
+
+
+<h2>Übungsblätter</h2>
+
+<!-- TBD -->
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th>&nbsp;</th>
+    <th class="abstand_zentriert" colspan="2">Übungsblätter</th>
+    <th class="abstand_links">Inhalte</th>
+    <th class="abstand_zentriert" colspan="2">Lösungen</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;1</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_01.pdf"><img src="Bilder/flag_english.gif" alt="Exercise sheet 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_01.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 1 in German language" border="0" width="16" height="12"></a></td> 
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz 1</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_01_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_01_loesung.pdf"><img src="Bilder/flag_deutsch.gif" alt="Solution of Exercise Sheet 1 in German language" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;2</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_02.pdf"><img src="Bilder/flag_english.gif" alt="Exercise sheet 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_02.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 2 in German language" border="0" width="16" height="12"></a></td> 
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz 2</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_02_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_02_loesung.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Solution of Exercise Sheet 2 in German language" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;3</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_03.pdf"><img src="Bilder/flag_english.gif" alt="Exercise sheet 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_03.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 3 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz 3</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_03_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_03_loesung.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Solution of Exercise Sheet 3 in German language" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;4</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_04.pdf"><img src="Bilder/flag_english.gif" alt="Exercise sheet 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_04.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 4 in German language" border="0" width="16" height="12"></a></td> 
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz 4</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_04_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_04_loesung.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Solution of Exercise Sheet 4 in German language" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;5</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_05.pdf"><img src="Bilder/flag_english.gif" alt="Exercise sheet 5 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_05.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 5 in German language" border="0" width="16" height="12"></a></td> 
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz 5</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_05_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 5 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_05_loesung.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Solution of Exercise Sheet 5 in German language" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;6</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_06.pdf"><img src="Bilder/flag_english.gif" alt="Exercise sheet 6 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_06.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 6 in German language" border="0" width="16" height="12"></a></td> 
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz 6</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_06_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 6 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_06_loesung.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Solution of Exercise Sheet 6 in German language" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;7</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_07.pdf"><img src="Bilder/flag_english.gif" alt="Exercise sheet 7 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_07.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 7 in German language" border="0" width="16" height="12"></a></td> 
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz 7</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_07_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 7 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_07_loesung.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Solution of Exercise Sheet 7 in German language" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;8</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_08.pdf"><img src="Bilder/flag_english.gif" alt="Exercise sheet 8 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_08.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 8 in German language" border="0" width="16" height="12"></a></td> 
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz 8</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_08_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 8 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_08_loesung.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Solution of Exercise Sheet 8 in German language" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;9</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_09.pdf"><img src="Bilder/flag_english.gif" alt="Exercise sheet 9 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_09.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 9 in German language" border="0" width="16" height="12"></a></td> 
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz 9</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_09_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 9 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_09_loesung.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Solution of Exercise Sheet 9 in German language" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Übungsblatt&nbsp;10</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_exercise_sheet_10.pdf"><img src="Bilder/flag_english.gif" alt="Exercise sheet 10 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_10.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise sheet 10 in German language" border="0" width="16" height="12"></a></td> 
+    <td class="abstand_links" style="white-space:nowrap;">Foliensatz 10</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="Skript/bts_WS2425_uebungsblatt_10_loesung.pdf" ><img src="Bilder/flag_deutsch.gif" alt="Solution of Exercise Sheet 10 in German language" border="0" width="16" height="12"></a></td>
+  </tr>
+</table>
+
+
+<h2>Weitere hilfreiche Informationen</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td class="abstand_links"><a href="Skript/WLS_Einfuehrung_Hundeshagen.pdf">Anleitung für Windows Subsystem für Linux v2 (WSL2)</a></td>
+    <td class="abstand_links">Eine sehr gut verständliche und detaillierte Anleitung zur Installation von Linux mit WSL2 von David Hundeshagen</td>
+  </tr>
+</table>
+
+
+<h2>Lehrmaterial in deutscher Sprache zur Linux-Systemadministration und Shell-Programmierung</h2>
+
+<p>
+<b>Diese Dokumentation reicht nicht aus, um alle praktischen Übungen auf den Übungsblättern zu lösen. Sie ist aber ein guter Einstieg, wenn Sie wenig oder gar kein Vorwissen zu den Themengebieten Linux-Systemadministration und Shell-Programmierung haben. Die Dokumentation selbst ist nicht klausurrelevant, aber die praktischen Übungsaufgaben auf den Übungsblättern sind klausurrelevant.</b>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_01_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;1</a></td>
+    <td class="abstand_links">Organisatorisches, Einführung, Hilfesystem, Verzeichnisse, Dateien</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_02_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;2</a></td>
+    <td class="abstand_links">Systemverwaltung, Zugriffsrechte, Verweise, Dateien durchsuchen, Editoren, Prozesse</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_03_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;3</a></td>
+    <td class="abstand_links">Datum und Uhrzeit, Ein-/Ausgaben umleiten, Zeichen zählen, Alias, Dateien suchen, Kommandos zeitsteuern</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_04_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;4</a></td>
+    <td class="abstand_links">Ressourcen überwachen, Sortieren, Umgebungsvariablen, Textausgaben, Mustervergleiche, Texte auswerten</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_05_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;5</a></td>
+    <td class="abstand_links">Grundlagen der Shell und von Shell-Skripten, Vergleichsoperationel, Kontrollstrukturen, Schleifen</td>
+  </tr>
+  <tr>
+    <td class="abstand_links"><a href="../BTS1314/Skript/folien_bts_uebung_06_WS1314.pdf">Linux und Shell-Programmierung - Teil&nbsp;6</a></td>
+    <td class="abstand_links">Arithmetik auswerten, Funktionen, Funktionsbibliotheken, Auswahlmenüs</td>
+  </tr>
+</table>
+
+
+
+  
+<h2 id="Klausuren">Klausuren</h2>
+
+  
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Semester</th>
+    <th class="abstand_zentriert" colspan="2">Klausuren</th>
+    <th class="abstand_zentriert">Bearbeitungszeit</th>
+    <th class="abstand_links">Hochschule</th>
+    <th class="abstand_zentriert" colspan="2">Lösungen</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS2324</td>
+    <td class="abstand_zentriert"><a href="../BTS2324/Skript/BTS_Exam_en_WS2324.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS2324 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../BTS2324/Skript/BTS_Exam_en_solution_WS2324.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS2324 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS2223</td>
+    <td class="abstand_zentriert"><a href="../BTS2223/Skript/BTS_Exam_en_WS2223.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS2223 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../BTS2223/Skript/BTS_Exam_en_solution_WS2223.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS2223 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS2122</td>
+    <td class="abstand_zentriert"><a href="../BTS2122/Skript/BTS_Exam_en_WS2122.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS2122 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../BTS2122/Skript/BTS_Exam_en_solution_WS2122.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS2122 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS2021</td>
+    <td class="abstand_zentriert"><a href="../BTS2021/Skript/BTS_Exam_en_WS2021.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS2021 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../BTS2021/Skript/BTS_Exam_en_solution_WS2021.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS2021 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1920</td>
+    <td class="abstand_zentriert"><a href="../BTS1920/Skript/BTS_Exam_en_WS1920.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS1920 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../BTS1920/Skript/BTS_Exam_en_solution_WS1920.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS1920 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2019</td>
+    <td class="abstand_zentriert"><a href="../BTS19/Skript/BTS_Exam_en_SS2019.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom SS2019 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../BTS19/Skript/BTS_Klausur_de_SS2019.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2019 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../BTS19/Skript/BTS_Exam_en_solution_SS2019.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom SS2019 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../BTS19/Skript/BTS_Klausur_de_Musterloesung_SS2019.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2019 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2016</td>
+    <td class="abstand_zentriert"><a href="../BTS16/Skript/BTS_Exam_en_SS2016.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom SS2016 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../BTS16/Skript/BTS_Klausur_de_SS2016.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2016 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../BTS16/Skript/BTS_Exam_en_solution_SS2016.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom SS2016 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../BTS16/Skript/BTS_Klausur_de_Musterloesung_SS2016.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2016 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1516</td>
+    <td class="abstand_zentriert"><a href="../BTS15/Skript/BTS_Exam_en_WS1516.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS1516 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../BTS15/Skript/BTS_Klausur_de_WS1516.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1516 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BTS15/Skript/BTS_Klausur_de_Musterloesung_WS1516.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS1516 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2015</td>
+    <td class="abstand_zentriert"><a href="../BTS15/Skript/BTS_Exam_en_SS2015.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom SS2015 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../BTS15/Skript/BTS_Klausur_de_SS2015.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2015 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BTS15/Skript/BTS_Klausur_de_Musterloesung_SS2015.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2015 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1415</td>
+    <td class="abstand_zentriert"><a href="../BTS14/Skript/BTS_Exam_en_WS1415.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS1415 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../BTS14/Skript/BTS_Klausur_de_WS1415.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1415 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">FH Frankfurt</td>
+    <td class="abstand_zentriert"><a href="../BTS14/Skript/BTS_Exam_en_solution_WS1415.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS1415 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../BTS14/Skript/BTS_Klausur_de_Musterloesung_WS1415.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS1415 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2014</td>
+    <td class="abstand_zentriert"><a href="../BTS14/Skript/BTS_Exam_en_SS2014.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom SS2014 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../BTS14/Skript/BTS_Klausur_de_SS2014.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2014 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">FH Frankfurt</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BTS14/Skript/BTS_Klausur_de_Musterloesung_SS2014.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2014 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1314</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BTS1314/Skript/BTS_Klausur_WS1314.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1314 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">FH Frankfurt</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BTS1314/Skript/BTS_Klausur_Musterloesung_WS1314.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS1314 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1314</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BTM1213/Skript/BTS_Klausur_60_WS1213.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1213 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BTM1213/Skript/BTS_Klausur_Musterloesung_60_WS1213.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS1213 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2012</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BTS12/Skript/BTS_Klausur_SS2012.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2012 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minuten</td>
+    <td class="abstand_links">HS Darmstadt</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BTS12/Skript/BTS_Klausur_Musterloesung_SS2012.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2012 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2011</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BTS11/Skript/BTS_Klausur_SS2011.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2011 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BTS11/Skript/BTS_Klausur_Loesung_SS2011.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2011 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2009</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../SYS09/Skript/SYS_Klausur_SS2009.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2009 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../SYS09/Skript/SYS_Klausur_Loesung_SS2009.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2009 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS0809</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../SYS0809/Skript/SYS_Klausur_WS0809.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS0809 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../SYS0809/Skript/SYS_Klausur_Loesung_WS0809.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS0809 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2008</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../SYS08/Skript/SYS_Klausur_SS2008.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2008 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../SYS08/Skript/SYS_Klausur_Loesung_SS2008.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2008 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS0708</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../SYS0708/Skript/SYS_Klausur_WS0708.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS0708 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">60 Minuten</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../SYS0708/Skript/SYS_Klausur_Loesung_WS0708.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS0708 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2007</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BTS07/Skript/BTS_Klausur_SS2007.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2007 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">70 Minuten</td>
+    <td class="abstand_links">HS Mannheim</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../BTS07/Skript/BTS_Klausur_Loesung_SS2007.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2007 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+</table> 
+
+
+
+
+<!--<h2>Klausurergebnisse</h2> 
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="op_sys_klausur_SS2024.html" style="text-decoration: none">Ergebnis der Klausur im SS2024</a></td>  
+  </tr>
+  <tr>
+    <td><a href="op_sys_klausur_WS2324.html" style="text-decoration: none">Ergebnis der Klausur im WS2324</a></td>
+  </tr>
+</table>-->
+
+
+<!--<h2>Evaluation</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/WiSe23_24-Operating_System.pdf">Result</a> of the evaluation
+    </td>
+  </tr>
+</table>-->
+
+<h2>Kontakt</h2>
+
+<p>Zu erreichen bin ich am besten per E-Mail: <a href="mailto:christianbaun@fb2.fra-uas.de">christianbaun@fb2.fra-uas.de</a></p>
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="49%" align="left">
+      <i><a href="mailto:christianbaun@fb2.fra-uas.de">Prof. Dr. Christian Baun</a><br></i>
+      <i><a href="https://www.frankfurt-university.de/">Frankfurt University of Applied Sciences</a><br></i>
+      <i>(1971-2014: Fachhochschule Frankfurt am Main)<br></i>
+      <i><a href="https://www.frankfurt-university.de/de/hochschule/fachbereich-2-informatik-und-ingenieurwissenschaften/">FB 2: Informatik und Ingenieurwissenschaften</a><br></i>
+      <i>Stand: 26.6.2024</i>
+    </td>
+    <td width="49%" align="right" valign="middle">
+      <a href="https://www.frankfurt-university.de/"><img src="Bilder/fuas-logo.png" alt="zur Homepage der Frankfurt University of Applied Sciences" border="0" width="225" height="100" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
