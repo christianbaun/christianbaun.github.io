@@ -1,0 +1,718 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Computer Networks, WS2223, FH-Frankfurt, Christian Baun">
+<meta name="author" content="Dr. Christian Baun">
+<meta name="keywords" content="Computer Networks, FH-Frankfurt, Frankfurt, WS2425, Wintersemester, Computer Science, Prof. Dr. Christian Baun">
+<meta name="GENERATOR" content="none">
+<title>Computer Networks (WS2425)</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+</head>
+
+<body bgcolor="white" link="blue" alink="blue" vlink="blue">
+
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="middle">
+    <a href="../"><img src="Bilder/arrow.gif" alt="Back to main page" border="0" height="32" width="32"></a>
+    &nbsp;
+    <a href="../" style="text-decoration: none">Back to main page</a>
+    </td>
+    <td align="right" valign="middle">
+    <a href="index_de.html" style="text-decoration: none">Jump to the page in German language</a>
+    &nbsp;
+    <a href="index_de.html"><img src="Bilder/Flag_of_Germany.png" alt="Zurück zur Hauptseite" border="0" height="24" width="40"></a>
+    </td>
+  </tr>
+</table>
+
+
+<hr>
+
+
+
+
+<h2>Computer Networks (WS2425)</h2>
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+<tr>
+
+<td valign="top">
+
+<img src="Bilder/computernetze_buch_bilingual_auflage2_cover_kleiner.png" alt="Computernetze kompakt bilingual Cover 2. Auflage" border="0" width="167" height="238" align="middle">
+
+<div class="zweitescover">
+<img src="Bilder/computernetze_buch_auflage6_cover_kleiner.jpg" alt="Computernetze kompakt Cover 6. Auflage" border="0" width="167" height="267" align="middle">
+</div>
+</td>
+
+<td>&nbsp;</td>
+<td valign="top">
+<p>
+Computer networks allow to connect individual computers systems for communication and resource sharing. Communication via computer networks is realized via different protocols of different layers of reference models (OSI reference model, TCP/IP reference model, hybrid reference model). 
+</p>
+<p>
+At the beginning of the course, an introduction to the required fundamentals of the computer sciences and computer networks takes place. Next, the protocols and their classification into established reference models is discussed. The main focus of the course is to explain the way, the data is transmitted through the different protocol layers and via different transmission media.
+</p>
+<p>
+The exercise sessions in WS2425 are supervised in collaboration with Ms. Wei Yin Shing.
+</p>
+<p>
+The course (lectures, exercises and exam) is held in English language. All slide sets and exercise sheets are available in English and in German language. The content of the English and German slide sets and exercise sheets is identical. A list of technical terms provides <a href="computernetworks_technical_terms.html" style="text-decoration: none">this page</a>.
+</p> 
+<p>
+The slide sets are the basis for the sixth edition of the German-language book <b>Computernetze kompakt</b>, was published in autumn 2022 by Springer Vieweg. ISBN: 978-3-662-65362-3
+</p>
+<p>
+Also, a bilingual (English-German) edition exists <b>Computer Networks / Computernetze</b>, which was published in autumn 2022 (second edition) by Springer Vieweg. ISBN: 978-3-658-38892-8
+</p>
+  
+<!-- <center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#00FF00" align="center" valign="middle">
+<p>
+The password of all <a href="https://fra-uas.zoom.us/j/89673600428
+"><img src="Bilder/zoom_communications_logo_wikipedia_cc0.png" alt="Zoom Logo" border="0" width="51" height="12">-video conferences</a> is: <tt>CompNet</tt></b>
+</p>
+</td>
+</tr>
+</table>
+</center>-->
+
+
+<!-- <p>   -->
+
+<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#00ff00" align="center" valign="middle">
+
+<table border="0" cellspacing="0" cellpadding="5">
+  <tr>
+    <td align="left" valign="middle">
+      <img src="Bilder/arrow_rechts.gif" alt="Pfeil nach rechts" border="0" width="32" height="32">
+    </td>
+    <td align="center" valign="middle">
+      <a href="compnet_faq_en.html">Questions and answers concerning the Computer Networks course in WS2425 (is updated over the semester!)</a>
+    </td>
+    <td align="center" valign="middle">
+     <img src="Bilder/arrow.gif" alt="Pfeil nach rechts" border="0" width="32" height="32">
+    </td>
+  </tr>
+</table> 
+
+</td>
+</tr>
+</table>
+</center>
+
+
+<!-- <p>   -->
+
+
+<!--<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#ff0000" align="center" valign="middle">
+<font size="+3" color="#000000"><b>!!! Attention !!!</b></font>
+<p>
+The exam can be viewed on April 24 from 14:15 in room 1-216
+</td>
+</tr>
+</table>
+</center>-->
+
+<!-- <p>   -->
+
+
+<!--<center>
+<table width="90%" border="2">
+<tr>
+<td bgcolor="#00FF00" align="center" valign="middle">
+<font size="+2" color="#000000"><b>Organizational information about this course</b></font>
+<p>
+This website provides information about the course, and it offers the complete lecture material.
+<p>
+For the slide sets, there are exercise sheets that repeat the relevant contents of the slide sets. You can solve the exercise sheets by yourself using the slide sets. For some exercise questions, you need to do some research on your own. For verification, the sample solutions of the exercise sheets are online.
+<p>
+In the exercise sessions, I will assist all participants and groups if they have any questions. There will be no simple recitation or copying of the solutions on the whiteboard because, from my experience, this is not very effective.
+<p>
+The final exam at the end of the semester is a 90-minute written exam. You can find exams from previous semesters and the corresponding sample solutions on this page. Relevant for the exam are the contents of the slide sets that were discussed during the semester and, thus, first of all, the corresponding exercise sheets. There will be questions from every exercise sheet in the exam.
+<p>
+If you have any questions or if you found an error in the course material, don't hesitate to get in touch with me personally or by email.
+</td>
+</tr>
+</table>
+</center>-->
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+<h2>Schedule of the Course</h2>
+
+TBD
+
+<!--<ul>
+<li>Exercise session 1 takes place on Thursday between <b>14:30-16:00</b> in room 1-234</li>
+<li>Exercise session 2 takes place on Thursday between <b>16:00-17:30</b> in room 1-234</li>
+</ul>-->
+
+<!--
+<table border="0" cellspacing="0" cellpadding="1" style="white-space:nowrap;">
+  <tr>
+    <th class="abstand_links">Date</th>
+    <th class="abstand_links">Time</th>
+    <th class="abstand_links">Room</th>
+    <th class="abstand_links">Event</th>
+    <th class="abstand_links">Topics</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">19.10.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 1 (slides 1-40)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">26.10.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 1 (slides 41-46) + slide set 2 (slides 1-15)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">02.11.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 2 (slides 16-39)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">09.11.2023</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>The lecture and the exercise sessions cannot take place due to a business trip</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">16.11.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 2 (slides 40-54) + slide set 3 (slides 1-18)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">23.11.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 4 + slide set 5 (slides 1-9)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">30.11.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 5 (slides 10-39)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">07.12.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 6 (slides 1-35)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">14.12.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>The lecture and the exercise sessions cannot take place due to a business trip</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">21.12.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 7 (slides 1-25)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">21.12.2023</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:30-16:00</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links"><a href="#Christmasspecial">Christmas Special</a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">28.12.2023</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Christmas break</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">04.01.2024</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links">&nbsp;</td>
+    <td class="abstand_links"><i>Christmas break</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">11.01.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 7 (slides 26-50)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">18.01.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 7 (slides 51-69) + slide set 8 (slides 1-9)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">25.01.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 8 (slides 10-55)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">01.02.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 9 (slides 1-23)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">08.02.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">11:45-13:15</td>
+    <td class="abstand_links">1-130</td>
+    <td class="abstand_links">Lecture</td>
+    <td class="abstand_links">Discussion of slide set 9 (slides 24-49) + slide set 10 (slides 1-16)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">20.02.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:00-15:30</td>
+    <td class="abstand_links">Audimax, 4-8</td>  
+    <td class="abstand_links"><a href="#Klausuren">Exam</a></td>
+    <td class="abstand_links">The exam covers all discussed slide sets and exercise sheets</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">17.05.2024</td>
+    <td class="abstand_links" style="white-space:nowrap;">08:00-09:30</td>
+    <td class="abstand_links">Audimax</td>   
+    <td class="abstand_links"><a href="#Klausuren">Exam</a></td>
+    <td class="abstand_links">The exam covers all discussed slide sets and exercise sheets</td>
+  </tr>
+</table>-->
+
+
+<h2>Slide Sets</h2>
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th>&nbsp;</th>
+    <th class="abstand_zentriert" colspan="2">Slide sets</th>
+    <th class="abstand_links">Topics</th>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;1</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_slideset_01.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_01.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 1 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Organisational information, fundamentals of computer networks, protocols and reference models</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;2</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_slideset_02.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_02.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 2 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Physical layer (part 1)</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links" colspan="4"><font color="#FF0000">The Slides 49-52 (fiber-optic cables) will not be discussed in class and are not relevant for the exam in WS1718 and SS2018</font></td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;3</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_slideset_03.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_03.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 3 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Physical layer (part 2)</td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links" colspan="4"><font color="#FF0000">The Slides 11-41 (encoding data with line codes) will not be discussed in class and are not relevant for the exam in WS1718 and SS2018</font></td>
+  </tr>-->
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;4</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_slideset_04.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_04.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 4 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Data Link layer (part 1)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;5</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_slideset_05.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 5 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_05.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 5 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Data Link layer (part 2)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;6</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_slideset_06.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 6 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_06.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 6 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Data Link layer (part 3)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;7</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_slideset_07.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 7 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_07.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 7 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Network layer (part 1)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;8</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_slideset_08.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 8 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_08.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 8 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Network layer (part 2)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;9</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_slideset_09.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 9 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_09.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 9 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Transport layer</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;10</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_slideset_10.pdf"><img src="Bilder/flag_english.gif" alt="Slide set 10 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_10.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 10 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Application layer</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;11</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_11.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 11 in German language" border="0" width="16" height="12"></a></td>
+<!--     <td class="abstand_zentriert">&nbsp;</td> -->
+    <td class="abstand_links">Cryptography (fundamentals, symmetric key cryptography)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;12</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_12.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 12 in German language" border="0" width="16" height="12"></a></td>
+<!--     <td class="abstand_zentriert">&nbsp;</td> -->
+    <td class="abstand_links">Cryptography (asymmetric key cryptography, key exchange, hash functions)</td>
+  </tr>
+  <tr>
+    <td class="abstand_links" style="white-space:nowrap;">Slide&nbsp;set&nbsp;13</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_13.pdf"><img src="Bilder/flag_deutsch.gif" alt="Slide set 13 in German language" border="0" width="16"height="12"></a></td>
+<!--     <td class="abstand_zentriert">&nbsp;</td> -->
+    <td class="abstand_links">Steganography, copyright traps and digital watermarking</td>
+  </tr>
+</table>
+
+<p>
+<b>The slide sets 1 to 10 are relevant for the exam.</b><br>
+<b>The slide sets 11 to 13 are <u>not</u> relevant for the exam.</b>
+</p> 
+
+<h2>Exercise Sheets</h2>
+
+
+    
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th>&nbsp;</th>
+    <th class="abstand_zentriert" colspan="2">Exercise&nbsp;sheets</th>
+    <th class="abstand_links">Topics</th>
+    <th class="abstand_zentriert" colspan="2">Solutions</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;1</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_exercise_sheet_01.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/computernetze_WS2425_uebungsblatt_01.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise Sheet 1 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Topics of slide set 1 (Fundamentals)</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_exercise_sheet_01_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 1 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;2</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_exercise_sheet_02.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/computernetze_WS2425_uebungsblatt_02.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise Sheet 2 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Topics of slide set 2 + 3 (Physical layer)</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_exercise_sheet_02_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 2 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;3</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_exercise_sheet_03.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/computernetze_WS2425_uebungsblatt_03.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise Sheet 3 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Topics of slide set 4 + 5 + 6 (Data link layer)</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_exercise_sheet_03_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 3 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;4</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_exercise_sheet_04.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/computernetze_WS2425_uebungsblatt_04.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise Sheet 4 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Topics of slide set 7 + 8 (Network layer)</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_exercise_sheet_04_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 4 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;5</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_exercise_sheet_05.pdf"><img src="Bilder/flag_english.gif" alt="Exercise Sheet 5 in English language" border="0" width="16" height="12"></a></td>
+   <td class="abstand_zentriert"><a href="Skript/computernetze_WS2425_uebungsblatt_05.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise Sheet 5 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Topics of slide set 9 + 10 (Transport layer and Application layer)</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_exercise_sheet_05_solution.pdf"><img src="Bilder/flag_english.gif" alt="Solution of Exercise Sheet 5 in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Exercise&nbsp;sheet&nbsp;6</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="Skript/computernetze_WS2425_uebungsblatt_06.pdf"><img src="Bilder/flag_deutsch.gif" alt="Exercise Sheet 6 in German language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_links">Topics of slide set 11 + 12 + 13 (Cryptography and Steganography)</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+</table>
+  
+<p>
+<b>The exercise sheets 1 to 5 are relevant for the exam.</b><br>
+<b>Exercise sheet 6 is <u>not</u> relevant for the exam.</b>
+</p>
+
+<h2 id="Klausuren">Exams</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Semester</th>
+    <th class="abstand_zentriert" colspan="2">Exams</th>
+    <th class="abstand_zentriert">Time limit</th>
+    <th class="abstand_links">University</th>
+    <th class="abstand_zentriert" colspan="2">Sample solutions</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS2324</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke2324/Skript/CompNet_Exam_en_WS2324.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS2324 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke2324/Skript/CompNet_Exam_en_solution_WS2324.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS2324 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS2223</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke2223/Skript/CompNet_Exam_en_WS2223.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS2223 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke2223/Skript/CompNet_Exam_en_solution_WS2223.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS2223 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS2021</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke2021/Skript/CompNet_Exam_en_WS2021.pdf" ><img src="Bilder/flag_english.gif" alt="Klausur vom WS2021 in englischer Sprache" border="0" width="16" height="12"></a></td>
+<!--     <td class="abstand_zentriert"><a href="../Bilder/wisdom-cloak.png"><img src="Bilder/flag_english.gif" alt="Klausur vom WS2021 in englischer Sprache" border="0" width="16" height="12"></a></td> -->
+    <td class="abstand_zentriert">&nbsp;</td>
+<!--     <td class="abstand_zentriert"><a href="../Bilder/wisdom-cloak.png"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS2021 in deutscher Sprache" border="0" width="16" height="12"></a></td> -->
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke2021/Skript/CompNet_Exam_en_solution_WS2021.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS2021 in englischer Sprache" border="0" width="16" height="12"></a></td>
+<!--     <td class="abstand_zentriert"><a href="../Bilder/wisdom-cloak.png"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS2021 in deutscher Sprache" border="0" width="16" height="12"></a></td> -->
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1920</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1920/Skript/CompNet_Exam_en_WS1920.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom WS1920 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1920/Skript/CompNet_Exam_en_solution_WS1920.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS1920 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1819</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1819/Skript/CompNet_Exam_en_WS1819.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom WS1819 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1819/Skript/CompNet_Exam_en_solution_WS1819.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS1819 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1718</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1718/Skript/CompNet_Exam_en_WS1718.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom WS1718 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1718/Skript/CompNet_Exam_en_solution_WS1718.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS1718 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2017</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1617/Skript/CompNet_Exam_en_SS2017.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom SS2017 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1617/Skript/Netzwerke_Klausur_de_SS2017.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2017 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1617/Skript/CompNet_Exam_en_solution_SS2017.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom SS2017 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1617/Skript/Netzwerke_Klausur_de_loesung_SS2017.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2017 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1617</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1617/Skript/CompNet_Exam_en_WS1617.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom WS1617 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1617/Skript/CompNet_Exam_en_solution_WS1617.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS1617 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2016</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/CompNet_Exam_en_SS2016.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom SS2016 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/Netzwerke_Klausur_de_SS2016.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2016 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/CompNet_Exam_en_solution_SS2016.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom SS2016 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/Netzwerke_Klausur_de_loesung_SS2016.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2016 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1516</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/CompNet_Exam_en_WS1516.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom WS1516 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/Netzwerke_Klausur_de_WS1516.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1516 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1516/Skript/Netzwerke_Klausur_de_loesung_WS1516.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS1516 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2015</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1415/Skript/Netzwerke_Klausur_de_SS2015.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2015 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">Frankfurt UAS</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1415/Skript/Netzwerke_Klausur_de_loesung_SS2015.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom SS2015 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1415</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1415/Skript/Netzwerke_Klausur_de_WS1415.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1415 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">FH Frankfurt</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1415/Skript/Netzwerke_Klausur_de_loesung_WS1415.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung der Klausur vom WS1415 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2014</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1314/Skript/Netzwerke_Klausur_en_SS2014.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom SS2014 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1314/Skript/Netzwerke_Klausur_de_SS2014.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2014 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">FH Frankfurt</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1314/Skript/Netzwerke_Klausur_en_loesung_SS2014.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom SS2014 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">WS1314</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1314/Skript/Netzwerke_Klausur_en_WS1314.pdf"><img src="Bilder/flag_english.gif" alt="Klausur vom WS1314 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1314/Skript/Netzwerke_Klausur_de_WS1314.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom WS1314 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">FH Frankfurt</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke1314/Skript/Netzwerke_Klausur_en_loesung_WS1314.pdf"><img src="Bilder/flag_english.gif" alt="Lösung der Klausur vom WS1314 in englischer Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">SS2012</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke12/Skript/Netzwerke_Klausur_SS2012.pdf"><img src="Bilder/flag_deutsch.gif" alt="Klausur vom SS2012 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">90 Minutes</td>
+    <td class="abstand_links">HS Darmstadt</td>
+    <td class="abstand_zentriert">&nbsp;</td>
+    <td class="abstand_zentriert"><a href="../Netzwerke12/Skript/Netzwerke_Klausur_Musterloesung_SS2012.pdf"><img src="Bilder/flag_deutsch.gif" alt="Lösung Klausur vom SS2012 in deutscher Sprache" border="0" width="16" height="12"></a></td>
+  </tr>
+</table>
+
+ 
+<h2>Exam Results</h2>
+
+TBD
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td><a href="netzwerke_exam_SS2024.html" style="text-decoration: none">Result of the written examination in SS2024</a></td>
+  </tr>
+  <tr>
+    <td><a href="netzwerke_exam_WS2324.html" style="text-decoration: none">Result of the written examination in WS2324</a></td>
+  </tr>
+</table>-->
+
+<h2 id="Christmasspecial">Christmas Special</h2>
+
+
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td class="abstand_links">Exercise Sheet</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_exercise_sheet_components.pdf"><img src="Bilder/flag_english.gif" alt="Network Components Exercise Sheet in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">Network Components</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_slideset_network_components.pdf"><img src="Bilder/flag_english.gif" alt="Network Components in English language" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_netzwerkkomponenten.pdf"><img src="Bilder/flag_deutsch.gif" alt="Netzwerkkomponenten" border="0" width="16" height="12"></a></td>
+  </tr>
+<!--  <tr>
+    <td class="abstand_links">Network Components (Solution)</td>
+    <td class="abstand_zentriert"><a href="Skript/computer_networks_WS2425_slideset_network_components_solution.pdf"><img src="Bilder/flag_english.gif" alt="Network Components in English language (solution)" border="0" width="16" height="12"></a></td>
+    <td class="abstand_zentriert"><a href="Skript/netzwerke_WS2425_foliensatz_netzwerkkomponenten_loesung.pdf"><img src="Bilder/flag_deutsch.gif" alt="Netzwerkkomponenten (Lösung)" border="0" width="16" height="12"></a></td>
+  </tr>-->
+</table>
+
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Xsnow"><img src="Bilder/xsnow.png" alt="xsnow" border="0" width="531" height="102"></a>
+</p>
+
+<h2>Course Evaluation</h2>
+
+TBD
+
+<!--<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td>
+      <a href="Skript/WiSe23_24-Computer_Network.pdf">Result</a> of the course evaluation
+    </td>
+  </tr>
+</table>-->
+
+
+<h2>Contact</h2>
+
+<p>The best way to reach me is via email: <a href="mailto:christianbaun@fb2.fra-uas.de">christianbaun@fb2.fra-uas.de</a></p>
+
+
+<hr>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="49%" align="left">
+      <i><a href="mailto:christianbaun@fb2.fra-uas.de">Prof. Dr. Christian Baun</a><br></i>
+      <i><a href="https://www.frankfurt-university.de/">Frankfurt University of Applied Sciences</a><br></i>
+      <i>(1971-2014: Fachhochschule Frankfurt am Main)<br></i>
+      <i>Faculty of Computer Science and Engineering<br></i>
+      <i>Last updated: September 26th 2024</i>
+    </td>
+    <td width="49%" align="right" valign="middle">
+      <a href="https://www.frankfurt-university.de/"><img src="Bilder/fuas-logo.png" alt="zur Homepage der Frankfurt University of Applied Sciences" border="0" width="225" height="100" align="right"></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
