@@ -2,9 +2,8 @@ This is my personal web page for my course material, thesis projects, slides of 
 
 It can be reached via these URLs:
 
-http[s]://christianbaun.github.io
+[http\[s\]://christianbaun.github.io](https://christianbaun.github.io)
 
 and
 
-http[s]://[www.]christianbaun.de
-
+[http\[s\]://\[www.\]christianbaun.de](https://www.christianbaun.de/)
