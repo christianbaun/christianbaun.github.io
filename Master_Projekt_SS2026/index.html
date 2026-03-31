@@ -34,6 +34,8 @@
 
 <h2>Drohnen mit Künstlicher Intelligenz - Master-Projekt - Studienfeld Intelligente Systeme (SS2026)</h2>
 
+<img src="Bilder/Drei_Drohnen_Banner_SS2026_crop.jpg" alt="Riders on the storm :-)" width="100%" border="0">
+
 <p>Teilnehmerinnen und Teilnehmer des Projekts arbeiten in Gruppen von maximal vier Personen. Jede Gruppe erhält eine fertig aufgebaute (flugbereite) FPV-Drohne sowie die erforderlichen Komponenten. <b>Ziel des Projekts ist die eigenständige Entwicklung, Implementierung und Bewertung einer praxisnahen Drohnen-KI-Anwendung zur automatisierten Auslieferung von Objekten</b>. Dabei sollen sowohl technische Herausforderungen als auch die Grenzen der eingesetzten Systeme untersucht und nachvollziehbar dokumentiert werden.</p>
 
 <ul>
@@ -238,6 +240,20 @@
 <li>Alukoffer (ca. 45x30x15 cm)</li>
 </ul>
 
+
+<h3>Drohnen im SS2026</h3>
+
+<p>Die Komponenten und deren Verbindung miteinander ist bei allen drei Drohnen weitestgehend identisch.</p>
+
+<a href="Bilder/Drohne_Nr1_MasterProjekt_Komponenten_v1_en_Bild_mit_Drohne.png"><img src="Bilder/Drohne_Nr1_MasterProjekt_Komponenten_v1_en_icon.png" alt="Drohne 1: Bauplan" width="326" height="200" border="0"></a>
+
+<a href="Bilder/Drei_Drohnen_Gruppenbild_1_crop.jpg"><img src="Bilder/Drei_Drohnen_Gruppenbild_1_crop_icon.jpg" alt="Drohne 1: Bauplan" width="440" height="200" border="0"></a>
+
+<a href="Bilder/Drei_Drohnen_Gruppenbild_2_crop.jpg"><img src="Bilder/Drei_Drohnen_Gruppenbild_2_crop_icon.jpg" alt="Drohne 1: Bauplan" width="279" height="200" border="0"></a>
+
+<a href="Bilder/Drei_Drohnen_Gruppenbild_3_crop.jpg"><img src="Bilder/Drei_Drohnen_Gruppenbild_3_crop_icon.jpg" alt="Drohne 1: Bauplan" width="259" height="200" border="0"></a>
+
+
 <p>Die vorbereiteten Drohnen sind im Detail...</p>
 
 <h3>Drohne 1</h3>
@@ -249,7 +265,7 @@
 <ul>
 <li>Binding Phase: <tt>drone1ffm</tt></li>
 </ul>
-<li><b>Camera:</b> Caddx Ratel Pro 1500TVL Analog</li> 
+<li><b>Camera:</b> RunCam Phoenix 2 1000TVL 155FOV Analog</li> 
 <li><b>Videosender:</b> SpeedyBee TX800 VTX (<a href="Dokumente/TX800-manual_EN.pdf">Handbuch</a>)</li>
 <ul>
 <li>Kanal: <tt>5806 MHz (Band: Raceband, Channel: 5)</tt></li>
@@ -258,7 +274,7 @@
 <li><b>Motoren:</b> Emax Eco II 2004 3-6S 3000KV (<a href="Dokumente/10787-1080.jpg">Spezifikation</a>)</li>
 <li><b>Propeller:</b> Gemfan 90mm D90-5 3.5" Ducted 5-Blatt Propeller</li>
 <li><b>GPS:</b> HGLRC M100 mit Kompass (<a href="Dokumente/HGLRC_M100_5883_GPS.pdf">Handbuch</a>)</li>
-<li> Anschlusskabel für MicroAir MTF-01P und Raspberry Pi Zero sind am Flugcontroller angelötet, aber am Sensor und am Einplatinencomputer noch nicht eingesteckt, da die dauerhafte Befestigung dieser Komponenten bzw. der Umbau des Rahmens eine der Aufhaben des Praktikums sind.
+<li> Anschlusskabel für MicroAir MTF-01P und Raspberry Pi Zero sind am Flugcontroller angelötet, aber am Sensor und am Einplatinencomputer noch nicht eingesteckt, da die dauerhafte Befestigung dieser Komponenten bzw. der Umbau des Rahmens eine der Aufhaben des Praktikums sind.</li>
 </ul>
 
 <a href="Bilder/Drohne1_front_1.jpg"><img src="Bilder/Drohne1_front_1_icon.jpg" alt="Drohne 1: Front" width="200" height="200" border="0"></a>
@@ -271,75 +287,71 @@
 
 <a href="Bilder/Drohne1_unterseite.jpg"><img src="Bilder/Drohne1_unterseite_icon.jpg" alt="Drohne 1: Unterseite" width="200" height="200" border="0"></a>
 
-<a href="Bilder/Drohne_Nr1_MasterProjekt_Komponenten_v1_en_Bild_mit_Drohne.png"><img src="Bilder/Drohne_Nr1_MasterProjekt_Komponenten_v1_en_icon.png" alt="Drohne 1: Bauplan" width="326" height="200" border="0"></a>
-
 <h3>Drohne 2</h3>
 
-TBD
-
-<!--<ul>
-<li><b>Rahmen:</b> SpeedyBee BEE35 Pro 3.5 CineWhoop Frame Kit</li>
-<li><b>Flugcontroller:</b> Flywoo GOKU F722 PRO Mini V2 (STM32F722, 216MHz, 512kB Flash) 45A Stack 3-6S AM32  (Betaflight v2025.12.0-BETA)</li>
-<li><b>Camera:</b> RunCam Phoenix 1000TVL Analog</li> 
-<li><b>Videosender:</b> SpeedyBee TX800 VTX</li>
 <ul>
-<li>Kanal: <tt>5771 MHz (Band: BOSCAM/RichWave, Channel: 3)</tt></li>
+<li><b>Rahmen:</b> SpeedyBee BEE35 Pro 3.5 CineWhoop Frame Kit (<a href="Dokumente/SpeedyBee-Bee35-Manual-EN.pdf">Handbuch</a>)</li>
+<li><b>Flugcontroller:</b> Flywoo GOKU GN745 (STM32F745, 216MHz, 1MB Flash) 45A AIO 2-6S AM32 mit Betaflight v2025.12.2 (<a href="Dokumente/F745-V3">Handbuch</a>)</li>
+<li><b>Empfänger:</b> Radiomaster XR4 Gemini Xrossband Dual-Band ELRS Empfänger mit Firmware ExpressLRS 4.0.0 (<a href="Dokumente/XR4.pdf">Handbuch</a>)</li>
+<ul>
+<li>Binding Phase: <tt>drone1ffm</tt></li>
+</ul>
+<li><b>Camera:</b> RunCam Phoenix 2 1000TVL 155FOV Analog</li> 
+<li><b>Videosender:</b> SpeedyBee TX800 VTX (<a href="Dokumente/TX800-manual_EN.pdf">Handbuch</a>)</li>
+<ul>
+<li>Kanal: <tt>5769 MHz (Band: Raceband, Channel: 4)</tt></li>
 </ul>
 <li><b>VTX-Antenne:</b> TrueRC Singularity 5.8GHz RHCP SMA</li>
-<li><b>Empfänger:</b> Radiomaster XR1 ELRS Dual Band RX (Firmware: ExpressLRS 3.6.0)</li>
-<ul>
-<li>Binding Phase: <tt>drone2</tt></li>
-</ul>
-<li><b>Motoren:</b> Emax Eco II 2004 3-6S 3000KV</li>
+<li><b>Motoren:</b> Emax Eco II 2004 3-6S 3000KV (<a href="Dokumente/10787-1080.jpg">Spezifikation</a>)</li>
 <li><b>Propeller:</b> Gemfan 90mm D90-5 3.5" Ducted 5-Blatt Propeller</li>
-<li><b>GPS:</b> HGLRC M100 mit Kompass</li>
-</ul>-->
+<li><b>GPS:</b> HGLRC M100 mit Kompass (<a href="Dokumente/HGLRC_M100_5883_GPS.pdf">Handbuch</a>)</li>
+<li> Anschlusskabel für MicroAir MTF-01P und Raspberry Pi Zero sind am Flugcontroller angelötet, aber am Sensor und am Einplatinencomputer noch nicht eingesteckt, da die dauerhafte Befestigung dieser Komponenten bzw. der Umbau des Rahmens eine der Aufhaben des Praktikums sind.</li>
+</ul>
 
-<!--<a href="Bilder/Drohne2_front.jpg"><img src="Bilder/Drohne2_front_icon.jpg" alt="Drohne 2: Front" width="200" height="200" border="0"></a>
+<a href="Bilder/Drohne2_front_1.jpg"><img src="Bilder/Drohne2_front_1_icon.jpg" alt="Drohne 1: Front" width="200" height="200" border="0"></a>
 
-<a href="Bilder/Drohne2_rechts.jpg"><img src="Bilder/Drohne2_rechts_icon.jpg" alt="Drohne 2: Rechts" width="200" height="200" border="0"></a>
+<a href="Bilder/Drohne2_front_2.jpg"><img src="Bilder/Drohne2_front_2_icon.jpg" alt="Drohne 1: Rechts" width="200" height="200" border="0"></a>
 
-<a href="Bilder/Drohne2_hinten.jpg"><img src="Bilder/Drohne2_hinten_icon.jpg" alt="Drohne 2: R&uuml;ckseite" width="200" height="200" border="0"></a>
+<a href="Bilder/Drohne2_hinten_1.jpg"><img src="Bilder/Drohne2_hinten_1_icon.jpg" alt="Drohne 1: R&uuml;ckseite" width="200" height="200" border="0"></a>
 
-<a href="Bilder/Drohne2_links.jpg"><img src="Bilder/Drohne2_links_icon.jpg" alt="Drohne 2: Links" width="200" height="200" border="0"></a>
+<a href="Bilder/Drohne2_hinten_2.jpg"><img src="Bilder/Drohne2_hinten_2_icon.jpg" alt="Drohne 1: Links" width="200" height="200" border="0"></a>
 
-<a href="Bilder/Drohne2_unterseite.jpg"><img src="Bilder/Drohne2_unterseite_icon.jpg" alt="Drohne 2: Unterseite" width="200" height="200" border="0"></a>
+<a href="Bilder/Drohne2_unterseite.jpg"><img src="Bilder/Drohne2_unterseite_icon.jpg" alt="Drohne 1: Unterseite" width="200" height="200" border="0"></a>
 
-<a href="Bilder/Drohne_Nr2_MasterProjekt_Komponenten_v1_en.png"><img src="Bilder/Drohne_Nr2_MasterProjekt_Komponenten_v1_en_icon.png" alt="Drohne 2: Bauplan" width="266" height="200" border="0"></a>-->
+<!-- <a href="Bilder/Drohne_Nr2_MasterProjekt_Komponenten_v1_en.png"><img src="Bilder/Drohne_Nr2_MasterProjekt_Komponenten_v1_en_icon.png" alt="Drohne 2: Bauplan" width="266" height="200" border="0"></a> -->
 
 <h3>Drohne 3</h3>
 
-TBD
-
-<!--<ul>
-<li><b>Rahmen:</b> SpeedyBee BEE35 Pro 3.5 CineWhoop Frame Kit</li>
-<li><b>Flugcontroller:</b> Flywoo GOKU F722 PRO V2 (STM32F722, 216MHz, 512kB Flash) 55A Stack 3-6S AM32 (Betaflight v4.5.2)</li>
-<li><b>Camera:</b> Caddx Ratel Pro 1500TVL Analog</li> 
-<li><b>Videosender:</b> SpeedyBee TX800 VTX</li>
 <ul>
-<li>Kanal: <tt>5847 MHz (Band: BOSCAM/RichWave, Channel: 7)</tt></li>
-</ul>
-<li><b>VTX-Antenne:</b> Foxeer Lollipop 4 RHCP</li>
-<li><b>Empfänger:</b> Radiomaster XR1 ELRS Dual Band RX (Firmware: ExpressLRS 3.6.0)</li>
+<li><b>Rahmen:</b> SpeedyBee BEE35 Pro 3.5 CineWhoop Frame Kit (<a href="Dokumente/SpeedyBee-Bee35-Manual-EN.pdf">Handbuch</a>)</li>
+<li><b>Flugcontroller:</b> Flywoo GOKU GN745 (STM32F745, 216MHz, 1MB Flash) 45A AIO 2-6S AM32 mit Betaflight v2025.12.2 (<a href="Dokumente/F745-V3">Handbuch</a>)</li>
+<li><b>Empfänger:</b> Radiomaster XR4 Gemini Xrossband Dual-Band ELRS Empfänger mit Firmware ExpressLRS 4.0.0 (<a href="Dokumente/XR4.pdf">Handbuch</a>)</li>
 <ul>
-<li>Binding Phase: <tt>drone3</tt></li>
+<li>Binding Phase: <tt>drone1ffm</tt></li>
 </ul>
-<li><b>Motoren:</b> Axisflying C206 2006 2500KV 4-6S</li>
+<li><b>Camera:</b> RunCam Phoenix 2 Pro 1500TVL 128FOV Analog</li> 
+<li><b>Videosender:</b> SpeedyBee TX800 VTX (<a href="Dokumente/TX800-manual_EN.pdf">Handbuch</a>)</li>
+<ul>
+<li>Kanal: <tt>5769 MHz (Band: Raceband, Channel: 4)</tt></li>
+</ul>
+<li><b>VTX-Antenne:</b> TrueRC Singularity 5.8GHz RHCP SMA</li>
+<li><b>Motoren:</b> Emax Eco II 2004 3-6S 3000KV (<a href="Dokumente/10787-1080.jpg">Spezifikation</a>)</li>
 <li><b>Propeller:</b> Gemfan 90mm D90-5 3.5" Ducted 5-Blatt Propeller</li>
-<li><b>GPS:</b> Matek M10Q-5883 GPS mit Kompass</li>
-</ul>-->
+<li><b>GPS:</b> HGLRC M100 mit Kompass (<a href="Dokumente/HGLRC_M100_5883_GPS.pdf">Handbuch</a>)</li>
+<li> Anschlusskabel für MicroAir MTF-01P und Raspberry Pi Zero sind am Flugcontroller angelötet, aber am Sensor und am Einplatinencomputer noch nicht eingesteckt, da die dauerhafte Befestigung dieser Komponenten bzw. der Umbau des Rahmens eine der Aufhaben des Praktikums sind.</li>
+</ul>
 
-<!--<a href="Bilder/Drohne3_front.jpg"><img src="Bilder/Drohne3_front_icon.jpg" alt="Drohne 3: Front" width="200" height="200" border="0"></a>
+<a href="Bilder/Drohne3_front_1.jpg"><img src="Bilder/Drohne3_front_1_icon.jpg" alt="Drohne 1: Front" width="200" height="200" border="0"></a>
 
-<a href="Bilder/Drohne3_rechts.jpg"><img src="Bilder/Drohne3_rechts_icon.jpg" alt="Drohne 3: Rechts" width="200" height="200" border="0"></a>
+<a href="Bilder/Drohne3_front_2.jpg"><img src="Bilder/Drohne3_front_2_icon.jpg" alt="Drohne 1: Rechts" width="200" height="200" border="0"></a>
 
-<a href="Bilder/Drohne3_hinten.jpg"><img src="Bilder/Drohne3_hinten_icon.jpg" alt="Drohne 3: R&uuml;ckseite" width="200" height="200" border="0"></a>
+<a href="Bilder/Drohne3_hinten_1.jpg"><img src="Bilder/Drohne3_hinten_1_icon.jpg" alt="Drohne 1: R&uuml;ckseite" width="200" height="200" border="0"></a>
 
-<a href="Bilder/Drohne3_links.jpg"><img src="Bilder/Drohne3_links_icon.jpg" alt="Drohne 3: Links" width="200" height="200" border="0"></a>
+<a href="Bilder/Drohne3_hinten_2.jpg"><img src="Bilder/Drohne3_hinten_2_icon.jpg" alt="Drohne 1: Links" width="200" height="200" border="0"></a>
 
-<a href="Bilder/Drohne3_unterseite.jpg"><img src="Bilder/Drohne3_unterseite_icon.jpg" alt="Drohne 3: Unterseite" width="200" height="200" border="0"></a>
+<a href="Bilder/Drohne3_unterseite.jpg"><img src="Bilder/Drohne3_unterseite_icon.jpg" alt="Drohne 1: Unterseite" width="200" height="200" border="0"></a>
 
-<a href="Bilder/Drohne_Nr3_MasterProjekt_Komponenten_v1_en.png"><img src="Bilder/Drohne_Nr3_MasterProjekt_Komponenten_v1_en_icon.png" alt="Drohne 3: Bauplan" width="307" height="200" border="0"></a>-->
+<!-- <a href="Bilder/Drohne_Nr3_MasterProjekt_Komponenten_v1_en.png"><img src="Bilder/Drohne_Nr3_MasterProjekt_Komponenten_v1_en_icon.png" alt="Drohne 3: Bauplan" width="307" height="200" border="0"></a> -->
 
 <h2>Teams</h2>
 
