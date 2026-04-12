@@ -2,14 +2,14 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-<base target="_blank">   <!--Open new window for links-->
+<base target="_blank">   <!-- Open new window for links -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="Cloud Computing, SS2026, FH-Frankfurt, Frankfurt University of Applied Sciences, FRA-UAS, Prof. Dr. Christian Baun">
 <meta name="author" content="Prof. Dr. Christian Baun">
 <meta name="keywords" content="Cloud Computing, FH-Frankfurt, Frankfurt, Frankfurt University of Applied Sciences, FRA-UAS, SS2026, Computer Science, Prof. Dr. Christian Baun">
 <meta name="GENERATOR" content="none">
 <title>Cloud Computing Course (SS2026)</title>
-<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
 </head>
 
@@ -27,33 +27,336 @@
 
 <hr>
 
-
 <h2>Cloud Computing (SS2026)</h2>
 
-  
+<p>
+This seminar applies the fundamentals of distributed systems and cloud computing in practice. Groups of students combine various hardware and software components into a complex system to enable the practical application of artificial intelligence.
+</p>
 
+<p>
+<b>The goal of the semester project is to develop an <a href="https://en.wikipedia.org/wiki/Edge_computing">edge computing</a> monitoring solution to identify people and detect threats. Each group of students will develop, build, test, document, and present a complex hardware and software system that automatically detects people and identifies threat situations or events such as theft, fire, or vandalism.</b> The semester project includes these tasks:
+</p>
 
-TBD
+<ul>
+<li><b>Task 1:</b> Develop and set up an <b>infrastructure</b> consisting of one or more sensor nodes with <a href="https://www.raspberrypi.com/products/raspberry-pi-5/">single-board computers</a> (Raspberry Pi 5) and a <a href="https://www.raspberrypi.com/products/ai-camera/">Raspberry Pi AI Camera module</a> or a <a href="https://www.raspberrypi.com/products/camera-module-v2/">Raspberry Pi Camera Module</a> plus a <a href="https://coral.ai/products/accelerator/">Google Coral USB Accelerator</a>.</li>
 
+<ul>
+<li>Deployment of the operating system (for example <a href="https://www.raspberrypi.com/software/">Raspberry Pi OS</a> or <a href="https://ubuntu.com/raspberry-pi">Ubuntu</a>) and the <a href="https://github.com/Qengineering">object detection software</a> (for example <a href="https://www.raspberrypi.com/news/deploying-ultralytics-yolo-models-on-raspberry-pi-devices/">YOLO</a> [<a href="https://core-electronics.com.au/guides/getting-started-with-yolo-object-and-animal-recognition-on-the-raspberry-pi/">1</a>], [<a href="https://www.raspberrypi.com/documentation/accessories/ai-camera.html">2</a>] or <a href="https://www.tensorflow.org/">TensorFlow</a>)</li>
+</ul>
 
-<h2>Schedule of the Course</h2>
+<li><b>Task 2:</b> Investigate the <b>performance</b> (GFLOPS) of your infrastructure or cluster system by using the industry standard solution HPL (<a href="https://www.netlib.org/benchmark/hpl/">High Performance LINPACK</a>).</li>
 
+<li><b>Task 3:</b> Demonstrate <b>Amdahl's Law</b> and <b>Gustafson's Law</b> by using a tool such as <a href="https://github.com/christianbaun/task-distributor">Task Distributor</a>.</li>
 
-TBD
+<li><b>Task 4:</b> Deploy a <b>monitoring solution</b> that observes the health status of the hardware, relevant operating system parameters, service parameters, and network services with an open source tool such as <a href="https://prometheus.io/">Prometheus</a>, <a href="https://grafana.com/">Grafana</a>, or <a href="https://checkmk.com/">CheckMK</a>.</li>
+
+<li><b>Task 5:</b> Collect a sufficient number of images for the training and testing of your <b>object detection model</b> (for example <a href="https://www.tensorflow.org/">TensorFlow</a>, <a href="https://opencv.org/">OpenCV</a>, <a href="https://pjreddie.com/darknet/yolo/">YOLO</a>) using your own hardware (in this case you need a supported GPU) or a cloud service (for example <a href="https://roboflow.com/">Roboflow</a> or <a href="https://www.v7labs.com/">V7</a>).</li>
+
+<ul>
+<li>You are expected to train your own model. Using a pre existing model is not sufficient.</li>
+</ul>
+
+<li><b>Task 6:</b> Develop a <b>backend</b> to manage the sensor nodes and the collected data.</li>
+
+<ul>
+<li>The backend can be deployed as Docker container(s) on a <a href="https://medium.com/thinkport/how-to-build-a-raspberry-pi-kubernetes-cluster-with-k3s-76224788576c">Raspberry Pi Kubernetes cluster</a> with <a href="https://k3s.io/">k3s</a> or a similar solution. The backend infrastructure will be a robust and scalable <a href="Skript/cloud_computing_SS2025_slideset_02.pdf">high availability cluster</a> of Raspberry Pi 3 nodes. The cluster includes a distributed file system (for example <a href="https://ceph.io">Ceph</a> with the <a href="https://docs.ceph.com/en/latest/radosgw/s3/">Ceph Object Gateway S3 API</a>) or a storage service (for example <a href="https://github.com/seaweedfs/seaweedfs">SeaweedFS</a> or <a href="https://github.com/minio/minio">MinIO</a>).</li>
+</ul>
+
+<li><b>Task 7:</b> Develop a <b>frontend</b> to present, for example, log information, event messages, and a map of events with supporting evidence such as images and timestamps.</li>
+
+<ul>
+<li>
+The frontend will also be deployed as a Docker container on a <a href="https://medium.com/thinkport/how-to-build-a-raspberry-pi-kubernetes-cluster-with-k3s-76224788576c">Raspberry Pi Kubernetes cluster</a> with <a href="https://k3s.io/">k3s</a> or a similar solution and should be implemented with a modern framework such as <a href="https://vuejs.org/">Vue.js</a> or <a href="https://react.dev/">React</a>.</li>
+<li>Use protocol(s) such as <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> or <a href="https://mqtt.org/">MQTT</a> for communication between the components (frontend, backend, services, etc.).</li>
+</ul>
+
+<li><b>Task 8:</b> Implement a <b>Telegram</b> notification feature with a <a href="https://core.telegram.org/bots">Telegram Bot</a>.</li>
+
+<ul>
+<li>The Telegram Bot informs the team members about health related events of the infrastructure and threats or other events detected by the sensor node(s).</li>
+</ul>
+
+<li><b>Task 9:</b> Documentation and presentation of the results from Tasks 1 to 8.</li>
+<ul>
+<li>Create documentation and guides that enable students, researchers, and lecturers to reproduce the edge computing scenarios and use them for their own modules and research projects.</li>
+<li><b>No slide presentations or traditional PDF project reports</b> will be created. Instead, each team develops complete and understandable <b>online documentation</b> (for example via <a href="https://docs.github.com/de/pages">GitHub Pages</a>) and presents the results in the form of a poster as well as a live demonstration.</li>
+</ul>
+
+</ul>
+
+<p>
+<b>This course has no written exam. Instead, your individual grade will depend entirely on your work and the results of the semester project.</b>
+</p>
+
+<ul>
+<li>On April 16th, each team will receive one aluminum case (460 x 340 x 160 mm) with hardware that should be sufficient for the semester project. The aluminum case contains:</li>
+<ul>
+<li>Smart Gigabit Ethernet switch with power cable or power supply unit</li>
+<li>RJ45 twisted pair network cables</li>
+<li><a href="https://www.raspberrypi.com/products/raspberry-pi-5/">Raspberry Pi 5</a> single-board computer (8 GB RAM)</li>
+<li><a href="https://www.raspberrypi.com/products/27w-power-supply/">Raspberry Pi 27W USB C Power Supply</a> (for the Raspberry Pi 5)</li>
+<li><a href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/">Raspberry Pi 4</a> single-board computer</li>
+<li><a href="https://www.raspberrypi.com/products/type-c-power-supply/">Raspberry Pi 15W USB C Power Supply</a> (for the Raspberry Pi 4)</li>
+<li>Micro HDMI to HDMI cable (for the Raspberry Pi 4)</li>
+<li>Several <a href="https://www.raspberrypi.com/products/raspberry-pi-3-model-b/">Raspberry Pi 3</a> single-board computers</li>
+<li>Anker USB power supply (6 or 10 ports, 60 W) (for the Raspberry Pi 3)</li>
+<li>Micro USB power cables (for the Raspberry Pi 3)</li>
+<li>HDMI to HDMI cable (for the Raspberry Pi 3)</li>
+<li><a href="https://www.raspberrypi.com/products/ai-camera/">Raspberry Pi AI Camera module</a> or <a href="https://www.raspberrypi.com/products/camera-module-v2/">Raspberry Pi Camera Module</a> plus <a href="https://coral.ai/products/accelerator/">Google Coral USB Accelerator</a></li>
+<li>MicroSD cards (32 GB each)</li>
+<li>USB 3.0 card reader for SD and MicroSD cards</li>
+<li>SD/MicroSD card adapter</li>
+<li>Spacer bolts M2.5</li>
+<li>Power strip</li>
+</ul>
+</ul>
+
+<!--<table width="100%">
+    <tr>
+        <td><img src="Bilder/Koffer1.jpg" alt="Image 1" width="98%"></td>
+        <td><img src="Bilder/Koffer2.jpg" alt="Image 2" width="98%"></td>
+        <td><img src="Bilder/Koffer3.jpg" alt="Image 3" width="98%"></td>
+    </tr>
+</table>-->
+
+<h2>Zeitplan für das Semester / Schedule of the Course</h2>
+
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="abstand_links">Date</th>
+    <th class="abstand_links">Time</th>
+    <th class="abstand_links">Room</th>
+    <th class="abstand_links">Target Audience</th>
+    <th class="abstand_links">Topics</th>
+  </tr>
+  <tr>
+    <td class="abstand_links">16.04.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-13:00</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links">Einführungsveranstaltung, Gruppenfindung, Anforderungsanalyse, Projektplanung</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">16.04.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-17:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links">Semester project introduction, team building, requirements analysis, task identification, time planning</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">23.04.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-13:00</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links">Gruppenarbeit</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">23.04.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-17:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links">Teamwork</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">30.04.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-13:00</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links">Gruppenarbeit</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">30.04.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-17:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links">Teamwork</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">07.05.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-13:00</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links">Gruppenarbeit</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">07.05.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-17:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links">Teamwork</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">14.05.2026</td>
+    <td class="abstand_links">-----</td>
+    <td class="abstand_links">-----</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links"><i>Christi Himmelfahrt, Feiertag</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">14.05.2026</td>
+    <td class="abstand_links">-----</td>
+    <td class="abstand_links">-----</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links"><i>Ascension Day, public holiday</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">21.05.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-13:00</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links">Gruppenarbeit</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">21.05.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-17:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links">Teamwork</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">28.05.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-13:00</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links">Gruppenarbeit</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">28.05.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-17:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links">Teamwork</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">04.06.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-13:00</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links">Gruppenarbeit</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">04.06.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-17:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links">Teamwork</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">11.06.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-13:00</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links">Gruppenarbeit</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">11.06.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-17:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links">Teamwork</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">18.06.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-13:00</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links">Gruppenarbeit</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">18.06.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-17:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links">Teamwork</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">25.06.2026</td>
+    <td class="abstand_links">-----</td>
+    <td class="abstand_links">-----</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links"><i>Dienstreise</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">25.06.2026</td>
+    <td class="abstand_links">-----</td>
+    <td class="abstand_links">-----</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links"><i>Business trip</i></td>
+  </tr>
+  <tr>
+    <td class="abstand_links">02.07.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-13:00</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links">Gruppenarbeit</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">02.07.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-17:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links">Teamwork</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">09.07.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-13:00</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links">Gruppenarbeit</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">09.07.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-17:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links">Teamwork</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">16.07.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">10:00-13:00</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_deutsch.gif" alt="Flagge (deutsch)" border="0" width="16" height="12">&nbsp;(Allgemeine Informatik)</td>
+    <td class="abstand_links">Demonstration und Präsentation der Projektergebnisse aller Teams, Abschlussveranstaltung</td>
+  </tr>
+  <tr>
+    <td class="abstand_links">16.07.2026</td>
+    <td class="abstand_links" style="white-space:nowrap;">14:15-17:15</td>
+    <td class="abstand_links">1-234</td>
+    <td class="abstand_links" style="white-space:nowrap;"><img src="Bilder/flag_english.gif" alt="Flagge (englisch)" border="0" width="16" height="12">&nbsp;(High-Integrity Systems)</td>
+    <td class="abstand_links">Semester project presentations and demonstrations, closing event</td>
+  </tr>
+</table>
 
 <h2>Course Materials</h2>
 
-
-TBD
+<table border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td class="abstand_zentriert" style="white-space:nowrap;"><a href="Skript/cloud_computing_SS2026_slideset_01.pdf">Slide&nbsp;set&nbsp;1</a></td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_01_SS2026.pdf">Exercise&nbsp;sheet&nbsp;1</a></td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2026_exercise_sheet_01_solution.pdf">Solution</a></td>
+    <td class="abstand_links">Organisational information, client server, fundamentals, laws and limitations, parallel computers</td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert" style="white-space:nowrap;"><a href="Skript/cloud_computing_SS2026_slideset_02.pdf">Slide&nbsp;set&nbsp;2</a></td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_exercise_sheet_02_SS2026.pdf">Exercise&nbsp;sheet&nbsp;2</a></td>
+    <td class="abstand_zentriert"><a href="Skript/cloud_computing_SS2026_exercise_sheet_02_solution.pdf">Solution</a></td>
+    <td class="abstand_links">Cluster Computing</td>
+  </tr>
+  <tr>
+    <td class="abstand_zentriert" style="white-space:nowrap;"><a href="Skript/cloud_computing_SS2026_slideset_03.pdf">Slide&nbsp;set&nbsp;3</a></td>
+    <td class="abstand_zentriert">TBD</td>
+    <td class="abstand_zentriert">TBD</td>
+    <td class="abstand_links">Cloud Computing, services and concepts, opportunities and risks</td>
+  </tr>
+</table>
 
 <h2>Results</h2>
-
 
 TBD
 
 <h2>Contact</h2>
 
-<p>The best way to reach me is via email: <a href="mailto:christianbaun@fb2.fra-uas.de">christianbaun@fb2.fra-uas.de</a></p>
+<p>The best way to reach me is by email: <a href="mailto:christianbaun@fb2.fra-uas.de">christianbaun@fb2.fra-uas.de</a></p>
 
 <hr>
 
@@ -62,9 +365,10 @@ TBD
     <td width="49%" align="left">
       <i><a href="mailto:christianbaun@fb2.fra-uas.de">Prof. Dr. Christian Baun</a><br></i>
       <i><a href="https://www.frankfurt-university.de/">Frankfurt University of Applied Sciences</a><br></i>
-      <i>(1971-2014: Fachhochschule Frankfurt am Main)<br></i>
+      <i>(1971 to 2014: Fachhochschule Frankfurt am Main)<br></i>
       <i>Faculty of Computer Science and Engineering<br></i>
-      <i>Last updated: March 2nd, 2026</i>
+      <i>Last updated: April 12th, 2026</i>
+    </td>
     <td width="49%" align="right" valign="middle">&nbsp;</td>
   </tr>
 </table>
