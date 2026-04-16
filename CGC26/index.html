@@ -90,31 +90,34 @@ If you do not have 40 credit points yet, you can take the course next semester o
 </p>
 
 <ul>
-<li><b>Task 1:</b> Develop and set up an <b>infrastructure</b> consisting of one or more sensor nodes with <a href="https://www.raspberrypi.com/products/raspberry-pi-5/">single-board computers</a> (Raspberry Pi 5) and a <a href="https://www.raspberrypi.com/products/ai-camera/">Raspberry Pi AI Camera module</a> or a <a href="https://www.raspberrypi.com/products/camera-module-v2/">Raspberry Pi Camera Module</a> plus a <a href="https://coral.ai/products/accelerator/">Google Coral USB Accelerator</a>.</li>
+<li><b>Task 1:</b> Develop and set up an <b>infrastructure</b> consisting of one or more sensor nodes with <a href="https://www.raspberrypi.com/products/raspberry-pi-5/">single-board computers</a> (Raspberry Pi 5) and a <a href="https://www.raspberrypi.com/products/ai-camera/">Raspberry Pi AI Camera module</a> or a <a href="https://www.raspberrypi.com/products/camera-module-v2/">Raspberry Pi Camera Module</a> plus a <a href="https://www.raspberrypi.com/documentation/accessories/ai-hat-plus.html">Raspberry Pi AI HAT</a>.</li>
 
 <ul>
 <li>Deployment of the operating system (for example <a href="https://www.raspberrypi.com/software/">Raspberry Pi OS</a> or <a href="https://ubuntu.com/raspberry-pi">Ubuntu</a>) and the <a href="https://github.com/Qengineering">object detection software</a> (for example <a href="https://www.raspberrypi.com/news/deploying-ultralytics-yolo-models-on-raspberry-pi-devices/">YOLO</a> [<a href="https://core-electronics.com.au/guides/getting-started-with-yolo-object-and-animal-recognition-on-the-raspberry-pi/">1</a>], [<a href="https://www.raspberrypi.com/documentation/accessories/ai-camera.html">2</a>] or <a href="https://www.tensorflow.org/">TensorFlow</a>)</li>
+<li>Investigate how the operating system images of the Raspberry Pi 3 nodes can be consolidated on a Raspberry Pi 4 or Raspberry Pi 5. The goal is to boot the Raspberry Pi 3 nodes via PXE over the LAN and simplify the administration of the cluster. Try it out and investigate the benefits and drawbacks of such a deployment scenario.</li>
 </ul>
 
 <li><b>Task 2:</b> Investigate the <b>performance</b> (GFLOPS) of your infrastructure or cluster system by using the industry standard solution HPL (<a href="https://www.netlib.org/benchmark/hpl/">High Performance LINPACK</a>).</li>
 
-<li><b>Task 3:</b> Demonstrate <b>Amdahl's Law</b> and <b>Gustafson's Law</b> by using a tool such as <a href="https://github.com/christianbaun/task-distributor">Task Distributor</a>.</li>
+<li><b>Task 3:</b> Deploy the <a href="https://www.open-mpi.org/">Message Passing Interface</a> (MPI) on the cluster to make it a <a href="Skript/cloud_computing_SS2026_slideset_02.pdf">high-performance cluster</a> The Raspberry Pi 3 nodes can act as worker nodes, while the Raspberry Pi 4 or Raspberry Pi 5 acts as the master node. Demonstrate the scalability of the cluster using MPI applications and analyze the potential performance as well as the bottlenecks. Also demonstrate <b>Amdahl's Law</b> and <b>Gustafson's Law</b> using at least two MPI examples.</li>
 
-<li><b>Task 4:</b> Deploy a <b>monitoring solution</b> that observes the health status of the hardware, relevant operating system parameters, service parameters, and network services with an open source tool such as <a href="https://prometheus.io/">Prometheus</a>, <a href="https://grafana.com/">Grafana</a>, or <a href="https://checkmk.com/">CheckMK</a>.</li>
+<li><b>Task 4:</b> Demonstrate <b>Amdahl's Law</b> and <b>Gustafson's Law</b> by using a non-MPI tool such as <a href="https://github.com/christianbaun/task-distributor">Task Distributor</a>.</li>
 
-<li><b>Task 5:</b> Collect a sufficient number of images for the training and testing of your <b>object detection model</b> (for example <a href="https://www.tensorflow.org/">TensorFlow</a>, <a href="https://opencv.org/">OpenCV</a>, <a href="https://pjreddie.com/darknet/yolo/">YOLO</a>) using your own hardware (in this case you need a supported GPU) or a cloud service (for example <a href="https://roboflow.com/">Roboflow</a> or <a href="https://www.v7labs.com/">V7</a>).</li>
+<li><b>Task 5:</b> Deploy a <b>monitoring solution</b> that observes the health status of the hardware, relevant operating system parameters, service parameters, and network services with an open source tool such as <a href="https://prometheus.io/">Prometheus</a>, <a href="https://grafana.com/">Grafana</a>, or <a href="https://checkmk.com/">CheckMK</a>.</li>
+
+<li><b>Task 6:</b> Collect a sufficient number of images for the training and testing of your <b>object detection model</b> (for example <a href="https://www.tensorflow.org/">TensorFlow</a>, <a href="https://opencv.org/">OpenCV</a>, <a href="https://pjreddie.com/darknet/yolo/">YOLO</a>) using your own hardware (in this case you need a supported GPU) or a cloud service (for example <a href="https://roboflow.com/">Roboflow</a> or <a href="https://www.v7labs.com/">V7</a>).</li>
 
 <ul>
 <li>You are expected to train your own model. Using a pre existing model is not sufficient.</li>
 </ul>
 
-<li><b>Task 6:</b> Develop a <b>backend</b> to manage the sensor nodes and the collected data.</li>
+<li><b>Task 7:</b> Develop a <b>backend</b> to manage the sensor nodes and the collected data.</li>
 
 <ul>
-<li>The backend can be deployed as Docker container(s) on a <a href="https://medium.com/thinkport/how-to-build-a-raspberry-pi-kubernetes-cluster-with-k3s-76224788576c">Raspberry Pi Kubernetes cluster</a> with <a href="https://k3s.io/">k3s</a> or a similar solution. The backend infrastructure will be a robust and scalable <a href="Skript/cloud_computing_SS2025_slideset_02.pdf">high availability cluster</a> of Raspberry Pi 3 nodes. The cluster includes a distributed file system (for example <a href="https://ceph.io">Ceph</a> with the <a href="https://docs.ceph.com/en/latest/radosgw/s3/">Ceph Object Gateway S3 API</a>) or a storage service (for example <a href="https://github.com/seaweedfs/seaweedfs">SeaweedFS</a> or <a href="https://github.com/minio/minio">MinIO</a>).</li>
+<li>The backend can be deployed as Docker container(s) on a <a href="https://medium.com/thinkport/how-to-build-a-raspberry-pi-kubernetes-cluster-with-k3s-76224788576c">Raspberry Pi Kubernetes cluster</a> with <a href="https://k3s.io/">k3s</a> or a similar solution. The backend infrastructure will be a robust and scalable <a href="Skript/cloud_computing_SS2026_slideset_02.pdf">high availability cluster</a> of Raspberry Pi 3 nodes. The cluster includes a distributed file system (for example <a href="https://ceph.io">Ceph</a> with the <a href="https://docs.ceph.com/en/latest/radosgw/s3/">Ceph Object Gateway S3 API</a>) or a storage service (for example <a href="https://github.com/seaweedfs/seaweedfs">SeaweedFS</a> or <a href="https://github.com/minio/minio">MinIO</a>).</li>
 </ul>
 
-<li><b>Task 7:</b> Develop a <b>frontend</b> to present, for example, log information, event messages, and a map of events with supporting evidence such as images and timestamps.</li>
+<li><b>Task 8:</b> Develop a <b>frontend</b> to present, for example, log information, event messages, and a map of events with supporting evidence such as images and timestamps.</li>
 
 <ul>
 <li>
@@ -122,13 +125,13 @@ The frontend will also be deployed as a Docker container on a <a href="https://m
 <li>Use protocol(s) such as <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> or <a href="https://mqtt.org/">MQTT</a> for communication between the components (frontend, backend, services, etc.).</li>
 </ul>
 
-<li><b>Task 8:</b> Implement a <b>Telegram</b> notification feature with a <a href="https://core.telegram.org/bots">Telegram Bot</a>.</li>
+<li><b>Task 9:</b> Implement a <b>Telegram</b> notification feature with a <a href="https://core.telegram.org/bots">Telegram Bot</a>.</li>
 
 <ul>
 <li>The Telegram Bot informs the team members about health related events of the infrastructure and threats or other events detected by the sensor node(s).</li>
 </ul>
 
-<li><b>Task 9:</b> Documentation and presentation of the results from Tasks 1 to 8.</li>
+<li><b>Task 10:</b> Documentation and presentation of the results from Tasks 1 to 9.</li>
 <ul>
 <li>Create documentation and guides that enable students, researchers, and lecturers to reproduce the edge computing scenarios and use them for their own modules and research projects.</li>
 <li><b>No slide presentations or traditional PDF project reports</b> will be created. Instead, each team develops complete and understandable <b>online documentation</b> (for example via <a href="https://docs.github.com/de/pages">GitHub Pages</a>) and presents the results in the form of a poster as well as a live demonstration.</li>
