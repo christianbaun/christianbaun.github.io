@@ -29,9 +29,188 @@
 
 <h2>Cloud Computing (WS2627)</h2>
 
+<p>
+  This master's-level course applies the fundamentals of distributed systems,
+  <a href="https://en.wikipedia.org/wiki/Edge_computing">edge computing</a>,
+  cloud computing, and artificial intelligence in practice. Groups of students
+  combine hardware and software components to develop a complex distributed
+  system. The goal of the semester project is
+  to develop an <b>edge computing system that detects, identifies, and tracks
+  drones</b> using multiple cameras. Each group will design, build, test,
+  document, and present a complete prototype consisting of an edge-based sensor
+  node and a distributed backend cluster. The sensor node will use several
+  stationary cameras to monitor a large section of the sky. When a possible
+  drone is detected, the system will classify the object and track its movement.
+  The backend infrastructure consists of a cluster system that receives events,
+  images, video clips, status information, and monitoring data from the sensor
+  node. The backend provides persistent storage, an API, a web-based dashboard,
+  monitoring, and notification services.
+</p>
 
+<p>
+  The project includes the following tasks:
+</p>
 
-TBD
+<ul>
+  <li>
+    <b>Task 1: Sensor Node and Camera Infrastructure.</b>
+    Develop and set up an edge sensor node that includes several stationary
+    overview cameras (USB webcams or CSI-connected cameras) and provides local
+    buffering of images and events. The students must investigate, among other
+    things, the effects of image resolution, frame rate, field of view, exposure
+    settings, USB bandwidth, power consumption, and processing load. The system
+    does not need to monitor the entire sky. Instead, the group must define and
+    document a realistic horizontal and vertical observation area.
+  </li>
+
+  <li>
+    <b>Task 2: Drone Detection and Classification.</b>
+    Collect and annotate a representative dataset and train an object-detection
+    model using, for example,
+    <a href="https://www.tensorflow.org/">TensorFlow</a>,
+    <a href="https://opencv.org/">OpenCV</a>, or
+    <a href="https://pjreddie.com/darknet/yolo/">YOLO</a>. The model may be
+    trained using the group's own hardware, in which case a supported GPU is
+    required, or a cloud service such as
+    <a href="https://roboflow.com/">Roboflow</a> or
+    <a href="https://www.v7labs.com/">V7</a>. The model must recognize drones
+    and distinguish them from birds, airplanes, helicopters, and other objects.
+    The dataset should contain images recorded with the project hardware as well
+    as challenging negative examples captured under different weather,
+    lighting, distance, and background conditions. Separate training,
+    validation, and test datasets must be used. The group must evaluate the
+    model using suitable metrics such as precision, recall, the F1 score, a
+    confusion matrix, and the number of false alarms per observation hour.
+    Merely using an existing pretrained model is not sufficient. The
+    image-processing pipeline should combine object detection with suitable
+    preprocessing techniques such as motion detection, background subtraction,
+    regions of interest, and temporal confirmation across multiple frames.
+  </li>
+
+  <li>
+    <b>Task 3: Distributed Backend and Communication.</b>
+    Develop a containerized backend for the cluster system. The backend should
+    include a message broker (e.g., <a href="https://github.com/apache/activemq">Apache ActiveMQ</a>, <a href="https://qpid.apache.org/">Apache Qpid</a>, <a href="https://github.com/apache/activemq">ActiveMQ</a>, or <a href="https://en.wikipedia.org/wiki/RabbitMQ">RabbitMQ</a>), event-processing services, an API, a metadata
+    database (e.g., <a href="https://www.postgresql.org/">PostgreSQL</a> or <a href="https://mariadb.com/">MariaDB</a>) storage for images and video clips, a web-based frontend,
+    monitoring (see Task 4), and a Telegram Bot as notification service (see Task 4). Communication between the sensor
+    node and the backend may use
+    <a href="https://en.wikipedia.org/wiki/MQTT">MQTT</a>,
+    <a href="https://en.wikipedia.org/wiki/REST">REST</a>, or similar protocols
+    and must support authentication, encryption, automatic reconnection, and
+    reliable event delivery. To provide reliable and high-performance storage,
+    the cluster should include either a distributed file system, such as
+    <a href="https://ceph.io/">Ceph</a> with the
+    <a href="https://docs.ceph.com/en/latest/radosgw/s3/">Ceph Object Gateway S3 API</a>,
+    or an object storage service, such as
+    <a href="https://github.com/seaweedfs/seaweedfs">SeaweedFS</a> or
+    <a href="https://github.com/minio/minio">MinIO</a>. Continuous transmission
+    of all video streams should be avoided. Instead, the sensor node should
+    perform the initial processing locally and transfer only relevant metadata,
+    images, and short video clips. The backend architecture must take the
+    limited memory and processing capabilities of the single-board computer
+    nodes into account. It should remain available when an individual cluster
+    node or service fails and should therefore provide high availability.
+  </li>
+
+  <li>
+    <b>Task 4: Monitoring, Fault Tolerance, and Evaluation.</b>
+    Develop a monitoring solution for the complete infrastructure, including
+    the backend and the sensor node. The dashboard should present detections,
+    confidence values, images, video clips, tracking information, sensor status,
+    cluster status, resource utilization, temperatures, network traffic,
+    storage utilization, and end-to-end latency. Open-source tools such as
+    <a href="https://prometheus.io/">Prometheus</a>,
+    <a href="https://grafana.com/">Grafana</a>, or
+    <a href="https://checkmk.com/">Checkmk</a> may be used. The group must define
+    and demonstrate failure scenarios such as node failure, interruption of the
+    network connection, restart of the sensor node, camera failure, backend
+    service failure, and unavailable storage. Implement a Telegram
+    notification feature using a
+    <a href="https://core.telegram.org/bots">Telegram bot</a>. The bot should
+    inform the team members about infrastructure health events and drone
+    detections. The complete system must be evaluated experimentally. The
+    groups must investigate network traffic and the maximum processing
+    throughput of the backend.
+  </li>
+
+  <li>
+    <b>Task 5: Evaluation of Performance and Scalability.</b>
+    Investigate the performance, measured in
+    <a href="https://en.wikipedia.org/wiki/Floating_point_operations_per_second">GFLOPS</a>,
+    of the cluster system using the industry-standard HPL benchmark
+    (<a href="https://www.netlib.org/benchmark/hpl/">High-Performance LINPACK</a>).
+    Deploy the
+    <a href="https://www.open-mpi.org/">Message Passing Interface</a> (MPI) on
+    the cluster to turn it into a
+    <a href="Skript/cloud_computing_SS2026_slideset_02.pdf">high-performance cluster</a>.
+    Demonstrate the scalability of the worker nodes using MPI applications, and
+    analyze the achievable performance and relevant bottlenecks. Also
+    demonstrate
+    <a href="https://en.wikipedia.org/wiki/Amdahl%27s_law">Amdahl's law</a> and
+    <a href="https://en.wikipedia.org/wiki/Gustafson%27s_law">Gustafson's law</a>
+    using at least two MPI examples.
+  </li>
+
+  <li>
+    <b>Task 6: Automatic Camera Control and Object Tracking.</b>
+    Design and, if possible, build a motorized <a href="https://www.google.com/search?q=pan+tilt++mechanism+diy">pan-tilt platform</a> for a
+    higher-resolution camera. The system must convert detections from the
+    stationary cameras into suitable pan and tilt angles and automatically
+    point the tracking camera towards the detected drone. Servomotors or
+    stepper motors may be controlled by a dedicated microcontroller. As an
+    optional extension, a low-energy countermeasure demonstrator may be
+    developed using a <a href="https://www.google.com/search?q=ping+pong+ball+launcher+mechanism+diy+microcontroller">table-tennis-ball launcher</a> or a similar mechanism.
+  </li>
+
+  <li>
+    <b>Task 7: Documentation and Presentation.</b>
+    Create complete online documentation that enables other students,
+    researchers, and lecturers to reproduce the project. Instead of a
+    traditional written project report, the group should create comprehensive
+    and easy-to-understand online documentation, for example using
+    <a href="https://docs.github.com/en/pages">GitHub Pages</a>, and present the
+    results with a poster and a live demonstration.
+  </li>
+</ul>
+
+<p>
+  <b>
+    This course has no written exam. Instead, your individual grade will depend
+    entirely on your work and the results of the semester project.
+  </b>
+</p>
+
+<p>
+  <b>
+    The semester project covers many topics and technologies from cloud
+    computing, cluster computing, distributed and parallel systems, computer
+    networks, and operating systems. These include:
+  </b>
+</p>
+
+<ul>
+  <li>Amdahl's law and Gustafson's law (see Slide Set 1)</li>
+  <li>Client-server architectures (see Slide Set 1)</li>
+  <li>
+    High-availability clustering, high-performance clustering, and
+    high-throughput clustering (see Slide Set 2)
+  </li>
+  <li>Distributed file systems (see Slide Set 2)</li>
+  <li>
+    The Message Passing Interface (MPI) for developing cluster applications
+    (see Slide Set 2)
+  </li>
+  <li>
+    Evaluation of the performance and throughput of different resources,
+    especially computing capacity, storage, and network bandwidth
+    (see Slide Set 2)
+  </li>
+  <li>Container-based virtualization and web services (see Slide Set 3)</li>
+  <li>Object storage services (see Slide Set 3)</li>
+</ul>
+
+  
+
 
 
 
@@ -162,7 +341,7 @@ TBD
       <i><a href="https://www.frankfurt-university.de/">Frankfurt University of Applied Sciences</a><br></i>
       <i>(1971 to 2014: Fachhochschule Frankfurt am Main)<br></i>
       <i>Faculty of Computer Science and Engineering<br></i>
-      <i>Last updated: August 13th, 2026</i>
+      <i>Last updated: September 2nd, 2026</i>
     </td>
     <td width="49%" align="right" valign="middle">&nbsp;</td>
   </tr>
