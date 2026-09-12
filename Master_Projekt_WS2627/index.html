@@ -34,7 +34,66 @@
 
 <h2>Drohnen mit Künstlicher Intelligenz - Master-Projekt - Studienfeld Intelligente Systeme (WS2627)</h2>
 
-TBD
+<!-- TBD -->
+
+
+<p>
+Teilnehmerinnen und Teilnehmer des Projekts arbeiten in Gruppen von maximal vier Personen. Jede Gruppe erhält eine fertig aufgebaute und flugbereite FPV-Drohne sowie die erforderlichen Hard- und Softwarekomponenten. Ziel des Projekts ist die Entwicklung, Implementierung und experimentelle Bewertung einer drohnenbasierten Lösung zur <strong>automatischen Erkundung und Kartografierung von Innenräumen</strong>.
+</p>
+
+<p>
+Die Drohne soll Räume und Gänge eines Gebäudes möglichst selbstständig erkunden und dabei eine zwei- oder dreidimensionale Karte der Umgebung erstellen. Da innerhalb von Gebäuden in der Regel kein zuverlässiger GPS-Empfang verfügbar ist, müssen alternative Verfahren zur Positionsbestimmung, Navigation und Hinderniserkennung untersucht und miteinander kombiniert werden. Hierfür kommen beispielsweise optischer Fluss, <a href="https://de.wikipedia.org/wiki/Lidar">LiDAR</a>, visuelle Odometrie, Inertialsensoren sowie Verfahren aus den Bereichen <a href="https://de.wikipedia.org/wiki/Simultaneous_Localization_and_Mapping">SLAM (Simultaneous Localization and Mapping)</a> und künstliche Intelligenz infrage.
+</p>
+
+<p>
+Die Verarbeitung kann vollständig auf der Drohne oder verteilt zwischen Drohne und Bodenstation erfolgen. In jedem Fall muss die Drohne auch bei eingeschränkter oder unterbrochener Funkverbindung in einen sicheren Zustand wechseln können. Neben der technischen Umsetzung sollen insbesondere die Genauigkeit und Vollständigkeit der erzeugten Karten, die Zuverlässigkeit der Positionsbestimmung sowie die Grenzen der verwendeten Hard- und Software untersucht und nachvollziehbar dokumentiert werden.
+</p>
+
+<p>
+Das Projekt umfasst die folgenden Aufgaben:
+</p>
+
+<ul>
+<li>
+<b>Aufgabe 1: Drohnenplattform und Systemarchitektur.</b>
+Machen Sie sich mit der bereitgestellten FPV-Drohne sowie deren Hard- und Softwarekomponenten vertraut. Entwerfen Sie eine geeignete Gesamtarchitektur für die automatische Gebäudeerkundung und legen Sie fest, welche Verarbeitungsschritte auf der Drohne und welche gegebenenfalls auf einer Bodenstation ausgeführt werden.
+</li>
+
+<li>
+<b>Aufgabe 2: Autonomer Flug in Innenräumen.</b>
+Integrieren und konfigurieren Sie eine geeignete Autopilot-Lösung, vorzugsweise <a href="https://ardupilot.org/">ArduPilot</a>. Die Kommunikation zwischen Autopilot, Einplatinencomputer und Bodenstation kann über <a href="https://mavlink.io/">MAVLink</a> erfolgen. Realisieren Sie einen stabilen und sicheren Flug ohne GPS. Verwenden Sie dazu geeignete Sensoren für Entfernungsmessung, optischen Fluss, Hinderniserkennung und Positionsschätzung. Die Drohne muss jederzeit manuell übernommen beziehungsweise über einen Not-Aus-Mechanismus sicher gestoppt werden können.
+</li>
+<li>
+<b>Aufgabe 3: Lokalisierung und Kartografierung.</b>
+Entwickeln Sie ein Verfahren, mit dem sich die Drohne innerhalb eines Gebäudes lokalisiert und gleichzeitig eine Karte ihrer Umgebung erzeugt. Als Ergebnis soll mindestens eine zweidimensionale Belegungskarte oder ein Grundriss entstehen. Eine dreidimensionale Punktwolke oder eine semantisch angereicherte Karte kann als Erweiterung umgesetzt werden. Geeignete Softwarelösungen sind beispielsweise <a href="https://www.ros.org/">Robot Operating System 2 (ROS)</a>, <a href="https://opencv.org/">Open Computer Vision Library (OpenCV)</a>, <a href="https://introlab.github.io/rtabmap/">Real-Time Appearance-Based Mapping (RTAB-Map)</a>, <a href="https://github.com/UZ-SLAMLab/ORB_SLAM3">ORB-SLAM3</a> oder <a href="https://google-cartographer.readthedocs.io/">Cartographer</a>.
+</li>
+<li>
+<b>Aufgabe 4: Automatische Erkundung und Navigation.</b>
+Die Drohne soll bislang unbekannte Bereiche selbstständig erkennen, geeignete Erkundungsziele bestimmen und eine möglichst kollisionsfreie Flugroute planen. Räume, Gänge, Türen, Sackgassen und Hindernisse sollen dabei sinnvoll berücksichtigt werden. Nach Abschluss der Erkundung oder beim Auftreten eines Fehlers soll die Drohne sicher landen oder zu einem bekannten Ausgangspunkt zurückkehren. Optional können Räume, Türen, Schilder oder andere relevante Objekte erkannt und in der Karte markiert werden.
+</li>
+<li>
+<b>Aufgabe 5: Integration und mechanische Anpassung.</b>
+Integrieren Sie die benötigten Kameras, Entfernungssensoren und Einplatinencomputer in die Drohnenplattform. Entwickeln Sie bei Bedarf geeignete Halterungen oder Erweiterungen des bestehenden Rahmens. Für Konstruktion und 3D-Druck können beispielsweise <a href="https://www.tinkercad.com/">Tinkercad</a> und <a href="https://ultimaker.com/software/ultimaker-cura/">UltiMaker Cura</a> verwendet werden. Möglichkeiten zum 3D-Druck stehen zur Verfügung.
+</li>
+<li>
+<b>Aufgabe 6: Experimentelle Evaluation.</b>
+Testen Sie das System in unterschiedlich gestalteten Räumen und Gängen. Untersuchen Sie unter anderem die Kartenqualität, Lokalisierungsabweichung, Flächenabdeckung, Erkundungsdauer, Zahl der erforderlichen manuellen Eingriffe, Rechen- und Energiebedarf sowie die Robustheit gegenüber unterschiedlichen Lichtverhältnissen, spiegelnden Flächen, strukturlosen Wänden, engen Durchgängen und beweglichen Hindernissen. Vergleichen Sie die erzeugte Karte nach Möglichkeit mit einem bekannten Grundriss oder einer anderweitig vermessenen Referenz.
+</li>
+<li>
+<b>Aufgabe 7: Dokumentation und Präsentation.</b>
+Erstellen Sie eine vollständige und verständliche Online-Dokumentation, die Studierende, Forschende und Lehrende in die Lage versetzt, das entwickelte System nachzubauen und für eigene Lehr- und Forschungsprojekte weiterzuverwenden. Es werden keine Folienpräsentationen oder klassischen PDF-Projektberichte erstellt. Jedes Team dokumentiert seine Architektur, Implementierung, Experimente, Ergebnisse und bekannten Einschränkungen beispielsweise mit <a href="https://docs.github.com/de/pages">GitHub Pages</a> und präsentiert das Projekt abschließend mit einem Poster und einer Live-Demonstration.
+</li>
+</ul>
+
+<p>
+Im Mittelpunkt des Projekts steht nicht allein eine erfolgreiche Demonstration. Ebenso wichtig sind eine systematische Vorgehensweise, reproduzierbare Experimente und eine fundierte Analyse der technischen Grenzen. Dazu gehören insbesondere die begrenzte Rechenleistung und Akkukapazität der Drohne, Fehler und Drift bei der Positionsbestimmung, unvollständige Sensordaten, Kommunikationsabbrüche sowie die sichere Navigation in einer unbekannten Umgebung.
+</p>
+
+
+
+
+
+
 
 <h2>Zeitplan für das Semester</h2>
 TBD
@@ -57,12 +116,102 @@ TBD
 
 <h2>Ausstattung</h2>
 
+<p>Jedes Team erhält folgende Ausrüstung:</p>
 
-TBD
+
+<ul>
+<li>FPV-Drohne 7-8'' mit komplett aufgebaut und flugfähig</li>
+<li><a href="https://www.skyzonefpv.com/en-de/products/skyzone-cobra-x-v2-5-8ghz-48ch-steadyview-receiver-fpv-goggles-with-dvr">Skyzone Cobra X</a> FPV-Brille</li>
+<li>Li-Ion Akkus (3 Stück)</li>
+<li><a href="https://radiomasterrc.com/products/gx12-dual-band-gemini-x-radio-controller">Radiomaster GX12 ELRS Dual-Band Gemini-X 868MHz/2.4GHz</a> Fernsteuerung mit Firmware <a href="https://edgetx.org/">EdgeTX</a> v2.12.2 und passend zum Empfänger konfigurierter Binding Phrase: <tt>drone[1-3]ffm</tt>
+</li>
+<li><a href="https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/">Raspberry Pi Zero 2 WH</a> Einplatinencomputer</li>
+<li>Gehäuse passend für den Raspberry Pi Zero 2 Einplatinencomputer</li>
+<li><a href="https://www.raspberrypi.com/products/ai-camera/">Raspberry Pi AI Kameramodul</a></li>
+<li><a href="https://micoair.com">MicroAi</a> Sensoren für Entfernungsmessung (LiDAR)</li>
+<li><a href="https://www.waveshare.com/wiki/CP2102_USB_UART_Board_(type_A)">CP2102-USB-UART-Adapter</a> zur Konfiguration des MicroAir MTF-01P</li>
+<li>Mini-HDMI zu Standard-HDMI-Kabel</li>
+<li>Micro-USB (m) auf USB Typ A (f) Kabel</li>
+<li>USB Typ A (m) auf USB-C Kabel</li>
+<li>USB-C auf USB-C Kabel</li>
+<li>USB-Audio/Video-Grabber (MacroSilicon MS210x)</li>
+<!-- <li>Micro-Servo 9g (2 Stück)</li> -->
+<li>Verbindungskabel (Buchse auf Buchse und Buchse auf Stecker)</li>
+<li>Smoke Stopper (Kurzschlussschutzstecker)</li>
+<li><a href="https://www.speedybee.com/speedybee-adapter-3/">Speedybee Adapter V3</a> (Konfigurationstool)</li>
+<li><a href="https://www.skyrc.com/b6neo+">SkyRC B6neo+</a> Ladegerät</li>
+<li>Imbus- und Sechskant-Schraubenschlüssel in den für FPV-Drohnen üblichen Größen (1,5 mm, 2,0 mm, 4,0 mm, 5,5 mm, 8,0 mm)</li>
+<li>Schraubendreher-Set mit 48-teiligem Präzisions-Bitsatz</li>
+<li>Ersatzpropeller (5'' und 6'')</li>
+<li>MicroSD-Speicherkarte (32 GB) mit SD/MicroSD-Adapter</li>
+<li>USB-Kartenlesegerät für SD und MicroSD-Speicherkarten</li>
+<li>18650-Akkus für Fernsteuerung und FPV-Brille</li>
+<li>Power Bank 20000 mAh PD 20 W (für alle Fälle...)</li>
+<li>USB-C Netzteil 27W zum Laden der FPV-Brille, der Fernsteuerung, der Power Bank und zum Betrieb des SkyRC B6neo+ Ladegeräts</li>
+<li>M3-Distanzbolzen und Schrauben (M3x9mm, M3x12mm) zum eventuellen nötigen Bau einer Plattform</li>
+<li>Alukoffer (ca. 45x30x15 cm)</li>
+</ul>
+
+
+Bilder TBD
 
 <h3>Drohnen im WS2627</h3>
 
+<p>Die Komponenten und deren Verbindung miteinander ist bei allen drei Drohnen weitestgehend identisch.</p>
+
+Bilder TBD
+
+
+<!--<a href="Bilder/Drohne_Nr1_MasterProjekt_Komponenten_v1_en_Bild_mit_Drohne.png"><img src="Bilder/Drohne_Nr1_MasterProjekt_Komponenten_v1_en_icon.png" alt="Drohne Gruppenbild 1" width="326" height="200" border="0"></a>
+
+<a href="Bilder/Drei_Drohnen_Gruppenbild_1_crop.jpg"><img src="Bilder/Drei_Drohnen_Gruppenbild_1_crop_icon.jpg" alt="Drohne Gruppenbild 2" width="440" height="200" border="0"></a>
+
+<a href="Bilder/Drei_Drohnen_Gruppenbild_2_crop.jpg"><img src="Bilder/Drei_Drohnen_Gruppenbild_2_crop_icon.jpg" alt="Drohnen Gruppenbild 3" width="279" height="200" border="0"></a>
+
+<a href="Bilder/Drei_Drohnen_Gruppenbild_3_crop.jpg"><img src="Bilder/Drei_Drohnen_Gruppenbild_3_crop_icon.jpg" alt="Drohne 1: Bauplan" width="259" height="200" border="0"></a>-->
+
+
+<p>Die vorbereiteten Drohnen sind im Detail...</p>
+
+<h3>Drohne 1</h3>
+
+
+<h3>Drohne 1</h3>
+
+<ul>
+<li><b>Rahmen:</b> GEPRC LC75 FPV Frame 7,5 Zoll</li>
+<li><b>Flugcontroller:</b> <a href="https://micoair.com/flightcontroller_micoair743v2/">MicoAir743 V2</a> (STM32H743VIT6, 480MHz, 2MB Flash, 2-6S, 8xUART, 1xI2C, 11xPWM, 5V 3A BEC, 12V 3A BEC) mit <a href="https://ardupilot.org/copter/docs/common-MicoAir743v2.html">ArduPilot</a> (<a href="https://micoair.com/docs/">Dokumentation</a>)</li>
+<li><b>ESC:</b> <a href="https://micoair.com/esc/">MicoAir</a> AM32-4IN1-55A</li>
+<li><b>Empfänger:</b> Radiomaster XR1 Nano Multi-Frequency ExpressLRS Empfänger mit Firmware ExpressLRS 4.1.0 (<a href="Dokumente/XR1_2.pdf">Handbuch</a>)</li>
+<ul>
+<li>Binding Phrase: <tt>drone1ffm</tt></li>
+</ul>
+<li><b>Kamara:</b> <a href="https://www.foxeer.com/foxeer-t-rex-micro-1500tvl-low-latency-super-wdr-fpv-camera-g-308">Foxeer T-Rex Micro</a> 1500TVL 155FOV 4,5-16V Analog (<a href="Dokumente/T_REX_MINI_MICRO_Manual.pdf">Handbuch</a>)</li>
+<li><b>Videosender:</b> <a href="https://www.foxeer.com/foxeer-4-9g-6g-reaper-extreme-v3-2-5w-80ch-vtx-g-591">Foxeer Reaper Extreme V3</a> 2.5W VTX 9-36V (<a href="Dokumente/Reaper_Extreme_V3_VTX_Manual_2.5W_80CH.pdf">Handbuch</a>)</li>
+<ul>
+<li>Kanal: <tt>5806 MHz (Band: Raceband, Channel: 5)</tt></li>
+</ul>
+<li><b>VTX-Antenne:</b> Foxeer Lollipop V4 Stubby 5,8 GHz RHCP SMA</li>
+<li><b>Motoren:</b> iFlight XING2 2809 1250KV 4-6S (<a href="Dokumente/xing2-2809-fpv-motor-890516.png">Spezifikation</a>)</li>
+<li><b>Propeller:</b> Gemfan Hurricane 6038-4 6-Zoll 4-Blatt Propeller</li>
+<li><b>GPS:</b> HGLRC M100 mit Kompass (<a href="Dokumente/HGLRC_M100_5883_GPS.pdf">Handbuch</a>)</li>
+</ul>
+
+
+Bilder TBD
+
+
+<h3>Drohne 2</h3>
+
+
+Bilder TBD
+
+
+<h3>Drohne 3</h3>
+
+
 TBD
+
 
 <h2>Teams</h2>
 
