@@ -283,6 +283,7 @@ Bilder TBD
 <li><b>Videosender:</b> SpeedyBee TX800 VTX (<a href="Dokumente/TX800-manual_EN.pdf">Handbuch</a>)</li>
 <ul>
 <li>Kanal: <tt>5785 MHz (Band: A, Channel: 5)</tt></li>
+<li>Die Eingangsspannung des SpeedyBee TX800 VTX ist nur 3.7-5V. Der analoge VIDEO-OUT des MicoAir743 V2 Flugcontrollers hat aber eine Ausgangsspannung vin 9V. Aus diesem Grund befindet sich ein Battery Eliminator Circuit (BEC) zwischen Flugcontroller und Videosender.</li>
 <li>Den Videosender betreffende Einstellungen in ArduPilot sind:
 <ul>
 <li><tt>VTX_ENABLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1</tt></li>
@@ -294,8 +295,6 @@ Bilder TBD
 <li><tt>VTX_MAX_POWER&nbsp;&nbsp;&nbsp; = 25    # Sendeleistung: 25mW </tt></li>
 <li><tt>VTX_OPTIONS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Hinweis: Pitmode funktioniert bislang nicht</tt></li>
 </ul>
-</ul>
-<li>Die Eingangsspannung des SpeedyBee TX800 VTX ist nur 3.7-5V. Der analoge VIDEO-OUT des MicoAir743 V2 Flugcontrollers hat aber eine Ausgangsspannung vin 9V. Aus diesem Grund befindet sich ein Battery Eliminator Circuit (BEC) zwischen Flugcontroller und Videosender.
 </ul>
 <li><b>VTX-Antenne:</b> Foxeer Lollipop V4 Stubby 5,8 GHz RHCP SMA</li>
 <li><b>Motoren:</b> <a href="https://www.rotorama.de/product/iflight-xing-2806-5-1800kv">iFlight XING2 2806.5 1800KV</a> 4-6S (<a href="Dokumente/XING-2806.5-1800KV.png">Spezifikation</a>)</li>
