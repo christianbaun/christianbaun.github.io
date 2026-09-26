@@ -342,7 +342,7 @@ Bilder TBD
 <li><b>VTX-Antenne:</b> Foxeer Lollipop V4 Stubby 5,8 GHz RHCP SMA</li>
 <li><b>Motoren:</b> <a href="https://iflight-rc.eu/products/xing2-2809-fpv-motor">iFlight XING2 2809 1250KV</a> 4-6S (<a href="Dokumente/xing2-2809-fpv-motor-890516.png">Spezifikation</a>)</li>
 <li><b>Propeller:</b> <a href="https://www.gemfanhobby.com/6038-hurricane-pc-4-blade.html">Gemfan Hurricane 6038-4</a> 6-Zoll 4-Blatt Propeller (<a href="Dokumente/2025-Gemfan-Product-Catalog.pdf">Informationen</a>)</li>
-<li><b>GPS:</b> HGLRC M100-5883 mit Kompass (<a href="Dokumente/HGLRC_M100_5883_GPS.pdf">Handbuch</a>)</li>
+<li><b>GPS:</b> HGLRC M100-5883 mit magnetischem Kompass (<a href="Dokumente/HGLRC_M100_5883_GPS.pdf">Handbuch</a>)</li>
 <li><b>Optical Flow Sensor:</b> MicroAir MTF-01P</li> 
 </ul>
 
@@ -370,6 +370,13 @@ Bilder TBD
 <li><b>Empfänger:</b> <a href="https://radiomasterrc.com/products/xr1-nano-multi-frequency-expresslrs-receiver">Radiomaster XR1</a> Nano Multi-Frequency ExpressLRS Empfänger mit Firmware ExpressLRS 4.1.0 (<a href="Dokumente/XR1_2.pdf">Handbuch</a>)</li>
 <ul>
 <li>Binding Phrase: <tt>drone2ffm</tt></li>
+<li>Den Videosender betreffende Einstellungen in ArduPilot sind:
+<ul>
+<li><tt>SERIAL6_PROTOCOL = 2&nbsp;&nbsp; # MAVLink 2</tt></li>
+<li><tt>SERIAL6_BAUD&nbsp;&nbsp;&nbsp;&nbsp; = 460 # 460800 Baud</tt></li>
+<li><tt>SERIAL6_OPTIONS&nbsp;  = 0</tt></li>
+<li><tt>RSSI_TYPE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 5&nbsp;&nbsp;    # TelemetryRadioRSSI, denn der XR1 übermittelt RSSI und Link-Qualität über MAVLink-RADIO_STATUS-Nachrichten.</tt></li>
+</ul>
 </ul>
 <li><b>Kamera:</b> <a href="https://www.caddxfpv.com/products/caddxfpv-ratel-pro-analog-camera">Caddx Ratel Pro</a> 1500TVL 125FOV 4,5-16V Analog (<a href="Dokumente/Ratel_pro_manual_V1.2.pdf">Handbuch</a>)</li>
 <li><b>Videosender:</b> <a href="https://www.foxeer.com/foxeer-4-9g-6g-reaper-extreme-v3-2-5w-80ch-vtx-g-591">Foxeer Reaper Extreme V3</a> 2.5W VTX 9-36V (<a href="Dokumente/Reaper_Extreme_V3_VTX_Manual_2.5W_80CH.pdf">Handbuch</a>)</li>
@@ -390,16 +397,38 @@ Bilder TBD
 <li><b>VTX-Antenne:</b> Foxeer Lollipop V4 Stubby 5,8 GHz RHCP SMA</li>
 <li><b>Motoren:</b> <a href="https://tmotorhobby.com/goods-1199-T-MOTORHOBBY+VELOX+V2808+Drone+Motor.html">T-MOTORHOBBY VELOX V2808 1950KV</a> 4-6S</li>
 <li><b>Propeller:</b> <a href="https://www.gemfanhobby.com/6038-hurricane-pc-4-blade.html">Gemfan Hurricane 6038-4</a> 6-Zoll 4-Blatt Propeller (<a href="Dokumente/2025-Gemfan-Product-Catalog.pdf">Informationen</a>)</li>
-<li><b>GPS:</b> HGLRC M100-5883 mit Kompass (<a href="Dokumente/HGLRC_M100_5883_GPS.pdf">Handbuch</a>)</li>
+<li><b>GPS:</b> HGLRC M100-5883 mit magnetischem Kompass (<a href="Dokumente/HGLRC_M100_5883_GPS.pdf">Handbuch</a>)</li>
 <ul>
-<li>Das GPS+Kompass-Modul ist um 180 Grad gedreht eingebaut (YAW=180), damit das Anschlusskabel nach hinten zeigt.</li>
-<li>Den im Flugcontroller enthalteten Kompass verwenden wir nicht, weil er zu anfällig ist für elektromagnetische Störungen.</li>
-<li><tt>COMPASS_AUTO_ROT = 0</tt></li>
+<li>Das GPS+Kompass-Modul ist um 180 Grad gedreht eingebaut (Yaw=180), damit das Anschlusskabel nach hinten zeigt.</li>
+<li>Den im Flugcontroller enthaltenen Kompass verwenden wir nicht, weil er zu anfällig für elektromagnetische Störungen ist.</li>
+<li>Das GPS+Kompass-Modul betreffende Einstellungen in ArduPilot sind:
+<ul>
+<li><tt>COMPASS_AUTO_ROT           = 0</tt></li>
 <li><tt>COMPASS_ENABLE&nbsp;&nbsp; = 1</tt></li>
-<li><tt>COMPASS_EXTERNAL = 1  # Externer Kompass </tt></li>
-<li><tt>COMPASS_ORIENT&nbsp;&nbsp; = 4 # Yaw180</tt></li>
+<li><tt>COMPASS_EXTERNAL           = 1&nbsp;  # Externer Kompass </tt></li>
+<li><tt>COMPASS_ORIENT&nbsp;&nbsp; = 4&nbsp; # Yaw180</tt></li>
 </ul>
-<li><b>Optical Flow Sensor:</b> MicroAir MTF-01P</li> 
+</ul>
+<li><b>Optical Flow Sensor:</b> <a href="https://store.micoair.com/product/mtf-01p/">MicroAir MTF-01P</a></li> 
+<ul>
+<li>Infos zur Konfiguration und Nutzung in ArduPilot:</li>
+<ul>
+<li><a href="https://ardupilot.org/copter/docs/common-mtf-01.html">MicoAir MTF-01 Optical Flow Sensor (inkl. LiDAR Laser-Abstandssensor)</a></li> 
+<li><a href="https://www.youtube.com/watch?v=D-ooFHEtQoo">Setup Optic Flow&amp;Lidar(MTF-01) For Ardupilot&amp;PX4 To Make Drones Hover And Fly Indoors Better</a></li>
+<li><a href="https://micoair.com/docs/decoding-micolink-messages-from-mtf-01/">Decoding Micolink Messages from MTF-01</a></li>
+<li>Den Fluss- und Abstandssensor betreffende Einstellungen in ArduPilot sind:
+<ul>
+<li><tt>SERIAL4_BAUD&nbsp;&nbsp;&nbsp;&nbsp; = 115&nbsp;  # 115200 Baud</tt></li>
+<li><tt>SERIAL4_OPTIONS&nbsp; = 1024 # Don't forward mavlink to/from</tt></li>
+<li><tt>SERIAL4_PROTOCOL = 1&nbsp;&nbsp;&nbsp; # MAVLink1</tt></li>
+<li><tt>FLOW_TYPE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 5&nbsp;&nbsp;&nbsp; # MAVLink</tt></li>
+<li><tt>RNGFND1_GNDCLEAR = 2&nbsp;&nbsp;&nbsp;   # Distance (in cm) from the range finder to the ground
+<li><tt>RNGFND1_MAX_CM&nbsp;&nbsp;  = 1200  # Rangefinder maximum distance
+<li><tt>RNGFND1_MIN_CM&nbsp;&nbsp;  = 2&nbsp;&nbsp;&nbsp;    # Rangefinder minimum distance
+<li><tt>RNGFND1_TYPE&nbsp;&nbsp;&nbsp;&nbsp; = 10&nbsp;&nbsp; # MAVLink</tt></li>
+<li><tt>RNGFND1_ORIENT&nbsp;&nbsp; = 25&nbsp;&nbsp; # Down</tt></li>
+</ul>
+</ul>
 </ul>
 
 <a href="Bilder/Drohne_6_5_mit_Raspi_Zero_und_Raspi_AI_Camera_und_LIDAR_2026.png"><img src="Bilder/Drohne_6_5_mit_Raspi_Zero_und_Raspi_AI_Camera_und_LIDAR_2026_icon.png" alt="Drohne Gruppenbild 1" width="190" height="200" border="0"></a>
@@ -440,7 +469,7 @@ Bilder TBD
 <li><b>VTX-Antenne:</b> Foxeer Lollipop V4 Stubby 5,8 GHz RHCP SMA</li>
 <li><b>Motoren:</b> <a href="https://www.rotorama.de/product/iflight-xing-2806-5-1800kv">iFlight XING2 2806.5 1800KV</a> 4-6S (<a href="Dokumente/XING-2806.5-1800KV.png">Spezifikation</a>)</li>
 <li><b>Propeller:</b> <a href="https://www.gemfanhobby.com/6038-hurricane-pc-4-blade.html">Gemfan Hurricane 6038-4</a> 6-Zoll 4-Blatt Propeller (<a href="Dokumente/2025-Gemfan-Product-Catalog.pdf">Informationen</a>)</li>
-<li><b>GPS:</b> HGLRC M100-5883 mit Kompass (<a href="Dokumente/HGLRC_M100_5883_GPS.pdf">Handbuch</a>)</li>
+<li><b>GPS:</b> HGLRC M100-5883 mit magnetischem Kompass (<a href="Dokumente/HGLRC_M100_5883_GPS.pdf">Handbuch</a>)</li>
 <li><b>Optical Flow Sensor:</b> MicroAir MTF-01P</li> 
 </ul>
 
