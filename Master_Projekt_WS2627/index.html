@@ -333,8 +333,8 @@ Bilder TBD
 <li><tt>SERIAL2_PROTOCOL = 44    # IRC Tramp</tt></li>
 <li><tt>SERIAL2_OPTIONS&nbsp; = 4&nbsp;     # Half-Duplex (wichtig!)</tt></li>
 <li><tt>SERIAL2_BAUD&nbsp;&nbsp;&nbsp;&nbsp; = 57    # 57600 Baudrate</tt></li>
-<li><tt>SVTX_BAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Band A</tt></li>
-<li><tt>SVTX_CHANNEL&nbsp;&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Kanal 1 => 5865 mW</tt></li>
+<li><tt>VTX_BAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Band A</tt></li>
+<li><tt>VTX_CHANNEL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Kanal 1 => 5865 mW</tt></li>
 <li><tt>VTX_MAX_POWER&nbsp;&nbsp;&nbsp; = 25    # Sendeleistung: 25mW </tt></li>
 <li><tt>VTX_OPTIONS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Empfehlung: Wert 7 für Pitmode vor und nach dem Arming</tt></li>
 </ul>
@@ -343,6 +343,7 @@ Bilder TBD
 <li><b>Motoren:</b> <a href="https://iflight-rc.eu/products/xing2-2809-fpv-motor">iFlight XING2 2809 1250KV</a> 4-6S (<a href="Dokumente/xing2-2809-fpv-motor-890516.png">Spezifikation</a>)</li>
 <li><b>Propeller:</b> <a href="https://www.gemfanhobby.com/6038-hurricane-pc-4-blade.html">Gemfan Hurricane 6038-4</a> 6-Zoll 4-Blatt Propeller (<a href="Dokumente/2025-Gemfan-Product-Catalog.pdf">Informationen</a>)</li>
 <li><b>GPS:</b> HGLRC M100-5883 mit Kompass (<a href="Dokumente/HGLRC_M100_5883_GPS.pdf">Handbuch</a>)</li>
+<li><b>Optical Flow Sensor:</b> MicroAir MTF-01P</li> 
 </ul>
 
 
@@ -380,8 +381,8 @@ Bilder TBD
 <li><tt>SERIAL2_PROTOCOL = 44    # IRC Tramp</tt></li>
 <li><tt>SERIAL2_OPTIONS&nbsp; = 4&nbsp;     # Half-Duplex (wichtig!)</tt></li>
 <li><tt>SERIAL2_BAUD&nbsp;&nbsp;&nbsp;&nbsp; = 57    # 57600 Baudrate</tt></li>
-<li><tt>SVTX_BAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Band A</tt></li>
-<li><tt>SVTX_CHANNEL&nbsp;&nbsp;&nbsp;&nbsp; = 2&nbsp;     # Kanal 3 => 5825 mW</tt></li>
+<li><tt>VTX_BAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Band A</tt></li>
+<li><tt>VTX_CHANNEL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 2&nbsp;     # Kanal 3 => 5825 mW</tt></li>
 <li><tt>VTX_MAX_POWER&nbsp;&nbsp;&nbsp; = 25    # Sendeleistung: 25mW </tt></li>
 <li><tt>VTX_OPTIONS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Empfehlung: Wert 7 für Pitmode vor und nach dem Arming</tt></li>
 </ul>
@@ -390,6 +391,15 @@ Bilder TBD
 <li><b>Motoren:</b> <a href="https://tmotorhobby.com/goods-1199-T-MOTORHOBBY+VELOX+V2808+Drone+Motor.html">T-MOTORHOBBY VELOX V2808 1950KV</a> 4-6S</li>
 <li><b>Propeller:</b> <a href="https://www.gemfanhobby.com/6038-hurricane-pc-4-blade.html">Gemfan Hurricane 6038-4</a> 6-Zoll 4-Blatt Propeller (<a href="Dokumente/2025-Gemfan-Product-Catalog.pdf">Informationen</a>)</li>
 <li><b>GPS:</b> HGLRC M100-5883 mit Kompass (<a href="Dokumente/HGLRC_M100_5883_GPS.pdf">Handbuch</a>)</li>
+<ul>
+<li>Das GPS+Kompass-Modul ist um 180 Grad gedreht eingebaut (YAW=180), damit das Anschlusskabel nach hinten zeigt.</li>
+<li>Den im Flugcontroller enthalteten Kompass verwenden wir nicht, weil er zu anfällig ist für elektromagnetische Störungen.</li>
+<li><tt>COMPASS_AUTO_ROT = 0</tt></li>
+<li><tt>COMPASS_ENABLE&nbsp;&nbsp; = 1</tt></li>
+<li><tt>COMPASS_EXTERNAL = 1  # Externer Kompass </tt></li>
+<li><tt>COMPASS_ORIENT&nbsp;&nbsp; = 4 # Yaw180</tt></li>
+</ul>
+<li><b>Optical Flow Sensor:</b> MicroAir MTF-01P</li> 
 </ul>
 
 <a href="Bilder/Drohne_6_5_mit_Raspi_Zero_und_Raspi_AI_Camera_und_LIDAR_2026.png"><img src="Bilder/Drohne_6_5_mit_Raspi_Zero_und_Raspi_AI_Camera_und_LIDAR_2026_icon.png" alt="Drohne Gruppenbild 1" width="190" height="200" border="0"></a>
@@ -421,8 +431,8 @@ Bilder TBD
 <li><tt>SERIAL2_PROTOCOL = 44    # IRC Tramp</tt></li>
 <li><tt>SERIAL2_OPTIONS&nbsp; = 4&nbsp;     # Half-Duplex (wichtig!)</tt></li>
 <li><tt>SERIAL2_BAUD&nbsp;&nbsp;&nbsp;&nbsp; = 57    # 57600 Baudrate</tt></li>
-<li><tt>SVTX_BAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Band A</tt></li>
-<li><tt>SVTX_CHANNEL&nbsp;&nbsp;&nbsp;&nbsp; = 4&nbsp;     # Kanal 5 => 5785 mW</tt></li>
+<li><tt>VTX_BAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Band A</tt></li>
+<li><tt>VTX_CHANNEL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 4&nbsp;     # Kanal 5 => 5785 mW</tt></li>
 <li><tt>VTX_MAX_POWER&nbsp;&nbsp;&nbsp; = 25    # Sendeleistung: 25mW </tt></li>
 <li><tt>VTX_OPTIONS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Hinweis: Pitmode funktioniert bislang nicht (Ursache unklar)</tt></li>
 </ul>
@@ -431,6 +441,7 @@ Bilder TBD
 <li><b>Motoren:</b> <a href="https://www.rotorama.de/product/iflight-xing-2806-5-1800kv">iFlight XING2 2806.5 1800KV</a> 4-6S (<a href="Dokumente/XING-2806.5-1800KV.png">Spezifikation</a>)</li>
 <li><b>Propeller:</b> <a href="https://www.gemfanhobby.com/6038-hurricane-pc-4-blade.html">Gemfan Hurricane 6038-4</a> 6-Zoll 4-Blatt Propeller (<a href="Dokumente/2025-Gemfan-Product-Catalog.pdf">Informationen</a>)</li>
 <li><b>GPS:</b> HGLRC M100-5883 mit Kompass (<a href="Dokumente/HGLRC_M100_5883_GPS.pdf">Handbuch</a>)</li>
+<li><b>Optical Flow Sensor:</b> MicroAir MTF-01P</li> 
 </ul>
 
 <a href="Bilder/Drohne_6_5_mit_Raspi_Zero_und_Raspi_AI_Camera_und_LIDAR_und_BAC_2026.png"><img src="Bilder/Drohne_6_5_mit_Raspi_Zero_und_Raspi_AI_Camera_und_LIDAR_und_BAC_2026_icon.png" alt="Drohne Gruppenbild 1" width="190" height="200" border="0"></a>
