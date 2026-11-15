@@ -825,6 +825,13 @@ KI-Drohnen im Informatikstudium – Erfahrungen bei der Integration einer komple
 <li><tt>FS_THR_ENABLE&nbsp; = 3&nbsp; # Landen bei Verlust der Verbindung zwischen Fernsteuerung und Empfänger</tt></li>
 <li><tt>LAND_SPEED&nbsp;&nbsp;&nbsp;&nbsp; = 30 # Landegeschwindigkeit 30 cm/s</tt></li>
 </ul>
+<li>Bei Videosendern, bei denen der PIT-Mode funktioniert, empfiehlt es sich, diesen über einen Kanal (z.B. Kanal 7) der Fernsteuerung zu aktivieren bzw. deaktivieren. Das schont den Akku der Drohne beträchtlich in Situationen, wo kein Videosignal nötig ist</li>
+<ul>
+<li><tt>RC7_OPTION&nbsp;&nbsp;&nbsp;&nbsp; = 94 # Sendeleistung des Videosenders (VTX) über Kanal 7 umschalten</tt></li>
+<li><tt>VTX_MAX_POWER&nbsp; = 25  # Auswahl auf PIT/25 mW begrenze </tt></li>
+<li><tt>VTX_POWER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 25    # Normale Sendeleistung: 25mW (reicht für Indoor-Flug)</tt></li>
+<li><tt>VTX_OPTIONS&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Keine automatische PIT-Umschaltung beim Armen/Disarmen</tt></li>
+</ul>
 </ul>
 
 <h2>Erste Schritte</h2>
