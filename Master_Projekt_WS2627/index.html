@@ -312,7 +312,7 @@ KI-Drohnen im Informatikstudium – Erfahrungen bei der Integration einer komple
 </li>
 <li><a href="https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/">Raspberry Pi Zero 2 WH</a> Einplatinencomputer</li>
 <li>Gehäuse passend für den Raspberry Pi Zero 2 Einplatinencomputer</li>
-<li>Anschlusskabel zur Verbindung von >Raspberry Pi Zero 2 WH mit dem Flugcontroller</li>
+<li>Anschlusskabel zur Verbindung des Raspberry Pi Zero 2 WH mit dem Flugcontroller</li>
 <li>MicroSD-Speicherkarte (32 GB) mit SD/MicroSD-Adapter</li>
 <li>USB-Kartenlesegerät für SD und MicroSD-Speicherkarten</li>
 <!-- <li><a href="https://www.raspberrypi.com/products/ai-camera/">Raspberry Pi AI Kameramodul</a></li> -->
@@ -820,17 +820,32 @@ KI-Drohnen im Informatikstudium – Erfahrungen bei der Integration einer komple
 <ul>
 <li>Weitere empfehlenswerte ArduPilot-Einstellungen für den Indoor-Flug</li>
 <ul>
-<li><tt>FS_GCS_ENABLE&nbsp; = 5&nbsp; # Landen bei Verlust der Bodenstation (Ground Control Station)</tt></li>
-<li><tt>FS_GCS_TIMEOUT = 5&nbsp; # Timeout beim Ausfall der Bodenstation bevor FS_GCS_ENABLE ausgelöst wird</tt></li>
-<li><tt>FS_THR_ENABLE&nbsp; = 3&nbsp; # Landen bei Verlust der Verbindung zwischen Fernsteuerung und Empfänger</tt></li>
-<li><tt>LAND_SPEED&nbsp;&nbsp;&nbsp;&nbsp; = 30 # Landegeschwindigkeit 30 cm/s</tt></li>
+<li><tt>FS_GCS_ENABLE&nbsp;&nbsp; = 5&nbsp;&nbsp;&nbsp; # Landen bei Verlust der Bodenstation (Ground Control Station)</tt></li>
+<li><tt>FS_GCS_TIMEOUT&nbsp; = 5&nbsp;&nbsp;&nbsp; # Timeout beim Ausfall der Bodenstation bevor FS_GCS_ENABLE ausgelöst wird</tt></li>
+<li><tt>FS_THR_ENABLE&nbsp;&nbsp; = 3&nbsp;&nbsp;&nbsp; # Landen bei Verlust der Verbindung zwischen Fernsteuerung und Empfänger</tt></li>
+<li><tt>LAND_SPEED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 30&nbsp;&nbsp; # Landegeschwindigkeit 30 cm/s</tt></li>
 </ul>
 <li>Bei Videosendern, bei denen der PIT-Mode funktioniert, empfiehlt es sich, diesen über einen Kanal (z.B. Kanal 7) der Fernsteuerung zu aktivieren bzw. deaktivieren. Das schont den Akku der Drohne beträchtlich in Situationen, wo kein Videosignal nötig ist</li>
 <ul>
-<li><tt>RC7_OPTION&nbsp;&nbsp;&nbsp;&nbsp; = 94 # Sendeleistung des Videosenders (VTX) über Kanal 7 umschalten</tt></li>
-<li><tt>VTX_MAX_POWER&nbsp; = 25  # Auswahl auf PIT/25 mW begrenze </tt></li>
-<li><tt>VTX_POWER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 25    # Normale Sendeleistung: 25mW (reicht für Indoor-Flug)</tt></li>
-<li><tt>VTX_OPTIONS&nbsp;&nbsp;&nbsp; = 0&nbsp;     # Keine automatische PIT-Umschaltung beim Armen/Disarmen</tt></li>
+<li><tt>RC7_OPTION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 94&nbsp;&nbsp; # Sendeleistung des Videosenders (VTX) über Kanal 7 umschalten</tt></li>
+<li><tt>VTX_MAX_POWER&nbsp;&nbsp; = 25&nbsp;&nbsp;  # Auswahl auf PIT/25 mW begrenze </tt></li>
+<li><tt>VTX_POWER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 25&nbsp;&nbsp;    # Normale Sendeleistung: 25mW (reicht für Indoor-Flug)</tt></li>
+<li><tt>VTX_OPTIONS&nbsp;&nbsp;&nbsp;&nbsp; = 0&nbsp;&nbsp;&nbsp;     # Keine automatische PIT-Umschaltung beim Armen/Disarmen</tt></li>
+</ul>
+<li>Ladungskapazität des verwendeten Akkus ist in ArduPilot und Schutzstufen definieren:</li>
+<ul>
+<li><tt>BATT_CAPACITY&nbsp;&nbsp; = 2500 # Kapazität des Akkus bei voller Ladung (im Beispiel 2500 mAh)</tt></li>
+<li><tt>BATT_ARM_VOLT&nbsp;&nbsp; = 15&nbsp;&nbsp; # Schwellwert kritischer Spannung, unterhalb der das Armen verhindert wird (im Beispiel 15 V)</tt></li>
+<li><tt>BATT_CRT_MAH&nbsp;&nbsp;&nbsp; = 500&nbsp; # Schwellwert kritischer Ladung, der BATT_FS_CRT_ACT auslöst (im Beispiel 500 mAh)</tt></li>
+<li><tt>BATT_CRT_VOLT&nbsp;&nbsp; = 13&nbsp;&nbsp; # Schwellwert kritischer Spannung, der BATT_FS_CRT_ACT auslöst (im Beispiel 13 V)</tt></li>
+<li><tt>BATT_LOW_MAH&nbsp;&nbsp;&nbsp; = 750&nbsp; # Schwellwert niedrige Ladung, der BATT_FS_LOW_ACT auslöst (im Beispiel 750 mAh)</tt></li>
+<li><tt>BATT_LOW_VOLT&nbsp;&nbsp; = 14&nbsp;&nbsp; # Schwellwert niedriger Spannung, der BATT_FS_LOW_ACT auslöst (im Beispiel 14 V)</tt></li>
+<li><tt>BATT_FS_LOW_ACT = 1&nbsp;&nbsp;&nbsp; # Landen bei niedriger Ladung</tt></li>
+<li><tt>BATT_FS_CRT_ACT = 1&nbsp;&nbsp;&nbsp; # Landen bei kritischer Ladung</tt></li>
+</ul>
+<li>Mehr Telemetriedaten (RxBt, Curr, Capa und Bat%) via MAVLink an die Fernsteuerung übertragen:</li>
+<ul>
+<li><tt>SR2_EXTRA3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1&nbsp;&nbsp;&nbsp; # Die Senderate der Telemetriedaten-Gruppe EXTRA3 (darunter BATTERY_STATUS, Optical Flow, Entfernungssensor und EKF-Status) beim MAVLink-Stream SR2 (dieser ist bei dieser Konfiguration mit SERIAL6 / ELRS-RX verbunden) wird auf 1 Hz festgelegt </tt></li>
 </ul>
 </ul>
 
