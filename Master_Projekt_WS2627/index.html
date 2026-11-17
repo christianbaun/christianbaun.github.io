@@ -845,7 +845,13 @@ KI-Drohnen im Informatikstudium – Erfahrungen bei der Integration einer komple
 </ul>
 <li>Mehr Telemetriedaten (RxBt, Curr, Capa und Bat%) via MAVLink an die Fernsteuerung übertragen:</li>
 <ul>
+<li><tt>SR2_EXTRA1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1&nbsp;&nbsp;&nbsp; # Die Senderate der Telemetriedaten-Gruppe EXTRA1 (darunter Fluglage: Roll, Pitch, Yaw = ATTITUDE) beim MAVLink-Stream SR2 (dieser ist bei dieser Konfiguration mit SERIAL6 / ELRS-RX verbunden) wird auf 1 Hz festgelegt </tt></li>
+<li><tt>SR2_EXTRA2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1&nbsp;&nbsp;&nbsp; # Die Senderate der Telemetriedaten-Gruppe EXTRA2 (darunter Flugdaten: Geschwindigkeit, Kurs, Gas, Höhe, Steigrate = VFR_HUD) beim MAVLink-Stream SR2 (dieser ist bei dieser Konfiguration mit SERIAL6 / ELRS-RX verbunden) wird auf 1 Hz festgelegt </tt></li>
 <li><tt>SR2_EXTRA3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1&nbsp;&nbsp;&nbsp; # Die Senderate der Telemetriedaten-Gruppe EXTRA3 (darunter BATTERY_STATUS, Optical Flow, Entfernungssensor und EKF-Status) beim MAVLink-Stream SR2 (dieser ist bei dieser Konfiguration mit SERIAL6 / ELRS-RX verbunden) wird auf 1 Hz festgelegt </tt></li>
+<li><tt>SR2_EXT_STAT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1&nbsp;&nbsp;&nbsp; # Die Senderate der Telemetriedaten-Gruppe EXT_STAT (darunter System-/Batteriestatus und GPS-Rohdaten, einschließlich Fix und Satelliten) beim MAVLink-Stream SR2 (dieser ist bei dieser Konfiguration mit SERIAL6 / ELRS-RX verbunden) wird auf 1 Hz festgelegt </tt></li>
+<li><tt>SR2_POSITION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1&nbsp;&nbsp;&nbsp; # Die Senderate der Telemetriedaten-Gruppe POSITION (darunter Geschätzte Position und Geschwindigkeit, globale/lokale Koordinaten und Höhe relativ Home) beim MAVLink-Stream SR2 (dieser ist bei dieser Konfiguration mit SERIAL6 / ELRS-RX verbunden) wird auf 1 Hz festgelegt</tt></li>
+<li><tt>SR2_RAW_SENS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1&nbsp;&nbsp;&nbsp; # Die Senderate der Telemetriedaten-Gruppe RAW_SENS (überträgt IMU-, Magnetometer- und Drucksensordaten, beispielsweise Beschleunigung und Drehraten) beim MAVLink-Stream SR2 (dieser ist bei dieser Konfiguration mit SERIAL6 / ELRS-RX verbunden) wird auf 1 Hz festgelegt</tt></li>
+<li><tt>SR2_RC_CHAN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1&nbsp;&nbsp;&nbsp; # Die Senderate der Telemetriedaten-Gruppe RC_CHAN (überträgt RC-Kanalinformationen und Servo-/Motorausgänge) beim MAVLink-Stream SR2 (dieser ist bei dieser Konfiguration mit SERIAL6 / ELRS-RX verbunden) wird auf 1 Hz festgelegt</tt></li>
 </ul>
 </ul>
 
